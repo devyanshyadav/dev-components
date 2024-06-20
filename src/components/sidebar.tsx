@@ -15,9 +15,9 @@ const SideBar = () => {
   const data = ComponentDataArray.filter(
     (item) => `/components/${CmpUrl(item.name)}` === params
   );
-  useEffect(() => {
-    sidebarToggle();
-  }, []);
+  // useEffect(() => {
+  //   sidebarToggle();
+  // }, []);
 
   return (
     sidebar && (
