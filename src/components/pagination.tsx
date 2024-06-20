@@ -1,5 +1,5 @@
 "use client";
-import { useParams } from "next/navigation";
+import {usePathname } from "next/navigation";
 import React from "react";
 import ComponentDataArray from "../../public/component-data-array";
 import CmpUrl from "@/utils/cmp-url";
@@ -7,11 +7,11 @@ import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const Pagination = () => {
-  const path = useParams();
+  const path = usePathname();
 
   const getCurrentIndex = () => {
     return ComponentDataArray.findIndex(
-      (item) => CmpUrl(item.name) === path?.cmp
+      (item) => `/components/${CmpUrl(item.name)}` === path
     );
   };
 
