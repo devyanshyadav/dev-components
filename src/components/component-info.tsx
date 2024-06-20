@@ -74,7 +74,7 @@ const ComponentInfo = ({
               textToCopy={CurrTab == 2 ? usageCodeString || "" : currVariant}
               setCopied={setCopyCode}
             >
-              <button className="bg-light-secondary dark:bg-dark-secondary text-accent border border-accent absolute  select-none top-0 -right-3 rounded-bl-lg rounded-tr-lg z-50 p-1 px-3 text-sm font-semibold cursor-pointer bg-light-primary dark:bg-dark-primary hover:bg-accent/30">
+              <button className="bg-light-secondary dark:bg-dark-secondary text-accent border border-accent absolute  select-none top-0 -right-3 rounded-bl-lg rounded-tr-lg z-50 p-1 px-3 text-sm font-semibold cursor-pointer hover:!bg-accent/30">
                 {copyCode ? "Copied!" : "Copy"}
               </button>
             </CopyCode>

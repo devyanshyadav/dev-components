@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import ComponentDataArray from "../../public/component-data-array";
 import useDevStore from "../utils/dev-store";
 import CmpUrl from "@/utils/cmp-url";
+import SearchComponents from "./search-components";
 
 const SideBar = () => {
   const { sidebar, sidebarToggle } = useDevStore((state) => state);
@@ -25,9 +26,10 @@ const SideBar = () => {
         animate={{ left: 0 }}
         exit={{ left: 0 }}
         transition={{ duration: 0.2 }}
-        className="h-full w-fit pr-14 bg-light-primary dark:bg-dark-primary overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden fixed md:static z-40 top-12 border-r border-accent/30 p-3"
+        className="h-full w-fit bg-light-primary dark:bg-dark-primary overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden fixed md:static z-40 top-12 border-r border-accent/30 p-3"
       >
-        <ul className="space-y-2 md:block hidden ">
+        <SearchComponents />
+        <ul className="space-y-2 md:block hidden  pr-14 mt-4">
           {ComponentDataArray.map((item: any, index: number) => (
             <li
               key={index}
@@ -47,7 +49,7 @@ const SideBar = () => {
             </li>
           ))}
         </ul>
-        <ul className="space-y-2 md:hidden">
+        <ul className="space-y-2 md:hidden pr-14 mt-4">
           {ComponentDataArray.map((item, index) => (
             <li
               key={index}

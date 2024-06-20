@@ -9,7 +9,7 @@ const Header = () => {
     <header className="w-full sticky top-0 z-50 h-12 backdrop-blur dark:bg-dark-secondary bg-light-secondary border-b border-b-accent/20 flex items-center justify-between px-2">
       <Link
         href="/"
-        className="select-none hover:opacity-80 z-50 top-1 flex items-center text-base text-accent gap-1  p-[2px] rounded-r-full px-4"
+        className="select-none hover:opacity-80 z-50 top-1 flex items-center text-base  gap-1  p-[2px] rounded-r-full px-4"
       >
         <Image
           src="/assets/logo.svg"
@@ -18,7 +18,7 @@ const Header = () => {
           height={500}
           className="w-8 select-none "
         />
-        <h2 className="md:block hidden select-none">Dev Components</h2>
+        <h2 className="md:block hidden select-none text-xl">Dev Components</h2>
       </Link>
 
       <div className="text-white/80 flex items-center justify-center gap-2">
