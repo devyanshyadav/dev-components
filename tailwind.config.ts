@@ -13,7 +13,7 @@ const config: Config = {
       colors: {
         // Light theme colors
         light: {
-          primary: "#f1f5f9", //100
+          primary: "#f8fafc", //50
           secondary: "#ffffff", //white
         },
         // Dark theme colors

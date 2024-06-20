@@ -56,7 +56,7 @@ const ComponentInfo = ({
           ))}
       </h3>
 
-      <div className="w-full mt-2  p-3 pt-0 overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden max-h-96 min-h-56 bg-light-secondary dark:bg-dark-secondary rounded-lg overflow-hidden relative flex flex-col">
+      <div className="w-full shadow mt-2  p-3 pt-0 overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden max-h-96 min-h-56 bg-light-secondary dark:bg-dark-secondary rounded-lg overflow-hidden relative flex flex-col">
         <ul className="w-full bg-light-secondary dark:bg-dark-secondary p-3 pb-0 flex items-center gap-5 text-sm sticky top-0 z-30   ">
           {["Preview", "Code", "Usage", "Details"].map((item, index) => (
             <li

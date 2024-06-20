@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark:bg-slate-900 bg-slate-50`}>
+      <body className={`${inter.className} dark:bg-dark-primary bg-light-primary`}>
         <Providers>{children}</Providers>
         {/* svg line patterns */}
         {/* <div className="svg-pattern absolute h-52 inset-0 -z-10 opacity-60">

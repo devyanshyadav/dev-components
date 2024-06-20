@@ -16,12 +16,12 @@ const DevInput = ({
   const commonStyle = "w-full flex items-center gap-2 text-white ";
   const inputVariants = {
     base: clsx(
-      "bg-white dark:bg-slate-800 border border-cyan-700 outline-cyan-700 rounded-full"
+      "bg-white dark:bg-slate-800 border border-cyan-500 outline-cyan-500 rounded-full"
     ),
     bordered:
-      "bg-transparent border border-cyan-700 outline-cyan-700 rounded-full",
+      "bg-transparent border border-cyan-500 outline-cyan-500 rounded-full",
     faded:
-      "bg-cyan-700/20 border border-cyan-700 outline-cyan-700 rounded-full",
+      "bg-cyan-500/20 border border-cyan-500 outline-cyan-500 rounded-full text-cyan-500",
     underline: clsx(
       " border-b-4 border-cyan-700 outline-none relative after:content-[''] after:absolute after:h-1 after:bg-cyan-500 after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0",
       active && "after:scale-x-100"
