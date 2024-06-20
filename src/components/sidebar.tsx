@@ -25,7 +25,7 @@ const SideBar = () => {
         animate={{ left: 0 }}
         exit={{ left: 0 }}
         transition={{ duration: 0.2 }}
-        className="h-full md:w-[20vw] w-[50vw] overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden fixed md:static z-50 border-r border-accent/30  p-3"
+        className="h-full w-fit pr-14 bg-light-primary dark:bg-dark-primary overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden fixed md:static z-40 top-12 border-r border-accent/30 p-3"
       >
         <ul className="space-y-2 md:block hidden ">
           {ComponentDataArray.map((item: any, index: number) => (

@@ -6,7 +6,7 @@ import ThemeSwitch from "./theme-switch";
 
 const Header = () => {
   return (
-    <header className="w-full h-12 backdrop-blur dark:bg-dark-secondary bg-light-secondary border-b border-b-accent/20 flex items-center justify-between px-2">
+    <header className="w-full sticky top-0 z-50 h-12 backdrop-blur dark:bg-dark-secondary bg-light-secondary border-b border-b-accent/20 flex items-center justify-between px-2">
       <Link
         href="/"
         className="select-none hover:opacity-80 z-50 top-1 flex items-center text-base text-accent gap-1  p-[2px] rounded-r-full px-4"
