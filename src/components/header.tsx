@@ -1,0 +1,34 @@
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import ToggleHamburger from "./toggle-hamburger";
+import ThemeSwitch from "./theme-switch";
+
+const Header = () => {
+  return (
+    <header className="w-full h-12 backdrop-blur dark:bg-slate-800 bg-slate-100 border-b border-b-accent/20 flex items-center justify-between px-2">
+      <Link
+        href="/"
+        className="select-none hover:opacity-80 z-50 top-1 flex items-center text-base text-accent gap-1  p-[2px] rounded-r-full px-4"
+      >
+        <Image
+          src="/assets/logo.svg"
+          alt="logo"
+          width={500}
+          height={500}
+          className="w-8 select-none "
+        />
+        <h2 className="md:block hidden select-none">Dev Components</h2>
+      </Link>
+
+      <div className="text-white/80 flex items-center justify-center gap-2">
+        <ThemeSwitch />
+        <span className=" bg-secondary/50 rounded-bl-xl md:hidden">
+          <ToggleHamburger />
+        </span>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
