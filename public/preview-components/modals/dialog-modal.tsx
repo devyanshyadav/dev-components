@@ -33,7 +33,7 @@ function DialogModal({
         {openBtn}
       </div>
       <dialog
-        className="border border-cyan-500/30 backdrop:bg-black/50 overflow-hidden relative flex-none bg-white dark:bg-slate-900  md:w-[40vw] min-h-60 rounded-xl"
+        className="w-[90vw] md:w-[40vw] border border-cyan-500/30 backdrop:bg-black/50 overflow-hidden relative flex-none bg-white dark:bg-slate-900   min-h-60 rounded-xl"
         ref={ref}
       >
         <div className="w-full  bg-slate-100 dark:bg-slate-800  font-semibold flex items-center justify-between relative">

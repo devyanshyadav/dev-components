@@ -1,10 +1,15 @@
 import AccordionsInfo from "./usage-components/accordions/accordions-info";
 import ButtonsInfo from "./usage-components/buttons/buttons-info";
+import CarouselsInfo from "./usage-components/carousels/carousels-info";
 import CheckBoxesInfo from "./usage-components/checkboxes/checkboxes-info";
 import ClipboardsInfo from "./usage-components/clipboards/clipboards-info";
 import InputsInfo from "./usage-components/inputs/inputs-info";
 import ModalsInfo from "./usage-components/modals/modals-info";
+import NavbarsInfo from "./usage-components/navbars/navbars-info";
 import RadiosInfo from "./usage-components/radios/radios-info";
+import SelectsInfo from "./usage-components/selects/selects-info";
+import TabsInfo from "./usage-components/tabs/tabs-info";
+import TooltipsInfo from "./usage-components/tooltips/tooltips-info";
 
 const ComponentDataArray = [
   {
@@ -56,6 +61,39 @@ const ComponentDataArray = [
     componentData: AccordionsInfo,
     description:
       "An accordion is a UI component that allows users to show/hide content by clicking on headers.",
+  },
+  {
+    name: "Tabs",
+    image: "tab.png",
+    componentData: TabsInfo,
+    description:
+      " A tab component that allows users to navigate between different sections of content.",
+  },
+  {
+    name: "Tooltips",
+    image: "tooltip.png",
+    componentData: TooltipsInfo,
+    description:
+      "A tooltip component that displays additional information or a helpful message when hovering over an element.",
+  },
+  {
+    name: "Carousels",
+    image: "carousel.png",
+    componentData: CarouselsInfo,
+    description:
+      " A carousels component that allows users to navigate between different sections of content.",
+  },
+  {
+    name: "Selects",
+    image: "select.png",
+    componentData: SelectsInfo,
+    description: "A select that allows to select an option from a list.",
+  },
+  {
+    name: "Navbars",
+    image: "nav.png",
+    componentData: NavbarsInfo,
+    description: "A navbar provides navigation options to users.",
   },
 ];
 

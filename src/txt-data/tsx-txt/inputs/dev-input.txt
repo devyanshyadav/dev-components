@@ -25,7 +25,7 @@ const DevInput = ({
   const commonStyle = "w-full flex items-center gap-2";
   const inputVariants = {
     base: clsx(
-      "bg-white dark:bg-slate-800 border border-cyan-500 outline-cyan-500 rounded-full"
+      "bg-slate-50 dark:bg-slate-900 border border-cyan-500 outline-cyan-500 rounded-full"
     ),
     bordered:
       "bg-transparent border border-cyan-500 outline-cyan-500 rounded-full",
