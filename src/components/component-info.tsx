@@ -8,6 +8,7 @@ import Link from "next/link";
 import { GoLinkExternal } from "react-icons/go";
 import CopyCode from "./copy-code";
 import clsx from "clsx";
+import CmpUrl from "@/utils/cmp-url";
 
 type componentInfoProps = {
   component_code: {
@@ -40,8 +41,8 @@ const ComponentInfo = ({
 
   return (
     <div className="w-full">
-      <h3 className="font-semibold flex items-center gap-4 opacity-80 text-xl">
-        # {component_name}{" "}
+      <h3 className="font-semibold group flex items-center gap-4 opacity-80 text-xl">
+        <span className="group-hover:text-accent">#</span>{component_name}
         {component_details.doc_links &&
           component_details.doc_links.length > 0 &&
           component_details.doc_links.map((item: string, index: number) => (
@@ -56,7 +57,10 @@ const ComponentInfo = ({
           ))}
       </h3>
 
-      <div className="w-full shadow mt-2  p-3 pt-0 overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden max-h-96 min-h-56 bg-light-secondary dark:bg-dark-secondary rounded-lg overflow-hidden relative flex flex-col">
+      <div
+        id={CmpUrl(component_name)}
+        className="w-full shadow mt-2  p-3 pt-0 overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden [&::-webkit-scrollbar-thumb]:hidden max-h-96 min-h-56 bg-light-secondary dark:bg-dark-secondary rounded-lg overflow-hidden relative flex flex-col"
+      >
         <ul className="w-full bg-light-secondary dark:bg-dark-secondary p-3 pb-0 flex items-center gap-5 text-sm sticky top-0 z-30   ">
           {["Preview", "Code", "Usage", "Details"].map((item, index) => (
             <li

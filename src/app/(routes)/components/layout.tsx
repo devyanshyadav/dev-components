@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "../../../components/sidebar";
 import Pagination from "@/components/pagination";
+import SideNavigation from "@/components/side-navigation";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,6 +11,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           {children}
           <Pagination/>
         </section>
+        <SideNavigation/>
       </main>
   );
 };
