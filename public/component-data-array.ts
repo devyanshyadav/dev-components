@@ -3,10 +3,12 @@ import ButtonsInfo from "./usage-components/buttons/buttons-info";
 import CarouselsInfo from "./usage-components/carousels/carousels-info";
 import CheckBoxesInfo from "./usage-components/checkboxes/checkboxes-info";
 import ClipboardsInfo from "./usage-components/clipboards/clipboards-info";
+import ColorPickersInfo from "./usage-components/color-pickers/color-pickers-info";
 import InputsInfo from "./usage-components/inputs/inputs-info";
 import ModalsInfo from "./usage-components/modals/modals-info";
 import NavbarsInfo from "./usage-components/navbars/navbars-info";
 import RadiosInfo from "./usage-components/radios/radios-info";
+import RichTxtEditorsInfo from "./usage-components/rich-txt-editors/rich-txt-editors-info";
 import SelectsInfo from "./usage-components/selects/selects-info";
 import TabsInfo from "./usage-components/tabs/tabs-info";
 import TogglesInfo from "./usage-components/toggles/toggles-info";
@@ -102,6 +104,19 @@ const ComponentDataArray = [
     componentData: TogglesInfo,
     description:
       "A toggle component that allows users to turn an option on or off.",
+  },
+  {
+    name: "Color Pickers",
+    image: "color-picker.png",
+    componentData:ColorPickersInfo,
+    description: "A color picker that allows to select and choose colors",
+  },
+  {
+    name: "Rich Txt Editors",
+    image: "rich-txt-editor.png",
+    componentData:RichTxtEditorsInfo, 
+    description:
+      "A rich text editor is a component that allows users to create and edit text with formatting options like bold, italics, fonts, colors, and embedded images and more.",
   },
 ];
 
