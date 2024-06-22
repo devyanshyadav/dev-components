@@ -9,6 +9,7 @@ import NavbarsInfo from "./usage-components/navbars/navbars-info";
 import RadiosInfo from "./usage-components/radios/radios-info";
 import SelectsInfo from "./usage-components/selects/selects-info";
 import TabsInfo from "./usage-components/tabs/tabs-info";
+import TogglesInfo from "./usage-components/toggles/toggles-info";
 import TooltipsInfo from "./usage-components/tooltips/tooltips-info";
 
 const ComponentDataArray = [
@@ -94,6 +95,13 @@ const ComponentDataArray = [
     image: "nav.png",
     componentData: NavbarsInfo,
     description: "A navbar provides navigation options to users.",
+  },
+  {
+    name: "Toggles",
+    image: "toggle.png",
+    componentData: TogglesInfo,
+    description:
+      "A toggle component that allows users to turn an option on or off.",
   },
 ];
 
