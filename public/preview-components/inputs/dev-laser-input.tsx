@@ -88,7 +88,7 @@ const DevLaserInput = ({
       <div
         className={clsx(
           InputRounded,
-          "absolute text-sm px-2 inset-[2px] flex items-center justify-center flex-grow border border-cyan-500/50 bg-white dark:bg-slate-800 gap-2  outline outline-cyan-500/20",
+          "absolute text-sm px-2 inset-[2px] flex items-center justify-center flex-grow border border-cyan-500/50 bg-white dark:bg-slate-900 gap-2  outline outline-cyan-500/20",
           className
         )}
       >

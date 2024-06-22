@@ -19,7 +19,7 @@ const ComponentCard = ({
   return (
     <Link
       href={`/components/${CmpUrl(name)}`}
-      className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl dark:bg-dark-secondary items-center border-accent/30 border hover:border-accent  bg-white"
+      className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl items-center border-accent/50 border hover:border-accent hover:bg-accent/20"
     >
       <Image
         src={`/assets/svg_icons/${image}`}

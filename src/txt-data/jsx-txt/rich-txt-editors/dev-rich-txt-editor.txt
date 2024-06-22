@@ -1,5 +1,5 @@
 //Create a File DevRichTxtEditor as well as export it and it will work seamlessly 
-//and this css style to global.css to make list element workable => *{list-style-type:decimal !important;}
+//and apply this css style to global.css to make list element workable => *{list-style-type:decimal !important;}
 // Import necessary libraries and components
 "use client";
 import React, { useEffect, useId, useState } from "react"; // Core React library and hooks

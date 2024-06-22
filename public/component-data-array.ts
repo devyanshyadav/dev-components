@@ -32,7 +32,7 @@ const ComponentDataArray = [
 
   {
     name: "Clipboards",
-    image: "clipboard.svg",
+    image: "clipboard.png",
     componentData: ClipboardsInfo,
     description:
       "A Clipboard component that allows users to copy text to their clipboard on click",

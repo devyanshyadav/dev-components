@@ -3,6 +3,7 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata } from "next";
 import { Providers } from "@/utils/providers";
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,11 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} dark:bg-dark-primary bg-light-primary`}>
+        <NextTopLoader color="#06b6d4" shadow="0 0 10px #06b6d4,0 0 5px #06b6d4" />
         <Providers>{children}</Providers>
         {/* svg line patterns */}
-        {/* <div className="svg-pattern absolute h-52 inset-0 -z-10 opacity-60">
-          <div className="bg-gradient-to-t from-primary to-secondary/50 w-full h-full"></div>
-        </div> */}
+        <div className="magicpattern absolute h-52 inset-0 -z-10 opacity-60">
+        </div>
         {/* <GoogleAnalytics gaId="G-BQTKMVNV86" /> */}
       </body>
     </html>
