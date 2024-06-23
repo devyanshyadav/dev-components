@@ -13,7 +13,10 @@ const DevInput = ({
   ...props
 }) => {
   const [active, setActive] = useState(false);
-  const commonStyle = "w-full flex items-center gap-2 text-white ";
+  const commonStyle = clsx(
+    "w-full flex items-center gap-2",
+    reverseIcon && "flex-row-reverse"
+  );
   const inputVariants = {
     base: clsx(
       "bg-slate-50 dark:bg-slate-900 border border-cyan-500 outline-cyan-500 rounded-full"
