@@ -9,12 +9,12 @@ const ThemeSwitch = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <button
+    <span
       onClick={() => (theme == "dark" ? setTheme("light") : setTheme("dark"))}
       className="text-accent text-2xl bg-secondary/50 p-1 rounded-full"
     >
       {currentTheme === "dark" ? <IoMdMoon /> : <MdWbSunny />}
-    </button>
+    </span>
   );
 };
 

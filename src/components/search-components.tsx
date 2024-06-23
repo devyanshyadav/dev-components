@@ -54,7 +54,7 @@ const SearchComponents = () => {
             animate={{ scale: 1 }}
             exit={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="w-full max-h-60 bg-light-primary dark:bg-dark-primary border border-accent absolute top-10 rounded-xl p-2 overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden space-y-2 [&::-webkit-scrollbar-thumb]"
+            className="w-full max-h-60 bg-light-primary dark:bg-dark-primary border border-accent/50 absolute top-10 rounded-xl p-2 overflow-y-scroll [&::-webkit-scrollbar]:hidden [&::-webkit-scrollbar-track]:hidden space-y-2 [&::-webkit-scrollbar-thumb]"
           >
             {searchData.length > 0 &&
               searchData.map((e, i) => (

@@ -62,7 +62,7 @@ const ThemeToggle = ({ toggle, isToggle, size = "md" }: devToggleProps) => {
           {toggle ? <MdWbSunny /> : <IoMdMoon />}
         </div>
       </label>
-      <span className="m-3 ">{toggle ? "ON" : "OFF"}</span>
+      <span className="m-3 ">{toggle ? "Light" : "Dark"}</span>
     </>
   );
 };
