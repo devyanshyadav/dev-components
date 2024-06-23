@@ -7,6 +7,7 @@ type DevLaserInputProps = {
   rounded?: "none" | "sm" | "md" | "full";
   laserColor?: string;
   laserActiveOnClick?: boolean;
+  reverseIcon?: boolean;
   icon?: React.ReactNode;
   className?: string;
 } & React.ComponentProps<"input">;
@@ -16,6 +17,7 @@ const DevLaserInput = ({
   rounded = "full",
   laserColor = "#01FFF5",
   laserActiveOnClick = true,
+  reverseIcon = false,
   icon,
   className,
   ...props
@@ -89,7 +91,8 @@ const DevLaserInput = ({
         className={clsx(
           InputRounded,
           "absolute text-sm px-2 inset-[2px] flex items-center justify-center flex-grow border border-cyan-500/50 bg-white dark:bg-slate-900 gap-2  outline outline-cyan-500/20",
-          className
+          className,
+          reverseIcon && "flex-row-reverse"
         )}
       >
         {icon && <span className={clsx("z-10", laserColor)}>{icon}</span>}

@@ -9,7 +9,7 @@ type DevButton = {
   href?: string;
   rounded?: "sm" | "md" | "lg" | "full" | "none";
   ripple?: boolean;
-  icon?: boolean;
+  asIcon?: boolean;
   children: React.ReactNode;
   className?: string;
 } & React.ComponentProps<"button"> &
@@ -21,7 +21,7 @@ const DevButton = ({
   href,
   rounded = "md",
   ripple = false,
-  icon,
+  asIcon,
   children,
   className,
   ...rest
@@ -40,9 +40,9 @@ const DevButton = ({
   };
 
   const buttonSizes = {
-    sm: icon ? "p-[4px] aspect-square" : "p-1 px-3",
-    md: icon ? "p-1 aspect-square" : "p-2 px-5",
-    lg: icon ? "p-2 aspect-square" : "p-3 px-7",
+    sm: asIcon ? "p-[4px] aspect-square" : "p-1 px-3",
+    md: asIcon ? "p-1 aspect-square" : "p-2 px-5",
+    lg: asIcon ? "p-2 aspect-square" : "p-3 px-7",
   };
   const buttonRoundness = {
     sm: "rounded-sm",

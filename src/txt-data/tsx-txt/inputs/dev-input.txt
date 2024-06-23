@@ -15,6 +15,7 @@ const DevInput = ({
   variant = "base",
   scale = "md",
   labelName,
+  className,
   icon,
   rounded = "full",
   reverseIcon = false,
@@ -22,7 +23,10 @@ const DevInput = ({
   ...props
 }: devInputProps) => {
   const [active, setActive] = useState(false);
-  const commonStyle = "w-full flex items-center gap-2";
+  const commonStyle = clsx(
+    "w-full flex items-center gap-2",
+    reverseIcon && "flex-row-reverse"
+  );
   const inputVariants = {
     base: clsx(
       "bg-slate-50 dark:bg-slate-900 border border-cyan-500 outline-cyan-500 rounded-full"
@@ -72,7 +76,7 @@ const DevInput = ({
           commonStyle,
           inputRound,
           inputVariant,
-          props.className
+          className
         )}
       >
         <span className="text-xl text-cyan-500">{icon}</span>
