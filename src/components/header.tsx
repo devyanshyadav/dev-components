@@ -18,7 +18,7 @@ const Header = () => {
           height={500}
           className="w-8 select-none "
         />
-        <h2 className="md:block hidden select-none text-xl">Dev Components</h2>
+        <h2 className="md:block hidden select-none text-lg font-light">Dev Components</h2>
       </Link>
 
       <div className="text-white/80 flex items-center justify-center gap-2">

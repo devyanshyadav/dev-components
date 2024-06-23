@@ -22,7 +22,7 @@ const ComponentCard = ({
       className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl items-center border-accent/50 border hover:border-accent hover:bg-accent/20"
     >
       <Image
-        src={`/assets/svg_icons/${image}`}
+        src={`/assets/cmp-icons/${image}`}
         alt="logo"
         width={60}
         height={60}

@@ -94,7 +94,7 @@ const ComponentDataArray = [
   },
   {
     name: "Navbars",
-    image: "nav.png",
+    image: "navbar.png",
     componentData: NavbarsInfo,
     description: "A navbar provides navigation options to users.",
   },

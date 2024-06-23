@@ -67,7 +67,7 @@ const SearchComponents = () => {
                   className="w-full hover:bg-light-secondary hover:dark:bg-dark-secondary flex items-center p-2 min-h-10 gap-3 bg-secondary/20 rounded-lg"
                 >
                   <Image
-                    src={`/assets/svg_icons/${e.image}`}
+                    src={`/assets/cmp-icons/${e.image}`}
                     alt="logo"
                     className="w-10"
                     width={60}
