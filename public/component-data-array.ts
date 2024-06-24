@@ -8,6 +8,7 @@ import InputsInfo from "./usage-components/inputs/inputs-info";
 import ModalsInfo from "./usage-components/modals/modals-info";
 import NavbarsInfo from "./usage-components/navbars/navbars-info";
 import RadiosInfo from "./usage-components/radios/radios-info";
+import RangeSlidersInfo from "./usage-components/range-sliders/range-sliders-info";
 import RichTxtEditorsInfo from "./usage-components/rich-txt-editors/rich-txt-editors-info";
 import SelectsInfo from "./usage-components/selects/selects-info";
 import TabsInfo from "./usage-components/tabs/tabs-info";
@@ -108,15 +109,22 @@ const ComponentDataArray = [
   {
     name: "Color Pickers",
     image: "color-picker.png",
-    componentData:ColorPickersInfo,
+    componentData: ColorPickersInfo,
     description: "A color picker that allows to select and choose colors",
   },
   {
     name: "Rich Txt Editors",
     image: "rich-txt-editor.png",
-    componentData:RichTxtEditorsInfo, 
+    componentData: RichTxtEditorsInfo,
     description:
       "A rich text editor is a component that allows users to create and edit text with formatting options like bold, italics, fonts, colors, and embedded images and more.",
+  },
+  {
+    name: "Range Sliders",
+    image: "range-slider.png",
+    componentData: RangeSlidersInfo,
+    description:
+      "A range slider component that allows users to select a value within a specific range.",
   },
 ];
 
