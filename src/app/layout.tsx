@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional web components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",
   keywords:
     "web components, custom components, react components, UI components, web development, front-end development, customizable components, functional components, custom web design, reusable components, open-source components",
-  themeColor: "#1E293B",
+  // themeColor: "#1E293B",
   // twitterTitle: "Dev Components - Fully Customizable Web Components",
   // twitterDescription:
   //   "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional web components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",

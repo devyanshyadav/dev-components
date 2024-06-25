@@ -4,9 +4,11 @@ import CarouselsInfo from "./usage-components/carousels/carousels-info";
 import CheckBoxesInfo from "./usage-components/checkboxes/checkboxes-info";
 import ClipboardsInfo from "./usage-components/clipboards/clipboards-info";
 import ColorPickersInfo from "./usage-components/color-pickers/color-pickers-info";
+import EmojiPickersInfo from "./usage-components/emoji-pickers/emoji-pickers-info";
 import InputsInfo from "./usage-components/inputs/inputs-info";
 import ModalsInfo from "./usage-components/modals/modals-info";
 import NavbarsInfo from "./usage-components/navbars/navbars-info";
+import PopoversInfo from "./usage-components/popovers/popovers-info";
 import RadiosInfo from "./usage-components/radios/radios-info";
 import RangeSlidersInfo from "./usage-components/range-sliders/range-sliders-info";
 import RichTxtEditorsInfo from "./usage-components/rich-txt-editors/rich-txt-editors-info";
@@ -125,6 +127,19 @@ const ComponentDataArray = [
     componentData: RangeSlidersInfo,
     description:
       "A range slider component that allows users to select a value within a specific range.",
+  },
+  {
+    name: "Popovers",
+    image: "popover.png",
+    componentData: PopoversInfo,
+    description: "A Popover component that use to display content on trigger",
+  },
+  {
+    name: "Emoji Pickers",
+    image: "emoji-picker.png",
+    componentData: EmojiPickersInfo,
+    description:
+      "A Emoji Picker component that allows users to add emojis to their text",
   },
 ];
 

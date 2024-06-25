@@ -49,22 +49,17 @@ const DevSelect = ({
   }, []);
 
   return (
-    <div>
+    <>
       {mounted &&
         createPortal(
           <Select
-            clickable={mounted ? true : false}
-            events={["click"]}
-            isOpen
+            clickable={true}
+            isOpen={mounted}
             id={randomId}
             place="bottom"
+            disableStyleInjection={true}
             offset={2}
             opacity={1}
-            style={{
-              backgroundColor: "transparent",
-              padding: "0px",
-              zIndex: 1000,
-            }}
           >
             <div
               className="flex text-black dark:text-white shadow-md flex-col gap-1 border border-cyan-500/50 bg-slate-50 dark:bg-slate-900 rounded-md p-2 max-h-64 overflow-y-scroll [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
@@ -106,10 +101,13 @@ const DevSelect = ({
       >
         {selectValue}
         <IoIosArrowDown
-        className={clsx("text-lg transition-all text-cyan-500", mounted && "rotate-180")}
-         />
+          className={clsx(
+            "text-lg transition-all text-cyan-500",
+            mounted && "rotate-180"
+          )}
+        />
       </button>
-    </div>
+    </>
   );
 };
 

@@ -98,13 +98,13 @@ const DevButtonUsage = () => {
             <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
               <h2 className="font-semibold">Using as Icon</h2>
               <div className="flex gap-2 items-center flex-wrap">
-                <DevButton variant="solid" size="lg" icon={true}>
+                <DevButton variant="solid" size="lg" asIcon={true}>
                   <IoSearch />
                 </DevButton>
-                <DevButton variant="solid" size="lg" icon={true}>
+                <DevButton variant="solid" size="lg" asIcon={true}>
                   <HiHome />
                 </DevButton>
-                <DevButton variant="solid" size="lg" icon={true}>
+                <DevButton variant="solid" size="lg" asIcon={true}>
                   <MdCameraAlt />
                 </DevButton>
               </div>
