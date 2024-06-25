@@ -4,7 +4,7 @@ import { MdWbSunny } from "react-icons/md";
 import { IoMdMoon } from "react-icons/io";
 import { useEffect, useState } from "react";
 
-export function ThemeSwitch() {
+export default function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
