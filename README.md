@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dev Components
 
-## Getting Started
+![Dev Components Logo](/assets/logo.svg)
 
-First, run the development server:
+🚀 Dev Components is a unique platform providing fully customizable React components in TSX/JSX, seamlessly integrated with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Our Philosophy
+
+- **Minimal Dependencies**: We create components with little to no external dependencies, ensuring lightweight integration.
+- **Best-of-Breed Options**: Some components offer variations inspired by renowned packages, giving you top-quality choices without the bloat.
+
+## What Sets Us Apart
+
+Dev Components isn't just another UI library. We specialize in highly functional React components that go beyond the surface:
+
+- **TSX/JSX Flexibility**: Write your way, we support both.
+- **Tailwind CSS Integration**: Beautiful, responsive designs out of the box.
+- **Functional Power**: Our components aren't just pretty—they're smart.
+
+## Why Choose Dev Components?
+
+1. **Functionality First**: While others focus on looks, we prioritize powerful, feature-rich components that solve real development challenges.
+
+2. **Customization King**: Tailor each component to your needs without breaking a sweat.
+
+3. **Performance Driven**: Optimized for speed and efficiency, because every millisecond counts.
+
+4. **TypeScript Love**: Full TypeScript support for rock-solid development.
+
+5. **NextJS Ready**: Seamless integration with NextJS for modern web apps.
+
+## How to Use
+
+1. Visit our website: [Dev Components Website]
+2. Browse our component library
+3. Find a component you love
+4. Copy the code directly from the preview
+5. Paste into your project
+6. Enjoy seamless functionality!
+
+## Example Usage
+
+After copying a component from our website, you can use it like this:
+
+```jsx
+import DevModal from './path-to-dev-tooltip-component';
+import React, { useState } from 'react'
+
+const MyApp = () => {
+    const [open, isOpen] = useState(false)
+    return (
+        <DevModal
+            open={open}
+            isOpen={isOpen}
+            modalTitle="Modal Title"
+            openBtn={
+                <button className="bg-cyan-500 p-2 px-3 rounded-lg active:scale-95 text-white hover:bg-cyan-500/80">
+                    Open Modal
+                </button>
+            }
+        >
+            <div className="font-semibold text-lg"> 
+                Modal Content
+            </div>
+        </DevModal>
+    )
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

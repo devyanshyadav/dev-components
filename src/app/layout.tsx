@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Dev Components - Fully Customizable Functional React Components",
   description:
-    "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional React components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",
+    "Discover Dev Components, a unique platform providing fully customizable React components in TSX/JSX, seamlessly integrated with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.",
   keywords:
-    "web components, custom components, react components, UI components, web development, front-end development, customizable components, functional components, custom web design, reusable components, open-source components",
+    "web components, tsx react components, custom components, react components, UI components, web development, front-end development, customizable components, functional components, custom web design, reusable components, open-source components",
   // themeColor: "#1E293B",
   // twitterTitle: "Dev Components - Fully Customizable Web Components",
   // twitterDescription:
@@ -30,12 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark:bg-dark-primary bg-light-primary overflow-hidden`}>
-        <NextTopLoader color="#06b6d4" shadow="0 0 10px #06b6d4,0 0 5px #06b6d4" />
+      <body
+        className={`${inter.className} dark:bg-dark-primary bg-light-primary overflow-hidden`}
+      >
+        <NextTopLoader
+          color="#06b6d4"
+          shadow="0 0 10px #06b6d4,0 0 5px #06b6d4"
+        />
         <Providers>{children}</Providers>
         {/* svg line patterns */}
-        <div className="magicpattern absolute h-52 inset-0 -z-10 opacity-60">
-        </div>
+        <div className="magicpattern absolute h-52 inset-0 -z-10 opacity-60"></div>
         {/* <GoogleAnalytics gaId="G-BQTKMVNV86" /> */}
       </body>
     </html>

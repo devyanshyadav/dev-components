@@ -11,7 +11,7 @@ const page = () => {
           Dev Components<span className="text-6xl text-accent">.</span>
         </h1>
         <p className=" opacity-80 font-normal text-center text-sm">
-          Crafting a Lightweight Website using customizable and functional Web
+          Crafting a Lightweight Website using customizable and functional React
           Components for Maximum Control
         </p>
 
