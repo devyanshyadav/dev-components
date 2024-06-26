@@ -1,6 +1,6 @@
 # Dev Components
 
-![Dev Components Logo](/assets/logo.svg)
+![Dev Components Logo](public/assets/readme-banner.png)
 
 🚀 Dev Components is a unique platform providing fully customizable React components in TSX/JSX, seamlessly integrated with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.
 
@@ -27,7 +27,7 @@ Dev Components isn't just another UI library. We specialize in highly functional
 
 4. **TypeScript Love**: Full TypeScript support for rock-solid development.
 
-5. **NextJS Ready**: Seamless integration with NextJS for modern web apps.
+5. **React or NextJS Ready**: Seamless integration with ReactJS as well as NextJS for modern web apps.
 
 ## How to Use
 

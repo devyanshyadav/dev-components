@@ -10,11 +10,7 @@ type cardProps = {
   componentsNo: number;
 };
 
-const ComponentCard = ({
-  name,
-  image,
-  componentsNo,
-}: cardProps) => {
+const ComponentCard = ({ name, image, componentsNo }: cardProps) => {
   return (
     <Link
       href={`/components/${CmpUrl(name)}`}
@@ -29,7 +25,7 @@ const ComponentCard = ({
       <span className="pl-3">
         <h2 className="font-semibold text-xl">{name}</h2>
         <p className="text-sm text-accent">
-          {componentsNo} components
+          {componentsNo} {componentsNo > 1 ? "components" : "component"}
         </p>
       </span>
     </Link>
