@@ -8,9 +8,9 @@ import NextTopLoader from "nextjs-toploader";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dev Components - Fully Customizable Functional Web Components",
+  title: "Dev Components - Fully Customizable Functional React Components",
   description:
-    "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional web components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",
+    "Discover Dev Components, a unique platform offering a wide range of fully customizable and functional React components. Enhance your web development experience with our ready-to-use, highly flexible UI elements.",
   keywords:
     "web components, custom components, react components, UI components, web development, front-end development, customizable components, functional components, custom web design, reusable components, open-source components",
   // themeColor: "#1E293B",
