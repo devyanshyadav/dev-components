@@ -7,7 +7,7 @@ import { FaGithub } from "react-icons/fa6";
 
 const Header = () => {
   return (
-    <header className="w-full sticky top-0 z-50 h-12 backdrop-blur dark:bg-dark-secondary bg-light-secondary border-b border-b-accent/20 flex items-center justify-between px-2">
+    <header className="w-full h-[8vh] sticky top-0 z-50 h-12 backdrop-blur dark:bg-dark-secondary bg-light-secondary border-b border-b-accent/20 flex items-center justify-between px-2">
       <Link
         href="/"
         className="select-none hover:opacity-80 z-50 top-1 flex items-center text-base  gap-1  p-[2px] rounded-r-full px-4"

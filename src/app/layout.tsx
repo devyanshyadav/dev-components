@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark:bg-dark-primary bg-light-primary`}>
+      <body className={`${inter.className} dark:bg-dark-primary bg-light-primary overflow-hidden`}>
         <NextTopLoader color="#06b6d4" shadow="0 0 10px #06b6d4,0 0 5px #06b6d4" />
         <Providers>{children}</Providers>
         {/* svg line patterns */}

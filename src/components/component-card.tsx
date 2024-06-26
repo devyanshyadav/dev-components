@@ -13,13 +13,12 @@ type cardProps = {
 const ComponentCard = ({
   name,
   image,
-  description,
   componentsNo,
 }: cardProps) => {
   return (
     <Link
       href={`/components/${CmpUrl(name)}`}
-      className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl items-center border-accent/50 border hover:border-accent hover:bg-accent/20"
+      className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl items-center border-accent/50 border hover:border-accent hover:bg-accent/20 hover:dark:bg-accent/20 bg-light-primary dark:bg-dark-primary"
     >
       <Image
         src={`/assets/cmp-icons/${image}`}
