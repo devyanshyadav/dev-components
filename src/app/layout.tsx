@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Dev Components - Fully Customizable Functional React Components",
   description:
-    "Discover Dev Components, a unique platform providing fully customizable React components in TSX/JSX, seamlessly integrated with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.",
+    "Discover Dev Components, a unique platform providing fully customizable React components in TSX/JSX, seamlessly styled with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.",
   keywords:
     "web components, tsx react components, custom components, react components, UI components, web development, front-end development, customizable components, functional components, custom web design, reusable components, open-source components",
   // themeColor: "#1E293B",

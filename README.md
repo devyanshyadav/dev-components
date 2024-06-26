@@ -2,7 +2,7 @@
 
 ![Dev Components Logo](public/assets/readme-banner.png)
 
-🚀 Dev Components is a unique platform providing fully customizable React components in TSX/JSX, seamlessly integrated with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.
+🚀 Dev Components is a unique platform providing fully customizable React components in TSX/JSX, seamlessly styled with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.
 
 ## Our Philosophy
 
