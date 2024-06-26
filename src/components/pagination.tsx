@@ -18,7 +18,7 @@ const Pagination = () => {
   const getData = () => {
     const currentIndex = getCurrentIndex();
     if (currentIndex === -1) {
-      console.log("Component not found");
+      // console.log("Component not found");
       return { current: null, prev: null, next: null };
     }
     const prevIndex =

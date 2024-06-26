@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import ToggleHamburger from "./toggle-hamburger";
 import ThemeSwitch from "./theme-switch";
+import { FaGithub } from "react-icons/fa6";
 
 const Header = () => {
   return (
@@ -18,10 +19,18 @@ const Header = () => {
           height={500}
           className="w-8 select-none "
         />
-        <h2 className="md:block hidden select-none text-lg font-light">Dev Components</h2>
+        <h2 className="md:block hidden select-none text-lg font-light">
+          Dev Components
+        </h2>
       </Link>
 
-      <span className="text-white/80 flex items-center justify-center gap-2">
+      <span className="text-accent flex items-center justify-center gap-2">
+        <Link
+          target="_blank"
+          href="https://github.com/devyanshyadav/Dev-Components"
+        >
+          <FaGithub className="text-2xl" />
+        </Link>
         <ThemeSwitch />
         <span className=" bg-secondary/50 rounded-bl-xl md:hidden">
           <ToggleHamburger />

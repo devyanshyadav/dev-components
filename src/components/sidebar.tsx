@@ -20,7 +20,8 @@ const SideBar = () => {
   // }, []);
 
   return (
-    sidebar && (
+    sidebar &&
+    params !== "/components" && (
       <motion.section
         initial={{ left: "-100px" }}
         animate={{ left: 0 }}
@@ -61,7 +62,10 @@ const SideBar = () => {
               } `}
             >
               <GoDotFill className="text-xs group-hover:text-accent" />{" "}
-              <Link href={CmpUrl(item.name)} className="w-full">
+              <Link
+                href={`/components/${CmpUrl(item.name)}`}
+                className="w-full"
+              >
                 {item.name}
               </Link>
             </li>
