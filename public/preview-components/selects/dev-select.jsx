@@ -46,7 +46,7 @@ const DevSelect = ({ setSelectValue, selectValue, Options }) => {
             isOpen={mounted}
             id={randomId}
             place="bottom"
-            disableStyleInjection={true}
+            style={{ backgroundColor: "transparent", padding: "0px", zIndex: 1000 }}
             offset={2}
             opacity={1}
           >
