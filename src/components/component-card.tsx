@@ -14,16 +14,16 @@ const ComponentCard = ({ name, image, componentsNo }: cardProps) => {
   return (
     <Link
       href={`/components/${CmpUrl(name)}`}
-      className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl items-center border-accent/50 border hover:border-accent hover:bg-accent/20 hover:dark:bg-accent/20 bg-light-primary dark:bg-dark-primary"
+      className="w-full flex gap-5 pl-4 p-2 max-h-24 h-24 rounded-xl overflow-hidden items-center border-accent/50 border hover:border-accent hover:bg-accent/20 hover:dark:bg-accent/20 bg-light-primary dark:bg-dark-primary"
     >
       <Image
         src={`/assets/cmp-icons/${image}`}
         alt="logo"
-        width={60}
-        height={60}
+        width={50}
+        height={50}
       />
       <span className="pl-3">
-        <h2 className="font-semibold text-xl">{name}</h2>
+        <h2 className="font-semibold text-xl text-ellipsis overflow-hidden">{name}</h2>
         <p className="text-sm text-accent">
           {componentsNo} {componentsNo > 1 ? "components" : "component"}
         </p>
