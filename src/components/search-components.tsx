@@ -25,7 +25,7 @@ const SearchComponents = () => {
     e.preventDefault();
     const searchValue = e.target.value;
     const searchResult = ComponentDataArray.filter((item) =>
-      CmpUrl(item.name)
+      CmpUrl(item.name).includes(CmpUrl(searchValue))
     );
     setSearchData(searchResult);
   };
