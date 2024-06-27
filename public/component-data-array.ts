@@ -6,6 +6,7 @@ import ClipboardsInfo from "./usage-components/clipboards/clipboards-info";
 import ColorPickersInfo from "./usage-components/color-pickers/color-pickers-info";
 import EmojiPickersInfo from "./usage-components/emoji-pickers/emoji-pickers-info";
 import InputsInfo from "./usage-components/inputs/inputs-info";
+import MiscellaneousInfo from "./usage-components/miscellaneous/miscellaneous-info";
 import ModalsInfo from "./usage-components/modals/modals-info";
 import NavbarsInfo from "./usage-components/navbars/navbars-info";
 import PopoversInfo from "./usage-components/popovers/popovers-info";
@@ -140,6 +141,13 @@ const ComponentDataArray = [
     componentData: EmojiPickersInfo,
     description:
       "A Emoji Picker component that allows users to add emojis to their text",
+  },
+  {
+    name: "Miscellaneous",
+    image: "miscellaneous.png",
+    componentData: MiscellaneousInfo,
+    description:
+      "Miscellaneous components are assorted minor parts or elements that don't fit main categories.",
   },
 ];
 

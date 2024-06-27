@@ -30,6 +30,7 @@
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-pick-color": "^2.0.0",
+    "react-resizable-panels": "^2.0.19",
     "react-syntax-highlighter": "^15.5.0",
     "react-tooltip": "^5.27.0",
     "read-file": "^0.2.0",
