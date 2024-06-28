@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/preview-components/accordions/dev-accordion.ssx", "public/usage-components/toggles/sleek-toggle.-usagetsx", "public/preview-components/miscellaneous/react-resizable-panels.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/preview-components/accordions/dev-accordion.ssx", "public/usage-components/toggles/sleek-toggle.-usagetsx", "public/preview-components/miscellaneous/react-resizable-panels.jsx", "public/preview-components/miscellaneous/responsive-grid-layout.jsx"],
   "exclude": ["node_modules"]
 }
