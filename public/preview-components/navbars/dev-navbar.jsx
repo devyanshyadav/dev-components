@@ -12,7 +12,7 @@ const DevNavbar = ({ navList }) => {
         <header className="sticky top-0 flex h-14 w-full flex-col md:justify-between justify-center border-b border-cyan-500/50 bg-slate-100 p-2 px-4 text-black md:flex-row md:items-center dark:bg-slate-900 dark:text-white">
             <a href="/" className="w-fit text-xl font-semibold text-cyan-500">LOGO</a>
 
-            <nav className={clsx("z-15 fixed inset-0 inset-x-0 top-14 w-full border-t md:border-none border-cyan-500/50 bg-slate-100 transition-all duration-300 overflow-hidden md:static md:block md:w-auto md:transition-none dark:bg-slate-900", on ? "w-full" : "w-0")}>
+            <nav className={clsx("z-50 fixed inset-0 inset-x-0 top-14 w-full border-t md:border-none border-cyan-500/50 bg-slate-100 transition-all duration-300 overflow-hidden md:static md:block md:w-auto md:transition-none dark:bg-slate-900", on ? "w-full" : "w-0")}>
                 <ul className="flex flex-col md:flex-row gap-5 h-full p-3 md:p-0">
                     {
                         navList.map((e, i) => (
