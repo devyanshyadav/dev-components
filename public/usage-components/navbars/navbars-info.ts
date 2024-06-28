@@ -1,4 +1,5 @@
 import DevNavbarUsage from "./dev-navbar-usage";
+import DevNavbarV1Usage from "./dev-navbar-v1-usage";
 
 const NavbarsInfo = [
   {
@@ -34,6 +35,34 @@ const NavbarsInfo = [
           pckg_name: "clsx",
           pckg_link: "https://www.npmjs.com/package/clsx",
         },
+      ],
+    },
+  },
+  {
+    title: "Dev NavBar v1",
+    component: DevNavbarV1Usage,
+    variants: {
+      jsx: true,
+      tsx: true,
+    },
+    details: {
+      description:
+        "A responsive navigation bar component best for server side rendering.",
+      features: [
+        "Displays a list of navigation links",
+        "Includes a logo",
+        "Adds dropdown animation for mobile screens",
+        "Zero client side rendering",
+      ],
+      props: [
+        {
+          propName: "navList",
+          propExample: "['Home', 'Blogs', 'About', 'Contact']",
+          propDetail:
+            "An array of strings representing the navigation links to be displayed.",
+        },
+      ],
+      packages: [
       ],
     },
   },
