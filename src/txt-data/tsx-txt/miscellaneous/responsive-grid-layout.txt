@@ -25,14 +25,14 @@ const ResponsiveGridLayout = () => {
             layouts={layout}
             rowHeight={60}
             compactType={"horizontal"}
-            breakpoints={{ lg: 1200, md: 3, sm: 2 }}
-            cols={{ lg: 12, md: 3, sm: 2 }}
-            maxRows={5}
+            breakpoints={{ lg: 1200, md: 800, sm: 300 }}
+            cols={{ lg: 12, md: 8, sm: 8 }}
+            // maxRows={5}
             onLayoutChange={(layout) => {
                 setLayout({ lg: layout });
                 console.log({ lg: layout })
             }}
-            className="bg-slate-100 dark:bg-slate-900 border border-cyan-500/50 "
+            className="bg-slate-100 h-full w-full dark:bg-slate-900 border border-cyan-500/50 "
         >
             {
                 layout.lg.map((e, i) => (
