@@ -25,8 +25,8 @@ const ResponsiveGridLayout = () => {
             layouts={layout}
             rowHeight={60}
             compactType={"horizontal"}
-            breakpoints={{ lg: 1200, md: 800, sm: 300 }}
-            cols={{ lg: 12, md: 8, sm: 8 }}
+            breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+            cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
             // maxRows={5}
             onLayoutChange={(layout) => {
                 setLayout({ lg: layout });

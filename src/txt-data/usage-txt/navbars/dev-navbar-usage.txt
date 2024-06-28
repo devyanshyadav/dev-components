@@ -3,7 +3,7 @@ import DevNavbar from '../../preview-components/navbars/dev-navbar'
 
 const DevNavbarUsage = () => {
   return (
-    <DevNavbar navList={["Home", "About", "Contact"]} />
+    <DevNavbar navList={["Home", "Blogs", "About", "Contact"]} />
   )
 }
 

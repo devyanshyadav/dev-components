@@ -15,7 +15,7 @@ const DevSelect = ({ setSelectValue, selectValue, Options }) => {
   useEffect(() => {
     if (buttonRef.current) {
       setCalcWidth(buttonRef.current.offsetWidth);
-     // console.log(buttonRef.current.offsetWidth, "width");
+      // console.log(buttonRef.current.offsetWidth, "width");
     }
   }, []);
 

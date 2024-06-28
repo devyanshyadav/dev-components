@@ -3,7 +3,7 @@ import React from "react";
 const DevNavbarV1 = ({ navList }: { navList: string[] }) => {
   return (
     <header className="sticky top-2 mx-auto my-2 flex h-14 w-[98%] flex-col rounded-full border border-cyan-500/50 bg-slate-100 p-2 px-4 text-black md:flex-row md:items-center md:justify-between dark:bg-slate-900 dark:text-white">
-      <a href="/" className="w-fit text-xl font-semibold">
+      <a href="/" className="w-fit text-xl mt-1 font-semibold">
         LOGO
       </a>
       <span className="absolute right-5 top-1/2 -translate-y-1/2">
