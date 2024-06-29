@@ -36,7 +36,7 @@ const ResponsiveGridLayout = () => {
             width={1200}
         >
             {layout.map((item) => (
-                <div key={item.i} className="bg-white grid place-content-center hover:bg-cyan-500 hover:dark:bg-cyan-500 cursor-move dark:bg-slate-900 border border-cyan-500/50 rounded-md">
+                <div key={item.i} className="bg-white grid place-content-center hover:bg-cyan-500 hover:dark:bg-cyan-500 cursor-move dark:bg-slate-800 border border-cyan-500/50 rounded-md">
                     {item.i}
                 </div>
             ))}
