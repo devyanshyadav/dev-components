@@ -159,8 +159,8 @@ const MiscellaneousInfo = [
       props: [
         {
           propName: "tags",
-          propExample: "[{ id: 1, value: 'Tag1' }, { id: 2, value: 'Tag2' }]",
-          propDetail: "Array of objects representing tags with unique IDs and values."
+          propExample: "['ReactJs','NextJS'...]",
+          propDetail: "Array of representing tags with unique string values."
         },
         {
           propName: "setTags",
