@@ -25,11 +25,11 @@ const DevChipInput = ({ tags, setTags, tagLength = 14, textLength = 20 }: TagsIn
   };
 
   return (
-    <div className="w-full bg-slate-100 dark:bg-slate-900 border border-accent/50 flex flex-wrap gap-2 p-3 rounded-xl">
+    <div className="w-full bg-slate-50 dark:bg-slate-900 border border-accent/50 flex flex-wrap gap-2 p-3 rounded-xl">
       {tags.map((tag) => (
         <span
           key={tag}
-          className="flex select-none text-base w-fit gap-2 px-3 pr-1 rounded-full border border-cyan-500 text-cyan-400 items-center bg-cyan-500/20"
+          className="flex select-none text-base w-fit gap-2 px-3 pr-1 rounded-full border border-cyan-500 text-cyan-400 items-center bg-cyan-500/30"
         >
           {tag}
           <RiCloseCircleFill
