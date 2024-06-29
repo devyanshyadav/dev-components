@@ -1,6 +1,7 @@
 import ReactMovableUsage from "./react-movable-usage";
 import ReactResizablePanelsUsage from "./react-resizable-panels-usage";
 import ResponsiveGridLayoutUsage from "./responsive-grid-layout-usage";
+import DevChipInputUsage from "./dev-chip-input-usage";
 
 const MiscellaneousInfo = [
   {
@@ -69,7 +70,6 @@ const MiscellaneousInfo = [
       doc_links: ["https://github.com/tajo/react-movable"],
     },
   },
-
   {
     title: "Responsive Grid Layout",
     component:ResponsiveGridLayoutUsage,
@@ -141,6 +141,48 @@ const MiscellaneousInfo = [
       doc_links:["https://react-grid-layout.github.io/react-grid-layout/examples/0-showcase.html"]
     },
   },
+  {
+    title: "Dev Chip Input",
+    component: DevChipInputUsage,
+    variants: {
+      jsx: true,
+      tsx: true 
+    },
+    details: {
+      description:
+        "A React component for managing tags with an input field to add new tags and a display of existing tags with delete functionality.",
+      features: [
+        "Add tags with Enter key or by typing",
+        "Delete tags individually",
+        "Input validation for duplicate tags and tag length",
+      ],
+      props: [
+        {
+          propName: "tags",
+          propExample: "[{ id: 1, value: 'Tag1' }, { id: 2, value: 'Tag2' }]",
+          propDetail: "Array of objects representing tags with unique IDs and values."
+        },
+        {
+          propName: "setTags",
+          propExample: "Function",
+          propDetail: "Setter function to update the tags state."
+        },
+        {
+          propName: "tagLength",
+          propExample: "14",
+          propDetail: "Maximum number of tags allowed."
+        },
+        {
+          propName: "textLength",
+          propExample: "20",
+          propDetail: "Maximum length of each tag's text."
+        }
+      ],
+      packages: [],
+      doc_links: [] 
+    }
+  }
+  
 ];
 
 export default MiscellaneousInfo;
