@@ -34,6 +34,7 @@
     "react-movable": "^3.2.0",
     "react-pick-color": "^2.0.0",
     "react-resizable-panels": "^2.0.19",
+    "react-share": "^5.1.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-tooltip": "^5.27.0",
     "read-file": "^0.2.0",
