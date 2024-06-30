@@ -2,6 +2,7 @@ import ReactMovableUsage from "./react-movable-usage";
 import ReactResizablePanelsUsage from "./react-resizable-panels-usage";
 import ResponsiveGridLayoutUsage from "./responsive-grid-layout-usage";
 import DevChipInputUsage from "./dev-chip-input-usage";
+import ReactShareUsage from "./react-share-usage";
 
 const MiscellaneousInfo = [
   {
@@ -181,7 +182,56 @@ const MiscellaneousInfo = [
       packages: [],
       doc_links: [] 
     }
+  },
+  {
+    title: "React Share",
+    component: ReactShareUsage,
+    variants: {
+      jsx: true,
+      tsx: true
+    },
+    details: {
+      description:
+        "A React component that renders social media share buttons with customizable icons and functionality.",
+      features: [
+        "Renders social media share buttons (WhatsApp, Twitter, LinkedIn, etc.)",
+        "Customizable size, rounded corners, and hover effects for icons",
+        "Supports sharing URLs dynamically"
+      ],
+      props: [
+        {
+          propName: "shareData",
+          propExample: "[{ shareWrapper: WhatsappShareButton, shareIcon: WhatsappIcon }, ...]",
+          propDetail: "An array of objects defining each social media share button configuration."
+        },
+        {
+          propName: "shareUrl",
+          propExample: "'https://example.com/'",
+          propDetail: "The URL to be shared across social media platforms."
+        },
+        {
+          propName: "size",
+          propExample: "35",
+          propDetail: "Size of the share icons in pixels. Default is 25."
+        },
+        {
+          propName: "rounded",
+          propExample: "true",
+          propDetail: "Determines whether the share icons should have rounded corners. Default is true."
+        }
+      ],
+      packages: [
+        {
+          pckg_name: "react-share",
+          pckg_link: "https://github.com/nygardk/react-share"
+        }
+      ],
+      doc_links: [
+        "https://github.com/nygardk/react-share"
+      ]
+    }
   }
+  
   
 ];
 
