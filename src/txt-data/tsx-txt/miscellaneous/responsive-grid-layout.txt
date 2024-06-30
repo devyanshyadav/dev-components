@@ -20,7 +20,7 @@ const ResponsiveGridLayout = () => {
 
     const [layout, setLayout] = useState(initialLayout);
 
-    const layoutChange = (newLayout:any) => {
+    const layoutChange = (newLayout: any) => {
         console.log(newLayout);
         setLayout(newLayout);
     };
