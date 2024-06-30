@@ -5,7 +5,7 @@ const ClipboardsInfo = [
     title: "Dev Clipboard",
     component: DevClipboardUsage,
     variants: {
-      tsx: false,
+      tsx: true,
       jsx: true,
     },
     details: {
@@ -19,10 +19,26 @@ const ClipboardsInfo = [
       ],
       props: [
         {
-          propName: "text",
-          propExample: `"Hello world"`,
+          propName: "textClip",
+          propExample: '"https://dev-components.vercel.app/"',
+          propDetail: "The text to be copied to the clipboard.",
+        },
+        {
+          propName: "setCopied",
+          propExample: "Function",
           propDetail:
-            "The text to be copied to the clipboard. Defaults to `'no text provided'` if not specified.",
+            "An optional callback function to update the copied status internally. Resets after 1 second.",
+        },
+        {
+          propName: "className",
+          propExample:
+            '"flex items-center justify-center gap-1 bg-cyan-500 p-2 px-3 rounded-lg text-white active:scale-95 active:bg-cyan-700/50"',
+          propDetail: "Custom CSS classes to style the button.",
+        },
+        {
+          propName: "children",
+          propExample: "ReactNode",
+          propDetail: "Children components to customize the button's content.",
         },
       ],
       packages: [
@@ -34,6 +50,5 @@ const ClipboardsInfo = [
     },
   },
 ];
-
 
 export default ClipboardsInfo;

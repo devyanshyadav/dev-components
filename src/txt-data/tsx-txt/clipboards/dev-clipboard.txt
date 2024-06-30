@@ -1,7 +1,14 @@
 "use client";
 import React from "react";
 
-const DevClipboard = ({ textClip = "no text provided", setCopied, className, children }) => {
+type DevClipboardProps = {
+  textClip: string
+  setCopied?: React.Dispatch<React.SetStateAction<boolean>>
+  className?: string
+  children?: React.ReactNode
+}
+
+const DevClipboard = ({ textClip = "no text provided", setCopied, className, children }: DevClipboardProps) => {
 
   const copyToClipboard = async () => {
     try {
@@ -26,3 +33,5 @@ const DevClipboard = ({ textClip = "no text provided", setCopied, className, chi
 };
 
 export default DevClipboard;
+
+

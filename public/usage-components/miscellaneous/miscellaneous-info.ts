@@ -66,17 +66,17 @@ const MiscellaneousInfo = [
         {
           pckg_name: "react-movable",
           pckg_link: "https://github.com/tajo/react-movable",
-          },
+        },
       ],
       doc_links: ["https://github.com/tajo/react-movable"],
     },
   },
   {
     title: "Responsive Grid Layout",
-    component:ResponsiveGridLayoutUsage,
-    variants:{
-      jsx:true,
-      tsx:true
+    component: ResponsiveGridLayoutUsage,
+    variants: {
+      jsx: true,
+      tsx: true,
     },
     details: {
       description:
@@ -134,12 +134,15 @@ const MiscellaneousInfo = [
         {
           pckg_name: "react-grid-layout",
           pckg_link: "https://github.com/react-grid-layout/react-grid-layout",
-         },{
+        },
+        {
           pckg_name: "@types/react-grid-layout",
           pckg_link: "https://www.npmjs.com/package/@types/react-grid-layout",
-         }
+        },
       ],
-      doc_links:["https://react-grid-layout.github.io/react-grid-layout/examples/0-showcase.html"]
+      doc_links: [
+        "https://react-grid-layout.github.io/react-grid-layout/examples/0-showcase.html",
+      ],
     },
   },
   {
@@ -147,7 +150,7 @@ const MiscellaneousInfo = [
     component: DevChipInputUsage,
     variants: {
       jsx: true,
-      tsx: true 
+      tsx: true,
     },
     details: {
       description:
@@ -161,78 +164,86 @@ const MiscellaneousInfo = [
         {
           propName: "tags",
           propExample: "['ReactJs','NextJS'...]",
-          propDetail: "Array of representing tags with unique string values."
+          propDetail: "Array of representing tags with unique string values.",
         },
         {
           propName: "setTags",
           propExample: "Function",
-          propDetail: "Setter function to update the tags state."
+          propDetail: "Setter function to update the tags state.",
         },
         {
           propName: "tagLength",
           propExample: "14",
-          propDetail: "Maximum number of tags allowed."
+          propDetail: "Maximum number of tags allowed.",
         },
         {
           propName: "textLength",
           propExample: "20",
-          propDetail: "Maximum length of each tag's text."
-        }
+          propDetail: "Maximum length of each tag's text.",
+        },
       ],
       packages: [],
-      doc_links: [] 
-    }
+      doc_links: [],
+    },
   },
   {
     title: "React Share",
     component: ReactShareUsage,
     variants: {
       jsx: true,
-      tsx: true
+      tsx: true,
     },
     details: {
       description:
-        "A React component that renders social media share buttons with customizable icons and functionality.",
+        "A React component that provides social media sharing buttons, allowing users to easily share a URL across various platforms. Includes a clipboard feature for copying the URL.",
       features: [
-        "Renders social media share buttons (WhatsApp, Twitter, LinkedIn, etc.)",
-        "Customizable size, rounded corners, and hover effects for icons",
-        "Supports sharing URLs dynamically"
+        "Social media sharing buttons for major platforms",
+        "URL input field with clipboard functionality",
+        "Customizable button size and rounding",
+        "Support for multiple sharing services",
       ],
       props: [
         {
-          propName: "shareData",
-          propExample: "[{ shareWrapper: WhatsappShareButton, shareIcon: WhatsappIcon }, ...]",
-          propDetail: "An array of objects defining each social media share button configuration."
-        },
-        {
           propName: "shareUrl",
-          propExample: "'https://example.com/'",
-          propDetail: "The URL to be shared across social media platforms."
+          propExample: '"https://dev-components.vercel.app/"',
+          propDetail: "The URL to be shared across social media platforms.",
         },
         {
           propName: "size",
-          propExample: "35",
-          propDetail: "Size of the share icons in pixels. Default is 25."
+          propExample: "37",
+          propDetail: "The size of the share icons. Default is 25.",
         },
         {
-          propName: "rounded",
+          propName: "isRounded",
           propExample: "true",
-          propDetail: "Determines whether the share icons should have rounded corners. Default is true."
-        }
+          propDetail:
+            "Determines whether the share icons should be rounded. Default is true.",
+        },
+        {
+          propName: "setUrl",
+          propExample: "Function",
+          propDetail:
+            "A function to update the URL being shared. Used in conjunction with the URL input field.",
+        },
       ],
       packages: [
         {
           pckg_name: "react-share",
-          pckg_link: "https://github.com/nygardk/react-share"
-        }
+          pckg_link: "https://github.com/nygardk/react-share",
+          pckg_detail:
+            "A React component library for adding social media share buttons to your website.",
+        },
       ],
-      doc_links: [
-        "https://github.com/nygardk/react-share"
-      ]
-    }
-  }
-  
-  
+      helpers: [
+        {
+          cmp_name: "DevClipboard",
+          cmp_link: "components/clipboards#dev-clipboard",
+        },
+      ],
+
+      doc_links: ["https://github.com/nygardk/react-share"],
+    },
+  },
 ];
 
 export default MiscellaneousInfo;

@@ -66,9 +66,8 @@ const ComponentInfo = ({
             <li
               key={index}
               onClick={() => setCurrTab(index)}
-              className={`hover:text-accent select-none cursor-pointer border-transparent border-b-2 hover:border-accent z-10 ${
-                CurrTab === index && "border-accent text-accent"
-              }`}
+              className={`hover:text-accent select-none cursor-pointer border-transparent border-b-2 hover:border-accent z-10 ${CurrTab === index && "border-accent text-accent"
+                }`}
             >
               {item}
             </li>
@@ -186,6 +185,28 @@ const ComponentInfo = ({
                     {copyNPM ? <FaCheck /> : <IoCopy />}
                   </button>
                 </CopyCode>
+              </code>
+            )}
+
+            <h3 className="font-semibold text-accent/80">
+              Helper Components:
+            </h3>
+
+            {component_details.helpers.length > 0 && (
+              <code className="text-sm bg-accent/20 text-accent w-fit p-1 border border-accent px-2 rounded-lg">
+                {component_details.helpers.map((item: any, index: number) => (
+                  <React.Fragment key={index}>
+                    {" "}
+                    <Link
+                      target="_blank"
+                      className="hover:underline cursor-pointer"
+                      href={`${process.env.NEXT_PUBLIC_BASE_URL}/${item.cmp_link}`}
+                    >
+                      {item.cmp_name}
+                    </Link>
+                  </React.Fragment>
+                ))}
+
               </code>
             )}
 

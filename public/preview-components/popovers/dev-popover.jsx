@@ -39,7 +39,7 @@ const DevPopover = ({
             opacity={1}
             >
             <div
-              className="min-h-4 text-black dark:text-white bg-slate-50 dark:bg-slate-900 shadow-md border border-cyan-500/50 min-w-36 rounded-lg p-1 z-50"
+              className="min-h-4 text-black dark:text-white bg-slate-50 dark:bg-slate-900 shadow-md border border-cyan-500/50 min-w-10 rounded-lg p-1 z-50"
               ref={popoverRef}
               onClick={() => contentClick && setMounted(!mounted)}
             >

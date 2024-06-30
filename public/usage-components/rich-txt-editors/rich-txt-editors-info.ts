@@ -34,10 +34,6 @@ const RichTxtEditorsInfo = [
           pckg_link: "https://www.npmjs.com/package/react-contenteditable",
         },
         {
-          pckg_name: "react-tooltip",
-          pckg_link: "https://www.npmjs.com/package/react-tooltip",
-        },
-        {
           pckg_name: "react-icons",
           pckg_link: "https://react-icons.github.io/react-icons/",
         },
@@ -46,6 +42,16 @@ const RichTxtEditorsInfo = [
           pckg_link: "https://www.npmjs.com/package/use-undoable",
         },
       ],
+      helpers:[
+        {
+          cmp_name:"React Tooltip",
+          cmp_link:"components/tooltips#react-tooltip"
+        },
+        {
+          cmp_name:"Dev Popover",
+          cmp_link:"components/popovers#dev-popover"
+        }
+      ]
     },
   },
 ];

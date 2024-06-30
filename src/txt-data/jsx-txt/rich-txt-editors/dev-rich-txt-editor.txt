@@ -2,9 +2,7 @@
 //and apply this css style to global.css to make list element workable => *{list-style-type:decimal !important;}
 // Import necessary libraries and components
 "use client";
-import React, { useEffect, useId, useState } from "react"; // Core React library and hooks
-import { Tooltip } from "react-tooltip"; // Tooltip component for displaying tooltips
-import { Tooltip as Popover } from "react-tooltip"; // Another Tooltip component used for popovers
+import React, { useEffect, useState } from "react"; // Core React library and hooks
 import clsx from "clsx"; // Utility for constructing className strings conditionally
 import ContentEditable from "react-contenteditable"; // Component for editable content area
 import { GoBold } from "react-icons/go"; // Icon for bold formatting
@@ -32,57 +30,6 @@ import useUndoable from "use-undoable"; // Custom hook for managing undo-redo fu
 
 // Styling for buttons
 const buttonStyle = "toolBtn text-xl hover:bg-cyan-500/50 text-black dark:text-white rounded-md p-1";
-
-// Tooltip component for development purposes
-const DevToolTip = ({ tipData, children }) => {
-  const Id = useId(); // Generate unique ID for each tooltip instance
-
-  return (
-    <>
-      {/* Tooltip wrapper */}
-      <Tooltip
-        id={Id}
-        place="top"
-        offset={2}
-        opacity={1}
-        style={{ backgroundColor: "transparent", padding: "0px", zIndex: 1000 }} // Custom styling
-      >
-        <div className="bg-cyan-500 border border-cyan-500 text-xs px-2 rounded-full text-black dark:text-white">
-          {tipData} {/* Display tooltip text */}
-        </div>
-      </Tooltip>
-      {/* Trigger for showing tooltip */}
-      <div className="w-fit" data-tooltip-id={Id}>
-        {children}
-      </div>
-    </>
-  );
-};
-
-// Popover component for development purposes
-const DevPopover = ({ popButton, children }) => {
-  const Id = useId(); // Generate unique ID for each popover instance
-
-  return (
-    <>
-      {/* Popover wrapper */}
-      <Popover
-        id={Id}
-        place="bottom"
-        clickable={true}
-        offset={2}
-        opacity={1}
-        style={{ backgroundColor: "transparent", padding: "0px", zIndex: 1000 }} // Custom styling
-      >
-        <div className="p-1 rounded-xl bg-white dark:bg-slate-800 border border-cyan-500/50 shadow-md">{children}</div> {/* Popover content */}
-      </Popover>
-      {/* Button to trigger popover */}
-      <div className="w-fit" data-tooltip-id={Id}>
-        {popButton}
-      </div>
-    </>
-  );
-};
 
 //********* Main Rich Text Editor component***********//
 const DevRichTxtEditor = ({ editorData, setEditorData }) => {
@@ -304,26 +251,48 @@ const DevRichTxtEditor = ({ editorData, setEditorData }) => {
   ];
   useEffect(() => {
     setEditorData(txtData)
-  }, [editorData])
+  }, [txtData])
   return (
     <main className="border border-cyan-500/50 overflow-hidden overflow-y-scroll [&::-webkit-scrollbar]:hidden [scrollbar-width:none] w-full max-w-3xl h-full min-h-64 resize-y bg-slate-50 dark:bg-slate-900 rounded-xl shadow-md p-2">
       {/* Toolbar section */}
       <section className="pt-3 flex-wrap py-2 sticky top-0 bg-slate-100 dark:bg-slate-800 border-cyan-500/30 border w-full rounded-xl flex items-center gap-[5px] p-1">
         {toolbarButtons.map((Button, i) => (
-          <DevToolTip key={i} tipData={Button.tooltip}>
-            {Button.type === 'popover' ? (
-              <DevPopover popButton={<button className={buttonStyle}><Button.element /></button>}>
+          <ReactTooltip key={i} tipData={Button.tooltip}>
+            {Button.type === "popover" ? (
+              <DevPopover
+                popButton={
+                  <button className={buttonStyle}>
+                    <Button.element />
+                  </button>
+                }
+              >
                 <Button.popover />
               </DevPopover>
             ) : (
-              <button onClick={Button.action} className={buttonStyle}><Button.element /></button>
+              <button onClick={Button.action} className={buttonStyle}>
+                <Button.element />
+              </button>
             )}
-          </DevToolTip>
+          </ReactTooltip>
         ))}
         {/* Undo and Redo buttons */}
         <span className="px-2  bg-cyan-500/20 text-black dark:text-white flex items-center gap-2 rounded-lg ml-3 border-cyan-500/50 border justify-center">
-          <DevToolTip tipData={"undo"}><button onClick={undo} className={clsx(buttonStyle, "!rounded-full")}><BiUndo className="text-xl" /></button></DevToolTip>
-          <DevToolTip tipData={"redo"}><button onClick={redo} className={clsx(buttonStyle, "!rounded-full")}><BiRedo className="text-xl" /></button></DevToolTip>
+          <ReactTooltip tipData={"undo"}>
+            <button
+              onClick={undo}
+              className={clsx(buttonStyle, "!rounded-full")}
+            >
+              <BiUndo className="text-xl" />
+            </button>
+          </ReactTooltip>
+          <ReactTooltip tipData={"redo"}>
+            <button
+              onClick={redo}
+              className={clsx(buttonStyle, "!rounded-full")}
+            >
+              <BiRedo className="text-xl" />
+            </button>
+          </ReactTooltip>
         </span>
       </section>
       {/* Editable content area */}
