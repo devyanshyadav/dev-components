@@ -154,10 +154,10 @@ const ComponentInfo = ({
             </h2>
 
             <h3 className="font-semibold text-accent/80">
-              Packages: {component_details.packages.length}
+              Packages: {component_details.packages && component_details.packages.length}
             </h3>
 
-            {component_details.packages.length > 0 && (
+            {component_details.packages && component_details.packages.length > 0 && (
               <code className="text-sm bg-accent/20 text-accent w-fit p-1 border border-accent px-2 rounded-lg">
                 npm i
                 {component_details.packages.map((item: any, index: number) => (
@@ -192,7 +192,7 @@ const ComponentInfo = ({
               Helper Components:
             </h3>
 
-            {component_details.helpers.length > 0 && (
+            {component_details.helpers && component_details.helpers.length > 0 && (
               <code className="text-sm bg-accent/20 text-accent w-fit p-1 border border-accent px-2 rounded-lg">
                 {component_details.helpers.map((item: any, index: number) => (
                   <React.Fragment key={index}>
