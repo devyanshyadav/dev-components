@@ -17,6 +17,7 @@ import SelectsInfo from "./usage-components/selects/selects-info";
 import TabsInfo from "./usage-components/tabs/tabs-info";
 import TogglesInfo from "./usage-components/toggles/toggles-info";
 import TooltipsInfo from "./usage-components/tooltips/tooltips-info";
+import AutocompletesInfo from "./usage-components/autocompletes/autocompletes-info";
 
 const ComponentDataArray = [
   {
@@ -143,12 +144,20 @@ const ComponentDataArray = [
       "A Emoji Picker component that allows users to add emojis to their text",
   },
   {
+    name: "Autocompletes",
+    image: "autocomplete.png",
+    componentData: AutocompletesInfo,
+    description:
+      "Autocomplete component is a text input field that displays a list of suggestions as the user types filtered in real-time.",
+  },
+  {
     name: "Miscellaneous",
     image: "miscellaneous.png",
     componentData: MiscellaneousInfo,
     description:
       "Miscellaneous components are assorted minor parts or elements that don't fit main categories.",
   },
+ 
 ];
 
 export default ComponentDataArray;
