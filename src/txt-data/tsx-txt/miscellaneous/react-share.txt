@@ -48,7 +48,7 @@ const ReactShare = ({ shareUrl, size = 25, setUrl, isRounded = true }: ReactShar
   ]
 
   return (
-    <div className='w-full max-w-sm bg-slate-50 p-3 dark:bg-slate-900 border border-cyan-500/50 rounded-xl'>
+    <div className='w-full md:max-w-sm bg-slate-50 p-3 dark:bg-slate-900 border border-cyan-500/50 rounded-xl'>
       <span className='flex items-center gap-1 p-1 rounded-full border border-cyan-500/50'>
         <input
           type="text"

@@ -48,10 +48,10 @@ const DevAutocomplete = ({ items }: { items: string[] }) => {
     };
 
     return (
-        <div ref={containerRef} className="w-full max-w-sm" data-tooltip-id={randomId}>
+        <div ref={containerRef} className="w-full md:max-w-sm" data-tooltip-id={randomId}>
             <input
-                type="text"
-                className="bg-white dark:bg-slate-800  w-full rounded-md px-1 outline-none outline-cyan-500/50 focus:outline-cyan-500"
+                type="search"
+                className="bg-white dark:bg-slate-800  w-full rounded-full px-1 outline-none outline-cyan-500/50 focus:outline-cyan-500"
                 placeholder="Start typing..."
                 value={state.value}
                 onChange={handleInput}
@@ -67,15 +67,15 @@ const DevAutocomplete = ({ items }: { items: string[] }) => {
                     opacity={1}
                     style={{ backgroundColor: "transparent", padding: "0px", width: calcWidth + "px" }}
                 >
-                    <ul className="border bg-slate-5 dark:bg-slate-900  border-cyan-500/50 rounded-md p-1 w-full shadow "
+                    <ul className="border space-y-1 bg-slate-5 dark:bg-slate-900  border-cyan-500/50 rounded-md p-1 w-full shadow "
                     >
                         {state.suggestions.map((suggestion, index) => (
                             <li
                                 key={index}
-                                className={`w-full rounded-md text-black dark:text-white ${index === state.focus ? 'bg-cyan-500' : 'hover:bg-cyan-500/30'}`}
+                                className={`w-full p-[2px] px-2 rounded-md text-black dark:text-white ${index === state.focus ? 'bg-cyan-500' : 'hover:bg-cyan-500/30'}`}
                             >
                                 <button
-                                    className='w-full'
+                                    className='w-full text-left'
                                     onClick={() => updateState(suggestion, [])}
                                 >{suggestion}</button>
                             </li>
