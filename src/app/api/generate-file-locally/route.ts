@@ -7,19 +7,19 @@ export async function POST(req: NextRequest) {
   try {
     await copyFile(
       `public/react-components/${category}/(${component})/${component}-usage.tsx`,
-     `src/react-components-txt/usage-txt/${category}/${component}-usage.txt`
+     `src/react-components-txt/${category}/${component}/${component}-usage.txt`
     );
     if (tsx) {
       await copyFile(
         `public/react-components/${category}/(${component})/${component}.tsx`,
-        `src/react-components-txt/tsx-txt/${category}/${component}.txt`
+        `src/react-components-txt/${category}/${component}/${component}-tsx.txt`
       );
     }
 
     if (jsx) {
       await copyFile(
         `public/react-components/${category}/(${component})/${component}.jsx`,
-        `src/react-components-txt/jsx-txt/${category}/${component}.txt`
+        `src/react-components-txt/${category}/${component}/${component}-jsx.txt`
       );
     }
 
