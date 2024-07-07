@@ -3,59 +3,8 @@ import React from "react";
 import { redirect } from "next/navigation";
 import CmpUrl from "@/utils/cmp-url";
 import ComponentDataArray from "../../../../../public/component-data-array";
+import { generateFileLocally, getPreviewCode, getUsageCode } from "@/actions";
 
-const getUsageCode = async (component: string, category: string) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/usage-code`,
-    {
-      cache: "no-store",
-      method: "POST",
-      body: JSON.stringify({ component, category }),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    }
-  );
-  const data = await res.json();
-  return data;
-};
-
-const getPreviewCode = async (
-  component: string,
-  category: string,
-  variants: { tsx: boolean; jsx: boolean }
-) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/cmp-code`, {
-    cache: "no-store",
-    method: "POST",
-    body: JSON.stringify({ component, category, variants }),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
-  const data = await res.json();
-  return data;
-};
-
-const generateFileLocally = async (
-  component: string,
-  category: string,
-  variants: { tsx: boolean; jsx: boolean }
-) => {
-  await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/generate-file-locally`, {
-    cache: "no-store",
-    method: "POST",
-    body: JSON.stringify({ component, category, variants }),
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  });
-  // const data = await res.json();
-  // return data;
-};
 
 export const generateMetadata = ({ params }: { params: { cmp: string } }) => {
   const data = ComponentDataArray.find(
