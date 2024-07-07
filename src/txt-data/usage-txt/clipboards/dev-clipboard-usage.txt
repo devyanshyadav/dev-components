@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { IoCheckmarkDoneSharp } from 'react-icons/io5';
 import { MdContentCopy } from 'react-icons/md';
-import DevClipboard from '../../preview-components/clipboards/dev-clipboard';
+import DevClipboard from '../../react-components/clipboards/dev-clipboard';
 
 const DevClipboardUsage = () => {
   const [copied, setCopied] = useState(false);

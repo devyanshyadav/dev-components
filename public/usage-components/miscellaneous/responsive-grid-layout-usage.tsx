@@ -1,5 +1,5 @@
 import React from 'react'
-import ResponsiveGridLayout from '../../preview-components/miscellaneous/responsive-grid-layout'
+import ResponsiveGridLayout from '../../react-components/miscellaneous/(responsive-grid-layout)/responsive-grid-layout'
 
 const ResponsiveGridLayoutUsage = () => {
   return (

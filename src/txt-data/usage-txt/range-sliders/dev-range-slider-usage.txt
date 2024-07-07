@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import DevRangeSlider from "../../preview-components/range-sliders/dev-range-slider";
+import DevRangeSlider from "../../react-components/range-sliders/dev-range-slider";
 
 const DevRangeSliderUsage = () => {
   const [currValue, setCurrValue] = useState(10);

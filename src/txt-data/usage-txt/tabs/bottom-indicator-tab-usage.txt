@@ -1,5 +1,5 @@
 import React from "react";
-import BottomIndicatorTab from "../../preview-components/tabs/bottom-indicator-tab";
+import BottomIndicatorTab from "../../react-components/tabs/bottom-indicator-tab";
 
 const BottomIndicatorUsage = () => {
   const tabData = [

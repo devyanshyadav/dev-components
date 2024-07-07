@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import DevSelect from "../../preview-components/selects/dev-select";
+import DevSelect from "../../react-components/selects/dev-select";
 
 const DevSelectUsage = () => {
   const [selectValue, setSelectValue] = useState("Lion");

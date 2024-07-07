@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import ReactPickColor from "../../preview-components/color-pickers/react-pick-color";
+import ReactPickColor from "../../react-components/color-pickers/react-pick-color";
 
 const ReactPickColorUsage = () => {
   const [color, setColor] = useState({

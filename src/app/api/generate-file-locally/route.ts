@@ -11,14 +11,14 @@ export async function POST(req: NextRequest) {
     );
     if (tsx) {
       await copyFile(
-        `public/preview-components/${category}/${component}.tsx`,
+        `public/react-components/${category}/${component}.tsx`,
         `src/txt-data/tsx-txt/${category}/${component}.txt`
       );
     }
 
     if (jsx) {
       await copyFile(
-        `public/preview-components/${category}/${component}.jsx`,
+        `public/react-components/${category}/${component}.jsx`,
         `src/txt-data/jsx-txt/${category}/${component}.txt`
       );
     }

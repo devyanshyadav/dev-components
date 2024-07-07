@@ -1,5 +1,5 @@
 import React from "react";
-import EmblaCarousel from "../../preview-components/carousels/embla-carousel";
+import EmblaCarousel from "../../react-components/carousels/embla-carousel";
 
 const EmblaCarouselUsage = () => {
   let carouselData = [

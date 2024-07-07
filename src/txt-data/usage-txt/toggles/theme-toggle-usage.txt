@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import ThemeToggle from '../../preview-components/toggles/theme-toggle'
+import ThemeToggle from '../../react-components/toggles/theme-toggle'
 
 const ThemeToggleUsage = () => {
     const [toggle, isToggle] = useState(true)

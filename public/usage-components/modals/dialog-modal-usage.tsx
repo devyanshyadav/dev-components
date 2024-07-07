@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import DialogModal from "../../preview-components/modals/dialog-modal";
+import DialogModal from "../../react-components/modals/dialog-modal";
 
 const DialogModalUsage = () => {
   const [open, isOpen] = useState(false);

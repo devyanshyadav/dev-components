@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import MultiRangeSliderReact from '../../preview-components/range-sliders/multi-range-slider-react';
+import MultiRangeSliderReact from '../../react-components/range-sliders/multi-range-slider-react';
 
 const MultiRangeSliderReactUsage = () => {
     const [currMinValue, setCurrMinValue] = useState(25);

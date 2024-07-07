@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import DevToggle from '../../preview-components/toggles/dev-toggle'
+import DevToggle from '../../react-components/toggles/dev-toggle'
 
 const DevToggleUsage = () => {
     const [toggle, isToggle] = useState(true)

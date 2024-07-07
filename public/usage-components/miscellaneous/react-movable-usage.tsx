@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import ReactMovable from '../../preview-components/miscellaneous/react-movable';
+import ReactMovable from '../../react-components/miscellaneous/react-movable';
 
 const ReactMovableUsage = () => {
     const [items, setItems] = useState(['Item 1', 'Item 2', 'Item 3', 'Item4']);

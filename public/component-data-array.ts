@@ -1,5 +1,5 @@
-import AccordionsInfo from "./usage-components/accordions/accordions-info";
-import ButtonsInfo from "./usage-components/buttons/buttons-info";
+import AccordionsInfo from "./react-components/accordions/accordions-info";
+import ButtonsInfo from "./react-components/buttons/(dev-button)/buttons-info";
 import CarouselsInfo from "./usage-components/carousels/carousels-info";
 import CheckBoxesInfo from "./usage-components/checkboxes/checkboxes-info";
 import ClipboardsInfo from "./usage-components/clipboards/clipboards-info";
@@ -17,7 +17,7 @@ import SelectsInfo from "./usage-components/selects/selects-info";
 import TabsInfo from "./usage-components/tabs/tabs-info";
 import TogglesInfo from "./usage-components/toggles/toggles-info";
 import TooltipsInfo from "./usage-components/tooltips/tooltips-info";
-import AutocompletesInfo from "./usage-components/autocompletes/autocompletes-info";
+import AutocompletesInfo from "./react-components/autocompletes/autocompletes-info";
 
 const ComponentDataArray = [
   {

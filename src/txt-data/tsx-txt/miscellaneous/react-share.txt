@@ -5,7 +5,7 @@ import {
   FacebookShareButton, EmailShareButton, TelegramShareButton, RedditShareButton,
   WhatsappIcon, XIcon, LinkedinIcon, FacebookIcon, EmailIcon, TelegramIcon, RedditIcon
 } from "react-share";
-import DevClipboard from '../../preview-components/clipboards/dev-clipboard';
+import DevClipboard from '../../react-components/clipboards/dev-clipboard';
 
 type ReactShareProps = {
   shareUrl: string,

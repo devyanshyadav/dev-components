@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import ReactColorful from '../../preview-components/color-pickers/react-colorful';
+import ReactColorful from '../../react-components/color-pickers/react-colorful';
 
 const ReactColorfulUsage = () => {
     const [hexColor, setHexColor] = useState("#2ed0d7");

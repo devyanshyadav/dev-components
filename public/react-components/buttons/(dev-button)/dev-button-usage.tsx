@@ -1,0 +1,116 @@
+import React from 'react'
+import { HiHome } from 'react-icons/hi'
+import { IoIosArrowForward } from 'react-icons/io'
+import { IoSearch } from 'react-icons/io5'
+import { MdCameraAlt } from 'react-icons/md'
+import DevButton from './dev-button'
+
+const DevButtonUsage = () => {
+  return (
+    <section className="space-y-4">
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Base Buttons</h2>
+              <div className="flex gap-2 items-center flex-wrap">
+                <DevButton variant="solid">
+                  Solid
+                </DevButton>
+                <DevButton variant="border">Border</DevButton>
+                <DevButton variant="light">Light</DevButton>
+                <DevButton variant="flat">Flat</DevButton>
+                <DevButton variant="ghost">Ghost</DevButton>
+              </div>
+            </div>
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Ripples Effect</h2>
+              <div className="flex gap-2 items-center flex-wrap">
+                <DevButton variant="solid" ripple={true}>
+                  Solid
+                </DevButton>
+                <DevButton variant="border" ripple={true}>
+                  Border
+                </DevButton>
+                <DevButton variant="light" ripple={true}>
+                  Light
+                </DevButton>
+                <DevButton variant="flat" ripple={true}>
+                  Flat
+                </DevButton>
+                <DevButton variant="ghost" ripple={true}>
+                  Ghost
+                </DevButton>
+              </div>
+            </div>
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Buttons Sizes</h2>
+              <div className="flex gap-2 items-center flex-wrap">
+                <DevButton variant="solid" size="sm">
+                  Size sm
+                </DevButton>
+                <DevButton variant="solid" size="md">
+                  Size md
+                </DevButton>
+                <DevButton variant="solid" size="lg">
+                  Size lg
+                </DevButton>
+              </div>
+            </div>
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Buttons Roundness</h2>
+              <div className="flex gap-2 items-center flex-wrap">
+                <DevButton variant="solid" rounded="none">
+                  Rounded none
+                </DevButton>
+                <DevButton variant="solid" rounded="sm">
+                  Rounded sm
+                </DevButton>
+                <DevButton variant="solid" rounded="md">
+                  Rounded md
+                </DevButton>
+                <DevButton variant="solid" rounded="lg">
+                  Rounded lg
+                </DevButton>
+                <DevButton variant="solid" rounded="full">
+                  Rounded full
+                </DevButton>
+              </div>
+            </div>
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Using as Link</h2>
+              <div className="flex gap-2">
+                <DevButton variant="solid" href="/" target="_blank">
+                  Button as Link
+                </DevButton>
+              </div>
+            </div>
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Using with Icon</h2>
+              <div className="flex gap-2">
+                <DevButton variant="solid" target="_blank">
+                  <HiHome />
+                  Home
+                </DevButton>
+                <DevButton variant="solid" target="_blank">
+                  Proceed
+                  <IoIosArrowForward />
+                </DevButton>
+              </div>
+            </div>
+            <div className="space-y-2  p-3 border border-cyan-500/30 rounded-md">
+              <h2 className="font-semibold">Using as Icon</h2>
+              <div className="flex gap-2 items-center flex-wrap">
+                <DevButton variant="solid" size="lg" asIcon={true}>
+                  <IoSearch />
+                </DevButton>
+                <DevButton variant="solid" size="lg" asIcon={true}>
+                  <HiHome />
+                </DevButton>
+                <DevButton variant="solid" size="lg" asIcon={true}>
+                  <MdCameraAlt />
+                </DevButton>
+              </div>
+            </div>
+          </section>
+  )
+}
+
+export default DevButtonUsage

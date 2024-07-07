@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import DevEmojiPicker from "../../preview-components/emoji-pickers/dev-emoji-picker";
+import DevEmojiPicker from "../../react-components/emoji-pickers/dev-emoji-picker";
 
 const DevEmojiPickerUsage = () => {
   const [selectedEmoji, setSelectedEmoji] = useState("");

@@ -1,5 +1,5 @@
 import React from 'react'
-import DevAutocomplete from '../../preview-components/autocompletes/dev-autocomplete';
+import DevAutocomplete from '../../react-components/autocompletes/dev-autocomplete';
 
 const DevAutocompleteUsage = () => {
   const fruits = [

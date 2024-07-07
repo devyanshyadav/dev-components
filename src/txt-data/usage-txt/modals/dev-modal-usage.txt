@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import DevModal from '../../preview-components/modals/dev-modal'
+import DevModal from '../../react-components/modals/dev-modal'
 
 const DevModalUsage = () => {
     const [open, isOpen] = useState(false)

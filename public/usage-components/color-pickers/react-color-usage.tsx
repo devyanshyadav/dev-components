@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import ReactColor from '../../preview-components/color-pickers/react-color';
+import ReactColor from '../../react-components/color-pickers/react-color';
 
 const ReactColorUsage = () => {
     const [color, setColor] = useState({

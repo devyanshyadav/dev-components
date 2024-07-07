@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import ReactShare from '../../preview-components/miscellaneous/react-share'
+import ReactShare from '../../react-components/miscellaneous/react-share'
 
 
 const ReactShareUsage = () => {

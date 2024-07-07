@@ -1,6 +1,6 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-import DevInput from "../../preview-components/inputs/dev-input";
+import DevInput from "../../react-components/inputs/dev-input";
 
 const DevInputUsage = () => {
   return (

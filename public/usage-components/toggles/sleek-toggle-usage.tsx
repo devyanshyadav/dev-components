@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import SleekToggle from "../../preview-components/toggles/sleek-toggle";
+import SleekToggle from "../../react-components/toggles/sleek-toggle";
 
 const SleekToggleUsage = () => {
   const [toggle, isToggle] = useState(true);

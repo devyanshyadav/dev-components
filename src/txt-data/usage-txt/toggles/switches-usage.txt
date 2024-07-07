@@ -1,5 +1,5 @@
 import React from 'react'
-import Switches from '../../preview-components/toggles/switches'
+import Switches from '../../react-components/toggles/switches'
 
 const SwitchesUsage = () => {
     return (

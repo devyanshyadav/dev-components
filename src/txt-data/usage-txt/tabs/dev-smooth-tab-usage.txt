@@ -1,5 +1,5 @@
 import React from "react";
-import DevSmoothTab from "../../preview-components/tabs/dev-smooth-tab";
+import DevSmoothTab from "../../react-components/tabs/dev-smooth-tab";
 
 const DevSmoothTabUsage = () => {
   const tabData = [

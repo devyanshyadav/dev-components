@@ -1,5 +1,5 @@
 import React from "react";
-import ProductImgGallery from "../../preview-components/carousels/product-img-gallery";
+import ProductImgGallery from "../../react-components/carousels/product-img-gallery";
 
 const ProductImgGalleryUsage = () => {
   let productImages = [

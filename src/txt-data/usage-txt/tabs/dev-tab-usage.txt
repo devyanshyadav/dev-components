@@ -1,5 +1,5 @@
 import React from "react";
-import DevTab from "../../preview-components/tabs/dev-tab";
+import DevTab from "../../react-components/tabs/dev-tab";
 
 const DevTabUsage = () => {
   const tabData = [

@@ -1,5 +1,5 @@
 import React from 'react'
-import DevNavbar from '../../preview-components/navbars/dev-navbar'
+import DevNavbar from '../../react-components/navbars/dev-navbar'
 
 const DevNavbarUsage = () => {
   return (

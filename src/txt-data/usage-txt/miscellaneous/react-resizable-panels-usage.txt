@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactResizablePanels from '../../preview-components/miscellaneous/react-resizable-panels'
+import ReactResizablePanels from '../../react-components/miscellaneous/react-resizable-panels'
 
 const ReactResizablePanelsUsage = () => {
   return (

@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from "react";
-import DevChipInput from "../../preview-components/miscellaneous/dev-chip-input";
+import DevChipInput from "../../react-components/miscellaneous/dev-chip-input";
 
 const DevChipInputUsage = () => {
   const [tags, setTags] = useState([

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import DevCheckbox from '../../preview-components/checkboxes/dev-checkbox'
+import DevCheckbox from '../../react-components/checkboxes/dev-checkbox'
 
 const DevCheckboxUsage = () => {
     const [checked, isChecked] = useState(true)
