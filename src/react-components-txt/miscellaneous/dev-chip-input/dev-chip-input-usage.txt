@@ -15,7 +15,7 @@ const DevChipInputUsage = () => {
 
   return (
     <div className="w-full">
-      <DevChipInput tags={tags} setTags={setTags} tagLength={14} textLength={20} />
+      <DevChipInput tags={tags} trigger={"Enter"} setTags={setTags} tagLength={14} textLength={20} />
     </div>
   );
 };
