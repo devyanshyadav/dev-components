@@ -1,4 +1,4 @@
-import DevButtonUsage from "./dev-button-usage";
+import DevButtonUsage from "./(dev-button)/dev-button-usage";
 
 const ButtonsInfo = [
   {

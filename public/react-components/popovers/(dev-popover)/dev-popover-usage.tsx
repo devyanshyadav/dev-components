@@ -6,7 +6,7 @@ import { RiProfileLine } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { LuLogOut } from "react-icons/lu";
 import clsx from "clsx";
-import DevPopover from "../../react-components/popovers/(dev-popover)/dev-popover";
+import DevPopover from "./dev-popover";
 
 const DevPopoverUsage = () => {        
   return (

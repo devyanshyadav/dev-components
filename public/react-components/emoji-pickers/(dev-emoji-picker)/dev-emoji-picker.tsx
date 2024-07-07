@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Emoji from "./Emoji.json";
+import Emoji from "../Emoji.json";
 // Create Emoji.json file and get all emojis json from https://github.com/github/gemoji/blob/master/db/emoji.json
 import { FiSearch } from "react-icons/fi";
 

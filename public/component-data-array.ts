@@ -1,23 +1,26 @@
+import ButtonsInfo from "./react-components/buttons/buttons-info";
+import RadiosInfo from "./react-components/radios/radios-info";
+import ClipboardsInfo from "./react-components/clipboards/clipboards-info";
+import InputsInfo from "./react-components/inputs/inputs-info";
+import ModalsInfo from "./react-components/modals/modals-info";
+import CheckBoxesInfo from "./react-components/checkboxes/checkboxes-info";
 import AccordionsInfo from "./react-components/accordions/accordions-info";
-import ButtonsInfo from "./react-components/buttons/(dev-button)/buttons-info";
-import CarouselsInfo from "./usage-components/carousels/carousels-info";
-import CheckBoxesInfo from "./usage-components/checkboxes/checkboxes-info";
-import ClipboardsInfo from "./usage-components/clipboards/clipboards-info";
-import ColorPickersInfo from "./usage-components/color-pickers/color-pickers-info";
-import EmojiPickersInfo from "./usage-components/emoji-pickers/emoji-pickers-info";
-import InputsInfo from "./usage-components/inputs/inputs-info";
-import MiscellaneousInfo from "./usage-components/miscellaneous/miscellaneous-info";
-import ModalsInfo from "./usage-components/modals/modals-info";
-import NavbarsInfo from "./usage-components/navbars/navbars-info";
-import PopoversInfo from "./usage-components/popovers/popovers-info";
-import RadiosInfo from "./usage-components/radios/radios-info";
-import RangeSlidersInfo from "./usage-components/range-sliders/range-sliders-info";
-import RichTxtEditorsInfo from "./usage-components/rich-txt-editors/rich-txt-editors-info";
-import SelectsInfo from "./usage-components/selects/selects-info";
-import TabsInfo from "./usage-components/tabs/tabs-info";
-import TogglesInfo from "./usage-components/toggles/toggles-info";
-import TooltipsInfo from "./usage-components/tooltips/tooltips-info";
+import TabsInfo from "./react-components/tabs/tabs-info";
+import TooltipsInfo from "./react-components/tooltips/tooltips-info";
+import CarouselsInfo from "./react-components/carousels/carousels-info";
+import SelectsInfo from "./react-components/selects/selects-info";
+import NavbarsInfo from "./react-components/navbars/navbars-info";
+import TogglesInfo from "./react-components/toggles/toggles-info";
+import ColorPickersInfo from "./react-components/color-pickers/color-pickers-info";
+import RichTxtEditorsInfo from "./react-components/rich-txt-editors/rich-txt-editors-info";
+import RangeSlidersInfo from "./react-components/range-sliders/range-sliders-info";
+import PopoversInfo from "./react-components/popovers/popovers-info";
+import EmojiPickersInfo from "./react-components/emoji-pickers/emoji-pickers-info";
 import AutocompletesInfo from "./react-components/autocompletes/autocompletes-info";
+import MiscellaneousInfo from "./react-components/miscellaneous/miscellaneous-info";
+
+
+
 
 const ComponentDataArray = [
   {

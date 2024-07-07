@@ -1,5 +1,5 @@
 import DevInputUsage from "./(dev-input)/dev-input-usage";
-import DevLaserInputUsage from "./dev-laser-input-usage";
+import DevLaserInputUsage from "./(dev-laser-input)/dev-laser-input-usage";
 
 const InputsInfo = [
   {
