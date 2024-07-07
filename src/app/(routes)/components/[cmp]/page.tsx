@@ -3,7 +3,7 @@ import React from "react";
 import { redirect } from "next/navigation";
 import CmpUrl from "@/utils/cmp-url";
 import ComponentDataArray from "../../../../../public/component-data-array";
-import { generateFileLocally, getPreviewCode, getUsageCode } from "@/actions";
+import { generateFileLocally, getPreviewCode, getUsageCode } from "../../../actions";
 
 
 export const generateMetadata = ({ params }: { params: { cmp: string } }) => {
