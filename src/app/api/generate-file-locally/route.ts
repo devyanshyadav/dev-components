@@ -6,20 +6,20 @@ export async function POST(req: NextRequest) {
   const { tsx, jsx } = variants;
   try {
     await copyFile(
-      `public/usage-components/${category}/${component}-usage.tsx`,
-      `src/txt-data/usage-txt/${category}/${component}-usage.txt`
+      `public/react-components/${category}/(${component})/${component}-usage.tsx`,
+      `src/react-components-txt/${category}/(${component})/${component}-usage.txt`
     );
     if (tsx) {
       await copyFile(
-        `public/react-components/${category}/${component}.tsx`,
-        `src/txt-data/tsx-txt/${category}/${component}.txt`
+        `public/react-components/${category}/(${component})/${component}.tsx`,
+        `src/react-components-txt/${category}/(${component})/${component}-tsx.txt`
       );
     }
 
     if (jsx) {
       await copyFile(
-        `public/react-components/${category}/${component}.jsx`,
-        `src/txt-data/jsx-txt/${category}/${component}.txt`
+        `public/react-components/${category}/(${component})/${component}.jsx`,
+        `src/react-components-txt/${category}/(${component})/${component}-jsx.txt`
       );
     }
 
