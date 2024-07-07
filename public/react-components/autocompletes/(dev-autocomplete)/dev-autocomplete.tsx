@@ -85,7 +85,7 @@ const DevAutocomplete = ({ items }: { items: Item[] }) => {
                 >
                     <ul
                         ref={ulRef}
-                        className="border space-y-1 bg-slate-5 dark:bg-slate-900 border-cyan-500/50 rounded-md p-1 px-0 w-full shadow max-h-40 overflow-hidden [&::-webkit-scrollbar]:hidden overflow-y-scroll"
+                        className="border space-y-1 bg-slate-50 dark:bg-slate-900 border-cyan-500/50 rounded-md p-1 px-0 w-full shadow max-h-40 overflow-hidden [&::-webkit-scrollbar]:hidden overflow-y-scroll"
                     >
                         {state.suggestions.map((suggestion, index) => (
                             <li
