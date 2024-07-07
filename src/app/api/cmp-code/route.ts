@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     if (tsx) {
       const tsxFilePath = path.join(
         process.cwd(),
-        `src/react-components-txt/${category}/(${component})/${component}-tsx.txt`
+        `src/react-components-txt/tsx-txt/${category}/${component}.txt`
       );
       tsxData = await fs.readFile(tsxFilePath, "utf-8");
     }
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     if (jsx) {
       const jsxFilePath = path.join(
         process.cwd(),
-        `src/react-components-txt/${category}/(${component})/${component}-jsx.txt`
+      `src/react-components-txt/jsx-txt/${category}/${component}.txt`
       );
       jsxData = await fs.readFile(jsxFilePath, "utf-8");
     }

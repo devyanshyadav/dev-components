@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
   try {
     const filePath = path.join(
       process.cwd(),
-      `src/react-components-txt/${category}/(${component})/${component}-usage.txt`
+     `src/react-components-txt/usage-txt/${category}/${component}-usage.txt`
     );
     console.log(`Reading file from path: ${filePath}`);
     const data = await fs.readFile(filePath, "utf-8");
