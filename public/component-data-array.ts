@@ -18,6 +18,7 @@ import PopoversInfo from "./react-components/popovers/popovers-info";
 import EmojiPickersInfo from "./react-components/emoji-pickers/emoji-pickers-info";
 import AutocompletesInfo from "./react-components/autocompletes/autocompletes-info";
 import MiscellaneousInfo from "./react-components/miscellaneous/miscellaneous-info";
+import DrawersInfo from "./react-components/drawers/drawers-info";
 
 
 
@@ -152,6 +153,13 @@ const ComponentDataArray = [
     componentData: AutocompletesInfo,
     description:
       "Autocomplete component is a text input field that displays a list of suggestions as the user types filtered in real-time.",
+  },
+  {
+    name: "Drawers",
+    image: "drawer.png",
+    componentData:DrawersInfo,
+    description:
+     "A Drawer is a panel that slides out from the edge of a screen and can be used to display information without leaving the current page",
   },
   {
     name: "Miscellaneous",
