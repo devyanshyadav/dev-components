@@ -45,7 +45,7 @@ const ThemeToggle = ({ toggle, isToggle, size = "md" }: devToggleProps) => {
           type="checkbox"
           className="opacity-0 peer absolute cursor-pointer inset-0"
           id="toggleBox"
-          onChange={(e) => isToggle(e.target.checked)}
+          checked={toggle} onChange={(e) => isToggle(e.target.checked)}
         />
         <div
           className={clsx(
