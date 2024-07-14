@@ -18,13 +18,16 @@ const DevPopover = ({
 }: devPopoverProps) => {
   const [mounted, setMounted] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
   const randomId = useId();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         popoverRef.current &&
-        !popoverRef.current.contains(event.target as Node)
+        !popoverRef.current.contains(event.target as Node) &&
+        buttonRef.current && 
+        !buttonRef.current.contains(event.target as Node)
       ) {
         setMounted(false);
       }
@@ -59,6 +62,7 @@ const DevPopover = ({
           document.body
         )}
       <div
+        ref={buttonRef}
         className="w-fit"
         onClick={() => setMounted(!mounted)}
         data-tooltip-id={randomId}
