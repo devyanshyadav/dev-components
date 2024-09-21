@@ -43,26 +43,29 @@ Dev Components isn't just another UI library. We specialize in highly functional
 After copying a component from our website, you can use it like this:
 
 ```jsx
-import DevModal from './path-to-dev-tooltip-component';
-import React, { useState } from 'react'
+import React from "react";
+import DevModalV2 from "./dev-modal-v2";
 
-const MyApp = () => {
-    const [open, isOpen] = useState(false)
-    return (
-        <DevModal
-            open={open}
-            isOpen={isOpen}
-            modalTitle="Modal Title"
-            openBtn={
-                <button className="bg-cyan-500 p-2 px-3 rounded-lg active:scale-95 text-white hover:bg-cyan-500/80">
-                    Open Modal
-                </button>
-            }
-        >
-            <div className="font-semibold text-lg"> 
-                Modal Content
-            </div>
-        </DevModal>
-    )
-}
+const DevModalV2Usage = () => {
+  return (
+    <DevModalV2
+      title="Dev Modal"
+      modalBtn={
+        <button className="bg-accentNeon p-2 px-4 rounded-md hover:opacity-80">
+          Open Modal
+        </button>
+      }
+    >
+      <div className="flex flex-col gap-3">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nostrum
+          magni quia enim, vel autem maiores. Beatae eveniet omnis nam non ab,
+          quo suscipit repellat ratione enim delectus pariatur quos.
+        </p>
+      </div>
+    </DevModalV2>
+  );
+};
+
+export default DevModalV2Usage;
 ```
