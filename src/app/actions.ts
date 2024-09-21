@@ -17,7 +17,7 @@ export const getPreviewCode = async (
     if (tsx) {
       const tsxFilePath = path.join(
         process.cwd(),
-        `src/react-components-txt/${category}/${component}/${component}-tsx.txt`
+        `src/dev-components-txt/${category}/${component}/${component}-tsx.txt`
       );
       tsxData = await fs.readFile(tsxFilePath, "utf-8");
     }
@@ -25,7 +25,7 @@ export const getPreviewCode = async (
     if (jsx) {
       const jsxFilePath = path.join(
         process.cwd(),
-        `src/react-components-txt/${category}/${component}/${component}-jsx.txt`
+        `src/dev-components-txt/${category}/${component}/${component}-jsx.txt`
       );
       jsxData = await fs.readFile(jsxFilePath, "utf-8");
     }
@@ -46,7 +46,7 @@ export const getUsageCode = async (component: string, category: string) => {
   try {
     const filePath = path.join(
       process.cwd(),
-      `src/react-components-txt/${category}/${component}/${component}-usage.txt`
+      `src/dev-components-txt/${category}/${component}/${component}-usage.txt`
     );
     console.log(`Reading file from path: ${filePath}`);
     const data = await fs.readFile(filePath, "utf-8");
@@ -65,20 +65,20 @@ export const generateFileLocally = async (
   const { tsx, jsx } = variants;
   try {
     await copyFile(
-      `public/react-components/${category}/(${component})/${component}-usage.tsx`,
-      `src/react-components-txt/${category}/${component}/${component}-usage.txt`
+      `public/dev-components/${category}/(${component})/page.tsx`,
+      `src/dev-components-txt/${category}/${component}/${component}-usage.txt`
     );
     if (tsx) {
       await copyFile(
-        `public/react-components/${category}/(${component})/${component}.tsx`,
-        `src/react-components-txt/${category}/${component}/${component}-tsx.txt`
+        `public/dev-components/${category}/(${component})/${component}.tsx`,
+        `src/dev-components-txt/${category}/${component}/${component}-tsx.txt`
       );
     }
 
     if (jsx) {
       await copyFile(
-        `public/react-components/${category}/(${component})/${component}.jsx`,
-        `src/react-components-txt/${category}/${component}/${component}-jsx.txt`
+        `public/dev-components/${category}/(${component})/${component}.jsx`,
+        `src/dev-components-txt/${category}/${component}/${component}-jsx.txt`
       );
     }
 

@@ -1,0 +1,73 @@
+"use client";
+import React, { useState } from "react";
+import { HexAlphaColorPicker } from "react-colorful";
+import styled from "styled-components";
+import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
+
+const PickerDiv = styled.div`
+  .react-colorful {
+    gap: 5px;
+    width: 100%;
+    height: 180px;
+    border-radius: 0px;
+  }
+  .react-colorful__saturation {
+    border-radius: 5px !important;
+    width: 100%;
+  }
+  .react-colorful__hue,
+  .react-colorful__alpha {
+    border-radius: 5px !important;
+    width: 100%;
+
+    height: 12px !important;
+  }
+  .react-colorful__hue-pointer,
+  .react-colorful__alpha-pointer,
+  .react-colorful__saturation-pointer {
+    width: 15px !important;
+    height: 15px !important;
+  }
+`;
+
+const DevColorPickerV1 = ({
+  defaultColor = "#E26F1D",
+  onChange,
+}) => {
+  const [color, setColor] = useState(defaultColor);
+  const onChangeHandler = (e) => {
+    setColor(e);
+    onChange?.(e);
+  };
+  return (
+    <DevPopoverV1
+      button={
+        <button
+          data-tooltip-id="colorful-picker-popover"
+          className="min-w-32  min-h-8 rounded-md border-2 border-accentNeon focus:border-white"
+          style={{
+            background: color,
+          }}
+        />
+      }
+    >
+      <PickerDiv className="bg-rtlLight dark:bg-rtlDark p-1 rounded-lg w-[200px] space-y-2">
+        <HexAlphaColorPicker
+          color={color}
+          onChange={(newColor) => onChangeHandler?.(newColor)}
+        />
+        <span className=" flex-col flex flex-1 text-sm text-center text-black dark:text-white">
+          <input
+            spellCheck={false}
+            type="text"
+            className="w-full px-1 outline-none border-2 border-accentNeon rounded-md border-transparent focus:border-accentNeon bg-accentNeon/50"
+            value={color}
+            onChange={(e) => onChangeHandler(e.target.value)}
+          />
+        </span>
+      </PickerDiv>
+    </DevPopoverV1>
+  );
+};
+
+export default DevColorPickerV1;

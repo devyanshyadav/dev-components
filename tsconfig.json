@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/react-components/accordions/dev-accordion.ssx", "public/usage-components/toggles/sleek-toggle.-usagetsx", "public/react-components/miscellaneous/(react-resizable-panels)/reactpublic/react-components/miscellaneous/(responsive-grid-layout)/responsive-grid-layout.jsxesponsive-grid-layout.jsx", "src/components/date-picker.jsx"],
-  "exclude": ["node_modules"]
+"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "public/dev-components/modals/(dev-modal-v1)/dev-modal-v1.jsx", "public/dev-components/multiselect/(dev-multiselect-v1)/multiselect.jsx", "public/dev-components/dropdowns/(dev-dropdown-v1)/dev-dropdown-v1.jsx", "public/dev-components/accordions/(dev-accordion-v2)/dev-accordion-v2.jsx", "public/dev-components/emoji-pickers/(dev-emoji-picker-v1)/dev-emoji-picker-v1.jsx", "public/dev-components/rich-text-editor/(dev-rich-text-editor-v1)/dev-rich-text-editor-v1.jsx"],
+"exclude": ["node_modules"]
 }

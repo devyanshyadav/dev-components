@@ -11,21 +11,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Light theme colors
-        light: {
-          primary: "#f8fafc", //50
-          secondary: "#ffffff", //white
-        },
-        // Dark theme colors
-        dark: {
-          primary: "#0f172a", //900
-          secondary: "#1e293b", //800
-        },
-        accent: "#06b6d4",
+        accentNeon: "#06b6d4",
+        rtlLight: "#F5F8FF",
+        rtlDark: "#1f2937",
       },
     },
   },
   plugins: [],
 };
-
 export default config;
