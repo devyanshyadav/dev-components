@@ -40,7 +40,7 @@ export default function RootLayout({
         <Providers>{children}</Providers>
         {/* svg line patterns */}
         <div className="magicpattern absolute h-52 inset-0 -z-10 opacity-60"></div>
-        <GoogleAnalytics gaId="G-BQTKMVNV86" />
+        <GoogleAnalytics gaId={process.env.GA_ID as string} />
       </body>
     </html>
   );
