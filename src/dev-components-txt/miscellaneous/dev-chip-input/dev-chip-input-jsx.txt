@@ -1,95 +1,70 @@
 "use client";
-import React, { useState } from "react";
-import {
-  WhatsappShareButton,
-  TwitterShareButton,
-  LinkedinShareButton,
-  FacebookShareButton,
-  EmailShareButton,
-  TelegramShareButton,
-  RedditShareButton,
-  WhatsappIcon,
-  XIcon,
-  LinkedinIcon,
-  FacebookIcon,
-  EmailIcon,
-  TelegramIcon,
-  RedditIcon,
-} from "react-share";
-import DevClipboardV1 from "../../clipboards/(dev-clipboard-v1)/dev-clipboard-v1";
-const ReactShare = ({
-  size = 25,
-  defaultUrl = "https://dev-components.vercel.app/",
-  isRounded = true,
-  onChange,
-}) => {
-  const [url, setUrl] = useState(defaultUrl);
+import React, {useState, useEffect } from "react";
+import { RiCloseCircleFill } from "react-icons/ri";
 
-  const shareConfig = [
-    {
-      shareWrapper: WhatsappShareButton,
-      shareIcon: WhatsappIcon,
-    },
-    {
-      shareWrapper: TwitterShareButton,
-      shareIcon: XIcon,
-    },
-    {
-      shareWrapper: LinkedinShareButton,
-      shareIcon: LinkedinIcon,
-    },
-    {
-      shareWrapper: FacebookShareButton,
-      shareIcon: FacebookIcon,
-    },
-    {
-      shareWrapper: TelegramShareButton,
-      shareIcon: TelegramIcon,
-    },
-    {
-      shareWrapper: RedditShareButton,
-      shareIcon: RedditIcon,
-    },
-    {
-      shareWrapper: EmailShareButton,
-      shareIcon: EmailIcon,
-    },
-  ];
+const DevChipInput = ({
+  defaultValues,
+  onChange,
+  trigger = "Enter",
+  tagLength = 14,
+  textLength = 20,
+}) => {
+  const [tags, setTags] = useState(defaultValues);
+
+  useEffect(() => {
+    onChange?.(tags);
+  }, [tags, onChange]);
+
+  const handleEnter = (e) => {
+    if (e.key !== trigger) return;
+    e.preventDefault();
+    const inputValue = e.currentTarget.value.trim();
+    if (!inputValue) return;
+    if (tags.some((tag) => tag.name === inputValue))
+      return alert("Tag already exists");
+    if (inputValue.length > textLength)
+      return alert(`Tag must be less than ${textLength} characters`);
+
+    const newTag = { key: Date.now(), name: inputValue };
+    setTags((prev) => [...prev, newTag]);
+    e.currentTarget.value = "";
+  };
+
+  const handleDelete = (key) => {
+    setTags((prev) => prev.filter((tag) => tag.key !== key));
+  };
 
   return (
-    <div className="w-full md:max-w-sm bg-rtlLight p-3 dark:bg-rtlDark border border-accentNeon/50 rounded-xl">
-      <span className="flex items-center gap-1 p-1 rounded-full border border-accentNeon/50">
+    <div className="w-full relative bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 flex flex-wrap gap-2 p-3 rounded-xl">
+      {tags.map((tag) => (
+        <span
+          key={tag.key}
+          className="flex select-none text-base w-fit gap-2 px-3 pr-1 rounded-full text-accentNeon items-center bg-accentNeon/30"
+        >
+          {tag.name}
+          <RiCloseCircleFill
+            onClick={() => handleDelete(tag.key)}
+            className="text-xl hover:opacity-80 cursor-pointer"
+          />
+        </span>
+      ))}
+      {tags.length < tagLength && (
         <input
           type="text"
-          value={url}
-          onChange={(e) => {
-            setUrl(e.target.value);
-            onChange?.(e.target.value);
-          }}
-          className="p-0.5 px-2 outline-none border-none bg-transparent flex-1"
-          placeholder="Copy link"
+          onKeyDown={handleEnter}
+          placeholder="enter tag"
+          className="px-1 rounded-full bg-transparent outline-none w-28 border-none"
         />
-        <DevClipboardV1
-          textClip={url}
-          className="flex items-center justify-center gap-1 bg-accentNeon p-0.5 px-3 rounded-full text-white active:scale-95 active:bg-accentNeon/50"
-          beforeCopy={<p>Copy</p>}
-          afterCopy={<p>Copied</p>}
-        />
-      </span>
-      <div role="icon-group" className="flex flex-wrap gap-2 mt-2">
-        {shareConfig &&
-          shareConfig.map((share, index) => (
-            <share.shareWrapper url={url} key={index}>
-              <share.shareIcon
-                className="border border-accentNeon/50 hover:border-accentNeon rounded-full p-[2px] hover:scale-105 transition-all"
-                size={size}
-                round={isRounded}
-              />
-            </share.shareWrapper>
-          ))}
-      </div>
+      )}
+      <button
+        role="clear-btn"
+        className="absolute right-2 top-1 text-lg text-accentNeon/50 hover:text-accentNeon"
+        onClick={() => setTags([])}
+      >
+        🗙
+      </button>
     </div>
   );
 };
 
-export default ReactShare;
+export default DevChipInput;
