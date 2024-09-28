@@ -36,8 +36,8 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }: emblaCarouselProps) => {
   }, [emblaApi, logSlidesInView]);
 
   return (
-    <section
-      className=" w-full max-w-md h-64  aspect-square overflow-hidden relative rounded-lg"
+    <div
+      className=" w-full h-full overflow-hidden relative rounded-lg"
       ref={emblaRef}
     >
       <div className=" flex h-full">
@@ -83,7 +83,7 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }: emblaCarouselProps) => {
           />
         ))}
       </span>
-    </section>
+    </div>
   );
 };
 

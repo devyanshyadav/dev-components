@@ -31,8 +31,8 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }) => {
   }, [emblaApi, logSlidesInView]);
 
   return (
-    <section
-      className=" w-full max-w-md h-64  aspect-square overflow-hidden relative rounded-lg"
+    <div
+      className=" w-full h-full overflow-hidden relative rounded-lg"
       ref={emblaRef}
     >
       <div className=" flex h-full">
@@ -69,16 +69,16 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }) => {
             onClick={() => scrollTo(index)}
             key={index}
             className={`cursor-pointer transition-all duration-500 hover:text-accentNeon 
-            ${
-              index === selectedSlideIndex
-                ? " text-accentNeon text-lg"
-                : " text-accentNeon/40 text-base"
-            }
-          `}
+              ${
+                index === selectedSlideIndex
+                  ? " text-accentNeon text-lg"
+                  : " text-accentNeon/40 text-base"
+              }
+            `}
           />
         ))}
       </span>
-    </section>
+    </div>
   );
 };
 

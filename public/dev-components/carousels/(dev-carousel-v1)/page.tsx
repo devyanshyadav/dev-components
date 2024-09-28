@@ -10,7 +10,11 @@ const DevCarouselV1Usage = () => {
     <p>5</p>,
     <p>6</p>,
   ];
-  return <DevCarouselV1 carouselData={carouselData} perView={2} />;
+  return (
+    <section className="max-w-lg w-full h-52">
+      <DevCarouselV1 carouselData={carouselData} perView={2} />
+    </section>
+  );
 };
 
 export default DevCarouselV1Usage;
