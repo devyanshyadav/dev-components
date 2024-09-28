@@ -1,6 +1,7 @@
 import AccordionsInfo from "./dev-components/accordions/accordions-info";
 import AutocompletesInfo from "./dev-components/autocompletes/autocompletes-info";
 import ButtonsInfo from "./dev-components/buttons/buttons-info";
+import CarouselsInfo from "./dev-components/carousels/carousels-info";
 import CheckBoxesInfo from "./dev-components/checkboxes/checkboxes-info";
 import ClipboardsInfo from "./dev-components/clipboards/clipboards-info";
 import ColorPickersInfo from "./dev-components/color-pickers/color-pickers-info";
@@ -156,6 +157,13 @@ const ComponentDataArray = [
     componentData:RichTextEditorInfo,
     description:
       "A rich text editor component that allows users to write and edit text in different formats",
+  },
+  {
+    name: "Carousels",
+    image: "carousel.png",
+    componentData: CarouselsInfo,
+    description:
+      "A Carousel component that allows users to scroll through a series of images or content.",
   },
   {
     name: "Miscellaneous",
