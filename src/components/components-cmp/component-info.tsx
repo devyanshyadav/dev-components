@@ -31,24 +31,13 @@ const ComponentInfo = ({
   const [CurrTab, setCurrTab] = useState(0);
   const [copyCode, setCopyCode] = useState(false);
   const [copyNPM, setCopyNPM] = useState(false);
-  const jsxCodeString = `//JSX code
-  ${component_code.jsxCode
-    .replace(/rtlDark/g, "[#06b6d4]")
-    .replace(/rtlLight/g, "[#F5F8FF]")
-    .replace(/accentNeon/g, "[#06b6d4]")
-    .replace(/(\w+)V\d+/g, "$1")}`;
-  const tsxCodeString = `//TSX code\n${component_code.tsxCode
-    .replace(/rtlLight/g, "[#F5F8FF]")
-    .replace(/accentNeon/g, "[#06b6d4]")
-    .replace(/(\w+)V\d+/g, "$1")}`;
+  const jsxCodeString = `//JSX code \n${changeColorNameToHex(component_code.jsxCode)}`;
+  const tsxCodeString = `//TSX code\n${changeColorNameToHex(component_code.tsxCode)}`;
   const [currVariant, setCurrVariant] = useState<string>(
     jsxCodeString || tsxCodeString
   );
 
-  const usageCodeString = component_usage_code
-    ?.replace(/rtlLight/g, "[#F5F8FF]")
-    .replace(/accentNeon/g, "[#06b6d4]")
-    .replace(/(\w+)V\d+/g, "$1");
+  const usageCodeString =changeColorNameToHex(component_usage_code);
 
   const highlightCodeBlocks = (content: string) => {
     const highlightedCode = Prism.highlight(
@@ -58,6 +47,15 @@ const ComponentInfo = ({
     );
     return `<pre class="text-sm"><code class="language-javascript">${highlightedCode}</code></pre>`;
   };
+
+  function changeColorNameToHex(component_code:string) {
+    const updatedCodeString=component_code.replace(/rtlDark/g, "[#06b6d4]")
+      .replace(/rtlLight/g, "[#F5F8FF]")
+      .replace(/accentNeon/g, "[#06b6d4]")
+      .replace(/(\w+)V\d+/g, "$1")
+    
+    return updatedCodeString;
+  }
 
   return (
     <div className="w-full mt-5">

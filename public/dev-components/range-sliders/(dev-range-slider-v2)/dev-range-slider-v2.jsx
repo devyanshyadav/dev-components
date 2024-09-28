@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import * as Slider from "@radix-ui/react-slider";
-const DevRangeSliderV1 = ({
+const DevRangeSliderV2 = ({
   min = 0,
   max = 100,
   step = 1,
@@ -27,4 +27,4 @@ const DevRangeSliderV1 = ({
   );
 };
 
-export default DevRangeSliderV1;
+export default DevRangeSliderV2;

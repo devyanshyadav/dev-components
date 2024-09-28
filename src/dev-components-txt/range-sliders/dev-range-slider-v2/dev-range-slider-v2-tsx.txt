@@ -9,7 +9,7 @@ type RangeSliderProps = {
   defaultValue?: number;
   onChange?: (value: any) => void;
 };
-const DevRangeSliderV1 = ({
+const DevRangeSliderV2 = ({
   min = 0,
   max = 100,
   step = 1,
@@ -35,4 +35,4 @@ const DevRangeSliderV1 = ({
   );
 };
 
-export default DevRangeSliderV1;
+export default DevRangeSliderV2;
