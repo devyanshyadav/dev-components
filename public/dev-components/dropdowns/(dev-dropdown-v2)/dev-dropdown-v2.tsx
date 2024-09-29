@@ -1,20 +1,33 @@
 "use client";
 import React from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import DevDrawerV2, {
+  DrawerTrigger,
+} from "../../drawers/(dev-drawer-v2)/dev-drawer-v2";
 type DropDownProps = {
   children: React.ReactNode;
   button: React.ReactElement;
   place?: "top" | "bottom" | "left" | "right";
 };
-const DevDropdownV1 = ({
+const DevDropdownV2 = ({
   children,
   button,
   place = "bottom",
 }: DropDownProps) => {
-  return (
+  return window.innerWidth < 768 ? (
+    <DevDrawerV2
+      isOverlay={false}
+      accommodate={true}
+      position="bottom"
+      openBtn={button}
+    >
+      <DrawerTrigger>{children}</DrawerTrigger>
+    </DevDrawerV2>
+  ) : (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="outline-none" asChild>
-        {button}</DropdownMenu.Trigger>
+        {button}
+      </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           sideOffset={3}
@@ -30,4 +43,4 @@ const DevDropdownV1 = ({
   );
 };
 
-export default DevDropdownV1;
+export default DevDropdownV2;

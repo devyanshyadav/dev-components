@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-white dark:bg-[#0f172a] antialiased w-full overflow-hidden flex flex-col h-dvh`}
+        className={`${inter.className} bg-white dark:bg-[#0f172a] w-full overflow-hidden flex flex-col h-dvh`}
       >
         <ThemeProviders>
           {children}
