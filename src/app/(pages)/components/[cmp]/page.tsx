@@ -5,7 +5,7 @@ import ComponentDataArray from "../../../../../public/component-data-array";
 import { generateFileLocally, getPreviewCode, getUsageCode } from "@/app/actions";
 import dynamic from "next/dynamic";
 import ComponentInfoLdr from "@/components/ui/loaders/componentInfoLdr";
-const ComponentInfo=dynamic(()=>import('@/components/components-cmp/component-info'),{ssr:false, loading: () => <ComponentInfoLdr/>})
+import ComponentInfo from "@/components/components-cmp/component-info";
 
 export const generateMetadata = ({ params }: { params: { cmp: string } }) => {
   const data = ComponentDataArray.find(
