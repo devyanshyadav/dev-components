@@ -49,7 +49,7 @@ const ComponentInfo = ({
   };
 
   function changeColorNameToHex(component_code:string) {
-    const updatedCodeString=component_code.replace(/rtlDark/g, "[#06b6d4]")
+    const updatedCodeString=component_code.replace(/rtlDark/g, "[#1f2937]")
       .replace(/rtlLight/g, "[#F5F8FF]")
       .replace(/accentNeon/g, "[#06b6d4]")
       .replace(/(\w+)V\d+/g, "$1")
