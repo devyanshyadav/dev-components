@@ -23,20 +23,13 @@ const DevDropdownV2 = ({
 // @keyframes dropDownShow {
 //   from {
 //     opacity: 0;
-//     transform:scale(0.85);
+//     transform:scale(0.9);
 //   }
 //   to {
 //     opacity: 1;
 //     transform:scale(1);
 //   }
 // }
-
-const origin = {
-  top: "origin-bottom",
-  bottom: "origin-top",
-  left: "origin-right",
-  right: "origin-left",
-};
 
   return window.innerWidth < 768 ? (
     <DevDrawerV2
@@ -56,7 +49,7 @@ const origin = {
       <DropdownMenu.Content
         sideOffset={3}
         side={place}
-        className={`bg-rtlLight ${origin[place]} showDropDown dark:bg-rtlDark rounded-lg p-2 border-accentNeon/30 rounded-b-lg border`}
+        className={`bg-rtlLight origin-[var(--radix-dropdown-menu-content-transform-origin)] showDropDown dark:bg-rtlDark rounded-lg p-2 border-accentNeon/30 rounded-b-lg border`}
       >
         <DropdownMenu.Item className="outline-none" asChild>
           {children}

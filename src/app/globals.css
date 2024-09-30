@@ -77,7 +77,7 @@ pre {
 @keyframes dropDownShow {
   from {
     opacity: 0;
-    transform:scale(0.85);
+    transform:scale(0.9);
   }
   to {
     opacity: 1;
@@ -93,10 +93,27 @@ pre {
 @keyframes popoverShow {
   from {
     opacity: 0;
-    transform:scale(0.85);
+    transform:scale(0.9);
   }
   to {
     opacity: 1;
     transform:scale(1);
   }
 }
+
+/* SelectOptions animation  */
+.showOptions{
+  animation: optionShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes optionShow {
+  from {
+    opacity: 0;
+    transform:scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform:scale(1);
+  }
+}
+

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import DevSelectV2 from "./dev-select-v2";
+import DevSelectV3 from "./dev-select-v3";
 
-const DevSelectV2Usage = () => {
+const DevSelectV3Usage = () => {
   const options = [
     { value: "React JS", label: "React JS" },
     { value: "Angular", label: "Angular" },
@@ -13,8 +13,8 @@ const DevSelectV2Usage = () => {
     { value: "Nuxt JS", label: "Nuxt JS" },
   ];
   return (
-    <div className="max-w-xs w-full">
-      <DevSelectV2
+  <div className="max-w-xs w-full">
+      <DevSelectV3
       options={options}
       onChange={(e) => console.log(e)}
       placeholder="Select a Framework.."
@@ -24,4 +24,6 @@ const DevSelectV2Usage = () => {
   );
 };
 
-export default DevSelectV2Usage;
+export default DevSelectV3Usage;
+
+

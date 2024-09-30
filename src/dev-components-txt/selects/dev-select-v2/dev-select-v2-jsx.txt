@@ -1,11 +1,16 @@
+'use client'
 import React from "react";
 
-const DevSelectV2 = ({ options, onChange, defaultValue }) => {
+const DevSelectV2 = ({ options, labelName, onChange, defaultValue,placeholder="Select an option" }) => {
   return (
-    <select
-      className="p-1 px-3 w-52 rounded-lg !outline-none border-2 focus:border-accentNeon border-accentNeon/50 bg-rtlLight dark:bg-rtlDark"
+    <div className="flex flex-col w-full">
+     {labelName && <label className="p-1" htmlFor={labelName?.replace(' ','-')}>Frameworks</label>}
+      <select
+      id={labelName?.replace(' ','-')}
+      className="p-1 px-3 w-full rounded-lg !outline-none border-2 focus:border-accentNeon border-accentNeon/50 bg-rtlLight dark:bg-rtlDark"
       onChange={(e) => onChange?.({ value: e.target.value })}
     >
+      <option value={placeholder} disabled selected>{placeholder}</option>
       {options.map((option) => (
         <option
           key={option.value}
@@ -16,6 +21,7 @@ const DevSelectV2 = ({ options, onChange, defaultValue }) => {
         </option>
       ))}
     </select>
+    </div>
   );
 };
 

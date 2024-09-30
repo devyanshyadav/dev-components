@@ -21,7 +21,7 @@ const DevPopoverV1 = ({
   // @keyframes popoverShow {
   //   from {
   //     opacity: 0;
-  //     transform:scale(0.85);
+  //     transform:scale(0.9);
   //   }
   //   to {
   //     opacity: 1;
@@ -29,12 +29,6 @@ const DevPopoverV1 = ({
   //   }
   // }
 
-  const origin = {
-    top: "origin-bottom",
-    bottom: "origin-top",
-    left: "origin-right",
-    right: "origin-left",
-  };
   return (
     <Root>
       <Trigger asChild>{button}</Trigger>
@@ -42,9 +36,7 @@ const DevPopoverV1 = ({
         <Content
           side={place}
           sideOffset={2}
-          className={`p-1 *:!border-0 ${
-            origin[place]
-          } showPopover rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
+          className={`p-1 *:!border-0 origin-[var(--radix-popover-content-transform-origin)] showPopover rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
             closeIcon && "pt-4"
           }`}
         >

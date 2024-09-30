@@ -24,7 +24,7 @@ const DevPopoverV2 = ({
 // @keyframes popoverShow {
 //   from {
 //     opacity: 0;
-//     transform:scale(0.85);
+//     transform:scale(0.9);
 //   }
 //   to {
 //     opacity: 1;
@@ -32,12 +32,6 @@ const DevPopoverV2 = ({
 //   }
 // }
 
-const origin = {
-  top: "origin-bottom",
-  bottom: "origin-top",
-  left: "origin-right",
-  right: "origin-left",
-};
 
   return window.innerWidth < 768 ? (
     <DevDrawerV2
@@ -55,7 +49,7 @@ const origin = {
         <Content
           side={place}
           sideOffset={2}
-          className={`p-1 *:!border-0 ${origin[place]} showPopover rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
+          className={`p-1 *:!border-0 origin-[var(--radix-popover-content-transform-origin)] showPopover rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
             closeIcon && "pt-4"
           }`}
         >

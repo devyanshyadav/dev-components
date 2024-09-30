@@ -13,13 +13,14 @@ const DevSelectV1Usage = () => {
     { value: "Nuxt JS", label: "Nuxt JS" },
   ];
   return (
-   <div className="self-start">
-     <DevSelectV1
+    <div className="max-w-xs w-full">
+      <DevSelectV1
       options={options}
-      defaultValue={options[2]}
       onChange={(e) => console.log(e)}
+      placeholder="Select a Framework.."
+      labelName="Frameworks"
     />
-   </div>
+  </div>
   );
 };
 
