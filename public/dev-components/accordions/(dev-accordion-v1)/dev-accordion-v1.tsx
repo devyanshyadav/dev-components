@@ -1,47 +1,45 @@
 "use client";
 import React, { useState } from "react";
 import { RiAddLine, RiSubtractFill } from "react-icons/ri";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 type AccordionProps = {
   AccordData: { title: string; content: string }[];
 };
 
-const DevAccordionV1 = ({ AccordData }: AccordionProps) => {
-  const [open, setOpen] = useState<number | null | boolean>(0);
-
-  const variants = {
-    open: { height: "auto" },
-    closed: { height: 0 },
-  };
+const DevAccordion = ({ AccordData }: AccordionProps) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className=" bg-rtlLight dark:bg-rtlDark w-full divide-y divide-accentNeon/50 border border-accentNeon/30 rounded-xl p-2">
-      {AccordData.map((elem, i) => (
-        <div
-          className="space-y-1 py-2"
-          key={i}
-          onClick={() => setOpen(open == i ? null : i)}
-        >
-          <h3 className="text-sm flex justify-between cursor-pointer items-center hover:text-accentNeon  font-semibold pr-5">
-            {elem.title}
+    <div className="bg-[#F5F8FF] dark:bg-[#1f2937] w-full divide-y divide-[#06b6d4]/50 border border-[#06b6d4]/30 rounded-xl p-2">
+      {AccordData.map((item, index) => (
+        <div key={index} className="py-2">
+          <h3 
+            className="text-sm flex justify-between cursor-pointer items-center hover:text-[#06b6d4] font-semibold pr-5"
+            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+          >
+            {item.title}
             <span className="text-lg">
-              {open == i ? <RiSubtractFill /> : <RiAddLine />}
+              {openIndex === index ? <RiSubtractFill /> : <RiAddLine />}
             </span>
           </h3>
-          <motion.div
-            animate={open == i ? "open" : "closed"}
-            variants={variants}
-            transition={{ duration: 0.2 }}
-            onClick={() => setOpen(!open)}
-            className="text-sm overflow-hidden h-0"
-          >
-            {elem.content}
-          </motion.div>
+          <AnimatePresence initial={false}>
+            {openIndex === index && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-sm overflow-hidden"
+              >
+                {item.content}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ))}
     </div>
   );
 };
 
-export default DevAccordionV1;
+export default DevAccordion;
