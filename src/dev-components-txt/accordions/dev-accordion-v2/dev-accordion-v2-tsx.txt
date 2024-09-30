@@ -10,12 +10,22 @@ const DevAccordionV2 = ({ AccordData }: AccordionProps) => {
     <div className="w-full border border-accentNeon/30 divide-y divide-accentNeon/50 bg-rtlLight dark:bg-rtlDark rounded-xl overflow-hidden px-1">
       {AccordData.map((e, i) => (
         <div key={i} className="group p-2 px-5 space-y-1">
-          <button className="flex hover:text-accentNeon justify-between items-center w-full text-left focus:outline-none">
-            <h2 className="text-md font-semibold">{e.title}</h2>
-            <IoChevronDownOutline className="text-xl transform transition-transform duration-200 group-focus-within:rotate-180" />
-          </button>
-          <div className="max-h-0 overflow-hidden group-focus-within:max-h-96">
-            <p className="text-sm">{e.content}</p>
+          <div className="relative">
+            <input
+              type="checkbox"
+              id={`accordion-${i}`}
+              className="peer sr-only"
+            />
+            <label
+              htmlFor={`accordion-${i}`}
+              className="flex hover:text-accentNeon z-10 relative justify-between items-center w-full text-left cursor-pointer"
+            >
+              <h2 className="text-md font-semibold">{e.title}</h2>
+            </label>
+            <IoChevronDownOutline className="text-xl absolute top-0.5 right-0 transform transition-transform duration-200 peer-checked:rotate-180" />
+            <div className="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-96">
+              <p className="text-sm pt-2">{e.content}</p>
+            </div>
           </div>
         </div>
       ))}

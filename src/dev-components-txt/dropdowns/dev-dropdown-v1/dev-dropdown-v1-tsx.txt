@@ -11,15 +11,39 @@ const DevDropdownV1 = ({
   button,
   place = "bottom",
 }: DropDownProps) => {
+
+//   /* Dropdown CSS animation  */
+// .showDropDown{
+//   animation: dropDownShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+// }
+
+// @keyframes dropDownShow {
+//   from {
+//     opacity: 0;
+//     transform:scale(0.85);
+//   }
+//   to {
+//     opacity: 1;
+//     transform:scale(1);
+//   }
+// }
+
+  const origin = {
+    top: "origin-bottom",
+    bottom: "origin-top",
+    left: "origin-right",
+    right: "origin-left",
+  };
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="outline-none" asChild>
-        {button}</DropdownMenu.Trigger>
+        {button}
+      </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           sideOffset={3}
           side={place}
-          className="bg-rtlLight dark:bg-rtlDark rounded-lg p-2 border-accentNeon/30 rounded-b-lg border"
+          className={`bg-rtlLight ${origin[place]} showDropDown dark:bg-rtlDark rounded-lg p-2 border-accentNeon/30 rounded-b-lg border`}
         >
           <DropdownMenu.Item className="outline-none" asChild>
             {children}

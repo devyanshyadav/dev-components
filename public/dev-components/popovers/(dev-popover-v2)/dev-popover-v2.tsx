@@ -15,6 +15,30 @@ const DevPopoverV2 = ({
   closeIcon,
   place = "bottom",
 }: PopoverProps) => {
+
+//   /* Popover animation  */
+// .showPopover{
+//   animation: popoverShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+// }
+
+// @keyframes popoverShow {
+//   from {
+//     opacity: 0;
+//     transform:scale(0.85);
+//   }
+//   to {
+//     opacity: 1;
+//     transform:scale(1);
+//   }
+// }
+
+const origin = {
+  top: "origin-bottom",
+  bottom: "origin-top",
+  left: "origin-right",
+  right: "origin-left",
+};
+
   return window.innerWidth < 768 ? (
     <DevDrawerV2
       isOverlay={false}
@@ -31,7 +55,7 @@ const DevPopoverV2 = ({
         <Content
           side={place}
           sideOffset={2}
-          className={`p-1 *:!border-0 rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
+          className={`p-1 *:!border-0 ${origin[place]} showPopover rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
             closeIcon && "pt-4"
           }`}
         >
