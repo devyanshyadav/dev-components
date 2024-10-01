@@ -23,7 +23,7 @@ const DevSelectV3 = ({
       </Select.Trigger>
       <Select.Portal>
         <Select.Content
-          side="top"
+          side="bottom"
           position="popper"
           sideOffset={5}
           className={`z-50 origin-[var(--radix-select-content-transform-origin)] showOptions w-[var(--radix-select-trigger-width)] max-h-48 overflow-hidden bg-rtlLight border border-accentNeon/30 dark:bg-rtlDark rounded-md shadow-lg`}
