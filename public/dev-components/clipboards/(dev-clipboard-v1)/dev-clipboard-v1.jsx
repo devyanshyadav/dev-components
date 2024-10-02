@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const DevClipboardV1 = ({
-  textClip = "https://dev-components.vercel.app/",
+  textClip,
   beforeCopy = "Copy",
   afterCopy = "Copied",
   className,

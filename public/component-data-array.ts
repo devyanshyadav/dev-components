@@ -20,6 +20,7 @@ import SelectsInfo from "./dev-components/selects/selects-info";
 import TabsInfo from "./dev-components/tabs/tabs-info";
 import TogglesInfo from "./dev-components/toggles/toggles-info";
 import TooltipsInfo from "./dev-components/tooltips/tooltips-info";
+import VisualCodesInfo from "./dev-components/visual-codes/visual-codes-info";
 
 const ComponentDataArray = [
   {
@@ -162,6 +163,13 @@ const ComponentDataArray = [
     name: "Carousels",
     image: "carousel.png",
     componentData: CarouselsInfo,
+    description:
+      "A Carousel component that allows users to scroll through a series of images or content.",
+  },
+  {
+    name: "Visual Codes",
+    image: "visual-code.png",
+    componentData: VisualCodesInfo,
     description:
       "A Carousel component that allows users to scroll through a series of images or content.",
   },
