@@ -171,7 +171,7 @@ const ComponentDataArray = [
     image: "visual-code.png",
     componentData: VisualCodesInfo,
     description:
-      "A Carousel component that allows users to scroll through a series of images or content.",
+      "Visual codes, are essential tools for encoding information in a machine-readable format.",
   },
   {
     name: "Miscellaneous",
