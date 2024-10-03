@@ -12,6 +12,7 @@ import InputsInfo from "./dev-components/inputs/inputs-info";
 import MiscellaneousInfo from "./dev-components/miscellaneous/miscellaneous-info";
 import ModalsInfo from "./dev-components/modals/modals-info";
 import MultiselectInfo from "./dev-components/multiselect/multiselect-info";
+import NavigationInfo from "./dev-components/navigation/navigation-info";
 import PopoversInfo from "./dev-components/popovers/popovers-info";
 import RadiosInfo from "./dev-components/radios/radios-info";
 import RangeSlidersInfo from "./dev-components/range-sliders/range-slider-info";
@@ -172,6 +173,13 @@ const ComponentDataArray = [
     componentData: VisualCodesInfo,
     description:
       "Visual codes, are essential tools for encoding information in a machine-readable format.",
+  },
+  {
+    name: "Navigation",
+    image: "navbar.png",
+    componentData: NavigationInfo,
+    description:
+      "Navigation components are used to navigate between different pages or sections of a web application.",
   },
   {
     name: "Miscellaneous",
