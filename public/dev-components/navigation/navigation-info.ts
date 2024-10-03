@@ -86,11 +86,11 @@ const NavigationInfo = [
       ],
       helpers: [
         {
-          cmp_name: "Dev Dynamic Menu",
+          cmp_name: "DevDynamicMenu",
           cmp_link: "/navigation#dev-dynamic-menu",
         },
         {
-          cmp_name: "Dev Drawer V1",
+          cmp_name: "DevDrawerV1",
           cmp_link: "/drawers#dev-drawer-v1",
         },
       ],
