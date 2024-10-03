@@ -1,4 +1,5 @@
 import DevDynamicMenuUsage from "./(dev-dynamic-menu)/page";
+import ResponsiveNavbarUsage from "./(responsive-navbar)/page";
 
 const NavigationInfo = [
   {
@@ -41,6 +42,56 @@ const NavigationInfo = [
           propName: "className",
           propExample: `"border-accentNeon/30 border rounded-lg"`,
           propDetail: "Optional class name for custom styling.",
+        },
+      ],
+      packages: [],
+    },
+  },
+  {
+    title: "Responsive Navbar",
+    component: ResponsiveNavbarUsage,
+    variants: {
+      jsx: true,
+      tsx: true,
+    },
+    details: {
+      description:
+        "A responsive navbar component that adapts to screen sizes, featuring a logo and dynamic menu.",
+      features: [
+        "Adaptive design for mobile and desktop layouts",
+        "Supports multi-level navigation with collapsible submenus",
+        "Customizable logo",
+        "Integration with Next.js routing",
+        "Accessibility-focused",
+      ],
+      props: [
+        {
+          propName: "menuItems",
+          propExample: `[
+            {
+              name: "Home",
+              path: "/",
+            },
+            // ... more menu items
+          ]`,
+          propDetail:
+            "Array of objects defining menu items, including their names, paths, and optional sublinks.",
+        },
+        {
+          propName: "logo",
+          propExample: `<h2 className="text-2xl font-semibold text-accentNeon">LOGO</h2>`,
+          propDetail:
+            "React node representing the logo element to be displayed in the navbar.",
+        },
+      ],
+      helpers: [
+        {
+          cmp_name: "Dev Dynamic Menu",
+          cmp_link: "/navigation#dev-dynamic-menu",
+        },
+        {
+          cmp_name: "Dev Drawer V1",
+          cmp_link: "/drawers#dev-drawer-v1",
         },
       ],
       packages: [],

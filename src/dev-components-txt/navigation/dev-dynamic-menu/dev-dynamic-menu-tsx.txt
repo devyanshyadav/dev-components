@@ -2,13 +2,13 @@ import React from "react";
 import Link from "next/link";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
-interface NavLink {
+export interface NavLink {
   name: string;
   path: string;
   subLinks?: NavLink[];
 }
 
-interface MenuItemsProps {
+export interface MenuItemsProps {
   menuItems: NavLink[];
   className?: string;
 }
@@ -23,19 +23,19 @@ const MenuItem: React.FC<{ item: NavLink; depth?: number }> = ({
   const paths: { [key: number]: string[] } = {
     0: [
       "group/item1",
-      `group-hover/item1:opacity-100 group-hover/item1:scale-100`,
+      `group-hover/item1:opacity-100 group-hover/item1:scale-100 group-hover/item1:flex`,
     ],
     1: [
       "group/item2",
-      `group-hover/item2:opacity-100 group-hover/item2:scale-100`,
+      `group-hover/item2:opacity-100 group-hover/item2:scale-100 group-hover/item2:flex`,
     ],
     2: [
       "group/item3",
-      `group-hover/item3:opacity-100 group-hover/item3:scale-100`,
+      `group-hover/item3:opacity-100 group-hover/item3:scale-100 group-hover/item3:flex`,
     ],
     3: [
       "group/item4",
-      `group-hover/item4:opacity-100 group-hover/item4:scale-100`,
+      `group-hover/item4:opacity-100 group-hover/item4:scale-100 group-hover/item4:flex`,
     ],
   };
 
@@ -43,11 +43,11 @@ const MenuItem: React.FC<{ item: NavLink; depth?: number }> = ({
     <li
       className={`
       ${paths[depth] ? paths[depth][0] : ""} 
-      relative p-2 px-4
+      relative p-2 px-4 w-full
       ${
         isFirstLevel
           ? "flex items-center justify-center flex-col"
-          : "w-full hover:bg-accentNeon/20"
+          : "w-full md:hover:bg-accentNeon/20"
       }
     `}
     >
@@ -64,17 +64,22 @@ const MenuItem: React.FC<{ item: NavLink; depth?: number }> = ({
         <ul
           className={`
           bg-rtlLight dark:bg-rtlDark 
-          divide-y divide-accentNeon/30 
-          opacity-0 
-          scale-0 
+          divide-y border-l-2 md:border-l divide-accentNeon/30 
+          md:opacity-0 
+          hidden
+          w-full
+          md:w-auto
+          md:flex
+          flex-col
+          md:scale-0 
           z-40 
           ${paths[depth] ? paths[depth][1] : ""}
-          border border-accentNeon/30 
-          shadow-md font-normal text-sm 
-          absolute 
+          md:border border-accentNeon/30 
+          md:shadow-md font-normal text-sm 
+          md:absolute 
           transition-all duration-200
           m-1
-          rounded-md
+          md:rounded-md
           ${
             isFirstLevel
               ? "origin-top top-full "
@@ -93,8 +98,8 @@ const MenuItem: React.FC<{ item: NavLink; depth?: number }> = ({
 
 const DevDynamicMenu: React.FC<MenuItemsProps> = ({ menuItems, className }) => {
   return (
-    <nav className={`bg-rtlLight dark:bg-rtlDark ${className}`}>
-      <ul className="flex items-center justify-between">
+    <nav className={`bg-rtlLight dark:bg-rtlDark w-full ${className}`}>
+      <ul className="flex flex-col md:flex-row items-start md:items-center justify-between">
         {menuItems.map((item, index) => (
           <MenuItem key={index} item={item} />
         ))}

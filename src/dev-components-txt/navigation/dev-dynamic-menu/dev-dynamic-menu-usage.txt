@@ -9,15 +9,15 @@ const DevDynamicMenuUsage = () => {
     },
     {
       name: "Products",
-      path: "/products",
+      path: "#",
       subLinks: [
         {
           name: "Software",
-          path: "/products/software",
+          path: "#",
           subLinks: [
             {
               name: "Productivity Tools",
-              path: "/products/software/productivity-tools",
+              path: "#",
               subLinks: [
                 {
                   name: "Task Management",
@@ -37,7 +37,7 @@ const DevDynamicMenuUsage = () => {
         },
         {
           name: "Hardware",
-          path: "/products/hardware",
+          path: "#",
           subLinks: [
             {
               name: "Laptops",
@@ -49,7 +49,7 @@ const DevDynamicMenuUsage = () => {
             },
             {
               name: "Accessories",
-              path: "/products/hardware/accessories",
+              path: "#",
               subLinks: [
                 {
                   name: "Keyboards",
@@ -67,7 +67,7 @@ const DevDynamicMenuUsage = () => {
     },
     {
       name: "Services",
-      path: "/services",
+      path: "#",
       subLinks: [
         {
           name: "Consulting",
@@ -93,7 +93,7 @@ const DevDynamicMenuUsage = () => {
     },
   ];
   return (
-    <div className="self-start">
+    <div className="self-start w-full md:w-auto">
       <DevDynamicMenu className="border-accentNeon/30 border rounded-lg" menuItems={menuItems} />
     </div>
   );
