@@ -187,7 +187,7 @@ const ComponentDataArray = [
     image: "toast.png",
     componentData: ToastInfo,
     description:
-      "Navigation components are used to navigate between different pages or sections of a web application.",
+      "Toast is a popup messages that are used to provide feedback to the users for their different actions",
   },
   {
     name: "Miscellaneous",
