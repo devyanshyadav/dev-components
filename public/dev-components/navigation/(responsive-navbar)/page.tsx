@@ -33,7 +33,7 @@ const ResponsiveNavbarUsage = () => {
     },
     {
       name: "Services",
-      path: "/services",
+      path: "/#",
       subLinks: [
         {
           name: "Consulting",

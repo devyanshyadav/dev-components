@@ -19,6 +19,7 @@ import RangeSlidersInfo from "./dev-components/range-sliders/range-slider-info";
 import RichTextEditorInfo from "./dev-components/rich-text-editor/rich-text-editor-info";
 import SelectsInfo from "./dev-components/selects/selects-info";
 import TabsInfo from "./dev-components/tabs/tabs-info";
+import ToastInfo from "./dev-components/toast/toast-info";
 import TogglesInfo from "./dev-components/toggles/toggles-info";
 import TooltipsInfo from "./dev-components/tooltips/tooltips-info";
 import VisualCodesInfo from "./dev-components/visual-codes/visual-codes-info";
@@ -178,6 +179,13 @@ const ComponentDataArray = [
     name: "Navigation",
     image: "navbar.png",
     componentData: NavigationInfo,
+    description:
+      "Navigation components are used to navigate between different pages or sections of a web application.",
+  },
+  {
+    name: "Toast",
+    image: "toast.png",
+    componentData: ToastInfo,
     description:
       "Navigation components are used to navigate between different pages or sections of a web application.",
   },
