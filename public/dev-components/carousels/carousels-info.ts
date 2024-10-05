@@ -1,3 +1,4 @@
+import BrandCarouselUsage from "./(brand-carousel)/page";
 import DevCarouselV1Usage from "./(dev-carousel-v1)/page";
 
 const CarouselsInfo = [
@@ -44,7 +45,33 @@ const CarouselsInfo = [
       ],
     },
   },
-  
+  {
+    title: "Brand Carousel",
+    component: BrandCarouselUsage,
+    variants: {
+      tsx: true,
+      jsx: true,
+    },
+    details: {
+      description:
+        "A responsive brand carousel component that displays brands in a marquee-like animation.",
+      features: [
+        "Seamless looping animation",
+        "Customizable brand content",
+        "Responsive design",
+        "Accessibility-focused",
+        "Integration with Tailwind CSS",
+      ],
+      props: [
+        {
+          propName: "brands",
+          propExample: `[<p>Brand 1</p>, <p>Brand 2</p>, ...]`,
+          propDetail: "Array of React nodes representing the brands to be displayed in the carousel.",
+        },
+      ],
+      packages: [],
+    },
+  },
 ];
 
 export default CarouselsInfo;
