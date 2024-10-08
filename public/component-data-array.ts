@@ -13,6 +13,7 @@ import MiscellaneousInfo from "./dev-components/miscellaneous/miscellaneous-info
 import ModalsInfo from "./dev-components/modals/modals-info";
 import MultiselectInfo from "./dev-components/multiselect/multiselect-info";
 import NavigationInfo from "./dev-components/navigation/navigation-info";
+import PaginationInfo from "./dev-components/pagination/pagination-info";
 import PopoversInfo from "./dev-components/popovers/popovers-info";
 import RadiosInfo from "./dev-components/radios/radios-info";
 import RangeSlidersInfo from "./dev-components/range-sliders/range-slider-info";
@@ -144,9 +145,9 @@ const ComponentDataArray = [
   {
     name: "Drawers",
     image: "drawer.png",
-    componentData:DrawersInfo,
+    componentData: DrawersInfo,
     description:
-     "A Drawer is a panel that slides out from the edge of a screen and can be used to display information without leaving the current page",
+      "A Drawer is a panel that slides out from the edge of a screen and can be used to display information without leaving the current page",
   },
   {
     name: "Autocompletes",
@@ -154,10 +155,11 @@ const ComponentDataArray = [
     componentData: AutocompletesInfo,
     description:
       "Autocomplete component is a text input field that displays a list of suggestions as the user types filtered in real-time.",
-  },{
-    name:"Rich Text Editor",
-    image:"rich-txt-editor.png",
-    componentData:RichTextEditorInfo,
+  },
+  {
+    name: "Rich Text Editor",
+    image: "rich-txt-editor.png",
+    componentData: RichTextEditorInfo,
     description:
       "A rich text editor component that allows users to write and edit text in different formats",
   },
@@ -188,6 +190,13 @@ const ComponentDataArray = [
     componentData: ToastInfo,
     description:
       "Toast is a popup messages that are used to provide feedback to the users for their different actions",
+  },
+  {
+    name: "Pagination",
+    image: "pagination.png",
+    componentData: PaginationInfo,
+    description:
+      "Pagination components allows users to navigate between multiple pages.",
   },
   {
     name: "Miscellaneous",
