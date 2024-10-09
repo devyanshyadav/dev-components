@@ -57,7 +57,7 @@ const ResponsiveNavbarUsage = () => {
   return (
     <div className="self-start w-full">
       <ResponsiveNavbar
-        logo={<h2 className="text-2xl font-semibold text-accentNeon">LOGO</h2>}
+        logo={<h2 className="text-2xl font-semibold text-ACCENT">LOGO</h2>}
         menuItems={menuItems}
       />
     </div>

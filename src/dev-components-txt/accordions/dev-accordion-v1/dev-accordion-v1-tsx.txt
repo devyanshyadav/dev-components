@@ -11,11 +11,11 @@ const DevAccordion = ({ AccordData }: AccordionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="bg-[#F5F8FF] dark:bg-[#1f2937] w-full divide-y divide-[#06b6d4]/50 border border-[#06b6d4]/30 rounded-xl p-2">
+    <div className="bg-LIGHT dark:bg-DARK w-full divide-y divide-ACCENT/50 border border-ACCENT/30 rounded-xl p-2">
       {AccordData.map((item, index) => (
         <div key={index} className="py-2">
           <h3 
-            className="text-sm flex justify-between cursor-pointer items-center hover:text-[#06b6d4] font-semibold pr-5"
+            className="text-sm flex justify-between cursor-pointer items-center hover:text-ACCENT font-semibold pr-5"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
           >
             {item.title}

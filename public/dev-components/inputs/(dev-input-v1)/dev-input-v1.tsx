@@ -27,13 +27,13 @@ const DevInputV1 = ({
   );
   const inputVariants = {
     base: clsx(
-      "bg-rtlLight dark:bg-rtlDark border border-accentNeon outline-accentNeon rounded-full"
+      "bg-LIGHT dark:bg-DARK border border-ACCENT outline-ACCENT rounded-full"
     ),
     bordered:
-      "bg-transparent border border-accentNeon outline-accentNeon rounded-full",
+      "bg-transparent border border-ACCENT outline-ACCENT rounded-full",
     faded:
-      "bg-accentNeon/20 border border-accentNeon outline-accentNeon rounded-full text-accentNeon",
-    underline: "border-b-4 border-accentNeon/40 outline-none relative after:content-[''] after:absolute after:h-1 after:bg-accentNeon after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0 has-[:focus]:after:scale-x-100"
+      "bg-ACCENT/20 border border-ACCENT outline-ACCENT rounded-full text-ACCENT",
+    underline: "border-b-4 border-ACCENT/40 outline-none relative after:content-[''] after:absolute after:h-1 after:bg-ACCENT after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0 has-[:focus]:after:scale-x-100"
   };
 
   const inputRoundness = {
@@ -71,7 +71,7 @@ const DevInputV1 = ({
           className
         )}
       >
-        <span className="text-xl text-accentNeon">{icon}</span>
+        <span className="text-xl text-ACCENT">{icon}</span>
         <input
           id={labelName && labelName}
           {...props}

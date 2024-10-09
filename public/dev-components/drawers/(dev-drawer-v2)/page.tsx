@@ -3,11 +3,11 @@ import DevDrawerV2 from "./dev-drawer-v2";
 
 const DevDrawerV2Usage = () => {
   return (
-    <div className="flex items-center justify-center gap-3 p-5 flex-col md:flex-row bg-rtlLight dark:bg-rtlDark rounded-xl">
+    <div className="flex items-center justify-center gap-3 p-5 flex-col md:flex-row bg-LIGHT dark:bg-DARK rounded-xl">
       <DevDrawerV2
         title="Drawer Title"
         openBtn={
-          <button className="bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-accentNeon/50">
+          <button className="bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-ACCENT/50">
             Open Bottom
           </button>
         }
@@ -21,7 +21,7 @@ const DevDrawerV2Usage = () => {
       <DevDrawerV2
         title="Drawer Title"
         openBtn={
-          <button className="bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-accentNeon/50">
+          <button className="bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-ACCENT/50">
             Open Right
           </button>
         }
@@ -35,7 +35,7 @@ const DevDrawerV2Usage = () => {
       <DevDrawerV2
         title="Drawer Title"
         openBtn={
-          <button className="bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-accentNeon/50">
+          <button className="bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-ACCENT/50">
             Open Left
           </button>
         }
@@ -49,7 +49,7 @@ const DevDrawerV2Usage = () => {
       <DevDrawerV2
         title="Drawer Title"
         openBtn={
-          <button className="bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-accentNeon/50">
+          <button className="bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-ACCENT/50">
             Open Top
           </button>
         }

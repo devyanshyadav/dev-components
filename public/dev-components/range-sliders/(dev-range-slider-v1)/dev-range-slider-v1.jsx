@@ -18,11 +18,11 @@ const DevRangeSliderV1 = ({
       step={step}
       min={min}
     >
-      <Slider.Track className="relative grow rounded-full h-2 bg-accentNeon/40">
-        <Slider.Range className="absolute bg-accentNeon rounded-full h-2 rounded-r-none" />
+      <Slider.Track className="relative grow rounded-full h-2 bg-ACCENT/40">
+        <Slider.Range className="absolute bg-ACCENT rounded-full h-2 rounded-r-none" />
       </Slider.Track>
       <Slider.Thumb
-        className="block w-5 h-5 focus:outline-none bg-accentNeon transition-all rounded-full border-2 cursor-pointer active:border-4 dark:border-rtlLight border-rtlDark"
+        className="block w-5 h-5 focus:outline-none bg-ACCENT transition-all rounded-full border-2 cursor-pointer active:border-4 dark:border-LIGHT border-DARK"
         aria-label="Slider"
       />
     </Slider.Root>

@@ -7,7 +7,7 @@ const DevPopoverV2Usage = () => {
       <h3 className="text-sm font-light opacity-70">Responsive for mobile</h3>
       <DevPopoverV2
         button={
-          <button className="p-1 px-3 bg-accentNeon text-white rounded-lg">
+          <button className="p-1 px-3 bg-ACCENT text-white rounded-lg">
             Open
           </button>
         }

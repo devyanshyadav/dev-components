@@ -9,7 +9,7 @@ const DevEmojiPickerV1Usage = () => {
     <DevPopoverV1
       place="bottom"
       button={
-        <button className="p-1 rounded-full px-3 bg-accentNeon/40 outline outline-accentNeon active:scale-90 transition-all">
+        <button className="p-1 rounded-full px-3 bg-ACCENT/40 outline outline-ACCENT active:scale-90 transition-all">
           😊 Select Emojis
         </button>
       }

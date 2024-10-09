@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { IoCopy } from "react-icons/io5";
 import Link from "next/link";
@@ -7,8 +7,9 @@ import { GoLinkExternal } from "react-icons/go";
 import CopyCode from "./copy-code";
 import CmpUrl from "@/utils/cmp-url";
 import Prism from "prismjs";
-import "prismjs/themes/prism-tomorrow.css"; // or any other theme you prefer
+import "prismjs/themes/prism-tomorrow.css";
 import clsx from "clsx";
+import useZustStore from "@/utils/zust-store";
 
 type componentInfoProps = {
   component_code: {
@@ -31,17 +32,47 @@ const ComponentInfo = ({
   const [CurrTab, setCurrTab] = useState(0);
   const [copyCode, setCopyCode] = useState(false);
   const [copyNPM, setCopyNPM] = useState(false);
-  const jsxCodeString = `//JSX code \n${changeColorNameToHex(
-    component_code.jsxCode
-  )}`;
-  const tsxCodeString = `//TSX code\n${changeColorNameToHex(
-    component_code.tsxCode
-  )}`;
+  const { ACCENT, DARK, LIGHT, AccentLabel, DarkLabel, LightLabel } =
+    useZustStore();
+
+  const [cmpCodes, setCmpCodes] = useState({
+    jsxCode: changeColorNameToHex(component_code.jsxCode),
+    tsxCode: changeColorNameToHex(component_code.tsxCode),
+    usageCode: changeColorNameToHex(component_usage_code),
+  });
   const [currVariant, setCurrVariant] = useState<string>(
-    jsxCodeString || tsxCodeString
+    cmpCodes.jsxCode || cmpCodes.tsxCode
   );
 
-  const usageCodeString = changeColorNameToHex(component_usage_code);
+  function changeColorNameToHex(component_code: string) {
+    const updatedCodeString = component_code
+      .replace(/DARK/g, DarkLabel)
+      .replace(/LIGHT/g, LightLabel)
+      .replace(/ACCENT/g, AccentLabel)
+      .replace(/(\w+)V\d+/g, "$1")
+      .replace(
+        /process.env.NEXT_PUBLIC_BASE_URL as string/g,
+        `"${process.env.NEXT_PUBLIC_BASE_URL as string}"`
+      );
+
+    return updatedCodeString;
+  }
+
+  useEffect(() => {
+    const updatedCmpCodes = {
+      jsxCode: changeColorNameToHex(component_code.jsxCode),
+      tsxCode: changeColorNameToHex(component_code.tsxCode),
+      usageCode: changeColorNameToHex(component_usage_code),
+    };
+    setCmpCodes(updatedCmpCodes);
+
+    // Update currVariant to match the current selection
+    setCurrVariant(
+      currVariant === cmpCodes.jsxCode
+        ? updatedCmpCodes.jsxCode
+        : updatedCmpCodes.tsxCode
+    );
+  }, [AccentLabel, DarkLabel, LightLabel]);
 
   const highlightCodeBlocks = (content: string) => {
     const highlightedCode = Prism.highlight(
@@ -51,20 +82,6 @@ const ComponentInfo = ({
     );
     return `<pre class="text-sm"><code class="language-javascript">${highlightedCode}</code></pre>`;
   };
-
-  function changeColorNameToHex(component_code: string) {
-    const updatedCodeString = component_code
-      .replace(/rtlDark/g, "[#1f2937]")
-      .replace(/rtlLight/g, "[#F5F8FF]")
-      .replace(/accentNeon/g, "[#06b6d4]")
-      .replace(/(\w+)V\d+/g, "$1")
-      .replace(
-        /process.env.NEXT_PUBLIC_BASE_URL as string/g,
-        `"${process.env.NEXT_PUBLIC_BASE_URL as string}"`
-      );
-
-    return updatedCodeString;
-  }
 
   return (
     <div className="w-full mt-5">
@@ -103,7 +120,7 @@ const ComponentInfo = ({
           ))}
           <li key={"copy-code"}>
             <CopyCode
-              textToCopy={CurrTab == 2 ? usageCodeString || "" : currVariant}
+              textToCopy={CurrTab == 2 ? cmpCodes.usageCode || "" : currVariant}
               setCopied={setCopyCode}
             >
               <button className="bg-rtlLight dark:bg-rtlDark text-accentNeon border border-accentNeon absolute  select-none top-0 right-0 rounded-bl-lg border-t-0 border-r-0 p-1 px-3 text-sm font-semibold cursor-pointer hover:!bg-accentNeon/30">
@@ -119,17 +136,19 @@ const ComponentInfo = ({
           <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
             <button
               className={`${
-                currVariant === jsxCodeString && "bg-accentNeon/50 text-white"
+                currVariant === cmpCodes.jsxCode &&
+                "bg-accentNeon/50 text-white"
               }`}
-              onClick={() => setCurrVariant(() => jsxCodeString)}
+              onClick={() => setCurrVariant(() => cmpCodes.jsxCode)}
             >
               Jsx
             </button>
             <button
               className={`${
-                currVariant === tsxCodeString && "bg-accentNeon/50 text-white"
+                currVariant === cmpCodes.tsxCode &&
+                "bg-accentNeon/50 text-white"
               }`}
-              onClick={() => setCurrVariant(() => tsxCodeString)}
+              onClick={() => setCurrVariant(() => cmpCodes.tsxCode)}
             >
               Tsx
             </button>
@@ -155,7 +174,7 @@ const ComponentInfo = ({
           ) : CurrTab == 2 ? (
             <div
               dangerouslySetInnerHTML={{
-                __html: highlightCodeBlocks(usageCodeString || ""),
+                __html: highlightCodeBlocks(cmpCodes.usageCode || ""),
               }}
             />
           ) : (

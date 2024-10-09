@@ -48,7 +48,7 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }: emblaCarouselProps) => {
             style={{ flex: `0 0 ${100 / perView}%` }}
             onClick={() => scrollTo(index)}
           >
-            <div className="w-full h-full bg-rtlLight rounded-lg dark:bg-rtlDark border border-accentNeon/30 text-accentNeon font-semibold text-4xl grid place-items-center">
+            <div className="w-full h-full bg-LIGHT rounded-lg dark:bg-DARK border border-ACCENT/30 text-ACCENT font-semibold text-4xl grid place-items-center">
               {elem}
             </div>
           </div>
@@ -56,14 +56,14 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }: emblaCarouselProps) => {
       </div>
       <button
         type="button"
-        className="absolute top-1/2 -translate-y-1/2 rotate-180 left-0 text-3xl text-accentNeon hover:text-cyan-700"
+        className="absolute top-1/2 -translate-y-1/2 rotate-180 left-0 text-3xl text-ACCENT hover:text-ACCENT"
         onClick={() => emblaApi && emblaApi.scrollPrev()}
       >
         <IoCaretForwardCircleOutline />
       </button>
       <button
         type="button"
-        className="absolute top-1/2 -translate-y-1/2 right-0 text-3xl text-accentNeon hover:text-cyan-700"
+        className="absolute top-1/2 -translate-y-1/2 right-0 text-3xl text-ACCENT hover:text-ACCENT"
         onClick={() => emblaApi && emblaApi.scrollNext()}
       >
         <IoCaretForwardCircleOutline />
@@ -73,11 +73,11 @@ const DevCarouselV1 = ({ carouselData, perView = 1 }: emblaCarouselProps) => {
           <GoDot
             onClick={() => scrollTo(index)}
             key={index}
-            className={`cursor-pointer transition-all duration-500 hover:text-accentNeon 
+            className={`cursor-pointer transition-all duration-500 hover:text-ACCENT 
               ${
                 index === selectedSlideIndex
-                  ? " text-accentNeon text-lg"
-                  : " text-accentNeon/40 text-base"
+                  ? " text-ACCENT text-lg"
+                  : " text-ACCENT/40 text-base"
               }
             `}
           />

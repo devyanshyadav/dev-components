@@ -49,22 +49,22 @@ const DevEmojiPickerV2 = ({
   }, []);
 
   return (
-    <section className="w-fit  shadow-lg h-72 rounded-xl space-y-2 bg-rtlLight dark:bg-rtlDark border-accentNeon/50 border p-2 flex flex-col">
+    <section className="w-fit  shadow-lg h-72 rounded-xl space-y-2 bg-LIGHT dark:bg-DARK border-ACCENT/50 border p-2 flex flex-col">
       <div className="relative">
         <input
           type="text"
           onChange={handleFindEmoji}
           value={hoveredEmoji ?? ""}
-          className="w-full p-1 px-2 pl-8 rounded-full bg-accentNeon/20  border border-accentNeon/50 text-sm focus:border-accentNeon focus:outline-none"
+          className="w-full p-1 px-2 pl-8 rounded-full bg-ACCENT/20  border border-ACCENT/50 text-sm focus:border-ACCENT focus:outline-none"
           placeholder="Search by tag or alias"
         />
-        <FiSearch className="absolute top-2 left-2 text-accentNeon" />
+        <FiSearch className="absolute top-2 left-2 text-ACCENT" />
       </div>
-      <div className="grid grid-cols-9 gap-1 text-accentNeon bg-accentNeon/30 rounded-full  p-1 text-xl items-center justify-center">
+      <div className="grid grid-cols-9 gap-1 text-ACCENT bg-ACCENT/30 rounded-full  p-1 text-xl items-center justify-center">
         {uniqueCategories?.map((elem, index) => (
           <button
             key={index}
-            className="cursor-pointer hover:bg-accentNeon rounded-full transition-all"
+            className="cursor-pointer hover:bg-ACCENT rounded-full transition-all"
             onClick={() => {
               setFilteredEmojis([]);
               setCurrentCategory(elem.ctgName);

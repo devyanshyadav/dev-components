@@ -41,8 +41,8 @@ const DevPaginationV1 = ({
           onClick={() => handlePageChange(1)}
           className={`p-2 rounded-full ${
             currentPage === 1
-              ? "bg-accentNeon !text-white"
-              : "text-accentNeon hover:bg-accentNeon/40"
+              ? "bg-ACCENT !text-white"
+              : "text-ACCENT hover:bg-ACCENT/40"
           }`}
         >
           1
@@ -50,7 +50,7 @@ const DevPaginationV1 = ({
       );
       if (startPage > 2) {
         pages.push(
-          <span key="start-ellipsis" className="px-2 py-1  text-accentNeon">
+          <span key="start-ellipsis" className="px-2 py-1  text-ACCENT">
             ...
           </span>
         );
@@ -65,8 +65,8 @@ const DevPaginationV1 = ({
           onClick={() => handlePageChange(i)}
           className={`p-2 rounded-full ${
             currentPage === i
-              ? "bg-accentNeon !text-white"
-              : "text-accentNeon hover:bg-accentNeon/40"
+              ? "bg-ACCENT !text-white"
+              : "text-ACCENT hover:bg-ACCENT/40"
           }`}
         >
           {i}
@@ -78,7 +78,7 @@ const DevPaginationV1 = ({
     if (endPage < totalPages) {
       if (endPage < totalPages - 1) {
         pages.push(
-          <span key="end-ellipsis" className="px-2 py-1  text-accentNeon">
+          <span key="end-ellipsis" className="px-2 py-1  text-ACCENT">
             ...
           </span>
         );
@@ -89,8 +89,8 @@ const DevPaginationV1 = ({
           onClick={() => handlePageChange(totalPages)}
           className={`p-2 rounded-full ${
             currentPage === totalPages
-              ? "bg-accentNeon !text-white"
-              : "text-accentNeon hover:bg-accentNeon/40"
+              ? "bg-ACCENT !text-white"
+              : "text-ACCENT hover:bg-ACCENT/40"
           }`}
         >
           {totalPages}
@@ -102,11 +102,11 @@ const DevPaginationV1 = ({
   };
 
   return (
-    <div className="flex *:!select-none items-center gap-1 bg-rtlLight dark:bg-rtlDark rounded-full p-1 border border-accentNeon/10">
+    <div className="flex *:!select-none items-center gap-1 bg-LIGHT dark:bg-DARK rounded-full p-1 border border-ACCENT/10">
       <button
         onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
-        className="p-2 text-2xl rounded-full text-accentNeon hover:bg-accentNeon/50 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-2 text-2xl rounded-full text-ACCENT hover:bg-ACCENT/50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BiChevronLeft />
       </button>
@@ -121,7 +121,7 @@ const DevPaginationV1 = ({
       <button
         onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
-        className="p-2 text-2xl rounded-full text-accentNeon hover:bg-accentNeon/50 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-2 text-2xl rounded-full text-ACCENT hover:bg-ACCENT/50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BiChevronRight />
       </button>

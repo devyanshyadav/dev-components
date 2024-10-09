@@ -7,7 +7,7 @@ import DevButtonV1 from './dev-button-v1'
 
 const DevButtonV1Usage = () => {
   return (
-    <section className="*:py-4 divide-y divide-accentNeon/30">
+    <section className="*:py-4 divide-y divide-ACCENT/30">
       <div>
         <h2>Base Buttons</h2>
         <div className="flex gap-2 items-center flex-wrap">

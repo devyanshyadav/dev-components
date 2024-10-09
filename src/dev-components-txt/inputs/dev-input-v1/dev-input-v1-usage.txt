@@ -4,9 +4,9 @@ import DevInputV1 from "./dev-input-v1";
 
 const DevInputV1Usage = () => {
   return (
-    <div className="*:py-4 divide-y divide-accentNeon/30 w-full max-w-xl">
+    <div className="*:py-4 divide-y divide-ACCENT/30 w-full max-w-xl">
       <div>
-        <h2 className="text-sm  text-accentNeon">
+        <h2 className="text-sm  text-ACCENT">
           Variants (base/ bordered/ faded/ underline)
         </h2>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full ">
@@ -41,7 +41,7 @@ const DevInputV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-sm  text-accentNeon">Sizes (sm/ md/ lg)</h2>
+        <h2 className="text-sm  text-ACCENT">Sizes (sm/ md/ lg)</h2>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full ">
           <DevInputV1
             type="text"
@@ -67,7 +67,7 @@ const DevInputV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-sm  text-accentNeon">
+        <h2 className="text-sm  text-ACCENT">
           Roundness (none/ sm/ md/ lg/full)
         </h2>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full ">

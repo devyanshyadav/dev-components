@@ -29,7 +29,7 @@ const DevQrCode = ({
   return (
     <div className="flex items-center justify-center gap-3 flex-col">
       <input
-        className="bg-transparent text-center outline-none focus:outline-accentNeon p-1 px-2 rounded-md border border-accentNeon/50 text-sm text-accentNeon/80"
+        className="bg-transparent text-center outline-none focus:outline-ACCENT p-1 px-2 rounded-md border border-ACCENT/50 text-sm text-ACCENT/80"
         id="QrCode"
         type="text"
         value={qrValue}
@@ -44,12 +44,12 @@ const DevQrCode = ({
           size={100}
           fgColor="#06B6D4"
           bgColor="transparent"
-          className="h-full rounded-md p-2 bg-white border border-accentNeon/30 w-40"
+          className="h-full rounded-md p-2 bg-white border border-ACCENT/30 w-40"
           value={qrValue}
         />
 
         <button
-          className="absolute text-5xl grid place-items-center group-hover:opacity-100 opacity-0 inset-0 bg-accentNeon/50"
+          className="absolute text-5xl grid place-items-center group-hover:opacity-100 opacity-0 inset-0 bg-ACCENT/50"
           onClick={handleDownload}
         >
           <ImDownload />

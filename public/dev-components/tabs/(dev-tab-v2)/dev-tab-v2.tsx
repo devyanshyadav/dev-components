@@ -12,12 +12,12 @@ const DevTabV2 = ({ tabData }: { tabData: TabProps[] }) => {
     <section className="w-full space-y-1">
       <div
         style={{ gridTemplateColumns: `repeat(${tabData.length}, 1fr)` }}
-        className={`gap-2 relative h-10 rounded-sm bg-rtlLight dark:bg-rtlDark grid`}
+        className={`gap-2 relative h-10 rounded-sm bg-LIGHT dark:bg-DARK grid`}
       >
         {tabData.map((elem, index) => (
           <button
             key={index}
-            className={`p-2 outline-none z-10 text-nowrap ${state === index && " text-accentNeon"
+            className={`p-2 outline-none z-10 text-nowrap ${state === index && " text-ACCENT"
               }`}
             onClick={() => setState(index)}
           >
@@ -29,10 +29,10 @@ const DevTabV2 = ({ tabData }: { tabData: TabProps[] }) => {
             width: `calc(100%/${tabData.length})`,
             left: `calc(${state} * 100%/${tabData.length})`,
           }}
-          className={`absolute transition-all inset-y-0 border-t-2 border-accentNeon bg-gradient-to-b from-accentNeon/30 to-transparent rounded-sm`}
+          className={`absolute transition-all inset-y-0 border-t-2 border-ACCENT bg-gradient-to-b from-ACCENT/30 to-transparent rounded-sm`}
         />
       </div>
-      <div className="bg-rtlLight w-full dark:bg-rtlDark  min-h-40 rounded-sm">
+      <div className="bg-LIGHT w-full dark:bg-DARK  min-h-40 rounded-sm">
         {tabData[state].element}
       </div>
     </section>

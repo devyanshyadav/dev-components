@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const ResponsiveNavbar = ({ menuItems, logo }) => {
   return (
-    <header className="p-3 px-5 w-full flex items-center gap-3 justify-between rounded-full bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 pr-3">
+    <header className="p-3 px-5 w-full flex items-center gap-3 justify-between rounded-full bg-LIGHT dark:bg-DARK border border-ACCENT/30 pr-3">
       <Link href="/">{logo}</Link>
       <div className="md:block hidden">
         <DevDynamicMenu menuItems={menuItems} />
@@ -19,7 +19,7 @@ const ResponsiveNavbar = ({ menuItems, logo }) => {
           position="right"
           title="Menu"
           openBtn={
-            <button className="p-2 rounded-full bg-accentNeon/20 text-accentNeon text-2xl">
+            <button className="p-2 rounded-full bg-ACCENT/20 text-ACCENT text-2xl">
               <RiMenu2Fill />
             </button>
           }

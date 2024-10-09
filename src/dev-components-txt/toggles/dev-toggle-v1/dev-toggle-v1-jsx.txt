@@ -23,7 +23,7 @@ const DevToggleV1 = ({ defaultState = true, onChange, labelName }) => {
                 }}
                 className={`
           "p-1 rounded-full relative grid ",
-         ${toggle ? "bg-accentNeon" : "bg-accentNeon/50"}
+         ${toggle ? "bg-ACCENT" : "bg-ACCENT/50"}
         `}
             >
                 <input
@@ -35,7 +35,7 @@ const DevToggleV1 = ({ defaultState = true, onChange, labelName }) => {
                     onChange={handleChange}
                 />
                 <span
-                    className="h-full absolute dark:bg-rtlLight bg-rtlDark aspect-square pointer-events-none transition-all duration-400 rounded-full"
+                    className="h-full absolute dark:bg-LIGHT bg-DARK aspect-square pointer-events-none transition-all duration-400 rounded-full"
                     style={{
                         transform: toggle
                             ? `translateX(${toggleSize.width - toggleSize.height}rem) scale(0.7)`

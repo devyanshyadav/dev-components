@@ -41,7 +41,6 @@ pre {
   cursor: pointer;
 }
 
-
 /* dev-Modal css animation */
 .Modal-Overlay {
   animation: modal-overlayShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -70,50 +69,55 @@ pre {
 }
 
 /* Dropdown animation  */
-.showDropDown{
+.showDropDown {
   animation: dropDownShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes dropDownShow {
   from {
     opacity: 0;
-    transform:scale(0.9);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
-    transform:scale(1);
+    transform: scale(1);
   }
 }
 
 /* Popover animation  */
-.showPopover{
+.showPopover {
   animation: popoverShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes popoverShow {
   from {
     opacity: 0;
-    transform:scale(0.9);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
-    transform:scale(1);
+    transform: scale(1);
   }
 }
 
 /* SelectOptions animation  */
-.showOptions{
+.showOptions {
   animation: optionShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes optionShow {
   from {
     opacity: 0;
-    transform:scale(0.9);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
-    transform:scale(1);
+    transform: scale(1);
   }
 }
 
+:root {
+  --ACCENT: 6, 182, 212;
+  --LIGHT: 245, 248, 255;
+  --DARK: 31, 41, 55;
+}

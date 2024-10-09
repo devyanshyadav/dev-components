@@ -40,7 +40,7 @@ const NavigationInfo = [
         },
         {
           propName: "className",
-          propExample: `"border-accentNeon/30 border rounded-lg"`,
+          propExample: `"border-ACCENT/30 border rounded-lg"`,
           propDetail: "Optional class name for custom styling.",
         },
       ],
@@ -79,7 +79,7 @@ const NavigationInfo = [
         },
         {
           propName: "logo",
-          propExample: `<h2 className="text-2xl font-semibold text-accentNeon">LOGO</h2>`,
+          propExample: `<h2 className="text-2xl font-semibold text-ACCENT">LOGO</h2>`,
           propDetail:
             "React node representing the logo element to be displayed in the navbar.",
         },

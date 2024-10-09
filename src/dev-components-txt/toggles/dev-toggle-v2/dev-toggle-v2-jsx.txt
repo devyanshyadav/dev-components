@@ -25,7 +25,7 @@ const DevToggleV2 = ({ defaultState = true, onChange, labelName }) => {
       >
         <hr
           className={`
-            ${toggle ? "bg-accentNeon" : "bg-accentNeon"}
+            ${toggle ? "bg-ACCENT" : "bg-ACCENT"}
             " w-full rounded-full border-none "
           `}
           style={{
@@ -41,7 +41,7 @@ const DevToggleV2 = ({ defaultState = true, onChange, labelName }) => {
           onChange={handleChange}
         />
         <span
-          className="h-full absolute bg-rtlDark dark:bg-rtlLight border-2 border-accentNeon aspect-square pointer-events-none transition-all duration-400 rounded-full"
+          className="h-full absolute bg-DARK dark:bg-LIGHT border-2 border-ACCENT aspect-square pointer-events-none transition-all duration-400 rounded-full"
           style={{
             transform: toggle
               ? "translateX(" + (toggleSize.width - toggleSize.height) + "rem)"

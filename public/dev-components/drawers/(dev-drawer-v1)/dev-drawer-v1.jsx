@@ -33,16 +33,16 @@ const DevDrawerV1 = forwardRef(
           direction={position}
           duration={200}
           style={{ padding: 0, backgroundColor: "transparent" }}
-          className={`!bg-rtlLight flex flex-col relative ${extraCss[position]} *:p-3 dark:!bg-rtlDark border-accentNeon/50 overflow-hidden`}
+          className={`!bg-LIGHT flex flex-col relative ${extraCss[position]} *:p-3 dark:!bg-DARK border-ACCENT/50 overflow-hidden`}
         >
           {title && (
-            <h2 className="border-b flex-shrink-0 border-accentNeon/50">
+            <h2 className="border-b flex-shrink-0 border-ACCENT/50">
               {title}
             </h2>
           )}
           {!closeIcon && (
             <button
-              className="absolute top-0 right-0 text-xl !p-0.5 text-accentNeon/50 hover:text-accentNeon"
+              className="absolute top-0 right-0 text-xl !p-0.5 text-ACCENT/50 hover:text-ACCENT"
               onClick={() => setOpen(false)}
               aria-label="Close drawer"
             >

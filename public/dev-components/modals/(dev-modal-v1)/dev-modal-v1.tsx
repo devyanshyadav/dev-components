@@ -49,11 +49,11 @@ const DevModalV1 = ({
         <Dialog.Trigger asChild>{modalBtn}</Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="Modal-Overlay inset-0 fixed bg-black/50 z-50" />
-          <Dialog.Content className="Modal-Content w-full  fixed z-50 top-[50%] left-[50%] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-xl bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 *:p-3">
+          <Dialog.Content className="Modal-Content w-full  fixed z-50 top-[50%] left-[50%] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-xl bg-LIGHT dark:bg-DARK border border-ACCENT/30 *:p-3">
             {(closeIcon || title) && (
               <div className="flex items-start justify-end w-full !pb-0">
                 {title && (
-                  <Dialog.Title className="flex-grow font-semibold text-accentNeon text-lg">{title}</Dialog.Title>
+                  <Dialog.Title className="flex-grow font-semibold text-ACCENT text-lg">{title}</Dialog.Title>
                 )}
                 <Dialog.Close>🗙</Dialog.Close>
               </div>

@@ -81,7 +81,7 @@ const ModalsInfo = [
         },
         {
           propName: "modalBtn",
-          propExample: `<button className="bg-accentNeon p-2 px-4 rounded-md hover:opacity-80">Open Modal</button>`,
+          propExample: `<button className="bg-ACCENT p-2 px-4 rounded-md hover:opacity-80">Open Modal</button>`,
           propDetail:
             "The button element that triggers the modal when clicked.",
         },

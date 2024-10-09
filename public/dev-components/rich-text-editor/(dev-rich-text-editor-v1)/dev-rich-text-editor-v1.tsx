@@ -82,12 +82,12 @@ const DevRichTextEditorV1 = ({
         fallback={
           <div className="flex items-center gap-4">
             <h2 className="font-semibold text-xl"> Editor Loading</h2>{" "}
-            <span className="h-5 w-5 block border-t-0 border-l-0 animate-spin rounded-full border-2 border-accentNeon"></span>{" "}
+            <span className="h-5 w-5 block border-t-0 border-l-0 animate-spin rounded-full border-2 border-ACCENT"></span>{" "}
           </div>
         }
       >
         <ReactQuill
-          className="text-black *:border-0 min-h-60 bg-rtlLight !rounded-lg overflow-hidden"
+          className="text-black *:border-0 min-h-60 bg-LIGHT !rounded-lg overflow-hidden"
           modules={modules}
           formats={formats}
           theme="snow"

@@ -14,8 +14,8 @@ const DevTooltipV1 = ({
           {children}
         </Tooltip.Trigger>
         <Tooltip.Portal>
-          <Tooltip.Content side={place} className="bg-accentNeon text-sm px-2 rounded-md">
-            <Tooltip.Arrow className="fill-accentNeon" />
+          <Tooltip.Content side={place} className="bg-ACCENT text-sm px-2 rounded-md z-50">
+            <Tooltip.Arrow className="fill-ACCENT" />
             {tipData}
           </Tooltip.Content>
         </Tooltip.Portal>

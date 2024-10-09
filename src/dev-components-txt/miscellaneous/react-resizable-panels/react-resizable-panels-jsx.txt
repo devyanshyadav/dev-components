@@ -8,26 +8,26 @@ const ReactResizablePanels = () => {
       <Panel
         defaultSize={30}
         minSize={10}
-        className="grid place-items-center bg-rtlLight dark:bg-rtlDark rounded-md"
+        className="grid place-items-center bg-LIGHT dark:bg-DARK rounded-md"
       >
         left
       </Panel>
 
-      <PanelResizeHandle className="w-2 hover:bg-accentNeon/50 h-full rounded-md  active:bg-accentNeon" />
+      <PanelResizeHandle className="w-2 hover:bg-ACCENT/50 h-full rounded-md  active:bg-ACCENT" />
       <Panel defaultSize={30} minSize={10}>
         <PanelGroup direction="vertical" className="w-[90vw]">
           <Panel
             defaultSize={30}
             minSize={10}
-            className="grid place-items-center bg-rtlLight dark:bg-rtlDark rounded-md"
+            className="grid place-items-center bg-LIGHT dark:bg-DARK rounded-md"
           >
             top
           </Panel>
-          <PanelResizeHandle className="w-full h-2 rounded-md hover:bg-accentNeon/50  active:bg-accentNeon" />
+          <PanelResizeHandle className="w-full h-2 rounded-md hover:bg-ACCENT/50  active:bg-ACCENT" />
           <Panel
             defaultSize={30}
             minSize={10}
-            className="grid place-items-center bg-rtlLight dark:bg-rtlDark rounded-md"
+            className="grid place-items-center bg-LIGHT dark:bg-DARK rounded-md"
           >
             bottom
           </Panel>

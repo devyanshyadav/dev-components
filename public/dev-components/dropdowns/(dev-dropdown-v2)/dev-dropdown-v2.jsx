@@ -44,7 +44,7 @@ const DevDropdownV2 = ({
       <DropdownMenu.Content
         sideOffset={3}
         side={place}
-        className={`bg-rtlLight origin-[var(--radix-dropdown-menu-content-transform-origin)] showDropDown dark:bg-rtlDark rounded-lg p-2 border-accentNeon/30 rounded-b-lg border`}
+        className={`bg-LIGHT origin-[var(--radix-dropdown-menu-content-transform-origin)] z-50 showDropDown dark:bg-DARK rounded-lg p-2 border-ACCENT/30 rounded-b-lg border`}
       >
         <DropdownMenu.Item className="outline-none" asChild>
           {children}

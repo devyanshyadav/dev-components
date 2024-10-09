@@ -32,7 +32,7 @@ const ClipboardsInfo = [
         {
           propName: "className",
           propExample:
-            '"flex items-center justify-center gap-1 bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 active:bg-accentNeon/50"',
+            '"flex items-center justify-center gap-1 bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 active:bg-ACCENT/50"',
           propDetail: "Custom CSS classes to style the button.",
         },
         {

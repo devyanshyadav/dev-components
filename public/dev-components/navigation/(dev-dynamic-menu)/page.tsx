@@ -94,7 +94,7 @@ const DevDynamicMenuUsage = () => {
   ];
   return (
     <div className="self-start w-full md:w-auto">
-      <DevDynamicMenu className="border-accentNeon/30 border rounded-lg" menuItems={menuItems} />
+      <DevDynamicMenu className="border-ACCENT/30 border rounded-lg" menuItems={menuItems} />
     </div>
   );
 };

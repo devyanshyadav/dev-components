@@ -4,7 +4,7 @@ import DevToggleV2 from "./dev-toggle-v2";
 
 const DevToggleV2Usage = () => {
   return (
-    <div className="bg-rtlLight dark:bg-rtlDark p-3 rounded-lg flex gap-3">
+    <div className="bg-LIGHT dark:bg-DARK p-3 rounded-lg flex gap-3">
       <DevToggleV2 labelName="Sleek Switch" defaultState={false} onChange={(e) => console.log(e)} />
     </div>
   );

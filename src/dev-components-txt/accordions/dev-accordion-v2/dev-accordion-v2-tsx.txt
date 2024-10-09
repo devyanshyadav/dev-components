@@ -7,7 +7,7 @@ type AccordionProps = {
 
 const DevAccordionV2 = ({ AccordData }: AccordionProps) => {
   return (
-    <div className="w-full border border-accentNeon/30 divide-y divide-accentNeon/50 bg-rtlLight dark:bg-rtlDark rounded-xl overflow-hidden px-1">
+    <div className="w-full border border-ACCENT/30 divide-y divide-ACCENT/50 bg-LIGHT dark:bg-DARK rounded-xl overflow-hidden px-1">
       {AccordData.map((e, i) => (
         <div key={i} className="group p-2 px-5 space-y-1">
           <div className="relative">
@@ -18,7 +18,7 @@ const DevAccordionV2 = ({ AccordData }: AccordionProps) => {
             />
             <label
               htmlFor={`accordion-${i}`}
-              className="flex hover:text-accentNeon z-10 relative justify-between items-center w-full text-left cursor-pointer"
+              className="flex hover:text-ACCENT z-10 relative justify-between items-center w-full text-left cursor-pointer"
             >
               <h2 className="text-md font-semibold">{e.title}</h2>
             </label>

@@ -13,7 +13,7 @@ const DevTooltipV2 = ({ children, place = "top", tipData }) => {
                 opacity={1}
                 style={{ backgroundColor: "transparent", padding: "0px" }}
             >
-                <span className="bg-accentNeon/50 border border-accentNeon text-sm px-2 rounded-full text-black dark:text-white">
+                <span className="bg-ACCENT/50 border border-ACCENT text-sm px-2 rounded-full text-black z-50 dark:text-white">
                     {tipData}
                 </span>
             </Tooltip>

@@ -44,14 +44,14 @@ const DevColorPickerV1 = ({
       button={
         <button
           data-tooltip-id="colorful-picker-popover"
-          className="min-w-32  min-h-8 rounded-md border-2 border-accentNeon focus:border-white"
+          className="min-w-32  min-h-8 rounded-md border-2 border-ACCENT focus:border-white"
           style={{
             background: color,
           }}
         />
       }
     >
-      <PickerDiv className="bg-rtlLight dark:bg-rtlDark p-1 rounded-lg w-[200px] space-y-2">
+      <PickerDiv className="bg-LIGHT dark:bg-DARK p-1 rounded-lg w-[200px] space-y-2">
         <HexAlphaColorPicker
           color={color}
           onChange={(newColor) => onChangeHandler?.(newColor)}
@@ -60,7 +60,7 @@ const DevColorPickerV1 = ({
           <input
             spellCheck={false}
             type="text"
-            className="w-full px-1 outline-none border-2 border-accentNeon rounded-md border-transparent focus:border-accentNeon bg-accentNeon/50"
+            className="w-full px-1 outline-none border-2 border-ACCENT rounded-md border-transparent focus:border-ACCENT bg-ACCENT/50"
             value={color}
             onChange={(e) => onChangeHandler(e.target.value)}
           />

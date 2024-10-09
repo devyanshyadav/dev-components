@@ -37,11 +37,11 @@ const DevChipInput = ({ defaultValues, onChange, trigger = "Enter", tagLength = 
   };
 
   return (
-    <div className="w-full relative bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 flex flex-wrap gap-2 p-3 rounded-xl">
+    <div className="w-full relative bg-LIGHT dark:bg-DARK border border-ACCENT/30 flex flex-wrap gap-2 p-3 rounded-xl">
       {tags.map((tag) => (
         <span
           key={tag.key}
-          className="flex select-none text-base w-fit gap-2 px-3 pr-1 rounded-full text-accentNeon items-center bg-accentNeon/30"
+          className="flex select-none text-base w-fit gap-2 px-3 pr-1 rounded-full text-ACCENT items-center bg-ACCENT/30"
         >
           {tag.name}
           <RiCloseCircleFill
@@ -60,7 +60,7 @@ const DevChipInput = ({ defaultValues, onChange, trigger = "Enter", tagLength = 
       )}
       <button 
         role="clear-btn" 
-        className="absolute right-2 top-1 text-lg text-accentNeon/50 hover:text-accentNeon" 
+        className="absolute right-2 top-1 text-lg text-ACCENT/50 hover:text-ACCENT" 
         onClick={() => setTags([])}
       >
         🗙

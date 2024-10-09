@@ -5,7 +5,7 @@ import DevRangeSliderV1 from "./dev-range-slider-v1";
 const DevRangeSliderV1Usage = () => {
 
   return (
-   <div className="w-full bg-rtlLight dark:bg-rtlDark p-5 max-w-md rounded-md ">
+   <div className="w-full bg-LIGHT dark:bg-DARK p-5 max-w-md rounded-md ">
      <DevRangeSliderV1
       min={10}
       max={100}

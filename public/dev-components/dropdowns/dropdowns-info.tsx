@@ -27,7 +27,7 @@ const DropdownsInfo = [
         },
         {
           propName: "button",
-          propExample: `<button className='p-1 px-3 bg-accentNeon text-white rounded-lg'>Open</button>`,
+          propExample: `<button className='p-1 px-3 bg-ACCENT text-white rounded-lg'>Open</button>`,
           propDetail: "Customizable trigger button element.",
         },
         {
@@ -73,7 +73,7 @@ const DropdownsInfo = [
         },
         {
           propName: "button",
-          propExample: `<button className="p-1 px-3 bg-accentNeon text-white rounded-lg">Open</button>`,
+          propExample: `<button className="p-1 px-3 bg-ACCENT text-white rounded-lg">Open</button>`,
           propDetail: "Customizable trigger button element.",
         },
         {

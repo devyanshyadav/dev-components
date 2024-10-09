@@ -36,12 +36,12 @@ const DevPopoverV1 = ({
         <Content
           side={place}
           sideOffset={2}
-          className={`p-1 *:!border-0 origin-[var(--radix-popover-content-transform-origin)] showPopover rounded-lg bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 ${
+          className={`p-1 *:!border-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30 ${
             closeIcon && "pt-4"
           }`}
         >
           {closeIcon && (
-            <Close className="text-accentNeon rounded-full p-0.5 absolute top-0.5 right-0.5 text-sm">
+            <Close className="text-ACCENT rounded-full p-0.5 absolute top-0.5 right-0.5 text-sm">
               🗙
             </Close>
           )}

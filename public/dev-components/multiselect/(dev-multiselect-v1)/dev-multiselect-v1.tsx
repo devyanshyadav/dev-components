@@ -15,22 +15,22 @@ const DevMultiselectV1 = ({ options, onChange, defaultValues }: SelectProps) => 
                 options={options}
                 onChange={(e) => onChange?.(e)}
                 classNames={{
-                    control: () => 'bg-rtlLight dark:bg-rtlDark !rounded-xl !border-accentNeon/70',
+                    control: () => 'bg-LIGHT dark:bg-DARK !rounded-xl !border-ACCENT/70',
                     option: ({ isFocused, isSelected }) =>
                         `rounded-lg !cursor-pointer !p-1 !px-2 ${isSelected
-                            ? `!bg-accentNeon text-white`
+                            ? `!bg-ACCENT text-white`
                             : isFocused
-                            && `!bg-accentNeon/20 !text-accentNeon`
+                            && `!bg-ACCENT/20 !text-ACCENT`
                         }`,
-                    menu: () => '!bg-rtlLight dark:!bg-rtlDark !rounded-xl p-1.5',
+                    menu: () => '!bg-LIGHT dark:!bg-DARK !rounded-xl p-1.5',
                     menuList: () => 'space-y-1',
                     singleValue: () => `!text-black dark:!text-white`,
                     input: () => '!text-black dark:!text-white',
                     indicatorSeparator: () => 'hidden',
-                    dropdownIndicator: () => '!text-accentNeon !cursor-pointer',
-                    multiValue: () => '!bg-accentNeon/20 !rounded-lg !text-accentNeon',
-                    multiValueLabel: () => '!text-accentNeon',
-                    multiValueRemove: () => '!bg-accentNeon/20 !rounded-r-lg !text-accentNeon',
+                    dropdownIndicator: () => '!text-ACCENT !cursor-pointer',
+                    multiValue: () => '!bg-ACCENT/20 !rounded-lg !text-ACCENT',
+                    multiValueLabel: () => '!text-ACCENT',
+                    multiValueRemove: () => '!bg-ACCENT/20 !rounded-r-lg !text-ACCENT',
                 }}
             />
         </div>

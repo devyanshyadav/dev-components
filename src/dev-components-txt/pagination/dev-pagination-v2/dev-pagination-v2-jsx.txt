@@ -15,11 +15,11 @@ const DevPaginationV2 = ({
   };
 
   return (
-    <div className="flex *:!select-none items-center bg-rtlLight dark:bg-rtlDark rounded-full p-1 border border-accentNeon/10 gap-2">
+    <div className="flex *:!select-none items-center bg-LIGHT dark:bg-DARK rounded-full p-1 border border-ACCENT/10 gap-2">
       <button
         onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
-        className="p-2 text-2xl rounded-full text-accentNeon hover:bg-accentNeon/50 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-2 text-2xl rounded-full text-ACCENT hover:bg-ACCENT/50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BiChevronLeft />
       </button>
@@ -29,7 +29,7 @@ const DevPaginationV2 = ({
       <button
         onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
-        className="p-2 text-2xl rounded-full text-accentNeon hover:bg-accentNeon/50 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="p-2 text-2xl rounded-full text-ACCENT hover:bg-ACCENT/50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BiChevronRight />
       </button>

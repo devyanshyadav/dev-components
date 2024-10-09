@@ -26,7 +26,7 @@ const PopoversInfo = [
         },
         {
           propName: "button",
-          propExample: `<button className='p-1 px-3 bg-accentNeon text-white rounded-lg'>Open</button>`,
+          propExample: `<button className='p-1 px-3 bg-ACCENT text-white rounded-lg'>Open</button>`,
           propDetail: "The button element that triggers the popover. Should be passed as a child prop.",
         },
         {
@@ -74,7 +74,7 @@ const PopoversInfo = [
         },
         {
           propName: "button",
-          propExample: `<button className="p-1 px-3 bg-accentNeon text-white rounded-lg">Open</button>`,
+          propExample: `<button className="p-1 px-3 bg-ACCENT text-white rounded-lg">Open</button>`,
           propDetail: "Customizable trigger button element.",
         },
         {

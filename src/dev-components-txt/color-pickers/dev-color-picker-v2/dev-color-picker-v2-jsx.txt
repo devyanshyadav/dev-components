@@ -32,7 +32,7 @@ const DevColorPickerV2 = ({
       button={
         <button
           data-tooltip-id="color-picker-popover"
-          className="min-w-32 min-h-8 rounded-md border-2 border-accentNeon focus:border-white"
+          className="min-w-32 min-h-8 rounded-md border-2 border-ACCENT focus:border-white"
           style={{
             backgroundColor: color.hexa ? color.hexa : color.hex,
           }}

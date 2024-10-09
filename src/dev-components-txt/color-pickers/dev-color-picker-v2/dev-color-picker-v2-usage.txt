@@ -4,7 +4,7 @@ import DevColorPickerV2 from './dev-color-picker-v2';
 
 const DevColorPickerV2Usage = () => {
     return (
-        <div className="p-5 rounded-md bg-rtlLight dark:bg-rtlDark">
+        <div className="p-5 rounded-md bg-LIGHT dark:bg-DARK">
             <DevColorPickerV2 defaultColor={{ hex: "#E26F1D" }} onChange={(e) => console.log(e)} />
         </div>
     )

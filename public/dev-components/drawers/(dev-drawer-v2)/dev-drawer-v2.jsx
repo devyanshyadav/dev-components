@@ -31,7 +31,7 @@ export default function DevDrawerV2({
           } z-50`}
         />
         <Drawer.Content
-          className={`z-50 bg-rtlLight shadow-[3px_200px_0px_1px_rgba(0,0,0,0)] border-accentNeon/50 dark:bg-rtlDark fixed flex flex-col  ${
+          className={`z-50 bg-LIGHT shadow-[3px_200px_0px_1px_rgba(0,0,0,0)] border-ACCENT/50 dark:bg-DARK fixed flex flex-col  ${
             getPositionClasses[position]
           } ${
             accommodate &&
@@ -40,7 +40,7 @@ export default function DevDrawerV2({
           }`}
         >
           {title && (
-            <h2 className="border-b p-3 border-accentNeon/50 text-accentNeon font-semibold flex-shrink-0">
+            <h2 className="border-b p-3 border-ACCENT/50 text-ACCENT font-semibold flex-shrink-0">
               {title}
             </h2>
           )}

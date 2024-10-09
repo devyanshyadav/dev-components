@@ -10,7 +10,7 @@ const DevModalV2Usage = () => {
       ref={closeRef} //optional
       title="Dev Modal"
       modalBtn={
-        <button className="bg-accentNeon p-2 px-4 rounded-md hover:opacity-80">
+        <button className="bg-ACCENT p-2 px-4 rounded-md hover:opacity-80">
           Open Modal
         </button>
       }
@@ -23,7 +23,7 @@ const DevModalV2Usage = () => {
         </p>
         <button
           onClick={handleClose}
-          className="bg-accentNeon p-1 px-4 rounded-xl hover:opacity-80"
+          className="bg-ACCENT p-1 px-4 rounded-xl hover:opacity-80"
         >
           Close
         </button>

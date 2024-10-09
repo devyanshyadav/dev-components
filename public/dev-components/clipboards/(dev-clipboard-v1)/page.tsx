@@ -7,7 +7,7 @@ const DevClipboardV1Usage = () => {
   return (
     <DevClipboardV1
       textClip={process.env.NEXT_PUBLIC_BASE_URL as string}
-      className="flex items-center justify-center gap-1 bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 active:bg-accentNeon/50"
+      className="flex items-center justify-center gap-1 bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 active:bg-ACCENT/50"
       beforeCopy={<span className='flex items-center gap-1'>
         <MdContentCopy />
         Copy</span>}

@@ -27,7 +27,7 @@ type ToastClassMap = {
 const TOAST_CLASSES: ToastClassMap = {
   [ToastType.DEFAULT]: {
     className:
-      "bg-rtlLight dark:bg-rtlDark after:bg-accentNeon after:bg-accentNeon/70 border-accentNeon/50",
+      "bg-LIGHT dark:bg-DARK after:bg-ACCENT after:bg-ACCENT/70 border-ACCENT/50",
     icon: <></>,
   },
   [ToastType.SUCCESS]: {

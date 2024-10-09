@@ -9,7 +9,7 @@ const BrandCarousel = ({brands}: {brands: React.ReactNode[]}) => {
         {brands.map((brand, index) => (
           <div
             key={`first-${index}`}
-            className="flex bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 items-center justify-center min-w-[200px] h-24 rounded-lg"
+            className="flex bg-LIGHT dark:bg-DARK border border-ACCENT/30 items-center justify-center min-w-[200px] h-24 rounded-lg"
           >
             {brand}
           </div>
@@ -18,7 +18,7 @@ const BrandCarousel = ({brands}: {brands: React.ReactNode[]}) => {
         {brands.map((brand, index) => (
           <div
             key={`second-${index}`}
-            className="flex bg-rtlLight dark:bg-rtlDark border border-accentNeon/30 items-center justify-center min-w-[200px] h-24 rounded-lg"
+            className="flex bg-LIGHT dark:bg-DARK border border-ACCENT/30 items-center justify-center min-w-[200px] h-24 rounded-lg"
           >
             {brand}
           </div>

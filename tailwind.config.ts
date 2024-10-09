@@ -11,9 +11,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accentNeon: "#06b6d4",
-        rtlLight: "#F5F8FF",
-        rtlDark: "#1f2937",
+        ACCENT:'rgba(var(--ACCENT), <alpha-value>)',
+        LIGHT: 'rgba(var(--LIGHT), <alpha-value>)',
+        DARK: 'rgba(var(--DARK), <alpha-value>)',
+        accentNeon:"#06b6d4",
+        rtlLight:"#F5F8FF",
+        rtlDark:"#1f2937"
       },
     },
   },

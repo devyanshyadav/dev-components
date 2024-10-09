@@ -31,19 +31,19 @@ const DevSelectV1 = ({
         onChange={(e) => onChange?.(e)}
         classNames={{
           control: () =>
-            "bg-rtlLight dark:bg-rtlDark !rounded-xl !border-accentNeon/70",
+            "bg-LIGHT dark:bg-DARK !rounded-xl !border-ACCENT/70",
           option: ({ isFocused, isSelected }) =>
             `rounded-lg !cursor-pointer !p-1 !px-2 ${
               isSelected
-                ? `!bg-accentNeon text-white`
-                : isFocused && `!bg-accentNeon/20 !text-accentNeon`
+                ? `!bg-ACCENT text-white`
+                : isFocused && `!bg-ACCENT/20 !text-ACCENT`
             }`,
-          menu: () => "!bg-rtlLight dark:!bg-rtlDark !rounded-xl p-1.5",
+          menu: () => "!bg-LIGHT dark:!bg-DARK !rounded-xl p-1.5",
           menuList: () => "space-y-1",
           singleValue: () => `!text-black dark:!text-white`,
           input: () => "!text-black dark:!text-white",
           indicatorSeparator: () => "hidden",
-          dropdownIndicator: () => "!text-accentNeon !cursor-pointer",
+          dropdownIndicator: () => "!text-ACCENT !cursor-pointer",
         }}
       />
     </div>

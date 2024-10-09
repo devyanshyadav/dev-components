@@ -6,11 +6,11 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 import CmpUrl from "@/utils/cmp-url";
-import DevInputV2 from "../../../../public/dev-components/inputs/(dev-input-v2)/dev-input-v2";
 import ComponentDataArray from "../../../../public/component-data-array";
 import Downshift from "downshift";
 import { useRouter } from "next/navigation";
 import { PiCaretRightBold } from "react-icons/pi";
+import LaserInput from "../laser-input";
 
 const SearchModal = ({bgDrop =true}:{bgDrop?:boolean}) => {
   const [mount, setMount] = useState(false);
@@ -37,7 +37,7 @@ const SearchModal = ({bgDrop =true}:{bgDrop?:boolean}) => {
           }) => (
             <div className="relative w-full">
               <label className="flex flex-col" {...getLabelProps()}>
-                <DevInputV2
+                <LaserInput
                   scale="md"
                   icon={<LuSearch className="text-xl" />}
                   placeholder="Search Components.."

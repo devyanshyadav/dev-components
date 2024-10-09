@@ -20,7 +20,7 @@ const ReactMovable = ({ items, onChange }) => {
                     ...props.style,
                     margin: '0.5em 0em',
                 }}
-                className={`${isDragged ? "cursor-grabbing bg-accentNeon" : "hover:!bg-accentNeon/20 bg-rtlLight dark:bg-rtlDark"} border cursor-grab list-none w-full p-4  border-accentNeon/30 shadow rounded-lg `}
+                className={`${isDragged ? "cursor-grabbing bg-ACCENT" : "hover:!bg-ACCENT/20 bg-LIGHT dark:bg-DARK"} border cursor-grab list-none w-full p-4  border-ACCENT/30 shadow rounded-lg `}
             >
                 {value}
             </li>)}

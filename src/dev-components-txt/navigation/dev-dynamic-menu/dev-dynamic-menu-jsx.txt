@@ -36,13 +36,13 @@ const MenuItem = ({
       ${
         isFirstLevel
           ? "flex items-center justify-center flex-col"
-          : "w-full md:hover:bg-accentNeon/20"
+          : "w-full md:hover:bg-ACCENT/20"
       }
     `}
     >
       <Link
         href={item.path}
-        className="cursor-pointer w-full whitespace-nowrap hover:text-accentNeon
+        className="cursor-pointer w-full whitespace-nowrap hover:text-ACCENT
           flex items-center justify-between"
       >
         {item.name}
@@ -52,8 +52,8 @@ const MenuItem = ({
       {item.subLinks && (
         <ul
           className={`
-          bg-rtlLight dark:bg-rtlDark 
-          divide-y border-l-2 md:border-l divide-accentNeon/30 
+          bg-LIGHT dark:bg-DARK 
+          divide-y border-l-2 md:border-l divide-ACCENT/30 
           md:opacity-0 
           hidden
           w-full
@@ -63,7 +63,7 @@ const MenuItem = ({
           md:scale-0 
           z-40 
           ${paths[depth] ? paths[depth][1] : ""}
-          md:border border-accentNeon/30 
+          md:border border-ACCENT/30 
           md:shadow-md font-normal text-sm 
           md:absolute 
           transition-all duration-200
@@ -87,7 +87,7 @@ const MenuItem = ({
 
 const DevDynamicMenu = ({ menuItems, className }) => {
   return (
-    <nav className={`bg-rtlLight dark:bg-rtlDark w-full ${className}`}>
+    <nav className={`bg-LIGHT dark:bg-DARK w-full ${className}`}>
       <ul className="flex flex-col md:flex-row items-start md:items-center justify-between">
         {menuItems.map((item, index) => (
           <MenuItem key={index} item={item} />

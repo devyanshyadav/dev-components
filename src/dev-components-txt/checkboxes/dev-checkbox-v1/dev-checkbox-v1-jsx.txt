@@ -16,7 +16,7 @@ const DevCheckboxV1 = ({
   return (
     <>
       <span
-        className={`border-2 relative border-accentNeon text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer ${check ? "bg-accentNeon" : "bg-accentNeon/20"
+        className={`border-2 relative border-ACCENT text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer ${check ? "bg-ACCENT" : "bg-ACCENT/20"
           }`}
       >
         {check && (

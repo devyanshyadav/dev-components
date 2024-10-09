@@ -6,7 +6,7 @@ const DevModalV1Usage = () => {
     <DevModalV1
       title="Dev Modal"
       modalBtn={
-        <button className="bg-accentNeon p-2 px-4 rounded-md hover:opacity-80">
+        <button className="bg-ACCENT p-2 px-4 rounded-md hover:opacity-80">
           Open Modal
         </button>
       }
@@ -19,7 +19,7 @@ const DevModalV1Usage = () => {
         </p>
 
         <ModalTrigger>
-          <button className="bg-accentNeon p-1 px-4 rounded-xl hover:opacity-80">
+          <button className="bg-ACCENT p-1 px-4 rounded-xl hover:opacity-80">
             Close
           </button>
         </ModalTrigger>

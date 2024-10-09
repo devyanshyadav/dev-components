@@ -2,22 +2,21 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 
-const DevLaserInput = ({
+const DevInputV2 = ({
   scale = "sm",
   rounded = "full",
-  laserColor = "#01FFF5",
   laserActiveOnClick = true,
   reverseIcon = false,
   icon,
   className,
   ...props
 }) => {
-  const [isHovered, setIsHovered] = useState < boolean > (false);
-  const [childPosition, setChildPosition] = useState < number > (0);
-  const [active, setActive] = useState < boolean > (false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [childPosition, setChildPosition] = useState(0);
+  const [active, setActive] = useState(false);
 
   const [childColor, setChildColor] = useState(
-    `linear-gradient(to right, transparent, ${laserColor}, transparent)`
+    `bg-gradient-to-r from-transparent via-ACCENT to-transparent`
   );
   const handleMouseMove = (e) => {
     const parentRect = e.currentTarget.getBoundingClientRect();
@@ -26,17 +25,17 @@ const DevLaserInput = ({
     if (x < 0) {
       setChildPosition(0);
       setChildColor(
-        `linear-gradient(to right, ${laserColor}, ${laserColor}, transparent)`
+        `bg-gradient-to-r from-ACCENT via-ACCENT to-transparent`
       );
     } else if (x > parentRect.width - 100) {
       setChildPosition(parentRect.width - 96);
       setChildColor(
-        `linear-gradient(to right, transparent, ${laserColor}, ${laserColor})`
+        `bg-gradient-to-r from-transparent via-ACCENT to-ACCENT`
       );
     } else {
       setChildPosition(x);
       setChildColor(
-        `linear-gradient(to right, transparent, ${laserColor} 50%, transparent)`
+        `bg-gradient-to-r from-transparent via-ACCENT to-transparent`
       );
     }
   };
@@ -68,24 +67,24 @@ const DevLaserInput = ({
       <span
         className={clsx(
           "absolute top-0 bottom-0 rounded-lg ",
+          active ? "bg-ACCENT" : childColor,
           isHovered || (active && laserActiveOnClick) ? "block" : "hidden",
           active ? "w-full  transition-all  duration-200 opacity-50" : "w-24"
         )}
         style={{
           left: `${active ? 0 : childPosition}px`,
-          background: active ? "#01FFF5" : childColor,
         }}
       />
 
       <div
         className={clsx(
           InputRounded,
-          "absolute text-sm px-2 inset-[2px] flex items-center justify-center flex-grow border border-accentNeon/50 bg-rtlLight dark:bg-rtlDark gap-2  outline outline-accentNeon/20",
+          "absolute text-sm px-2 inset-[2px] flex items-center justify-center flex-grow border border-ACCENT/50 bg-LIGHT dark:bg-DARK gap-2  outline outline-ACCENT/20",
           className,
           reverseIcon && "flex-row-reverse"
         )}
       >
-        {icon && <span className={clsx("z-10", laserColor)}>{icon}</span>}
+        {icon && <span className={clsx("z-10 ACCENT")}>{icon}</span>}
         <input
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
@@ -98,4 +97,4 @@ const DevLaserInput = ({
   );
 };
 
-export default DevLaserInput;
+export default DevInputV2;

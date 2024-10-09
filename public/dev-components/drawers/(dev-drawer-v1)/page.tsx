@@ -11,7 +11,7 @@ const DevDrawerV1Usage = () => {
       position="right"
       title="Drawer Title"
       openBtn={
-        <button className="bg-accentNeon p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-accentNeon/50">
+        <button className="bg-ACCENT p-2 px-3 rounded-lg text-white active:scale-95 hover:bg-ACCENT/50">
           Open Drawer
         </button>
       }
@@ -21,7 +21,7 @@ const DevDrawerV1Usage = () => {
 
         <button
           onClick={handleClose}
-          className="p-2 rounded-md bg-accentNeon hover:bg-accentNeon/70"
+          className="p-2 rounded-md bg-ACCENT hover:bg-ACCENT/70"
         >
           Close
         </button>
