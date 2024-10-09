@@ -63,7 +63,7 @@ const ColorPckr = ({
         <Sketch
           color={color.hex}
           onChange={onChangeHandler}
-          presetColors={["#E26F1D", "#F17013", "#F8C471"]}
+          presetColors={["#2563eb", "#4f46e5", "#7c3aed", "#9333ea", "#f97316"]}
         />
       </PickerDiv>
     </ColorPopover>
