@@ -69,8 +69,8 @@ const ComponentInfo = ({
     // Update currVariant to match the current selection
     setCurrVariant(
       currVariant === cmpCodes.jsxCode
-        ? updatedCmpCodes.jsxCode
-        : updatedCmpCodes.tsxCode
+        ? `//JSX code \n ${updatedCmpCodes.jsxCode}`
+        : `//TSX code \n ${updatedCmpCodes.tsxCode}`
     );
   }, [AccentLabel, DarkLabel, LightLabel]);
 
@@ -141,7 +141,7 @@ const ComponentInfo = ({
               }`}
               onClick={() => setCurrVariant(() => cmpCodes.jsxCode)}
             >
-              Jsx
+              JSX
             </button>
             <button
               className={`${
@@ -150,7 +150,7 @@ const ComponentInfo = ({
               }`}
               onClick={() => setCurrVariant(() => cmpCodes.tsxCode)}
             >
-              Tsx
+              TSX
             </button>
           </div>
         )}
