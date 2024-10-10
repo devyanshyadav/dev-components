@@ -132,8 +132,7 @@ const ComponentInfo = ({
             <hr className="transform absolute border-0 inset-x-0 h-[2px] bottom-0 bg-gradient-to-r from-accentNeon/50 to-transparent" />
           </li>
         </ul>
-        {CurrTab === 1 && (
-          <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
+        <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
             <button
               className={`${
                 currVariant === cmpCodes.jsxCode &&
@@ -153,8 +152,6 @@ const ComponentInfo = ({
               TSX
             </button>
           </div>
-        )}
-
         <div
           className={clsx(
             "flex-grow overflow-auto *:p-5",
