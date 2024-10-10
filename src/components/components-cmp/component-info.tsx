@@ -60,17 +60,17 @@ const ComponentInfo = ({
 
   useEffect(() => {
     const updatedCmpCodes = {
-      jsxCode: changeColorNameToHex(component_code.jsxCode),
-      tsxCode: changeColorNameToHex(component_code.tsxCode),
-      usageCode: changeColorNameToHex(component_usage_code),
+      jsxCode: changeColorNameToHex(`//JSX code \n${component_code.jsxCode}`),
+      tsxCode: changeColorNameToHex(`//TSX code \n${component_code.tsxCode}`),
+      usageCode: changeColorNameToHex(`//Usage code \n${component_usage_code}`),
     };
     setCmpCodes(updatedCmpCodes);
 
     // Update currVariant to match the current selection
     setCurrVariant(
       currVariant === cmpCodes.jsxCode
-        ? `//JSX code \n ${updatedCmpCodes.jsxCode}`
-        : `//TSX code \n ${updatedCmpCodes.tsxCode}`
+        ? updatedCmpCodes.jsxCode
+        : updatedCmpCodes.tsxCode
     );
   }, [AccentLabel, DarkLabel, LightLabel]);
 
@@ -132,26 +132,24 @@ const ComponentInfo = ({
             <hr className="transform absolute border-0 inset-x-0 h-[2px] bottom-0 bg-gradient-to-r from-accentNeon/50 to-transparent" />
           </li>
         </ul>
-        <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
-            <button
-              className={`${
-                currVariant === cmpCodes.jsxCode &&
-                "bg-accentNeon/50 text-white"
-              }`}
-              onClick={() => setCurrVariant(() => cmpCodes.jsxCode)}
-            >
-              JSX
-            </button>
-            <button
-              className={`${
-                currVariant === cmpCodes.tsxCode &&
-                "bg-accentNeon/50 text-white"
-              }`}
-              onClick={() => setCurrVariant(() => cmpCodes.tsxCode)}
-            >
-              TSX
-            </button>
-          </div>
+        {CurrTab === 1 && <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
+          <button
+            className={`${
+              currVariant === cmpCodes.jsxCode && "bg-accentNeon/50 text-white"
+            }`}
+            onClick={() => setCurrVariant(() => cmpCodes.jsxCode)}
+          >
+            JSX
+          </button>
+          <button
+            className={`${
+              currVariant === cmpCodes.tsxCode && "bg-accentNeon/50 text-white"
+            }`}
+            onClick={() => setCurrVariant(() => cmpCodes.tsxCode)}
+          >
+            TSX
+          </button>
+        </div>}
         <div
           className={clsx(
             "flex-grow overflow-auto *:p-5",
