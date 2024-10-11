@@ -30,6 +30,7 @@ const DateInfo = [
           propDetail: "Initial date displayed in the calendar.",
         },
       ],
+      doc_links:["https://projects.wojtekmaj.pl/react-calendar/"],
       packages: [
         {
           pckg_name: "react-calendar",

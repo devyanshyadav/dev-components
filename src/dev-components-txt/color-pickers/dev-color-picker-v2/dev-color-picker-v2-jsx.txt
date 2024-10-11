@@ -2,7 +2,7 @@
 import styled from "styled-components";
 import { ColorResult, Sketch } from "@uiw/react-color";
 import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const PickerDiv = styled.div`
   .w-color-sketch {
@@ -27,6 +27,9 @@ const DevColorPickerV2 = ({
     setColor(e);
     onChange?.(e);
   };
+  useEffect(() => {
+    setColor(defaultColor);
+  }, [defaultColor])
   return (
     <DevPopoverV1
       button={

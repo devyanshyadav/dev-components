@@ -1,5 +1,5 @@
 "use client";
-import {useState } from "react";
+import {useEffect, useState } from "react";
 import ColorPicker, { Color, ColorObject } from "react-pick-color";
 import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
 
@@ -24,6 +24,9 @@ const DevColorPickerV3 = ({ defaultColor = { hex: "#E26F1D" }, onChange }: Color
     setColor(e);
     onChange?.(e);
   };
+  useEffect(() => {
+    setColor(defaultColor);
+  }, [defaultColor])
   return (
     <DevPopoverV1
         button={
