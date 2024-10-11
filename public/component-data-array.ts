@@ -5,6 +5,7 @@ import CarouselsInfo from "./dev-components/carousels/carousels-info";
 import CheckBoxesInfo from "./dev-components/checkboxes/checkboxes-info";
 import ClipboardsInfo from "./dev-components/clipboards/clipboards-info";
 import ColorPickersInfo from "./dev-components/color-pickers/color-pickers-info";
+import DateInfo from "./dev-components/date/date-info";
 import DrawersInfo from "./dev-components/drawers/drawers-info";
 import DropdownsInfo from "./dev-components/dropdowns/dropdowns-info";
 import EmojiPickersInfo from "./dev-components/emoji-pickers/emoji-pickers-info";
@@ -197,6 +198,13 @@ const ComponentDataArray = [
     componentData: PaginationInfo,
     description:
       "Pagination components allows users to navigate between multiple pages.",
+  },
+  {
+    name: "Date",
+    image: "date.png",
+    componentData: DateInfo,
+    description:
+      "Date components are used to display and select dates in a calendar format.",
   },
   {
     name: "Miscellaneous",
