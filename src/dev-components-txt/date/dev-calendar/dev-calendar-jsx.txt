@@ -5,9 +5,8 @@ import Calendar from "react-calendar";
 //Adding Calendar styles
 /*
 .react-calendar {
-  @apply md:w-72 *:select-none overflow-hidden !text-sm w-[95%] rounded-xl border border-ACCENT/20 bg-LIGHT dark:bg-DARK;
+  @apply w-full max-w-xs  *:select-none overflow-hidden !text-sm rounded-xl border border-ACCENT/20 bg-LIGHT dark:bg-DARK;
 }
-
 .react-calendar__navigation {
   @apply p-3 bg-ACCENT flex items-center justify-between !text-white font-semibold gap-1;
 }
@@ -65,9 +64,7 @@ import Calendar from "react-calendar";
 
 const DevCalendar = ({ onChange, defaultDate = new Date() }) => {
   return (
-    <div className="w-full max-w-sm mx-auto grid place-content-center">
       <Calendar onChange={(e) => onChange?.(e)} value={defaultDate} />
-    </div>
   );
 };
 
