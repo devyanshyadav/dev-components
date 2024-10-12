@@ -42,8 +42,8 @@ const CheckboxInfo = [
       ],
       packages: [
         {
-          name: "@radix-ui/react-checkbox",
-          url: "https://www.radix-ui.com/primitives/docs/components/checkbox#checkbox",
+          pckg_name: "@radix-ui/react-checkbox",
+          pckg_link: "https://www.radix-ui.com/primitives/docs/components/checkbox#checkbox",
         },
       ],
     },
