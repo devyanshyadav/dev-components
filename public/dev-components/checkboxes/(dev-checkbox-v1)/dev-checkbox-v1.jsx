@@ -14,7 +14,7 @@ const DevCheckboxV1 = ({
         onCheckedChange={(checked) => onChange?.(Boolean(checked))}
         defaultChecked={defaultState}
         id={labelName || "dev-checkbox"}
-        className="border-2 relative border-ACCENT text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer bg-ACCENT/25 data-[state=checked]:bg-ACCENT"
+        className="border-2 relative transition-all border-ACCENT text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer bg-ACCENT/30 data-[state=checked]:bg-ACCENT"
       >
         <Checkbox.Indicator>
           <svg
