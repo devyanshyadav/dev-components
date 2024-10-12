@@ -46,7 +46,7 @@ import Calendar from "react-calendar";
 }
 
 .react-calendar__tile--now {
-  @apply text-ACCENT !border border-ACCENT;
+  @apply text-ACCENT !border border-ACCENT hover:!bg-ACCENT/20;
 }
 
 .react-calendar__tile--hasActive,
