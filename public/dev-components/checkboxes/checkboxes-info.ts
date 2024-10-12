@@ -34,8 +34,18 @@ const CheckboxInfo = [
           propExample: `"Dev Checkbox"`,
           propDetail: "An optional label name for the checkbox.",
         },
+        {
+          propName: "required",
+          propExample: `false`,
+          propDetail: "Whether the checkbox is required.",
+        },
       ],
-      packages: [],
+      packages: [
+        {
+          name: "@radix-ui/react-checkbox",
+          url: "https://www.radix-ui.com/primitives/docs/components/checkbox#checkbox",
+        },
+      ],
     },
   },
 ];

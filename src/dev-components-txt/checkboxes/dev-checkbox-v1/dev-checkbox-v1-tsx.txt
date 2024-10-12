@@ -1,32 +1,29 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
+import * as Checkbox from "@radix-ui/react-checkbox";
 
 type CheckboxProps = {
   defaultState?: boolean;
   onChange?: (checked: boolean) => void;
   labelName?: string;
+  required?: boolean;
 };
 
 const DevCheckboxV1 = ({
   defaultState = true,
   onChange,
   labelName,
+  required = false,
 }: CheckboxProps) => {
-  const [check, setCheck] = useState(defaultState);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newState = e.target.checked;
-    setCheck(newState);
-    onChange?.(newState);
-  };
   return (
     <>
-      <span
-        className={`border-2 relative border-ACCENT text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer ${
-          check ? "bg-ACCENT" : "bg-ACCENT/20"
-        }`}
+      <Checkbox.Root
+        required={required}
+        onCheckedChange={(checked) => onChange?.(Boolean(checked))}
+        defaultChecked={defaultState}
+        id={labelName || "dev-checkbox"}
+        className="border-2 relative border-ACCENT text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer bg-ACCENT/25 data-[state=checked]:bg-ACCENT"
       >
-        {check && (
+        <Checkbox.Indicator>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -51,16 +48,8 @@ const DevCheckboxV1 = ({
               ></animate>
             </path>
           </svg>
-        )}
-        <input
-          onChange={handleChange}
-          type="checkbox"
-          id={labelName || "dev-checkbox"}
-          className="cursor-pointer opacity-0 absolute inset-0"
-          defaultChecked={defaultState}
-          checked={check}
-        />
-      </span>
+        </Checkbox.Indicator>
+      </Checkbox.Root>
       {labelName && (
         <label htmlFor={labelName || "dev-checkbox"}>{labelName}</label>
       )}
