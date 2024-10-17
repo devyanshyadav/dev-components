@@ -21,28 +21,6 @@ const DevButtonV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2>Ripples Effect</h2>
-        <div className="flex gap-2 items-center flex-wrap">
-          <DevButtonV1 variant="solid" ripple={true}>
-            Solid
-          </DevButtonV1>
-          <DevButtonV1 variant="ghost" ripple={true}>
-            Ghost
-          </DevButtonV1>
-        
-          <DevButtonV1 variant="light" ripple={true}>
-            Light
-          </DevButtonV1>
-          <DevButtonV1 variant="border" ripple={true}>
-            Border
-          </DevButtonV1>
-          <DevButtonV1 variant="flat" ripple={true}>
-            Flat
-          </DevButtonV1>
-          
-        </div>
-      </div>
-      <div>
         <h2>Buttons Sizes</h2>
         <div className="flex gap-2 items-center flex-wrap">
           <DevButtonV1 variant="solid" size="sm">
