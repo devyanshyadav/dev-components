@@ -45,26 +45,10 @@ const ButtonsInfo = [
             "Controls the button's roundness. Options include 'none', 'sm', 'md', 'lg', 'full'.",
         },
         {
-          propName: "ripple",
-          propExample: true,
-          propDetail:
-            "Enables the ripple effect on button interaction. Set to true to enable.",
-        },
-        {
           propName: "asIcon",
           propExample: true,
           propDetail:
             "Indicates whether the button should display as an icon. Set to true to enable.",
-        },
-      ],
-      packages: [
-        {
-          pckg_name: "use-ripple-hook",
-          pckg_link: "https://www.npmjs.com/package/use-ripple-hook",
-        },
-        {
-          pckg_name: "clsx",
-          pckg_link: "https://www.npmjs.com/package/clsx",
         },
       ],
     },

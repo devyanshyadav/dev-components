@@ -1,77 +1,78 @@
-"use client";
-import React, { forwardRef } from "react";
-import clsx from "clsx";
-import useRipple from "use-ripple-hook";
+import React from "react";
 
-const DevButtonV1 = forwardRef(
+// Simple implementation of the `cn` function to merge tailwind classes
+const cn = (...classes) => {
+  return classes.filter(Boolean).join(" ");
+};
+
+const DevButtonV1 =(
   (
     {
       variant = "solid",
       size = "md",
-      href = "",
+      href,
       rounded = "md",
       ripple = false,
-      asIcon,
+      asIcon = false,
       children,
       className,
       ...rest
     },
     ref
   ) => {
-    const commonStyle =
-      "transition-all flex items-center gap-1 text-nowrap justify-center active:scale-95";
+    const baseStyle = cn(
+      "transition-all flex items-center justify-center",
+      !asIcon && "gap-1 text-nowrap",
+      "active:scale-95"
+    );
 
-    const buttonVariants = {
-      solid: "bg-ACCENT text-white",
-      border: "text-ACCENT font-semibold border-2 border-ACCENT",
-      light:
-        "hover:bg-ACCENT/30 text-ACCENT font-semibold border-2 border-ACCENT",
-      flat: "border-ACCENT/5 bg-ACCENT/20 text-ACCENT font-semibold backdrop-blur-sm",
+    const variantStyles = {
+      solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
+      light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
+      border: "hover:bg-ACCENT/30 text-ACCENT border-2 border-ACCENT",
+      flat: "border-ACCENT/5 bg-ACCENT/30 text-ACCENT backdrop-blur-sm",
       ghost:
-        "text-ACCENT hover:bg-ACCENT hover:text-white font-semibold border-2 border-ACCENT",
+        "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",
     };
 
-    const buttonSizes = {
-      sm: asIcon ? "p-[4px] aspect-square" : "p-1 px-3",
-      md: asIcon ? "p-1 aspect-square" : "p-2 px-5",
-      lg: asIcon ? "p-2 aspect-square" : "p-3 px-7",
+    const sizeStyles = {
+      sm: asIcon ? "*:h-3 *:w-3" : "py-1 px-4 text-sm",
+      md: asIcon ? "*:h-5 *:w-5" : "py-1.5 px-5 text-base",
+      lg: asIcon ? "*:h-6 *:w-6" : "py-2 px-7",
     };
 
-    const buttonRoundness = {
+    const roundedStyles = {
       sm: "rounded-sm",
-      md: "rounded-lg",
+      md: "rounded-md",
       lg: "rounded-2xl",
       full: "rounded-full",
       none: "rounded-none",
     };
 
-    const buttonVariant = buttonVariants[variant] || buttonVariants.solid;
-    const buttonSizeClass = buttonSizes[size] || buttonSizes.md;
-    const buttonRoundnessClass = buttonRoundness[rounded] || buttonRoundness.md;
-    const [rippleState, event] = useRipple();
-
     const Link = "a"; //Remove this for next js and import next/link
-    const ButtonComponent = href ? Link : "button";
+    const Component = href ? Link : "button";
 
     return (
-      <ButtonComponent
-        ref={rippleState}
+      <Component
+        ref={ref}
         href={href}
         {...rest}
-        {...(ripple && { onPointerDown: event })}
-        className={clsx(
-          commonStyle,
-          buttonVariant,
-          buttonSizeClass,
-          buttonRoundnessClass,
-          ButtonComponent === Link && "underline",
+        className={cn(
+          baseStyle,
+          variantStyles[variant],
+          sizeStyles[size],
+          roundedStyles[rounded],
+          asIcon && "aspect-square p-1.5",
+          href && "underline",
           className
         )}
       >
         {children}
-      </ButtonComponent>
+      </Component>
     );
   }
 );
+
+DevButtonV1.displayName = "Button";
 
 export default DevButtonV1;

@@ -14,10 +14,10 @@ const DevButtonV1Usage = () => {
           <DevButtonV1 variant="solid">
             Solid
           </DevButtonV1>
-          <DevButtonV1 variant="border">Border</DevButtonV1>
-          <DevButtonV1 variant="light">Light</DevButtonV1>
-          <DevButtonV1 variant="flat">Flat</DevButtonV1>
           <DevButtonV1 variant="ghost">Ghost</DevButtonV1>
+          <DevButtonV1 variant="light">Light</DevButtonV1>
+          <DevButtonV1 variant="border">Border</DevButtonV1>
+          <DevButtonV1 variant="flat">Flat</DevButtonV1>
         </div>
       </div>
       <div>
@@ -26,18 +26,20 @@ const DevButtonV1Usage = () => {
           <DevButtonV1 variant="solid" ripple={true}>
             Solid
           </DevButtonV1>
-          <DevButtonV1 variant="border" ripple={true}>
-            Border
+          <DevButtonV1 variant="ghost" ripple={true}>
+            Ghost
           </DevButtonV1>
+        
           <DevButtonV1 variant="light" ripple={true}>
             Light
+          </DevButtonV1>
+          <DevButtonV1 variant="border" ripple={true}>
+            Border
           </DevButtonV1>
           <DevButtonV1 variant="flat" ripple={true}>
             Flat
           </DevButtonV1>
-          <DevButtonV1 variant="ghost" ripple={true}>
-            Ghost
-          </DevButtonV1>
+          
         </div>
       </div>
       <div>
@@ -98,13 +100,13 @@ const DevButtonV1Usage = () => {
       <div>
         <h2>Using as Icon</h2>
         <div className="flex gap-2 items-center flex-wrap">
-          <DevButtonV1 variant="solid" size="lg" asIcon={true}>
+          <DevButtonV1 variant="solid" asIcon={true}>
             <IoSearch />
           </DevButtonV1>
-          <DevButtonV1 variant="solid" size="lg" asIcon={true}>
+          <DevButtonV1 variant="solid" asIcon={true}>
             <HiHome />
           </DevButtonV1>
-          <DevButtonV1 variant="solid" size="lg" asIcon={true}>
+          <DevButtonV1 variant="solid" asIcon={true}>
             <MdCameraAlt />
           </DevButtonV1>
         </div>
