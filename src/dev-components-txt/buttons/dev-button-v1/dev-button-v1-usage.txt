@@ -9,7 +9,7 @@ const DevButtonV1Usage = () => {
   return (
     <section className="*:py-4 divide-y divide-ACCENT/30">
       <div>
-        <h2>Base Buttons</h2>
+        <h2>Button Variants</h2>
         <div className="flex gap-2 items-center flex-wrap">
           <DevButtonV1 variant="solid">
             Solid
@@ -21,7 +21,7 @@ const DevButtonV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2>Buttons Sizes</h2>
+        <h2>Button Sizes</h2>
         <div className="flex gap-2 items-center flex-wrap">
           <DevButtonV1 variant="solid" size="sm">
             Size sm
@@ -35,7 +35,7 @@ const DevButtonV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2>Buttons Roundness</h2>
+        <h2>Button Roundness</h2>
         <div className="flex gap-2 items-center flex-wrap">
           <DevButtonV1 variant="solid" rounded="none">
             Rounded none

@@ -21,7 +21,7 @@ const ButtonsInfo = [
       ],
       props: [
         {
-          propName: "type",
+          propName: "variant",
           propExample: "solid",
           propDetail:
             "Determines the button's appearance. Options include 'solid', 'outline', 'light', 'flat', 'ghost'.",
