@@ -4,7 +4,7 @@ import DevPopoverV1 from "./dev-popover-v1";
 const DevPopoverV1Usage = () => {
   return (
     <DevPopoverV1 button={<button className='p-1 px-3 bg-ACCENT text-white rounded-lg'>Open</button>}>
-      <p>Popover Content</p>
+      <p className="p-3 px-5">Popover Content</p>
     </DevPopoverV1>
   );
 };

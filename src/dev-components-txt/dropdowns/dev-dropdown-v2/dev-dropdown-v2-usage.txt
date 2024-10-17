@@ -12,7 +12,7 @@ const DevDropdownV2Usage = () => {
           </button>
         }
       >
-        <p>Dropdown Content</p>
+        <p className="p-3 px-5">Dropdown Content</p>
       </DevDropdown>
     </div>
   );

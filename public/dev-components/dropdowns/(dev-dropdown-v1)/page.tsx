@@ -4,7 +4,7 @@ import DevDropdown from './dev-dropdown-v1'
 const DevDropdownV1Usage = () => {
   return (
     <DevDropdown button={<button className='p-1 px-3 bg-ACCENT text-white rounded-lg'>Open</button>}>
-      <p>Dropdown Content</p>
+      <p className='p-3 px-5'>Dropdown Content</p>
     </DevDropdown>
   )
 }

@@ -30,11 +30,6 @@ const PopoversInfo = [
           propDetail: "The button element that triggers the popover. Should be passed as a child prop.",
         },
         {
-          propName: "closeIcon",
-          propExample: `true`,
-          propDetail: "Whether to include a close icon in the popover. When true, adds a close button.",
-        },
-        {
           propName: "place",
           propExample: `"bottom"`,
           propDetail: "The position of the popover relative to the trigger. Options are 'top', 'right', 'bottom', 'left'.",

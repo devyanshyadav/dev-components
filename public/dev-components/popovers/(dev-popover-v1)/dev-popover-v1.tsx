@@ -4,13 +4,11 @@ import { Root, Trigger, Portal, Content, Close } from "@radix-ui/react-popover";
 type PopoverProps = {
   children: React.ReactNode;
   button: React.ReactElement;
-  closeIcon?: Boolean;
   place?: "top" | "bottom" | "left" | "right";
 };
 const DevPopoverV1 = ({
   children,
   button,
-  closeIcon,
   place = "bottom",
 }: PopoverProps) => {
   //   /* Popover animation  */
@@ -36,15 +34,8 @@ const DevPopoverV1 = ({
         <Content
           side={place}
           sideOffset={2}
-          className={`p-1 *:!border-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30 ${
-            closeIcon && "pt-4"
-          }`}
+          className={`origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30`}
         >
-          {closeIcon && (
-            <Close className="text-ACCENT rounded-full p-0.5 absolute top-0.5 right-0.5 text-sm">
-              🗙
-            </Close>
-          )}
           {children}
         </Content>
       </Portal>

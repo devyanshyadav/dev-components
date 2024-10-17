@@ -116,7 +116,7 @@ function DevDatePicker({
             </button>
           }
         >
-          <div className="scale-105 w-64">
+          <div>
             <DevCalendar onChange={handleCalendarChange} defaultDate={date} />
           </div>
         </DevPopoverV1>

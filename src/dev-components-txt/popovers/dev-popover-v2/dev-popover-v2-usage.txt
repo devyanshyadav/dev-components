@@ -12,7 +12,7 @@ const DevPopoverV2Usage = () => {
           </button>
         }
       >
-        <p>Popover Content</p>
+        <p className="p-3 px-5">Popover Content</p>
       </DevPopoverV2>
     </div>
   );

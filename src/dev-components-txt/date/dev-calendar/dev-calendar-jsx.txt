@@ -5,8 +5,9 @@ import Calendar from "react-calendar";
 //Adding Calendar styles
 /*
 .react-calendar {
-  @apply w-full max-w-xs  *:select-none overflow-hidden !text-sm rounded-xl border border-ACCENT/20 bg-LIGHT dark:bg-DARK;
+  @apply w-64 max-w-xs *:select-none overflow-hidden !text-sm rounded-lg border border-ACCENT/20 bg-LIGHT dark:bg-DARK;
 }
+
 .react-calendar__navigation {
   @apply p-3 bg-ACCENT flex items-center justify-between !text-white font-semibold gap-1;
 }
@@ -15,7 +16,7 @@ import Calendar from "react-calendar";
   @apply text-base;
 }
 .react-calendar__navigation__arrow {
-  @apply text-lg w-5 aspect-square hover:scale-110;
+  @apply !text-xl w-5 aspect-square;
 }
 .react-calendar__month-view__days {
   @apply !grid grid-cols-7 gap-0.5 p-1;
@@ -38,7 +39,7 @@ import Calendar from "react-calendar";
 .react-calendar__year-view .react-calendar__tile,
 .react-calendar__decade-view .react-calendar__tile,
 .react-calendar__century-view .react-calendar__tile {
-  @apply rounded-md p-2 hover:bg-ACCENT aspect-auto;
+  @apply rounded-md p-2 hover:bg-ACCENT hover:!text-white aspect-auto;
 }
 
 .react-calendar__tile {
@@ -46,7 +47,7 @@ import Calendar from "react-calendar";
 }
 
 .react-calendar__tile--now {
-  @apply text-ACCENT !border border-ACCENT hover:!bg-ACCENT/20;
+  @apply text-ACCENT hover:!text-white !border border-ACCENT hover:!bg-ACCENT;
 }
 
 .react-calendar__tile--hasActive,
@@ -58,8 +59,6 @@ import Calendar from "react-calendar";
 .react-calendar__month-view__days__day--neighboringMonth {
   @apply opacity-40;
 }
-
-
 */
 
 const DevCalendar = ({ onChange, defaultDate = new Date() }) => {

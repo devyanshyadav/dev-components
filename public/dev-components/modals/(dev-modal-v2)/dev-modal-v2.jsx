@@ -45,7 +45,7 @@ const DevModalV2 = forwardRef(
           createPortal(
             <>
               <section className="Modal-Overlay inset-0 fixed bg-black/50 z-50" />
-              <div className="Modal-Content w-full  fixed z-50 top-[50%] left-[50%] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-xl bg-LIGHT dark:bg-DARK border border-ACCENT/30 *:p-3">
+              <div className="Modal-Content w-[95%] md:w-full fixed z-50 top-[50%] left-[50%] max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-xl bg-LIGHT dark:bg-DARK border border-ACCENT/30">
                 {(closeIcon || title) && (
                   <div className="flex items-start justify-end w-full !pb-0">
                     {title && (
@@ -53,12 +53,12 @@ const DevModalV2 = forwardRef(
                         {title}
                       </h3>
                     )}
-                    <span
-                      className="cursor-pointer absolute top-1 right-1"
+                    <button
+                      className="cursor-pointer"
                       onClick={() => setOpen(false)}
                     >
                       🗙
-                    </span>
+                    </button>
                   </div>
                 )}
                 {children}
