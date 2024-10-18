@@ -1,5 +1,6 @@
 import DevInputV1Usage from "./(dev-input-v1)/page";
 import DevInputV2Usage from "./(dev-input-v2)/page";
+import DevPasswordInputUsage from "./(dev-password-input)/page";
 
 const InputsInfo = [
   {
@@ -106,6 +107,48 @@ const InputsInfo = [
           propExample: "true | false",
           propDetail:
             "Allows customization and appearance of the laser effect when the input field is clicked. Defaults to true.",
+        },
+      ],
+      packages: [],
+    },
+  },
+  {
+    title: "Dev Password Input",
+    component: DevPasswordInputUsage,
+    variants: {
+      jsx: true,
+      tsx: true,
+    },
+    details: {
+      description:
+        "A password input field with built-in password strength checker and toggle eye functionality.",
+      features: [
+        "Password strength analysis",
+        "Toggle eye icon for visibility",
+        "Integration with DevInputV1 component",
+        "Support all html input props",
+      ],
+      props: [
+        {
+          propName: "onChange",
+          propExample: `(e) => console.log(e.target.value)`,
+          propDetail: "Callback function triggered when the password changes.",
+        },
+        {
+          propName: "placeholder",
+          propExample: `"Enter Password"`,
+          propDetail: "Text shown inside the input field when it's empty.",
+        },
+        {
+          propName: "defaultValue and other props for input field",
+          propExample: `"hello@world"`,
+          propDetail: "Pre-fills the input field with a default value.",
+        },
+      ],
+      helpers: [
+        {
+          cmp_name: "DevInputV1",
+          cmp_link: "/inputs#dev-input-v1",
         },
       ],
       packages: [],

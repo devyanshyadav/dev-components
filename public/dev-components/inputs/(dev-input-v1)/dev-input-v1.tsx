@@ -22,7 +22,6 @@ const DevInputV1 = ({
   icon,
   rounded = "full",
   reverseIcon = false,
-  children,
   ...props
 }: InputProps) => {
   const commonStyle = `w-full flex outline-offset-2 border border-ACCENT outline-ACCENT items-center ${
