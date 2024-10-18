@@ -4,7 +4,7 @@ import { Root, Trigger, Portal, Content, Close } from "@radix-ui/react-popover";
 type PopoverProps = {
   children: React.ReactNode;
   button: React.ReactElement;
-  closeIcon?: Boolean;
+  closeIcon?: boolean;
   place?: "top" | "bottom" | "left" | "right";
 };
 const DevPopoverV1 = ({

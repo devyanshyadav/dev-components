@@ -31,7 +31,7 @@ type ModalProps = {
   title?: string;
   children: React.ReactNode;
   modalBtn: React.ReactNode;
-  closeIcon?: Boolean;
+  closeIcon?: boolean;
 };
 
 export const ModalTrigger = ({ children }: { children: React.ReactNode }) => {

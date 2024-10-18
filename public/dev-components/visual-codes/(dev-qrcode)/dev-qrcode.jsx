@@ -42,14 +42,14 @@ const DevQrCode = ({
         <QRCode
           ref={qrRef}
           size={100}
-          fgColor="#06B6D4"
+          fgColor="black" //pattern color
           bgColor="transparent"
           className="h-full rounded-md p-2 bg-white border border-ACCENT/30 w-40"
           value={qrValue}
         />
 
         <button
-          className="absolute text-5xl grid place-items-center group-hover:opacity-100 opacity-0 inset-0 bg-ACCENT/50"
+          className="absolute text-5xl text-white grid place-items-center group-hover:opacity-100 opacity-0 inset-0 bg-ACCENT/50"
           onClick={handleDownload}
         >
           <ImDownload />

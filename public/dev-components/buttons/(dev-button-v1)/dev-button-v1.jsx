@@ -5,7 +5,7 @@ const cn = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
 
-const DevButtonV1 =(
+const DevButtonV1 = React.forwardRef(
   (
     {
       variant = "solid",
@@ -20,16 +20,13 @@ const DevButtonV1 =(
     },
     ref
   ) => {
-    const baseStyle = cn(
-      "transition-all flex items-center justify-center",
-      !asIcon && "gap-1 text-nowrap",
-      "active:scale-95"
-    );
+    const baseStyle = `transition-all outline-0 flex items-center active:scale-95 justify-center  
+    ${!asIcon && "gap-1.5 text-nowrap"}`;
 
     const variantStyles = {
       solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
       light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
-      border: "hover:bg-ACCENT/30 text-ACCENT border-2 border-ACCENT",
+      border: "border text-ACCENT border-2 border-ACCENT",
       flat: "border-ACCENT/5 bg-ACCENT/30 text-ACCENT backdrop-blur-sm",
       ghost:
         "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",

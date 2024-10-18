@@ -57,16 +57,7 @@ const InputsInfo = [
             "Any child elements or text that should appear inside the input field.",
         },
       ],
-      packages: [
-        {
-          pckg_name: "clsx",
-          pckg_link: "https://www.npmjs.com/package/clsx",
-        },
-        {
-          pckg_name: "react-icons",
-          pckg_link: "https://react-icons.github.io/react-icons/",
-        },
-      ],
+      packages: [],
     },
   },
   {
@@ -117,12 +108,7 @@ const InputsInfo = [
             "Allows customization and appearance of the laser effect when the input field is clicked. Defaults to true.",
         },
       ],
-      packages: [
-        {
-          pckg_name: "clsx",
-          pckg_link: "https://www.npmjs.com/package/clsx",
-        },
-      ],
+      packages: [],
     },
   },
 ];

@@ -1,6 +1,9 @@
 "use client";
-import clsx from "clsx";
 import React, { useState } from "react";
+
+const cn = (...classes) => {
+  return classes.filter(Boolean).join(" ");
+};
 
 const DevInputV2 = ({
   scale = "sm",
@@ -11,9 +14,9 @@ const DevInputV2 = ({
   className,
   ...props
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [childPosition, setChildPosition] = useState(0);
-  const [active, setActive] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [childPosition, setChildPosition] = useState<number>(0);
+  const [active, setActive] = useState<boolean>(false);
 
   const [childColor, setChildColor] = useState(
     `bg-gradient-to-r from-transparent via-ACCENT to-transparent`
@@ -55,7 +58,7 @@ const DevInputV2 = ({
 
   return (
     <div
-      className={clsx(
+      className={cn(
         InputSize,
         InputRounded,
         "relative w-full overflow-hidden"
@@ -65,7 +68,7 @@ const DevInputV2 = ({
       onMouseMove={handleMouseMove}
     >
       <span
-        className={clsx(
+        className={cn(
           "absolute top-0 bottom-0 rounded-lg ",
           active ? "bg-ACCENT" : childColor,
           isHovered || (active && laserActiveOnClick) ? "block" : "hidden",
@@ -77,14 +80,14 @@ const DevInputV2 = ({
       />
 
       <div
-        className={clsx(
+        className={cn(
           InputRounded,
           "absolute text-sm px-2 inset-[2px] flex items-center justify-center flex-grow border border-ACCENT/50 bg-LIGHT dark:bg-DARK gap-2  outline outline-ACCENT/20",
           className,
           reverseIcon && "flex-row-reverse"
         )}
       >
-        {icon && <span className={clsx("z-10 ACCENT")}>{icon}</span>}
+        {icon && <span className={cn("z-10 ACCENT")}>{icon}</span>}
         <input
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}

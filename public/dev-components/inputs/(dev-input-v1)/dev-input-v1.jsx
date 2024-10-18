@@ -1,5 +1,7 @@
-import clsx from "clsx";
 import React from "react";
+const cn = (...classes) => {
+  return classes.filter(Boolean).join(" ");
+};
 
 const DevInputV1 = ({
   variant = "base",
@@ -12,19 +14,16 @@ const DevInputV1 = ({
   children,
   ...props
 }) => {
-  const commonStyle = clsx(
-    "w-full flex items-center gap-2",
-    reverseIcon && "flex-row-reverse"
-  );
+  const commonStyle = `w-full flex outline-offset-2 border border-ACCENT outline-ACCENT items-center ${
+    icon && "gap-2"
+  },
+    ${reverseIcon && "flex-row-reverse"}`;
   const inputVariants = {
-    base: clsx(
-      "bg-LIGHT dark:bg-DARK border border-ACCENT outline-ACCENT rounded-full"
-    ),
-    bordered:
-      "bg-transparent border border-ACCENT outline-ACCENT rounded-full",
-    faded:
-      "bg-ACCENT/20 border border-ACCENT outline-ACCENT rounded-full text-ACCENT",
-    underline: "border-b-4 border-ACCENT/40 outline-none relative after:content-[''] after:absolute after:h-1 after:bg-ACCENT after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0 has-[:focus]:after:scale-x-100"
+    base: "bg-LIGHT dark:bg-DARK",
+    bordered: "bg-transparent",
+    faded: "bg-ACCENT/20 text-ACCENT",
+    underline:
+      "border-0 !outline-0 !border-ACCENT/50 border-b-4 relative after:content-[''] after:absolute after:h-1 after:bg-ACCENT after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0 has-[:focus]:after:scale-x-100",
   };
 
   const inputRoundness = {
@@ -53,7 +52,7 @@ const DevInputV1 = ({
       )}
 
       <div
-        className={clsx(
+        className={cn(
           "has-[:focus]:outline has-[:focus]:outline-2",
           inputSize,
           commonStyle,

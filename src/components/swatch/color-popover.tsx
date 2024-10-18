@@ -7,7 +7,7 @@ import ColorDrawer from "./color-drawer";
 type PopoverProps = {
   children: React.ReactNode;
   button: React.ReactElement;
-  closeIcon?: Boolean;
+  closeIcon?: boolean;
   place?: "top" | "bottom" | "left" | "right";
 };
 const ColorPopover = ({

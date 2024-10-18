@@ -31,7 +31,7 @@ type ModalProps = {
   title?: string;
   children: React.ReactNode;
   modalBtn: React.ReactNode;
-  closeIcon?: Boolean;
+  closeIcon?: boolean;
 };
 export type ModalRef = {
   setModal: (newState: boolean) => void;

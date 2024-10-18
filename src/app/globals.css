@@ -123,8 +123,10 @@ pre {
   }
 }
 
-
-
+/* Qr code Css  */
+svg path:nth-child(2) {
+  @apply !fill-ACCENT;
+}
 /* Calendar CSS  */
 .react-calendar {
   @apply w-64 max-w-xs *:select-none overflow-hidden !text-sm rounded-lg border border-ACCENT/20 bg-LIGHT dark:bg-DARK;
