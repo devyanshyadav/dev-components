@@ -124,7 +124,7 @@ pre {
 }
 
 /* Qr code Css  */
-svg path:nth-child(2) {
+.dev-qr path:nth-child(2) {
   @apply !fill-ACCENT;
 }
 /* Calendar CSS  */

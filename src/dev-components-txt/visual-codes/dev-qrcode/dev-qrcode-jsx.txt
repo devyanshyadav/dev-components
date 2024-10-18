@@ -44,7 +44,7 @@ const DevQrCode = ({
           size={100}
           fgColor="black" //pattern color
           bgColor="transparent"
-          className="h-full rounded-md p-2 bg-white border border-ACCENT/30 w-40"
+          className="h-full dev-qr rounded-md p-2 bg-white border border-ACCENT/30 w-40"
           value={qrValue}
         />
 
