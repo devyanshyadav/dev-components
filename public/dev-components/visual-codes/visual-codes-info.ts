@@ -31,11 +31,11 @@ const VisualCodesInfo = [
           propDetail: "Callback function triggered when the QR code value changes.",
         },
       ],
-      doc_links: ["https://rosskhanas.github.io/react-qr-code/"],
+      doc_links: ["https://zpao.github.io/qrcode.react/"],
       packages: [
         {
-          pckg_name: "react-qr-code",
-          pckg_link: "https://www.npmjs.com/package/react-qr-code",
+          pckg_name: "qrcode.react",
+          pckg_link: "https://www.npmjs.com/package/qrcode.react",
         },
         {
           pckg_name: "html-to-image",

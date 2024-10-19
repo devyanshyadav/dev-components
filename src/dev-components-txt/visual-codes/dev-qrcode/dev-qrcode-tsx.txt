@@ -1,9 +1,7 @@
-"use client";
-import React, { useCallback, useRef, useState } from "react";
-import QRCode from "react-qr-code";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import { toPng } from "html-to-image";
 import { ImDownload } from "react-icons/im";
-
 const DevQrCode = ({
   value,
   onValueChange,
@@ -29,6 +27,10 @@ const DevQrCode = ({
     }
   }, [qrRef]);
 
+  useEffect(() => {
+    setQrValue(value);
+  }, [value]);
+
   return (
     <div className="flex items-center justify-center gap-3 flex-col">
       <input
@@ -42,15 +44,24 @@ const DevQrCode = ({
         }}
       />
       <div className="relative rounded-lg overflow-hidden group">
-        <QRCode
-          ref={qrRef}
-          size={100}
-          fgColor="black" //pattern color
-          bgColor="transparent"
-          className="h-full dev-qr rounded-md p-2 bg-white border border-ACCENT/30 w-40"
-          value={qrValue}
-        />
-
+        <div ref={qrRef} className="dev-qr rounded-md p-2 bg-white border border-ACCENT/30 w-40 h-40">
+          <QRCodeSVG
+            value={qrValue}
+            size={152}
+            fgColor="black"
+            bgColor="transparent"
+            level="L"
+            imageSettings={{
+              src: "/assets/logo.svg",
+              x: undefined,
+              y: undefined,
+              height: 20,
+              width: 20,
+              excavate: true,
+            }}
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
         <button
           className="absolute text-5xl text-white grid place-items-center group-hover:opacity-100 opacity-0 inset-0 bg-ACCENT/50"
           onClick={handleDownload}
