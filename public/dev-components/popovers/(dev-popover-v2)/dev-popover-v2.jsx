@@ -15,7 +15,7 @@ const DevPopoverV2 = ({ children, button }) => {
     </DevDrawerV2>
   ) : (
     <DevPopoverV1
-      contentProps={{ side: "bottom", sideOffset: 2 }}
+      contentProps={{ sideOffset: 2 }}
       rootProps={{ defaultOpen: false }}
       button={button}
     >

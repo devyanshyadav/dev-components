@@ -6,7 +6,6 @@ import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
 const DevEmojiPickerV2Usage = () => {
   return (
     <DevPopoverV1
-      place="bottom"
       button={
         <button className="p-1 rounded-full px-3 bg-ACCENT/40 outline outline-ACCENT active:scale-90 transition-all">
           😊 Select Emojis
