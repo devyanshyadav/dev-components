@@ -56,58 +56,64 @@ const DrawersInfo = [
             "A simple and flexible drawer component for React applications.",
         },
       ],
-      doc_links: ["https://github.com/Farzin-Firoozi/react-modern-drawer"],
+      doc_links: ["https://vaul.emilkowal.ski/api#root"],
     },
   },
   {
-    title: "Dev Drawer V2",
-    component: DevDrawerV2Usage,
-    variants: {
-      tsx: true,
-      jsx: true,
+    "title": "Dev Drawer V2",
+    "component": DevDrawerV2Usage,
+    "variants": {
+      "jsx": true,
+      "tsx": true
     },
-    details: {
-      description:
-        "A React component that provides a versatile drawer (sidebar) with support for four positions (left, right, top, bottom), enabling developers to integrate UX draggable experiences seamlessly.",
-      features: [
-        "Positional flexibility (left, right, top, bottom)",
-        "Customizable trigger button",
-        "Background scaling option",
-        "Stylable overlay and content areas",
+    "details": {
+      "description": "A customizable drawer component that slides in from any direction to display content.",
+      "features": [
+        "Flexible positioning (left, right, top, bottom)",
+        "Supports overlay for better focus on drawer content",
+        "Customizable trigger button for opening the drawer",
+        "Responsive design with adjustable dimensions"
       ],
-      props: [
+      "helpers": [],
+      "props": [
         {
-          propName: "openBtn",
-          propExample: "<button>Open Drawer</button>",
-          propDetail:
-            "A React node representing the button or element that triggers the drawer to open.",
+          "propName": "children",
+          "propExample": "<div>Drawer Content</div>",
+          "propDetail": "The content to be displayed inside the drawer."
         },
         {
-          propName: "children",
-          propExample: "ReactNode",
-          propDetail: "The content to be displayed inside the drawer.",
+          "propName": "title",
+          "propExample": "'Drawer Title'",
+          "propDetail": "An optional title for the drawer."
         },
         {
-          propName: "position",
-          propExample: "'right'",
-          propDetail:
-            "Specifies the position of the drawer relative to the viewport. Can be 'left', 'right', 'top', or 'bottom'. Defaults to 'top'.",
+          "propName": "openBtn",
+          "propExample": "<button>Open</button>",
+          "propDetail": "The button that triggers the drawer when clicked."
         },
         {
-          propName: "title",
-          propExample: "string",
-          propDetail: "The title of the drawer. Defaults to 'Drawer'.",
+          "propName": "position",
+          "propExample": "'bottom'",
+          "propDetail": "The position from which the drawer will slide in. Options: 'left', 'right', 'top', 'bottom'."
         },
+        {
+          "propName": "accommodate",
+          "propExample": "true",
+          "propDetail": "If true, adjusts the minimum height of the drawer for top and bottom positions."
+        },
+        {
+          "propName": "isOverlay",
+          "propExample": "true",
+          "propDetail": "If true, an overlay will be displayed behind the drawer."
+        }
       ],
-      packages: [
+      "packages": [
         {
-          pckg_name: "vaul",
-          pckg_link: "https://github.com/vaul-ui/vaul",
-          pckg_detail: "A lightweight and modular UI library for React.",
-        },
-      ],
-      doc_links: ["https://github.com/emilkowalski/vaul"],
-    },
-  },
+          "pckg_name": "vaul",
+          "pckg_link": "https://vaul.dev/"
+        }
+      ]
+    }
+  }
 ];
 export default DrawersInfo;

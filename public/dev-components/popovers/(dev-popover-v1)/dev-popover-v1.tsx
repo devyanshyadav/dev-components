@@ -1,16 +1,12 @@
 import React from "react";
-import { Root, Trigger, Portal, Content, Close } from "@radix-ui/react-popover";
+import * as Popover from "@radix-ui/react-popover";
 
-type PopoverProps = {
+interface DevPopoverV1Props {
   children: React.ReactNode;
   button: React.ReactElement;
-  place?: "top" | "bottom" | "left" | "right";
-};
-const DevPopoverV1 = ({
-  children,
-  button,
-  place = "bottom",
-}: PopoverProps) => {
+  rootProps?: Omit<React.ComponentProps<typeof Popover.Root>, 'children'>;
+  contentProps?: Omit<React.ComponentProps<typeof Popover.Content>, 'children'|'className'>;
+}
   //   /* Popover animation  */
   // .showPopover{
   //   animation: popoverShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -26,20 +22,24 @@ const DevPopoverV1 = ({
   //     transform:scale(1);
   //   }
   // }
-
+const DevPopoverV1: React.FC<DevPopoverV1Props> = ({ 
+  children,
+  button,
+  rootProps,
+  contentProps,
+}) => {
   return (
-    <Root>
-      <Trigger asChild>{button}</Trigger>
-      <Portal>
-        <Content
-          side={place}
-          sideOffset={2}
+    <Popover.Root {...rootProps}>
+      <Popover.Trigger asChild>{button}</Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content
           className={`origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30`}
+          {...contentProps}
         >
           {children}
-        </Content>
-      </Portal>
-    </Root>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 };
 

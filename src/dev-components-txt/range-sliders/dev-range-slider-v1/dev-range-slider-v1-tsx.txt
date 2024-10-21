@@ -1,29 +1,15 @@
-"use client";
 import React from "react";
 import * as Slider from "@radix-ui/react-slider";
 
-type RangeSliderProps = {
-  min?: number;
-  max?: number;
-  step?: number;
-  defaultValue?: number;
-  onChange?: (value: any) => void;
-};
-const DevRangeSliderV1 = ({
-  min = 0,
-  max = 100,
-  step = 1,
-  defaultValue = 50,
-  onChange,
-}: RangeSliderProps) => {
+type RangeSliderProps = Omit<
+  React.ComponentProps<typeof Slider.Root>,
+  "children" | "className"
+>;
+const DevRangeSliderV1 = (props: RangeSliderProps) => {
   return (
     <Slider.Root
-      onValueChange={(e) => onChange?.(e)}
+      {...props}
       className="relative flex items-center select-none touch-none w-full h-5 rounded-full"
-      defaultValue={[defaultValue]}
-      max={max}
-      step={step}
-      min={min}
     >
       <Slider.Track className="relative grow rounded-full h-2 bg-ACCENT/40">
         <Slider.Range className="absolute bg-ACCENT rounded-full h-2 rounded-r-none" />

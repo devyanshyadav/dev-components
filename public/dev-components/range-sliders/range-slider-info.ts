@@ -36,11 +36,11 @@ const RangeSliderInfo = [
         },
         {
           propName: "defaultValue",
-          propExample: `50`,
+          propExample: `[50]`,
           propDetail: "The initial selected value(s). Can be a single number or an array of numbers.",
         },
         {
-          propName: "onChange",
+          propName: "onValueChange",
           propExample: `(e) => console.log(e)`,
           propDetail: "A callback function triggered when the selection changes. Receives the new selection as an argument.",
         },
@@ -87,11 +87,11 @@ const RangeSliderInfo = [
         },
         {
           propName: "defaultValue",
-          propExample: `50`,
+          propExample: `[50]`,
           propDetail: "The initial selected value(s). Can be a single number or an array of numbers.",
         },
         {
-          propName: "onChange",
+          propName: "onValueChange",
           propExample: `(e) => console.log(e)`,
           propDetail: "A callback function triggered when the selection changes. Receives the new selection as an argument.",
         },

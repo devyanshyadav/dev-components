@@ -10,7 +10,8 @@ const DevRangeSliderV2Usage = () => {
       min={10}
       max={100}
       step={5}
-      onChange={(e) => console.log(e)}
+      defaultValue={[50]}
+      onValueChange={(e) => console.log(e)}
     />
    </div>
   );

@@ -24,13 +24,13 @@ const RadioInfo = [
           propDetail: "An array of options to display in the radio group. Each option should have a 'value' and 'label'.",
         },
         {
-          propName: "onChange",
+          propName: "onValueChange",
           propExample: `(e) => console.log(e)`,
           propDetail: "A callback function triggered when the selection changes. Receives the new selection as an argument.",
         },
         {
           propName: "defaultValue",
-          propExample: `{value: "angular", label: "Angular"}`,
+          propExample: `{value: "angular"}`,
           propDetail: "An optional object specifying the initially selected value. This can be either an option object or undefined.",
         },
       ],

@@ -1,7 +1,5 @@
 import React from "react";
-import { Root, Trigger, Portal, Content, Close } from "@radix-ui/react-popover";
-
-const DevPopoverV1 = ({ children, button, closeIcon, place = "bottom" }) => {
+import * as Popover from "@radix-ui/react-popover";
   //   /* Popover animation  */
   // .showPopover{
   //   animation: popoverShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -17,20 +15,24 @@ const DevPopoverV1 = ({ children, button, closeIcon, place = "bottom" }) => {
   //     transform:scale(1);
   //   }
   // }
-
+const DevPopoverV1 = ({ 
+  children,
+  button,
+  rootProps,
+  contentProps,
+}) => {
   return (
-    <Root>
-      <Trigger asChild>{button}</Trigger>
-      <Portal>
-        <Content
-          side={place}
-          sideOffset={2}
-          className={`p-1 *:!border-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30`}
+    <Popover.Root {...rootProps}>
+      <Popover.Trigger asChild>{button}</Popover.Trigger>
+      <Popover.Portal>
+        <Popover.Content
+          className={`origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30`}
+          {...contentProps}
         >
           {children}
-        </Content>
-      </Portal>
-    </Root>
+        </Popover.Content>
+      </Popover.Portal>
+    </Popover.Root>
   );
 };
 

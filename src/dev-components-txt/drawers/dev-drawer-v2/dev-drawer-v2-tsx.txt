@@ -2,14 +2,19 @@
 import React from "react";
 import { Drawer } from "vaul";
 
-interface DevDrawerProps {
-  openBtn: React.ReactNode;
+interface DrawerProps
+  extends Omit<
+    React.ComponentProps<typeof Drawer.Root>,
+    "children" | "direction" | "fadeFromIndex"
+  > {
   children: React.ReactNode;
   accommodate?: boolean;
   isOverlay?: boolean;
-  position?: "left" | "right" | "top" | "bottom";
   title?: string;
+  openBtn: React.ReactNode;
+  position?: "left" | "right" | "top" | "bottom";
 }
+
 export const DrawerTrigger = ({ children }: { children: React.ReactNode }) => {
   return <Drawer.Trigger asChild>{children}</Drawer.Trigger>;
 };
@@ -18,10 +23,11 @@ export default function DevDrawerV2({
   children = null,
   accommodate = false,
   isOverlay = true,
-  position = "right",
   title,
   openBtn = null,
-}: DevDrawerProps) {
+  position = "right",
+  ...props
+}: DrawerProps) {
   const getPositionClasses = {
     left: `left-0 inset-y-0 w-72 h-full border-r rounded-r-xl`,
     right: `right-0 inset-y-0 w-72 h-full border-l rounded-l-xl`,
@@ -29,7 +35,7 @@ export default function DevDrawerV2({
     bottom: `bottom-0 inset-x-0 min-h-[40vh] max-h-[80vh] w-full border-t rounded-t-xl`,
   };
   return (
-    <Drawer.Root direction={position}>
+    <Drawer.Root direction={position} {...props}>
       {/*This Trigger can be used to toggle the drawer anywhere */}
       <Drawer.Trigger asChild>{openBtn}</Drawer.Trigger>
       <Drawer.Portal>

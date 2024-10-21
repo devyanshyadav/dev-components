@@ -8,8 +8,9 @@ const DevRadioV1Usage = () => {
   return (
       <DevRadioV1
         options={options}
-        defaultValue={options[1]}
-        onChange={(e) => console.log(e)}
+        className="flex gap-2 flex-col"
+        defaultValue={options[1].value}
+        onValueChange={(e) => console.log(e)}
       />
   );
 };
