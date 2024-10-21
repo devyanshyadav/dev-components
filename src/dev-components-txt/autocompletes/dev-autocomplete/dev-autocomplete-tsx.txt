@@ -33,7 +33,7 @@ const DevAutocompleteV1 = ({
         <label className="flex flex-col" {...getLabelProps()}>
           Enter a fruit
           <input
-            className="p-1 px-3 rounded-md !outline-none border-2 focus:border-ACCENT border-ACCENT/50 bg-LIGHT dark:bg-DARK"
+            className="p-1 px-3 rounded-md !outline-0 border-2 focus:border-ACCENT border-ACCENT/50 bg-LIGHT dark:bg-DARK"
             autoFocus
             {...getInputProps()}
           />

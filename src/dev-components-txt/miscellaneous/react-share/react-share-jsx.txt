@@ -48,7 +48,7 @@ const ReactShare = ({ shareUrl, size = 25, setUrl, isRounded = true }) => {
           type="text"
           value={shareUrl}
           onChange={(e) => setUrl(e.target.value)}
-          className='p-1 px-2 outline-none border-none bg-transparent flex-1'
+          className='p-1 px-2 outline-0 border-none bg-transparent flex-1'
           placeholder="Copy link"
         />
         <DevClipboardV1 setCopied={setCopy} className='bg-ACCENT text-white rounded-full p-1 px-3 active:opacity-80' textClip={shareUrl}>

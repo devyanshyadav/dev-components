@@ -68,7 +68,7 @@ const DevEmojiPickerV2 = ({
           type="text"
           onChange={handleFindEmoji}
           value={hoveredEmoji ?? ""}
-          className="w-full p-1 px-2 pl-8 rounded-full bg-ACCENT/20  border border-ACCENT/50 text-sm focus:border-ACCENT focus:outline-none"
+          className="w-full p-1 px-2 pl-8 rounded-full bg-ACCENT/20  border border-ACCENT/50 text-sm focus:border-ACCENT focus:outline-0"
           placeholder="Search by tag or alias"
         />
         <FiSearch className="absolute top-2 left-2 text-ACCENT" />

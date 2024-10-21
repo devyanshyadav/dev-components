@@ -74,7 +74,7 @@ const ReactShare = ({
             setUrl(e.target.value);
             onChange?.(e.target.value);
           }}
-          className="p-0.5 px-2 outline-none border-none bg-transparent flex-1"
+          className="p-0.5 px-2 outline-0 border-none bg-transparent flex-1"
           placeholder="Copy link"
         />
         <DevClipboardV1

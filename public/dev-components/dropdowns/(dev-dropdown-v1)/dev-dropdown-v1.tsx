@@ -30,7 +30,7 @@ const DevDropdownV1 = ({
 
   return (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger className="outline-none" asChild>
+      <DropdownMenu.Trigger className="outline-0" asChild>
         {button}
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
@@ -39,7 +39,7 @@ const DevDropdownV1 = ({
           side={place}
           className={`bg-LIGHT origin-[var(--radix-dropdown-menu-content-transform-origin)] z-50 showDropDown dark:bg-DARK rounded-lg border-ACCENT/30 border`}
         >
-          <DropdownMenu.Item className="outline-none" asChild>
+          <DropdownMenu.Item className="outline-0" asChild>
             {children}
           </DropdownMenu.Item>
         </DropdownMenu.Content>

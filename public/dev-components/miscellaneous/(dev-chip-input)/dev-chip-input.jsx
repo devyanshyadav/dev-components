@@ -53,7 +53,7 @@ const DevChipInput = ({
           type="text"
           onKeyDown={handleEnter}
           placeholder="enter tag"
-          className="px-1 rounded-full bg-transparent outline-none w-28 border-none"
+          className="px-1 rounded-full bg-transparent outline-0 w-28 border-none"
         />
       )}
       <button

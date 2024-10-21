@@ -103,7 +103,7 @@ const DevInputV2 = ({
           onBlur={() => setActive(false)}
           spellCheck="false"
           {...props}
-          className="w-full outline-none bg-transparent"
+          className="w-full outline-0 bg-transparent"
         />
       </div>
     </div>

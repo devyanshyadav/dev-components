@@ -34,7 +34,7 @@ const DevQrCode = ({
   return (
     <div className="flex items-center justify-center gap-3 flex-col">
       <input
-        className="bg-transparent text-center outline-none focus:outline-ACCENT p-1 px-2 rounded-md border border-ACCENT/50 text-sm text-ACCENT/80"
+        className="bg-transparent text-center outline-0 focus:outline-ACCENT p-1 px-2 rounded-md border border-ACCENT/50 text-sm text-ACCENT/80"
         id="QrCode"
         type="text"
         value={qrValue}

@@ -17,7 +17,7 @@ const DevTabV3 = ({ tabData }: { tabData: TabProps[] }) => {
         {tabData.map((elem, index) => (
           <button
           key={index}
-            className={`p-2 outline-none z-10 text-nowrap border-b-2 border-ACCENT ${state === index && " text-ACCENT !border-b-0"
+            className={`p-2 outline-0 z-10 text-nowrap border-b-2 border-ACCENT ${state === index && " text-ACCENT !border-b-0"
               }`}
             onClick={() => setState(index)}
           >

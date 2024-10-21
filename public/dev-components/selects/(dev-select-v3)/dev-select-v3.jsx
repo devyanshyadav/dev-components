@@ -11,7 +11,7 @@ const DevSelectV3 = ({
 }) => {
   return (
     <Select.Root onValueChange={onChange} defaultValue={defaultValue?.value}>
-      <Select.Trigger className="flex outline-none focus:border-ACCENT/50 items-center justify-between w-full p-1.5 px-3 rounded-md bg-LIGHT dark:bg-DARK border border-ACCENT/30">
+      <Select.Trigger className="flex outline-0 focus:border-ACCENT/50 items-center justify-between w-full p-1.5 px-3 rounded-md bg-LIGHT dark:bg-DARK border border-ACCENT/30">
         <Select.Value className="text-white" placeholder={placeholder} />
         <FaChevronDown className="text-sm" />
       </Select.Trigger>
@@ -36,7 +36,7 @@ const DevSelectV3 = ({
                 <Select.Item
                   key={option.value}
                   value={option.value}
-                  className="relative flex mt-0.5 items-center p-1.5 px-3 text-sm rounded select-none hover:bg-ACCENT/30 focus:bg-ACCENT/30 outline-none cursor-pointer"
+                  className="relative flex mt-0.5 items-center p-1.5 px-3 text-sm rounded select-none hover:bg-ACCENT/30 focus:bg-ACCENT/30 outline-0 cursor-pointer"
                 >
                   <Select.ItemText>{option.label}</Select.ItemText>
                   <Select.ItemIndicator className="absolute left-2 inline-flex items-center"></Select.ItemIndicator>

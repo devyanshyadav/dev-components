@@ -19,7 +19,7 @@ const DevRadioV1 = ({ options, onChange, defaultValue }: RadioProps) => {
           <div key={index} className="flex items-center gap-2">
             <RadioGroup.Item
               onChange={(e) => onChange(e)}
-              className="rounded-full border-2 border-ACCENT focus:outline-none cursor-pointer w-5 text-ACCENT h-5"
+              className="rounded-full border-2 border-ACCENT focus:outline-0 cursor-pointer w-5 text-ACCENT h-5"
               value={option.value}
               id={option.value}
               key={option.value}

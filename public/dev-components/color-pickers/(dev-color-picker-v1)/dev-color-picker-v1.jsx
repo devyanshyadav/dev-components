@@ -63,7 +63,7 @@ const DevColorPickerV1 = ({
           <input
             spellCheck={false}
             type="text"
-            className="w-full px-1 outline-none border-2 border-ACCENT rounded-md border-transparent focus:border-ACCENT bg-ACCENT/50"
+            className="w-full px-1 outline-0 border-2 border-ACCENT rounded-md border-transparent focus:border-ACCENT bg-ACCENT/50"
             value={color}
             onChange={(e) => onChangeHandler(e.target.value)}
           />
