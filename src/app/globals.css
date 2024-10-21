@@ -183,3 +183,39 @@ pre {
 .react-calendar__month-view__days__day--neighboringMonth {
   @apply opacity-40;
 }
+
+/* color picker css  */
+.react-colorful {
+  gap: 5px;
+  width: 100% !important;
+  height: 180px !important;
+  border-radius: 0px;
+}
+.react-colorful__saturation {
+  border-radius: 5px !important;
+  width: 100%;
+}
+.react-colorful__hue,
+.react-colorful__alpha {
+  border-radius: 5px !important;
+  width: 100%;
+
+  height: 12px !important;
+}
+.react-colorful__hue-pointer,
+.react-colorful__alpha-pointer,
+.react-colorful__saturation-pointer {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* colorpicker 2 css */
+.w-color-sketch {
+  @apply !rounded-lg *:!border-slate-500/50 !pb-1.5 !bg-LIGHT dark:!bg-DARK; 
+}
+
+.w-color-sketch div:not(.w-color-swatch),
+.w-color-sketch input {
+  @apply !rounded-md  font-medium dark:!text-white !text-black;
+}
+

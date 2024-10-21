@@ -17,7 +17,7 @@ const ColorPickersInfo = [
         "Interactive color selection via hex-alpha color picker",
         "Support for hex color format",
         "Integration with react-colorful library",
-        "Customizable appearance through styled-components",
+        "Customizable appearance through css",
       ],
       helpers: [
         {
@@ -27,16 +27,15 @@ const ColorPickersInfo = [
       ],
       props: [
         {
-          propName: "defaultColor",
-          propExample: `'#E26F1D'`,
+          propName: "color",
+          propExample: "'#E26F1D'",
           propDetail:
-            "The initial color value. Defaults to '#E26F1D' if not specified.",
+            "The current selected color. Defaults to '#E26F1D' if not specified.",
         },
         {
-          propName: "onChange",
-          propExample: `(e) => console.log(e)`,
-          propDetail:
-            "A callback function triggered when the color selection changes.",
+          propName: "setColor",
+          propExample: "(newColor) => console.log(newColor)",
+          propDetail: "A callback function to update the selected color.",
         },
       ],
       packages: [
@@ -44,113 +43,51 @@ const ColorPickersInfo = [
           pckg_name: "react-colorful",
           pckg_link: "https://www.npmjs.com/package/react-colorful",
         },
-        {
-          pckg_name: "styled-components",
-          pckg_link: "https://styled-components.com/",
-        },
       ],
     },
   },
   {
-    title: "Dev Color Picker V2",
-    component: DevColorPickerV2Usage,
-    variants: {
-      jsx: true,
-      tsx: true,
+    "title": "Dev Color Picker V2",
+    "component":DevColorPickerV2Usage,
+    "variants": {
+      "jsx": true,
+      "tsx": true
     },
-    details: {
-      description:
-        "A color picker component that integrates with react-color's SketchPicker, providing a customizable and interactive way to select colors.",
-      features: [
-        "Interactive color selection using SketchPicker",
-        "Supports RGB, HEX, HSL, and HSV color formats",
-        "Customizable appearance through styled-components",
-        "Tooltip as popover for color preview",
-        "Alpha channel support for RGBA colors",
+    "details": {
+      "description": "An enhanced color picker component that allows users to select colors using a sketch interface.",
+      "features": [
+        "Interactive color selection via Sketch color picker",
+        "Support for both RGB and HEX color formats",
+        "Integration with @uiw/react-color library",
+        "Customizable appearance through styled-components"
       ],
-      props: [
+      "helpers": [
         {
-          propName: "color",
-          propExample: "{ hex: '#F17013' }",
-          propDetail:
-            "The current color state passed down from the parent component. It includes properties such as hex, rgb, hsl, and hsv.",
-        },
-        {
-          propName: "setColor",
-          propExample: "(color) => {}",
-          propDetail:
-            "A callback function used to update the color state in the parent component. It receives the new color object as its argument.",
-        },
+          "cmp_name": "DevPopoverV1",
+          "cmp_link": "/popovers#dev-popover-v1"
+        }
       ],
-      helpers: [
+      "props": [
         {
-          cmp_name: "DevPopoverV1",
-          cmp_link: "/popovers#dev-popover-v1",
+          "propName": "color",
+          "propExample": `{"hexa": "#E26F1D"}`,
+          "propDetail": "The current selected color, which can be in RGB or HEX format. Defaults to {'hexa': '#E26F1D'} if not specified."
         },
+        {
+          "propName": "setColor",
+          "propExample": `(color) => console.log(color)`,
+          "propDetail": "A callback function to update the selected color."
+        }
       ],
-      packages: [
+      "packages": [
         {
-          pckg_name: "@uiw/react-color",
-          pckg_link: "https://www.npmjs.com/package/@uiw/react-color",
+          "pckg_name": "@uiw/react-color",
+          "pckg_link": "https://www.npmjs.com/package/@uiw/react-color"
         },
-        {
-          pckg_name: "react-tooltip",
-          pckg_link: "https://www.npmjs.com/package/react-tooltip",
-        },
-        {
-          pckg_name: "styled-components",
-          pckg_link: "https://styled-components.com/",
-        },
-      ],
-      doc_links: ["https://casesandberg.github.io/react-color/"],
-    },
-
-  },
-  {
-    title: "Dev Color Picker V3",
-    component: DevColorPickerV3Usage,
-    variants: {
-      jsx: true,
-      tsx: true,
-    },
-    details: {
-      description:
-        "A color picker component that integrates with react-color's SketchPicker, providing a customizable and interactive way to select colors.",
-      features: [
-        "Interactive color selection using SketchPicker",
-        "Supports RGB, HEX, HSL, and HSV color formats",
-        "Customizable appearance through styled-components",
-        "Tooltip as popover for color preview",
-        "Alpha channel support for RGBA colors",
-      ],
-      props: [
-        {
-          propName: "color",
-          propExample: "{ hex: '#F17013' }",
-          propDetail:
-            "The current color state passed down from the parent component. It includes properties such as hex, rgb, hsl, and hsv.",
-        },
-        {
-          propName: "setColor",
-          propExample: "(color) => {}",
-          propDetail:
-            "A callback function used to update the color state in the parent component. It receives the new color object as its argument.",
-        },
-      ],
-      helpers: [
-        {
-          cmp_name: "DevPopoverV1",
-          cmp_link: "/popovers#dev-popover-v1",
-        },
-      ],
-      packages: [
-        {
-          pckg_name: "react-pick-color",
-          pckg_link: "https://www.npmjs.com/package/react-pick-color",
-        },
-      ],
-    },
-  },
+      ]
+    }
+  }
+ 
 ];
 
 export default ColorPickersInfo;
