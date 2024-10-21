@@ -16,7 +16,7 @@ const DevMultiselectV1Usage = () => {
   return (
     <DevMultiselectV1
       options={options}
-      defaultValues={[options[2], options[3], options[4]]}
+      defaultValue={[options[2], options[3], options[4]]}
       onChange={(e) => console.log(e)}
     />
   );
