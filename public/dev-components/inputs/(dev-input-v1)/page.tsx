@@ -41,7 +41,7 @@ const DevInputV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-sm  text-ACCENT">Sizes (sm/ md/ lg)</h2>
+        <h2 className="text-sm  text-ACCENT">Scale (sm/ md/ lg)</h2>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full ">
           <DevInputV1
             type="text"

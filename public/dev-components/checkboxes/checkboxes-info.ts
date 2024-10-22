@@ -1,4 +1,5 @@
 import DevCheckboxV1Usage from "./(dev-checkbox-v1)/page";
+import DevCheckboxV2Usage from "./(dev-checkbox-v2)/page";
 
 const CheckboxInfo = [
   {
@@ -10,42 +11,90 @@ const CheckboxInfo = [
     },
     details: {
       description:
-        "A customizable checkbox component for toggling between checked and unchecked states.",
+        "A customizable checkbox component built using Radix UI, designed for accessibility and visual appeal.",
       features: [
-        "Visual toggle between checked and unchecked states",
-        "Customizable appearance and styling",
-        "Optional label support",
-        "Callback function for state changes",
+        "Interactive checkbox with customizable styles",
+        "Supports checked and unchecked states",
+        "Integration with Radix UI for accessibility",
+        "Smooth animations for state changes",
       ],
       props: [
         {
-          propName: "defaultState",
-          propExample: `true`,
-          propDetail: "The initial state of the checkbox. Defaults to true.",
+          propName: "id",
+          propExample: "'dev-checkbox'",
+          propDetail: "Unique identifier for the checkbox element.",
         },
         {
-          propName: "onChange",
-          propExample: `(e) => console.log(e)`,
-          propDetail:
-            "An optional callback function triggered when the checkbox state changes.",
-        },
-        {
-          propName: "labelName",
-          propExample: `"Dev Checkbox"`,
-          propDetail: "An optional label name for the checkbox.",
+          propName: "defaultChecked",
+          propExample: "true",
+          propDetail: "Indicates whether the checkbox is checked by default.",
         },
         {
           propName: "required",
-          propExample: `false`,
-          propDetail: "Whether the checkbox is required.",
+          propExample: "",
+          propDetail:
+            "Indicates that the checkbox is required in a form submission.",
         },
+        {
+          propName: "onCheckedChange",
+          propExample: "(e) => console.log(e)",
+          propDetail:
+            "Callback function triggered when the checkbox state changes.",
+        },
+      ],
+      doc_links: [
+        "https://www.radix-ui.com/primitives/docs/components/checkbox#checkbox",
       ],
       packages: [
         {
           pckg_name: "@radix-ui/react-checkbox",
-          pckg_link: "https://www.radix-ui.com/primitives/docs/components/checkbox#checkbox",
+          pckg_link:
+            "https://www.radix-ui.com/docs/primitives/components/checkbox",
         },
       ],
+    },
+  },
+  {
+    title: "Dev Checkbox V2",
+    component: DevCheckboxV2Usage,
+    variants: {
+      jsx: true,
+      tsx: true,
+    },
+    details: {
+      description:
+        "An enhanced checkbox component that utilizes React Icons for visual feedback and improved styling.",
+      features: [
+        "Customizable checkbox with icon feedback",
+        "Supports checked and unchecked states",
+        "Accessible input with hidden native checkbox",
+        "Smooth transitions and animations",
+      ],
+      props: [
+        {
+          propName: "id",
+          propExample: "'dev-checkbox-v-two'",
+          propDetail: "Unique identifier for the checkbox element.",
+        },
+        {
+          propName: "defaultChecked",
+          propExample: "true",
+          propDetail: "Indicates whether the checkbox is checked by default.",
+        },
+        {
+          propName: "required",
+          propExample: "",
+          propDetail:
+            "Indicates that the checkbox is required in a form submission.",
+        },
+        {
+          propName: "onChange",
+          propExample: "(e) => console.log(e.target.checked)",
+          propDetail:
+            "Callback function triggered when the checkbox state changes.",
+        },
+      ],
+      packages: [],
     },
   },
 ];
