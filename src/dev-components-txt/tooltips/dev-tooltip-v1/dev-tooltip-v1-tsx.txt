@@ -5,23 +5,22 @@ type DevTooltipProps = {
   children: React.ReactNode;
   place?: "top" | "bottom" | "left" | "right";
   tipData: string;
-  rootProps?: Omit<React.ComponentProps<typeof Tooltip.Root>, "children">;
   contentProps?: Omit<
     React.ComponentProps<typeof Tooltip.Content>,
-    "children" | "className" | "side"
+    "className" | "side"
   >;
-};
+} & React.ComponentProps<typeof Tooltip.Root>;
 
 const DevTooltipV1 = ({
   children,
   place = "top",
   tipData,
-  rootProps,
   contentProps,
+  ...props
 }: DevTooltipProps) => {
   return (
     <Tooltip.Provider delayDuration={0}>
-      <Tooltip.Root {...rootProps}>
+      <Tooltip.Root {...props}>
         <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content

@@ -16,7 +16,7 @@ const DevDrawerV1Usage = () => {
         </button>
       }
     >
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col p-3 justify-between h-full">
         <p>Drawer Content</p>
 
         <button

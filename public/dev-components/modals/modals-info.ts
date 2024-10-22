@@ -38,6 +38,12 @@ const ModalsInfo = [
             "A boolean value indicating whether the modal should be open by default.",
         },
         {
+          propName: "contentProps",
+          propExample: "{ }",
+          propDetail:
+            "Props passed to the Modal Content component section",
+        },
+        {
           propName: "modalTitle",
           propExample: '"Modal Title"',
           propDetail: "The title to be displayed in the modal header.",

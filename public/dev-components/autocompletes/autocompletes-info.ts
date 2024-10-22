@@ -40,7 +40,7 @@ const AutocompletesInfo = [
           pckg_link: "https://www.npmjs.com/package/downshift",
         },
       ],
-      doc_link:["https://www.downshift-js.com/"]
+      doc_links:["https://www.downshift-js.com/downshift#props-used-in-examples"]
     },
   },
 ];

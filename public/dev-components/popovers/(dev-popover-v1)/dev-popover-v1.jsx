@@ -29,7 +29,7 @@ const DevPopoverV1 = ({
       <Popover.Portal>
         <Popover.Content
           side={position}
-          className={` outline-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30`}
+          className={`outline-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30 ${contentProps?.className}`}
           {...contentProps}
         >
           {children}

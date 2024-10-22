@@ -21,7 +21,7 @@ const DevAutocompleteV1Usage = () => {
   ];
 
   return (
-    <div className="max-w-lg self-start">
+    <div className="max-w-lg self-start bg-LIGHT dark:bg-DARK p-2 rounded-md">
       <DevAutocomplete
         items={items}
         defaultItem={items[0]}

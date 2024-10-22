@@ -13,7 +13,7 @@ const DevDrawerV2Usage = () => {
         }
         position="bottom"
       >
-        <div className="text-center">
+        <div className="text-center p-3">
           <h2>Drawer Content</h2>
         </div>
       </DevDrawerV2>
@@ -27,7 +27,7 @@ const DevDrawerV2Usage = () => {
         }
         position="right"
       >
-        <div className="text-center">
+        <div className="text-center p-3">
           <h2>Drawer Content</h2>
         </div>
       </DevDrawerV2>
@@ -41,7 +41,7 @@ const DevDrawerV2Usage = () => {
         }
         position="left"
       >
-        <div className="text-center">
+        <div className="text-center p-3">
           <h2>Drawer Content</h2>
         </div>
       </DevDrawerV2>
@@ -55,7 +55,7 @@ const DevDrawerV2Usage = () => {
         }
         position="top"
       >
-        <div className="text-center">
+        <div className="text-center p-3">
           <h2>Drawer Content</h2>
         </div>
       </DevDrawerV2>

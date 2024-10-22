@@ -1,16 +1,18 @@
 "use client";
 import React from "react";
-import Downshift from "downshift";
+import Downshift, { DownshiftProps } from "downshift";
 
 const DevAutocompleteV1 = ({
   items,
   onChange,
   defaultItem,
+  ...props
 }) => (
   <Downshift
     onChange={onChange}
     itemToString={(item) => item?.value ?? ""}
     initialInputValue={defaultItem?.value}
+    {...props}
   >
     {({
       getInputProps,
@@ -26,7 +28,7 @@ const DevAutocompleteV1 = ({
         <label className="flex flex-col" {...getLabelProps()}>
           Enter a fruit
           <input
-            className="p-1 px-3 rounded-md !outline-0 border-2 focus:border-ACCENT border-ACCENT/50 bg-LIGHT dark:bg-DARK"
+            className="p-1 px-3 mt-1 rounded-md focus:ring-[3px] transition-all ring-ACCENT/50 !outline-0 border  border-ACCENT bg-LIGHT dark:bg-DARK"
             autoFocus
             {...getInputProps()}
           />
@@ -37,7 +39,13 @@ const DevAutocompleteV1 = ({
             {...getMenuProps()}
           >
             {items
-              .filter((item) => !inputValue || item.value.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase()))
+              .filter(
+                (item) =>
+                  !inputValue ||
+                  item.value
+                    .toLocaleLowerCase()
+                    .includes(inputValue.toLocaleLowerCase())
+              )
               .map((item, index) => (
                 <li
                   key={item.value}
@@ -45,11 +53,8 @@ const DevAutocompleteV1 = ({
                     item,
                     index,
                     className: `p-0.5 px-3 ${
-                      highlightedIndex === index
-                        && "bg-ACCENT text-white"
-                    } ${
-                      selectedItem === item && "bg-ACCENT/30"
-                    }`,
+                      highlightedIndex === index && "bg-ACCENT text-white"
+                    } ${selectedItem === item && "bg-ACCENT/30"}`,
                   })}
                 >
                   {item.value}

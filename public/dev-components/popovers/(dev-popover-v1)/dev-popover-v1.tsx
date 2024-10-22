@@ -8,7 +8,7 @@ interface DevPopoverV1Props {
   rootProps?: Omit<React.ComponentProps<typeof Popover.Root>, "children">;
   contentProps?: Omit<
     React.ComponentProps<typeof Popover.Content>,
-    "children" | "className" | "side"
+    "children" | "side"
   >;
 }
 //   /* Popover animation  */
@@ -39,7 +39,7 @@ const DevPopoverV1: React.FC<DevPopoverV1Props> = ({
       <Popover.Portal>
         <Popover.Content
           side={position}
-          className={`outline-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30`}
+          className={`outline-0 origin-[var(--radix-popover-content-transform-origin)] z-50 showPopover rounded-lg bg-LIGHT dark:bg-DARK border border-ACCENT/30 ${contentProps?.className}`}
           {...contentProps}
         >
           {children}

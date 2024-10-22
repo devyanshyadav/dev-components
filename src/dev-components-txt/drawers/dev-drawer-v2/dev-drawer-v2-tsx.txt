@@ -58,7 +58,7 @@ export default function DevDrawerV2({
               {title}
             </h2>
           )}
-          <div className="overflow-y-auto *:p-3 flex-grow h-full">
+          <div className="overflow-y-auto flex-grow h-full">
             {children}
           </div>
         </Drawer.Content>

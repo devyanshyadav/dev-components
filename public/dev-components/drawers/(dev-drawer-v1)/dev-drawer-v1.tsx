@@ -44,10 +44,10 @@ const DevDrawerV1 = forwardRef<DevDrawerRef, DevDrawerProps>(
           direction={position}
           duration={200}
           style={{ padding: 0, backgroundColor: "transparent" }}
-          className={`!bg-LIGHT flex flex-col relative ${extraCss[position]} *:p-3 dark:!bg-DARK border-ACCENT/50 overflow-hidden`}
+          className={`!bg-LIGHT flex flex-col relative ${extraCss[position]} dark:!bg-DARK border-ACCENT/50 overflow-hidden`}
         >
           {title && (
-            <h2 className="border-b flex-shrink-0 border-ACCENT/50">
+            <h2 className="border-b flex-shrink-0 p-3 border-ACCENT/50">
               {title}
             </h2>
           )}

@@ -12,7 +12,7 @@ const DevModalV1Usage = () => {
         </button>
       }
     >
-      <div className="flex flex-col gap-3 w-full">
+      <div className="flex flex-col gap-3 w-full p-3">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nostrum
           magni quia enim, vel autem maiores. Beatae eveniet omnis nam non ab,
@@ -30,4 +30,3 @@ const DevModalV1Usage = () => {
 };
 
 export default DevModalV1Usage;
-
