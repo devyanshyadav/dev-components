@@ -9,6 +9,7 @@ type AutocompleteProps = {
   items: Item[];
   onChange?: (e: Item | null) => void;
   defaultItem?: Item;
+  labelName?: string;
 } & Omit<
   DownshiftProps<Item>,
   "itemToString" | "initialInputValue" | "onChange"
@@ -18,6 +19,7 @@ const DevAutocompleteV1 = ({
   items,
   onChange,
   defaultItem,
+  labelName="Select an items",
   ...props
 }: AutocompleteProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -62,17 +64,15 @@ const DevAutocompleteV1 = ({
                   inputRef.current?.focus();
                 },
               }}
-              rootProps={{
-                open: isOpen,
-                onOpenChange: (open) => {
-                  if (open) {
-                    inputRef.current?.focus();
-                  }
-                },
+              open={isOpen}
+              onOpenChange={(open) => {
+                if (open) {
+                  inputRef.current?.focus();
+                }
               }}
               button={
                 <label className="flex flex-col" {...getLabelProps()}>
-                  Enter a fruit
+                  <p className="text-sm">{labelName}</p>
                   <input
                     className="p-1 px-3 mt-1 rounded-md focus:ring-[3px] transition-all ring-ACCENT/50 !outline-0 border border-ACCENT bg-LIGHT dark:bg-DARK"
                     {...inputProps}

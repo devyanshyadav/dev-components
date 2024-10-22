@@ -25,6 +25,7 @@ const DevAutocompleteV1Usage = () => {
       <DevAutocomplete
         items={items}
         defaultItem={items[0]}
+        labelName="Select fruits"
         onChange={(e) => alert(`You selected ${e?.value}`)}
       />
     </div>

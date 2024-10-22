@@ -16,9 +16,10 @@ const DevSelectV2Usage = () => {
     <div className="max-w-xs w-full">
       <DevSelectV2
       options={options}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => console.log(e.target.value)}
       placeholder="Select a Framework.."
       labelName="Frameworks"
+      defaultValue={options[2].value}
     />
   </div>
   );

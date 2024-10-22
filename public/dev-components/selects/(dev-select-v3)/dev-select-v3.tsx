@@ -3,21 +3,23 @@ import * as Select from "@radix-ui/react-select";
 import { FaChevronDown } from "react-icons/fa";
 type SelectProps = {
   options: { value: string; label: string }[];
-  onChange?: (e: any) => void;
-  defaultValue?: { value: string; label: string };
   placeholder?: string;
   labelName?: string;
-};
+  contentProps?: Omit<
+    React.ComponentProps<typeof Select.Content>,
+    "side" | "sideOffset" | "position"
+  >;
+} & React.ComponentProps<typeof Select.Root>;
 const DevSelectV3 = ({
   options,
-  onChange,
-  defaultValue,
   labelName,
   placeholder = "Select an option",
+  contentProps,
+  ...props
 }: SelectProps) => {
   return (
-    <Select.Root onValueChange={onChange} defaultValue={defaultValue?.value}>
-      <Select.Trigger className="flex outline-0 focus:border-ACCENT/50 items-center justify-between w-full p-1.5 px-3 rounded-md bg-LIGHT dark:bg-DARK border border-ACCENT/30">
+    <Select.Root {...props}>
+      <Select.Trigger className="flex outline-0 items-center justify-between w-full p-1.5 px-3 rounded-md bg-LIGHT dark:bg-DARK border focus:ring-[3px] ring-ACCENT/50 transition-all border-ACCENT">
         <Select.Value className="text-white" placeholder={placeholder} />
         <FaChevronDown className="text-sm" />
       </Select.Trigger>
@@ -26,7 +28,7 @@ const DevSelectV3 = ({
           side="bottom"
           position="popper"
           sideOffset={5}
-          className={`z-50 origin-[var(--radix-select-content-transform-origin)] showOptions w-[var(--radix-select-trigger-width)] max-h-48 overflow-hidden bg-LIGHT border border-ACCENT/30 dark:bg-DARK rounded-md shadow-lg`}
+          className={`z-50 origin-[var(--radix-select-content-transform-origin)] showOptions w-[var(--radix-select-trigger-width)] max-h-48 overflow-hidden bg-LIGHT border border-ACCENT/30 dark:bg-DARK rounded-md shadow-lg ${contentProps?.className}`}
         >
           <Select.ScrollUpButton className="flex items-center justify-center h-5 bg-transparent hover:text-ACCENT cursor-pointer">
             <FaChevronDown className="text-sm rotate-180 opacity-80" />
@@ -42,7 +44,7 @@ const DevSelectV3 = ({
                 <Select.Item
                   key={option.value}
                   value={option.value}
-                  className="relative flex mt-0.5 items-center p-1.5 px-3 text-sm rounded select-none hover:bg-ACCENT/30 focus:bg-ACCENT/30 outline-0 cursor-pointer"
+                  className="relative flex mt-0.5 items-center p-1.5 px-3 text-sm rounded select-none hover:!bg-ACCENT/30 focus:bg-ACCENT outline-0 cursor-pointer"
                 >
                   <Select.ItemText>{option.label}</Select.ItemText>
                   <Select.ItemIndicator className="absolute left-2 inline-flex items-center"></Select.ItemIndicator>

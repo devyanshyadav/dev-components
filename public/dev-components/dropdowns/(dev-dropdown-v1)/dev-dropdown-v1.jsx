@@ -1,13 +1,6 @@
 "use client";
 import React from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-
-const DevDropdownV1 = ({
-  children,
-  button,
-  place = "bottom",
-}) => {
-
 //   /* Dropdown CSS animation  */
 // .showDropDown{
 //   animation: dropDownShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -24,16 +17,24 @@ const DevDropdownV1 = ({
 //   }
 // }
 
+const DevDropdownV1 = ({
+  children,
+  button,
+  position = "bottom",
+  contentProps,
+  ...props
+}) => {
   return (
-    <DropdownMenu.Root>
+    <DropdownMenu.Root {...props}>
       <DropdownMenu.Trigger className="outline-0" asChild>
         {button}
       </DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <DropdownMenu.Content
+          {...contentProps}
           sideOffset={3}
-          side={place}
-          className={`bg-LIGHT origin-[var(--radix-dropdown-menu-content-transform-origin)] z-50 showDropDown dark:bg-DARK rounded-lg border-ACCENT/30 border`}
+          side={position}
+          className={`bg-LIGHT origin-[var(--radix-dropdown-menu-content-transform-origin)] z-50 showDropDown dark:bg-DARK rounded-lg border-ACCENT/30 border ${contentProps?.className}`}
         >
           <DropdownMenu.Item className="outline-0" asChild>
             {children}

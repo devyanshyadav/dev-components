@@ -16,15 +16,15 @@ import * as Popover from "@radix-ui/react-popover";
 //     transform:scale(1);
 //   }
 // }
-const DevPopoverV1 = ({
+const DevPopoverV1= ({
   children,
   button,
-  rootProps,
   contentProps,
   position = "bottom",
+  ...props
 }) => {
   return (
-    <Popover.Root {...rootProps}>
+    <Popover.Root {...props}>
       <Popover.Trigger asChild>{button}</Popover.Trigger>
       <Popover.Portal>
         <Popover.Content

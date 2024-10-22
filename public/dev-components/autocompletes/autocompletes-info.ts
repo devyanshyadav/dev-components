@@ -10,37 +10,50 @@ const AutocompletesInfo = [
     },
     details: {
       description:
-        "A customizable autocomplete component for selecting options from a dropdown menu.",
+        "An autocomplete component that allows users to select from a list of items as they type.",
       features: [
-        "Real-time filtering of search results",
-        "Support for multiple selection",
-        "Customizable appearance and styling",
-        "Integration with Downshift library",
+        "Dynamic filtering of suggestions based on user input",
+        "Integration with Downshift for managing state and accessibility",
+        "Customizable appearance using popovers for displaying suggestions",
+        "Supports keyboard navigation and selection",
+      ],
+      helpers: [
+        {
+          cmp_name: "DevPopoverV1",
+          cmp_link: "/popovers#dev-popover-v1",
+        },
       ],
       props: [
         {
           propName: "items",
           propExample: `[{ value: 'Apple' }, { value: 'Banana' }]`,
-          propDetail: "An array of objects containing 'value' properties for each selectable option.",
-        },
-        {
-          propName: "onChange",
-          propExample: `(e) => alert('You selected ' + e?.value)`,
-          propDetail: "A callback function triggered when an item is selected. Receives the selected item as an argument.",
+          propDetail:
+            "An array of items to be used as suggestions in the autocomplete.",
         },
         {
           propName: "defaultItem",
           propExample: `{ value: 'Apple' }`,
-          propDetail: "The initially selected item. If not provided, no item will be pre-selected.",
+          propDetail:
+            "The item that should be pre-selected when the component is rendered.",
+        },
+        {
+          propName: "onChange",
+          propExample: `(e) => alert(e?.value)`,
+          propDetail: "Callback function triggered when an item is selected.",
+        },
+        {
+          propName: "labelName",
+          propExample: `"Select a fruit"`,
+          propDetail: "Label displayed above the input field.",
         },
       ],
+      doc_links:["https://www.downshift-js.com/downshift#props-used-in-examples"],
       packages: [
         {
           pckg_name: "downshift",
-          pckg_link: "https://www.npmjs.com/package/downshift",
+          pckg_link: "https://www.downshift-js.com/",
         },
       ],
-      doc_links:["https://www.downshift-js.com/downshift#props-used-in-examples"]
     },
   },
 ];

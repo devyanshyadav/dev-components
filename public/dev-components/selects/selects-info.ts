@@ -12,61 +12,54 @@ const SelectsInfo = [
     },
     details: {
       description:
-        "A customizable select component using Radix UI, supporting multiple options and labels.",
+        "A customizable select component for choosing options from a dropdown list.",
       features: [
-        "Supports multiple options with values and labels",
-        "Customizable placeholder text",
-        "Label name for the select field",
-        "Responsive design",
-        "Accessibility-focused",
-        "Customizable styling",
+        "Supports multiple options with labels and values",
+        "Customizable placeholder and label",
+        "Integration with Radix UI for accessibility and usability",
+        "Responsive design for various screen sizes",
       ],
       props: [
         {
           propName: "options",
-          propExample: `[
-            { value: "React JS", label: "React JS" },
-            { value: "Angular", label: "Angular" },
-            // ... more options
-          ]`,
-          propDetail: "Array of objects containing option values and labels.",
-        },
-        {
-          propName: "onChange",
-          propExample: `(e) => console.log(e)`,
-          propDetail: "Callback function triggered when an option is selected.",
+          propExample: `[{ value: 'React JS', label: 'React JS' }, { value: 'Angular', label: 'Angular' }]`,
+          propDetail:
+            "An array of option objects, each containing a value and a label.",
         },
         {
           propName: "defaultValue",
-          propExample: `{
-            value: "React JS",
-            label: "React JS"
-          }`,
-          propDetail: "Option to pre-select when the component mounts.",
+          propExample: `"React JS"`,
+          propDetail:
+            "The default selected value when the component is rendered.",
+        },
+        {
+          propName: "onValueChange",
+          propExample: `(value) => console.log(value)`,
+          propDetail:
+            "Callback function triggered when the selected value changes.",
         },
         {
           propName: "placeholder",
-          propExample: `"Select an option"`,
-          propDetail: "Text displayed when no option is selected.",
+          propExample: `"Select a Framework.."`,
+          propDetail: "Placeholder text displayed when no option is selected.",
         },
         {
           propName: "labelName",
           propExample: `"Frameworks"`,
-          propDetail: "Label text for the select field.",
+          propDetail: "Label displayed above the select dropdown.",
+        },
+        {
+          propName: "controlProps",
+          propExample: `{}`,
+          propDetail: "Props to pass to the control content section.",
         },
       ],
+      doc_links: ["https://www.radix-ui.com/primitives/docs/components/select"],
       packages: [
         {
-          pckg_name: "react",
-          pckg_link: "https://reactjs.org/",
-        },
-        {
           pckg_name: "@radix-ui/react-select",
-          pckg_link: "https://www.radix-ui.com/docs/primitives/select/getting-started",
-        },
-        {
-          pckg_name: "react-icons",
-          pckg_link: "https://react-icons.github.io/react-icons/",
+          pckg_link:
+            "https://www.radix-ui.com/docs/primitives/components/select",
         },
       ],
     },
@@ -80,48 +73,38 @@ const SelectsInfo = [
     },
     details: {
       description:
-        "A customizable select component for selecting a single option from a list.",
+        "A customizable single-select component for choosing options from a dropdown list.",
       features: [
-        "Displays a dropdown menu with selectable options",
-        "Customizable placeholder text",
-        "Label name for the select field",,
-        "Provides visual feedback for the selected option",
-        "Customizable appearance and behavior",
+        "Supports single selection from a list of options",
+        "Customizable appearance using class names",
+        "Integration with react-select for enhanced functionality",
+        "Responsive design suitable for various screen sizes",
       ],
+      helpers: [],
       props: [
         {
           propName: "options",
-          propExample: `[{"value": "React JS", "label": "React JS"}, {"value": "Angular", "label": "Angular"}]`,
+          propExample: `[{ value: 'React JS', label: 'React JS' }, { value: 'Angular', label: 'Angular' }]`,
           propDetail:
-            "An array of options to display in the dropdown. Each option should have a 'value' and 'label'.",
-        },
-        {
-          propName: "onChange",
-          propExample: `(e) => console.log(e)`,
-          propDetail:
-            "A callback function triggered when the selection changes. Receives the new selection as an argument.",
+            "An array of option objects, each containing a value and a label.",
         },
         {
           propName: "defaultValue",
-          propExample: `{"value": "Vue JS", "label": "Vue JS"}`,
+          propExample: `[{ value: 'Vue JS', label: 'Vue JS' }]`,
           propDetail:
-            "An optional object specifying the initially selected value. This can be either an option object or undefined.",
+            "The default selected option when the component is rendered.",
         },
         {
-          propName: "placeholder",
-          propExample: `"Select an option"`,
-          propDetail: "Text displayed when no option is selected.",
-        },
-        {
-          propName: "labelName",
-          propExample: `"Frameworks"`,
-          propDetail: "Label text for the select field.",
+          propName: "onChange",
+          propExample: `(selectedOption) => console.log(selectedOption)`,
+          propDetail: "Callback function triggered when an option is selected.",
         },
       ],
+      doc_links: ["https://react-select.com/props"],
       packages: [
         {
           pckg_name: "react-select",
-          pckg_link: "https://github.com/JedWatson/react-select",
+          pckg_link: "https://react-select.com/home",
         },
       ],
     },
@@ -135,52 +118,46 @@ const SelectsInfo = [
     },
     details: {
       description:
-        "A customizable select component for choosing options from a dropdown menu.",
+        "A simple and customizable select component for choosing options from a dropdown list.",
       features: [
-        "Support for custom labels and values",
-        "Ability to set a default selected option",
-        "Customizable appearance through CSS classes",
-        "Customizable placeholder text",
-        "Label name for the select field",
+        "Supports single selection from a list of options",
+        "Customizable placeholder and label",
+        "Built-in accessibility features with semantic HTML",
+        "Responsive design for various screen sizes",
       ],
+      helpers: [],
       props: [
         {
           propName: "options",
-          propExample: `[
-            { value: "React JS", label: "React JS" },
-            { value: "Angular", label: "Angular" },
-            // ... more options
-          ]`,
+          propExample: `[{ value: 'React JS', label: 'React JS' }, { value: 'Angular', label: 'Angular' }]`,
           propDetail:
-            "An array of objects containing 'value' and 'label' properties for each selectable option.",
-        },
-        {
-          propName: "onChange",
-          propExample: `(e) => console.log(e)`,
-          propDetail:
-            "A callback function triggered when an option is selected. Receives the selected option as an argument.",
+            "An array of option objects, each containing a value and a label.",
         },
         {
           propName: "defaultValue",
-          propExample: `{ value: "Vue JS", label: "Vue JS" }`,
+          propExample: `"Vue JS"`,
           propDetail:
-            "The initially selected option. If not provided, no option will be pre-selected.",
+            "The default selected value when the component is rendered.",
+        },
+        {
+          propName: "onChange",
+          propExample: `(e) => console.log(e.target.value)`,
+          propDetail: "Callback function triggered when an option is selected.",
         },
         {
           propName: "placeholder",
-          propExample: `"Select an option"`,
-          propDetail: "Text displayed when no option is selected.",
+          propExample: `"Select a Framework.."`,
+          propDetail: "Placeholder text displayed when no option is selected.",
         },
         {
           propName: "labelName",
           propExample: `"Frameworks"`,
-          propDetail: "Label text for the select field.",
+          propDetail: "Label displayed above the select dropdown.",
         },
       ],
       packages: [],
     },
   },
-  
 ];
 
 export default SelectsInfo;

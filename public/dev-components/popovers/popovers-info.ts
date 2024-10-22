@@ -30,12 +30,6 @@ const PopoversInfo = [
           propDetail: "The button that triggers the popover when clicked.",
         },
         {
-          propName: "rootProps",
-          propExample: "{ defaultOpen: true }",
-          propDetail:
-            "Props passed to the Popover root component, such as default open state.",
-        },
-        {
           propName: "position",
           propExample: "bottom",
           propDetail:
@@ -88,10 +82,11 @@ const PopoversInfo = [
           propDetail: "Customizable trigger button element.",
         },
         {
-          propName: "place",
-          propExample: `"bottom"`,
+          propName: "position",
+          propExample: "bottom",
           propDetail:
-            "Position of the dropdown relative to the trigger button. Can be 'top', 'bottom', 'left', or 'right'. Defaults to 'bottom'.",
+            "The position of the popover relative to the trigger button. Defaults to 'bottom'.",
+          options: ["left", "right", "top", "bottom"],
         },
       ],
       helpers: [
@@ -104,12 +99,7 @@ const PopoversInfo = [
           cmp_link: "/popovers#dev-popover-v1",
         },
       ],
-      packages: [
-        {
-          pckg_name: "@radix-ui/react-dropdown-menu",
-          pckg_link: "https://github.com/radix-ui/react-popover",
-        },
-      ],
+      packages: [],
     },
   },
 ];

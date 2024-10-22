@@ -12,17 +12,14 @@ const DevSelectV1Usage = () => {
     { value: "Gatsby", label: "Gatsby" },
     { value: "Nuxt JS", label: "Nuxt JS" },
   ];
+
   return (
-    <div className="max-w-xs w-full">
-      <DevSelectV1
+    <DevSelectV1
       options={options}
+      defaultValue={[options[2]]}
       onChange={(e) => console.log(e)}
-      placeholder="Select a Framework.."
-      labelName="Frameworks"
     />
-  </div>
   );
 };
 
 export default DevSelectV1Usage;
-

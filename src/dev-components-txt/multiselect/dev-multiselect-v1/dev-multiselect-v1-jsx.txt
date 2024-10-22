@@ -3,11 +3,11 @@ import Select from "react-select";
 
 const DevMultiselectV1 = (props) => {
   return (
-    <div className="max-w-sm">
+    <div className="max-w-sm w-full">
       <Select
         {...props}
         isMulti
-        className="bg-LIGHT rounded-xl border border-ACCENT outline-0 dark:bg-DARK has-[:focus]:ring ring-ACCENT/50 transition-all "
+        className="bg-LIGHT w-full rounded-xl border border-ACCENT outline-0 dark:bg-DARK has-[:focus]:ring ring-ACCENT/50 transition-all "
         classNames={{
           control: () => "!ring-0 !rounded-none !border-0 !bg-transparent ",
           option: ({ isFocused, isSelected }) =>
