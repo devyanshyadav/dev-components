@@ -5,6 +5,7 @@ const DevModalV1Usage = () => {
   return (
     <DevModalV1
       title="Dev Modal"
+      defaultOpen={false}
       modalBtn={
         <button className="bg-ACCENT p-2 px-4 rounded-md hover:opacity-80">
           Open Modal

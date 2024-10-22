@@ -32,20 +32,21 @@ type ModalProps = {
   children: React.ReactNode;
   modalBtn: React.ReactNode;
   closeIcon?: boolean;
-};
+} & React.ComponentProps<typeof Dialog.Root>;
 
 export const ModalTrigger = ({ children }: { children: React.ReactNode }) => {
   return <Dialog.Trigger asChild>{children}</Dialog.Trigger>;
-}
+};
 const DevModalV1 = ({
   title,
   children,
   modalBtn,
   closeIcon = true,
+  ...props
 }: ModalProps) => {
   return (
     <>
-      <Dialog.Root>
+      <Dialog.Root {...props}>
         <Dialog.Trigger asChild>{modalBtn}</Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="Modal-Overlay inset-0 fixed bg-black/50 z-50" />
@@ -53,7 +54,9 @@ const DevModalV1 = ({
             {(closeIcon || title) && (
               <div className="flex items-start justify-end w-full !pb-0">
                 {title && (
-                  <Dialog.Title className="flex-grow font-semibold text-ACCENT text-lg">{title}</Dialog.Title>
+                  <Dialog.Title className="flex-grow font-semibold text-ACCENT text-lg">
+                    {title}
+                  </Dialog.Title>
                 )}
                 <Dialog.Close>🗙</Dialog.Close>
               </div>

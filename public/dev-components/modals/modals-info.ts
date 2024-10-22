@@ -32,6 +32,12 @@ const ModalsInfo = [
             "A React element representing the button or component that opens the modal.",
         },
         {
+          propName: "defaultOpen",
+          propExample: "true",
+          propDetail:
+            "A boolean value indicating whether the modal should be open by default.",
+        },
+        {
           propName: "modalTitle",
           propExample: '"Modal Title"',
           propDetail: "The title to be displayed in the modal header.",
@@ -42,7 +48,7 @@ const ModalsInfo = [
           propDetail: "Whether to display the close icon in the modal header.",
         },
       ],
-      doc_links: [],
+      doc_links: ["https://www.radix-ui.com/primitives/docs/components/dialog"],
       packages: [
         {
           pckg_name: "@radix-ui/react-dialog",

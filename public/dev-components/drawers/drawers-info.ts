@@ -60,60 +60,65 @@ const DrawersInfo = [
     },
   },
   {
-    "title": "Dev Drawer V2",
-    "component": DevDrawerV2Usage,
-    "variants": {
-      "jsx": true,
-      "tsx": true
+    title: "Dev Drawer V2",
+    component: DevDrawerV2Usage,
+    variants: {
+      jsx: true,
+      tsx: true,
     },
-    "details": {
-      "description": "A customizable drawer component that slides in from any direction to display content.",
-      "features": [
+    details: {
+      description:
+        "A customizable drawer component that slides in from any direction to display content.",
+      features: [
         "Flexible positioning (left, right, top, bottom)",
         "Supports overlay for better focus on drawer content",
         "Customizable trigger button for opening the drawer",
-        "Responsive design with adjustable dimensions"
+        "Responsive design with adjustable dimensions",
       ],
-      "helpers": [],
-      "props": [
+      helpers: [],
+      props: [
         {
-          "propName": "children",
-          "propExample": "<div>Drawer Content</div>",
-          "propDetail": "The content to be displayed inside the drawer."
+          propName: "children",
+          propExample: "<div>Drawer Content</div>",
+          propDetail: "The content to be displayed inside the drawer.",
         },
         {
-          "propName": "title",
-          "propExample": "'Drawer Title'",
-          "propDetail": "An optional title for the drawer."
+          propName: "title",
+          propExample: "'Drawer Title'",
+          propDetail: "An optional title for the drawer.",
         },
         {
-          "propName": "openBtn",
-          "propExample": "<button>Open</button>",
-          "propDetail": "The button that triggers the drawer when clicked."
+          propName: "openBtn",
+          propExample: "<button>Open</button>",
+          propDetail: "The button that triggers the drawer when clicked.",
         },
         {
-          "propName": "position",
-          "propExample": "'bottom'",
-          "propDetail": "The position from which the drawer will slide in. Options: 'left', 'right', 'top', 'bottom'."
+          propName: "position",
+          propExample: "'bottom'",
+          propDetail:
+            "The position from which the drawer will slide in. Options: 'left', 'right', 'top', 'bottom'.",
         },
         {
-          "propName": "accommodate",
-          "propExample": "true",
-          "propDetail": "If true, adjusts the minimum height of the drawer for top and bottom positions."
+          propName: "accommodate",
+          propExample: "true",
+          propDetail:
+            "If true, adjusts the minimum height of the drawer for top and bottom positions.",
         },
         {
-          "propName": "isOverlay",
-          "propExample": "true",
-          "propDetail": "If true, an overlay will be displayed behind the drawer."
-        }
+          propName: "isOverlay",
+          propExample: "true",
+          propDetail:
+            "If true, an overlay will be displayed behind the drawer.",
+        },
       ],
-      "packages": [
+      doc_links: ["https://vaul.emilkowal.ski/api"],
+      packages: [
         {
-          "pckg_name": "vaul",
-          "pckg_link": "https://vaul.dev/"
-        }
-      ]
-    }
-  }
+          pckg_name: "vaul",
+          pckg_link: "https://vaul.dev/",
+        },
+      ],
+    },
+  },
 ];
 export default DrawersInfo;
