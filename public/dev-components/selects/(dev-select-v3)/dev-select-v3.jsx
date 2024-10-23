@@ -2,6 +2,24 @@ import React from "react";
 import * as Select from "@radix-ui/react-select";
 import { FaChevronDown } from "react-icons/fa";
 
+// select css
+/*
+.showOptions {
+  animation: optionShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes optionShow {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+*/
+
 const DevSelectV3 = ({
   options,
   labelName,

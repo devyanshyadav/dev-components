@@ -12,7 +12,7 @@ const DevModalV1Usage = () => {
         </button>
       }
     >
-      <div className="flex flex-col gap-3 w-full p-3">
+      <div className="flex flex-col gap-3 w-full p-3 pt-0">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nostrum
           magni quia enim, vel autem maiores. Beatae eveniet omnis nam non ab,
@@ -20,7 +20,7 @@ const DevModalV1Usage = () => {
         </p>
 
         <ModalTrigger>
-          <button className="bg-ACCENT p-1 px-4 rounded-xl hover:opacity-80">
+          <button className="bg-ACCENT p-1.5 rounded-lg hover:opacity-80">
             Close
           </button>
         </ModalTrigger>

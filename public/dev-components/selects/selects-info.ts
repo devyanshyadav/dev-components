@@ -49,7 +49,7 @@ const SelectsInfo = [
           propDetail: "Label displayed above the select dropdown.",
         },
         {
-          propName: "controlProps",
+          propName: "contentProps",
           propExample: `{}`,
           propDetail: "Props to pass to the control content section.",
         },
