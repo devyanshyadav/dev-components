@@ -47,6 +47,7 @@ const TooltipsInfo = [
             "Additional properties for the Tooltip.Content component.",
         },
       ],
+      doc_links:["https://www.radix-ui.com/primitives/docs/components/tooltip"],
       packages: [
         {
           pckg_name: "@radix-ui/react-tooltip",

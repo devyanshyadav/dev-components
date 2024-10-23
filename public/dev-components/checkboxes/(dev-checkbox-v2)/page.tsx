@@ -6,7 +6,7 @@ const DevCheckboxV2Usage = () => {
   return (
     <div className="bg-LIGHT border border-ACCENT/20 dark:bg-DARK p-3 rounded-lg flex gap-3">
       <DevCheckboxV2
-        id="dev-checkbox-v-two "
+        id="dev-checkbox-v-two"
         defaultChecked
         required
         onChange={(e) => console.log(e.target.checked)}

@@ -31,7 +31,7 @@ const MultiselectInfo = [
             "A callback function triggered when the selection changes. Receives the new selection as an argument.",
         },
         {
-          propName: "defaultValues",
+          propName: "defaultValue",
           propExample: `[{value: "vanilla", label: "Vanilla"}]`,
           propDetail:
             "An optional array of pre-selected values. These will be displayed initially in the selected area.",

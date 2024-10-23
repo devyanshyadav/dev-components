@@ -2,7 +2,6 @@
 import React, { useState, useCallback } from "react";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import DevInputV1 from "../(dev-input-v1)/dev-input-v1";
-
 const DevPasswordInput= ({
   error,
   onChange,
@@ -85,7 +84,7 @@ const DevPasswordInput= ({
         onChange={handleInputChange}
       />
       {getMessage() && (
-        <p className={`text-sm text-red-500 ${strengthStyles[state.strength] || ''}`}>
+        <p className={`text-sm ${strengthStyles[state.strength] || 'text-red-500'}`}>
           {getMessage()}
         </p>
       )}

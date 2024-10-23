@@ -91,7 +91,7 @@ const DevPasswordInput: React.FC<DevPasswordInputProps> = ({
         onChange={handleInputChange}
       />
       {getMessage() && (
-        <p className={`text-sm text-red-500 ${strengthStyles[state.strength as keyof typeof strengthStyles] || ''}`}>
+        <p className={`text-sm ${strengthStyles[state.strength as keyof typeof strengthStyles] || 'text-red-500'}`}>
           {getMessage()}
         </p>
       )}
