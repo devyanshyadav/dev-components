@@ -6,8 +6,9 @@ import DevPopoverV1 from "../(dev-popover-v1)/dev-popover-v1";
 type PopoverProps = {
   children: React.ReactNode;
   button: React.ReactElement;
+  position?: "left" | "right" | "top" | "bottom";
 };
-const DevPopoverV2 = ({ children, button }: PopoverProps) => {
+const DevPopoverV2 = ({ children, button, position="bottom" }: PopoverProps) => {
   return window.innerWidth < 768 ? (
     <DevDrawerV2
       isOverlay={false}
@@ -20,7 +21,7 @@ const DevPopoverV2 = ({ children, button }: PopoverProps) => {
   ) : (
     <DevPopoverV1
       contentProps={{ sideOffset: 2 }}
-      rootProps={{ defaultOpen: false }}
+      position={position}
       button={button}
     >
       {children}

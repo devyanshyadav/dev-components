@@ -1,95 +1,100 @@
 'use client'
 import React, { useState, useCallback } from "react";
-import DevInputV1 from "../(dev-input-v1)/dev-input-v1";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import DevInputV1 from "../(dev-input-v1)/dev-input-v1";
 
-const DevPasswordInput = ({ onChange, ...props }: React.ComponentProps<"input">) => {
-  const [hide, setHide] = useState(true);
-  const [strength, setStrength] = useState("");
+interface DevPasswordInputProps extends Omit<React.ComponentProps<"input">, "onChange"> {
+  error?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+}
+
+const DevPasswordInput: React.FC<DevPasswordInputProps> = ({
+  error,
+  onChange,
+  required = false,
+  ...props
+}) => {
+  const [state, setState] = useState({
+    hide: true,
+    strength: ""
+  });
 
   const checkPasswordStrength = useCallback((pass: string) => {
+    if (!pass.trim()) {
+      setState(prev => ({ ...prev, strength: required ? "error" : "" }));
+      return;
+    }
+
     let score = 0;
-    if (pass.length > 0) {
-      // Length check
-      if (pass.length >= 4) score++;
-      if (pass.length >= 8) score++;
-      // Character type checks
-      if (/[a-z]/.test(pass)) score++;
-      if (/[A-Z]/.test(pass)) score++;
-      if (/[0-9]/.test(pass)) score++;
-      if (/[^A-Za-z0-9]/.test(pass)) score++;
-    }
+    if (pass.length >= 4) score++;
+    if (pass.length >= 8) score++;
+    if (/[a-z]/.test(pass)) score++;
+    if (/[A-Z]/.test(pass)) score++;
+    if (/[0-9]/.test(pass)) score++;
+    if (/[^A-Za-z0-9]/.test(pass)) score++;
 
-    switch (score) {
-      case 0:
-      case 1:
-        setStrength("");
-        break;
-      case 2:
-        setStrength("weak");
-        break;
-      case 3:
-      case 4:
-        setStrength("medium");
-        break;
-      case 5:
-        setStrength("strong");
-        break;
-      case 6:
-        setStrength("very strong");
-        break;
-      default:
-        setStrength("");
-    }
-  }, []);
+    const strengthMap = {
+      0: "error",
+      1: "weak",
+      2: "weak",
+      3: "medium",
+      4: "medium",
+      5: "strong",
+      6: "very strong"
+    };
 
-  const getStrengthColor = () => {
-    switch (strength) {
-      case "weak":
-        return "text-red-500";
-      case "medium":
-        return "text-yellow-500";
-      case "strong":
-        return "text-green-500";
-      case "very strong":
-        return "text-blue-500";
-      default:
-        return "";
-    }
-  };
+    setState(prev => ({ 
+      ...prev, 
+      strength: strengthMap[score as keyof typeof strengthMap] || ""
+    }));
+  }, [required]);
 
   const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    checkPasswordStrength(e.target.value);
-    if (onChange) {
-      onChange(e);
-    }
+    const value = e.target.value;
+    checkPasswordStrength(value);
+    onChange?.(e);
   }, [onChange, checkPasswordStrength]);
 
+  const strengthStyles = {
+    error: "text-red-500",
+    weak: "text-red-500",
+    medium: "text-yellow-500",
+    strong: "text-green-500",
+    "very strong": "text-blue-500"
+  };
+
+  const getMessage = () => {
+    if (error) return error;
+    if (state.strength === "error" && required) return "Password is required";
+    if (state.strength) return `Password strength: ${state.strength}`;
+    return "";
+  };
+
   return (
-    <div>
+    <div className="space-y-1">
       <DevInputV1
-        rounded="lg"
+        rounded="md"
         {...props}
-        type={hide ? "password" : "text"}
+        type={state.hide ? "password" : "text"}
         labelName="Password"
         reverseIcon
+        required={required}
         icon={
           <span
             className="cursor-pointer text-xl"
-            onClick={() => setHide(!hide)}
+            onClick={() => setState(prev => ({ ...prev, hide: !prev.hide }))}
           >
-            {hide ? <VscEye /> : <VscEyeClosed />}
+            {state.hide ? <VscEye /> : <VscEyeClosed />}
           </span>
         }
         onChange={handleInputChange}
       />
-      <p
-        className={`m-1 pointer-events-none transition-all font-semibold text-sm ${
-          strength ? "opacity-100" : "opacity-0"
-        } ${getStrengthColor()}`}
-      >
-        Password strength: {strength && strength}
-      </p>
+      {getMessage() && (
+        <p className={`text-sm text-red-500 ${strengthStyles[state.strength as keyof typeof strengthStyles] || ''}`}>
+          {getMessage()}
+        </p>
+      )}
     </div>
   );
 };

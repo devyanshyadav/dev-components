@@ -3,7 +3,7 @@ import React from "react";
 import DevDrawerV2 from "../../drawers/(dev-drawer-v2)/dev-drawer-v2";
 import DevPopoverV1 from "../(dev-popover-v1)/dev-popover-v1";
 
-const DevPopoverV2 = ({ children, button }) => {
+const DevPopoverV2 = ({ children, button, position="bottom" }) => {
   return window.innerWidth < 768 ? (
     <DevDrawerV2
       isOverlay={false}
@@ -16,7 +16,7 @@ const DevPopoverV2 = ({ children, button }) => {
   ) : (
     <DevPopoverV1
       contentProps={{ sideOffset: 2 }}
-      rootProps={{ defaultOpen: false }}
+      position={position}
       button={button}
     >
       {children}
