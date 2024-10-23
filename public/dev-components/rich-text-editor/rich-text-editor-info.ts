@@ -10,38 +10,34 @@ const RichTextEditorInfo = [
     },
     details: {
       description:
-        "A rich text editor component based on Quill Editor, offering advanced formatting options.",
+        "A customizable rich text editor component built on top of Quill Editor.",
       features: [
-        "Supports various text formats (bold, italic, underline, etc.)",
-        "Allows header creation and font selection",
-        "Includes table support",
-        "Provides image and video insertion capabilities",
-        "Offers code block and formula editing",
-        "Includes alignment options",
-        "Supports RTL (right-to-left) text",
-        "Has a clean interface for removing formatting",
+        "Supports various text formatting options",
+        "Lazy loading for improved performance",
+        "Customizable toolbar with multiple functionalities",
+        "Real-time content updates with state management",
       ],
+      helpers: [],
       props: [
         {
-          propName: "defaultContent",
-          propExample: `<div><h1><strong>This is Dev-Components using Quill Editor</strong></h1><p>Some content...</p></div>`,
-          propDetail: "Initial content to display in the editor.",
+          propName: "defaultValue",
+          propExample: "`<div><h1>Hello World</h1></div>`",
+          propDetail: "Initial content to be displayed in the editor.",
         },
         {
-          propName: "onContentChange",
-          propExample: `(value) => console.log(value);`,
-          propDetail: "Callback function called whenever the content changes.",
+          propName: "onChange",
+          propExample: "(value) => console.log(value)",
+          propDetail: "Callback function triggered when the content changes.",
         },
       ],
       packages: [
         {
           pckg_name: "react-quill",
-          pckg_link: "https://www.npmjs.com/package/react-quill",
+          pckg_link: "https://github.com/zenoamaro/react-quill",
         },
       ],
-      doc_links:["https://github.com/zenoamaro/react-quill"]
     },
   },
-  ];
+];
 
-  export default RichTextEditorInfo
+export default RichTextEditorInfo;

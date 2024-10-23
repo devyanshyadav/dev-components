@@ -1,5 +1,5 @@
-"use client";
-import React, { useState, lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
+import { ReactQuillProps } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 const ReactQuill = lazy(() => import("react-quill"));
@@ -60,14 +60,7 @@ const formats = [
   "table",
 ];
 
-const DevRichTextEditorV1 = ({ defaultContent, onContentChange }) => {
-  const [content, setContent] = useState(defaultContent || "<p></p>");
-
-  const handleContentChange = (value) => {
-    setContent(value);
-    onContentChange?.(value);
-  };
-
+const DevRichTextEditorV1 = ({ ...props }) => {
   return (
     <div className="rich-text-editor">
       <Suspense
@@ -83,8 +76,7 @@ const DevRichTextEditorV1 = ({ defaultContent, onContentChange }) => {
           modules={modules}
           formats={formats}
           theme="snow"
-          value={content}
-          onChange={handleContentChange}
+          {...props}
         />
       </Suspense>
     </div>
