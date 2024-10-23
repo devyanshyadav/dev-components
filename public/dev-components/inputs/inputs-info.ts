@@ -144,6 +144,11 @@ const InputsInfo = [
           propExample: `"hello@world"`,
           propDetail: "Pre-fills the input field with a default value.",
         },
+        {
+          propName: "error",
+          propExample: `"Password must be at least 8 characters long"`,
+          propDetail: "Error message shown on specified conditions.",
+        }
       ],
       helpers: [
         {

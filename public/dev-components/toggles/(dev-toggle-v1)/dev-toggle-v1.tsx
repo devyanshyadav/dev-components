@@ -1,25 +1,14 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 
 type DevToggleProps = {
-  defaultState?: boolean;
-  onChange?: (checked: boolean) => void;
   labelName?: string;
-};
+} & Omit<React.ComponentProps<"input">, "type" | "id">;
 
-const DevToggleV1: React.FC<DevToggleProps> = ({ defaultState = true, onChange, labelName }) => {
-  const [toggle, setToggle] = useState(defaultState);
+const DevToggleV1: React.FC<DevToggleProps> = ({ labelName, ...props }) => {
   const toggleSize = {
     width: 3,
     height: 1.5,
   };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newState = e.target.checked;
-    setToggle(newState);
-    onChange?.(newState);
-  };
-
   return (
     <>
       <div
@@ -29,27 +18,30 @@ const DevToggleV1: React.FC<DevToggleProps> = ({ defaultState = true, onChange, 
         }}
         className={`
           "p-1 rounded-full relative grid ",
-         ${toggle ? "bg-ACCENT" : "bg-ACCENT/50"}
+         ${props.checked || props.defaultChecked ? "bg-ACCENT" : "bg-ACCENT/50"}
         `}
       >
         <input
           type="checkbox"
-          defaultChecked={defaultState}
+          {...props}
           className="opacity-0 absolute cursor-pointer inset-0"
           id={labelName || "toggleBox"}
-          checked={toggle}
-          onChange={handleChange}
         />
         <span
           className="h-full absolute dark:bg-LIGHT bg-DARK aspect-square pointer-events-none transition-all duration-400 rounded-full"
           style={{
-            transform: toggle
-              ? `translateX(${toggleSize.width - toggleSize.height}rem) scale(0.7)`
-              : "scale(0.7)",
+            transform:
+              props.checked || props.defaultChecked
+                ? `translateX(${
+                    toggleSize.width - toggleSize.height
+                  }rem) scale(0.7)`
+                : "scale(0.7)",
           }}
         />
       </div>
-      {labelName && <label htmlFor={labelName || "toggleBox"}>{labelName}</label>}
+      {labelName && (
+        <label htmlFor={labelName || "toggleBox"}>{labelName}</label>
+      )}
     </>
   );
 };

@@ -1,25 +1,14 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 
-type ToggleProps = {
-  defaultState?: boolean;
-  onChange?: (checked: boolean) => void;
+type DevToggleProps = {
   labelName?: string;
-};
+} & Omit<React.ComponentProps<"input">, "type" | "id">;
 
-const DevToggleV2: React.FC<ToggleProps> = ({ defaultState = true, onChange, labelName }) => {
-  const [toggle, setToggle] = useState(defaultState);
+const DevToggleV2: React.FC<DevToggleProps> = ({ labelName, ...props }) => {
   const toggleSize = {
     width: 3,
     height: 1.5,
   };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newState = e.target.checked;
-    setToggle(newState);
-    onChange?.(newState);
-  };
-
   return (
     <>
       <div
@@ -31,7 +20,7 @@ const DevToggleV2: React.FC<ToggleProps> = ({ defaultState = true, onChange, lab
       >
         <hr
           className={`
-            ${toggle ? "bg-ACCENT" : "bg-ACCENT/50"}
+            ${props.checked || props.defaultChecked ? "bg-ACCENT" : "bg-ACCENT/50"}
             " w-full rounded-full border-none "
           `}
           style={{
@@ -40,22 +29,25 @@ const DevToggleV2: React.FC<ToggleProps> = ({ defaultState = true, onChange, lab
         />
         <input
           type="checkbox"
-          defaultChecked={defaultState}
+          {...props}
           className="opacity-0 absolute cursor-pointer inset-0"
           id={labelName || "toggleBox"}
-          checked={toggle}
-          onChange={handleChange}
         />
         <span
           className="h-full absolute bg-DARK dark:bg-LIGHT border-2 border-ACCENT aspect-square pointer-events-none transition-all duration-400 rounded-full"
           style={{
-            transform: toggle
-              ? "translateX(" + (toggleSize.width - toggleSize.height) + "rem)"
-              : "none",
+            transform:
+              props.checked || props.defaultChecked
+                ? "translateX(" +
+                  (toggleSize.width - toggleSize.height) +
+                  "rem)"
+                : "none",
           }}
-        ></span>
+        />
       </div>
-      {labelName && <label htmlFor={labelName || "toggleBox"}>{labelName}</label>}
+      {labelName && (
+        <label htmlFor={labelName || "toggleBox"}>{labelName}</label>
+      )}
     </>
   );
 };

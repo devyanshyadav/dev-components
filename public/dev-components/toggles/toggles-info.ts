@@ -11,30 +11,29 @@ const TogglesInfo = [
     },
     details: {
       description:
-        "A customizable toggle switch component for toggling between two states.",
+        "A customizable toggle switch component for binary state selection.",
       features: [
-        "Visual toggle between two distinct states",
-        "Customizable size and styling",
-        "Optional label support",
-        "Callback function for state changes",
+        "Supports checked and unchecked states",
+        "Customizable label for better accessibility",
+        "Smooth transition animations",
+        "Responsive design with adjustable size",
       ],
       props: [
         {
-          propName: "defaultState",
-          propExample: `true`,
-          propDetail:
-            "The initial state of the toggle switch. Defaults to true.",
+          propName: "labelName",
+          propExample: "'Dev Switch'",
+          propDetail: "An optional label for the toggle switch.",
+        },
+        {
+          propName: "checked",
+          propExample: "true",
+          propDetail: "Controls the checked state of the toggle switch.",
         },
         {
           propName: "onChange",
-          propExample: `(e) => console.log(e)`,
+          propExample: "(e) => console.log(e.target.checked)",
           propDetail:
-            "An optional callback function triggered when the toggle state changes.",
-        },
-        {
-          propName: "labelName",
-          propExample: `"Switch"`,
-          propDetail: "An optional label name for the toggle switch.",
+            "Callback function triggered when the toggle state changes.",
         },
       ],
       packages: [],
@@ -58,21 +57,20 @@ const TogglesInfo = [
       ],
       props: [
         {
-          propName: "defaultState",
-          propExample: `true`,
-          propDetail:
-            "The initial state of the toggle switch. Defaults to true.",
+          propName: "labelName",
+          propExample: "'Dev Switch'",
+          propDetail: "An optional label for the toggle switch.",
+        },
+        {
+          propName: "checked",
+          propExample: "true",
+          propDetail: "Controls the checked state of the toggle switch.",
         },
         {
           propName: "onChange",
-          propExample: `(e) => console.log(e)`,
+          propExample: "(e) => console.log(e.target.checked)",
           propDetail:
-            "An optional callback function triggered when the toggle state changes.",
-        },
-        {
-          propName: "labelName",
-          propExample: `"Switch"`,
-          propDetail: "An optional label name for the toggle switch.",
+            "Callback function triggered when the toggle state changes.",
         },
       ],
       packages: [],
