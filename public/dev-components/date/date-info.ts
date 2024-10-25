@@ -26,8 +26,8 @@ const DateInfo = [
           propDetail: "Callback function triggered when a date is selected.",
         },
         {
-          propName: "defaultDate",
-          propExample: `new Date()`,
+          propName: "defaultValue",
+          propExample: `new Date() as Date`,
           propDetail: "Initial date displayed in the calendar.",
         },
       ],
@@ -59,7 +59,7 @@ const DateInfo = [
       ],
       props: [
         {
-          propName: "initialDate",
+          propName: "defaultValue",
           propExample: `new Date()`,
           propDetail: "Initial date displayed in the date picker.",
         },

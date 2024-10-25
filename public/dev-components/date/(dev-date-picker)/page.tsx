@@ -5,7 +5,7 @@ import DevDatePicker from "./dev-date-picker";
 const DevDatePickerUsage = () => {
   return (
     <DevDatePicker
-      initialDate={new Date()}
+      defaultValue={new Date()}
       onChange={(date) => console.log(date)}
     />
   );

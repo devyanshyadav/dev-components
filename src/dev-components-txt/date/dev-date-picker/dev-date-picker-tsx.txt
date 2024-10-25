@@ -1,27 +1,27 @@
 "use client";
-import { useState, useRef, ChangeEvent } from "react";
+import { useState, useRef, ChangeEvent, useEffect } from "react";
 import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
 import DevCalendar from "../(dev-calendar)/dev-calendar";
 import { IoCalendarOutline } from "react-icons/io5";
 
 interface DevDatePickerProps {
-  initialDate?: Date;
+  defaultValue?: Date;
   onChange?: (date: Date) => void;
   showIcon?: boolean;
   disabled?: boolean;
 }
 
 function DevDatePicker({
-  initialDate = new Date(),
+  defaultValue = new Date(),
   onChange,
   showIcon = true,
   disabled = false,
 }: DevDatePickerProps) {
-  const [date, setDate] = useState(initialDate);
+  const [date, setDate] = useState(defaultValue);
   const [inputDate, setInputDate] = useState({
-    year: initialDate.getFullYear().toString(),
-    month: (initialDate.getMonth() + 1).toString().padStart(2, "0"),
-    day: initialDate.getDate().toString().padStart(2, "0"),
+    year: defaultValue.getFullYear().toString(),
+    month: (defaultValue.getMonth() + 1).toString().padStart(2, "0"),
+    day: defaultValue.getDate().toString().padStart(2, "0"),
   });
 
   const monthInputRef = useRef<HTMLInputElement>(null);
@@ -78,6 +78,9 @@ function DevDatePicker({
     onChange?.(newDate);
   };
 
+  useEffect(() => {
+    setDate(defaultValue);
+  }, [defaultValue]);
   return (
     <div className="flex items-center justify-center gap-2 space-y-2 bg-LIGHT dark:bg-DARK border border-ACCENT/20 p-2 rounded-lg max-w-[250px]">
       <div className="flex gap-2 *:rounded-md *:px-1 *:border *:border-ACCENT">
@@ -125,7 +128,10 @@ function DevDatePicker({
           }
         >
           <div>
-            <DevCalendar onChange={handleCalendarChange} defaultDate={date} />
+            <DevCalendar
+              onChange={(e) => handleCalendarChange(e as Date)}
+              defaultValue={date}
+            />
           </div>
         </DevPopoverV1>
       )}

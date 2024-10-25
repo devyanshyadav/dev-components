@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Calendar from "react-calendar";
+import { PiCaretDoubleRightBold, PiCaretRightBold } from "react-icons/pi"; //for arrow icons
 
 //Adding Calendar styles
 /*
@@ -61,9 +62,15 @@ import Calendar from "react-calendar";
 }
 */
 
-const DevCalendar = ({ onChange, defaultDate = new Date() }) => {
+const DevCalendar = ({ ...props }) => {
   return (
-      <Calendar onChange={(e) => onChange?.(e)} value={defaultDate} />
+    <Calendar
+      nextLabel={<PiCaretRightBold />}
+      next2Label={<PiCaretDoubleRightBold className="scale-75" />}
+      prevLabel={<PiCaretRightBold className="rotate-180" />}
+      prev2Label={<PiCaretDoubleRightBold className="rotate-180 scale-75" />}
+      {...props}
+    />
   );
 };
 
