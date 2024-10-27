@@ -1,41 +1,28 @@
-"use client";
-import React, { useState } from "react";
-import { RiAddLine, RiSubtractFill } from "react-icons/ri";
-import { motion, AnimatePresence } from "framer-motion";
+import * as Accordion from "@radix-ui/react-accordion";
+import { FiChevronDown } from "react-icons/fi";
 
-const DevAccordion = ({ AccordData }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+const DevAccordion = ({ AccordData, ...props }) => {
   return (
-    <div className="bg-LIGHT dark:bg-DARK w-full divide-y divide-ACCENT/50 border border-ACCENT/30 rounded-xl p-2">
+    <Accordion.Root
+      {...props}
+      className="bg-LIGHT w-full dark:bg-DARK rounded-xl border border-ACCENT/30 divide-y divide-ACCENT/50 overflow-hidden"
+    >
       {AccordData.map((item, index) => (
-        <div key={index} className="py-2">
-          <h3 
-            className="text-sm flex justify-between cursor-pointer items-center hover:text-ACCENT font-semibold pr-5"
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-          >
+        <Accordion.Item
+          key={index}
+          value={item.title}
+          className="data-[state=open]:border-l-4 !border-x-ACCENT"
+        >
+          <Accordion.Trigger className="group focus:bg-ACCENT p-2 py-3 focus:!text-white !outline-0 text-sm flex w-full justify-between cursor-pointer data-[state=open]:!bg-transparent items-center font-semibold">
             {item.title}
-            <span className="text-lg">
-              {openIndex === index ? <RiSubtractFill /> : <RiAddLine />}
-            </span>
-          </h3>
-          <AnimatePresence initial={false}>
-            {openIndex === index && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="text-sm overflow-hidden"
-              >
-                {item.content}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+            <FiChevronDown className="text-xl group-data-[state=open]:rotate-180 transition-all" />
+          </Accordion.Trigger>
+          <Accordion.Content className="text-sm accordContent overflow-hidden">
+            <p className="px-2 py-3">{item.content}</p>
+          </Accordion.Content>
+        </Accordion.Item>
       ))}
-    </div>
+    </Accordion.Root>
   );
 };
-
 export default DevAccordion;

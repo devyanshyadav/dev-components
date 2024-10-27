@@ -26,7 +26,7 @@ const DevAccordionV1Usage = () => {
   ];
   return (
     <div className="md:max-w-xl w-full ">
-      <DevAccordionV1 AccordData={AccordData} />
+      <DevAccordionV1 type="single" AccordData={AccordData} />
     </div>
   );
 };

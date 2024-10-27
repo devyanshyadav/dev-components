@@ -6,28 +6,35 @@ const AccordionsInfo = [
     title: "Dev Accordion V1",
     component: DevAccordionV1Usage,
     variants: {
-      tsx: true,
       jsx: true,
+      tsx: true,
     },
     details: {
-      description: "Simple accordion with simple click functionality",
+      description:
+        "An accordion component that allows users to expand and collapse sections of content.",
       features: [
-        "Displays a list of accordion items with their titles and descriptions",
-        "Allows users to expand or collapse individual accordion items by clicking on the headers",
-        "Provides smooth animations for opening and closing accordion items",
+        "Supports single or multiple open sections based on configuration",
+        "Smooth animations for opening and closing sections",
+        "Integration with Radix UI for accessibility and usability",
+        "Customizable appearance with icons and styles",
       ],
+      helpers: [],
       props: [
         {
           propName: "AccordData",
-          propExample: `[ {title:"Accordion", content:"This is an accordion"}, ]`,
+          propExample: `[{ title: 'Accordion #1', content: 'Content for accordion #1' }]`,
           propDetail:
-            "This is an array of objects containing the title and description of the accordion.",
+            "An array of objects, each containing a title and content for the accordion items.",
         },
+      ],
+      doc_links: [
+        "https://www.radix-ui.com/primitives/docs/components/accordion",
       ],
       packages: [
         {
-          pckg_name: "framer-motion",
-          pckg_link: "https://www.framer.com/motion/",
+          pckg_name: "@radix-ui/react-accordion",
+          pckg_link:
+            "https://www.radix-ui.com/primitives/docs/components/accordion",
         },
       ],
     },
