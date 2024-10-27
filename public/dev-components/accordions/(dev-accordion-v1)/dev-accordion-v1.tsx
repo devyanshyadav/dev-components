@@ -5,6 +5,33 @@ type AccordionProps = {
   AccordData: { title: string; content: string }[];
 } & React.ComponentProps<typeof Accordion.Root>;
 
+// accordions css 
+/*.accordContent {
+  &[data-state="open"] {
+    animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  }
+  &[data-state="closed"] {
+    animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  }
+}
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+*/
 const DevAccordion = ({ AccordData, ...props }: AccordionProps) => {
   return (
     <Accordion.Root
