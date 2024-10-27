@@ -82,7 +82,6 @@ const CarouselsInfo = [
       ],
       doc_links: [
         "https://www.embla-carousel.com/examples/predefined/",
-        "https://www.embla-carousel.com/plugins/autoplay/",
       ],
       packages: [
         {
