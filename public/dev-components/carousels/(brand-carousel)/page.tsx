@@ -10,7 +10,7 @@ const BrandCarouselUsage = () => {
     <p>Brand 5</p>,
     <p>Brand 6</p>,
   ];
-  return <BrandCarousel brands={brands} />;
+  return <BrandCarousel pauseOnHover brands={brands} />;
 };
 
 export default BrandCarouselUsage;

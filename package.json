@@ -30,6 +30,7 @@
     "copy-file": "^11.0.0",
     "downshift": "^9.0.8",
     "embla-carousel": "^8.3.0",
+    "embla-carousel-autoplay": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
     "emoji-mart": "^5.6.0",
     "emoji-picker-react": "^4.12.0",

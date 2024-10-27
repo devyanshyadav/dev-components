@@ -12,7 +12,7 @@ const DevCarouselV1Usage = () => {
   ];
   return (
     <section className="max-w-lg w-full h-52">
-      <DevCarouselV1 carouselData={carouselData} perView={2} />
+      <DevCarouselV1 carouselData={carouselData} perView={1} />
     </section>
   );
 };
