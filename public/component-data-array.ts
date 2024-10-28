@@ -20,6 +20,7 @@ import RadiosInfo from "./dev-components/radios/radios-info";
 import RangeSlidersInfo from "./dev-components/range-sliders/range-slider-info";
 import RichTextEditorInfo from "./dev-components/rich-text-editor/rich-text-editor-info";
 import SelectsInfo from "./dev-components/selects/selects-info";
+import TablesInfo from "./dev-components/tables/tables-info";
 import TabsInfo from "./dev-components/tabs/tabs-info";
 import ToastInfo from "./dev-components/toast/toast-info";
 import TogglesInfo from "./dev-components/toggles/toggles-info";
@@ -205,6 +206,13 @@ const ComponentDataArray = [
     componentData: DateInfo,
     description:
       "Date components are used to display and select dates in a calendar format.",
+  },
+  {
+    name: "Tables",
+    image: "table.png",
+    componentData: TablesInfo,
+    description:
+      "Tables are used to display and organize data in a tabular format.",
   },
   {
     name: "Miscellaneous",
