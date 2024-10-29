@@ -13,7 +13,7 @@ const DevInputV1 = ({
   reverseIcon = false,
   ...props
 }) => {
-  const commonStyle = `w-full flex border border-ACCENT/50 transition-all ring-ACCENT/50 items-center ${
+  const commonStyle = `w-full flex border border-ACCENT transition-all ring-ACCENT/50 items-center ${
     icon && "gap-2"
   },
     ${reverseIcon && "flex-row-reverse"}`;

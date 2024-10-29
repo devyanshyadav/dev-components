@@ -12,7 +12,7 @@ const DevSelectV1: React.FC<SelectProps> = (props) => {
       <Select
         {...props}
         isMulti={false}
-        className="bg-LIGHT w-full rounded-xl border border-ACCENT outline-0 dark:bg-DARK has-[:focus]:ring ring-ACCENT/50 transition-all "
+        className="bg-LIGHT z-50 w-full rounded-xl border border-ACCENT outline-0 dark:bg-DARK has-[:focus]:ring ring-ACCENT/50 transition-all "
         classNames={{
           control: () => "!ring-0 !rounded-none !border-0 !bg-transparent ",
           option: ({ isFocused, isSelected }) =>

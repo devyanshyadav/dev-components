@@ -15,7 +15,7 @@ const DevSelectV2 = ({
     <div className="flex flex-col w-full">
       {labelName && (
         <label className="p-1" htmlFor={labelName?.replace(" ", "-")}>
-          Frameworks
+         {labelName}
         </label>
       )}
       <div className="p-1 w-full has-[:focus]:ring-[3px] transition-all ring-ACCENT/50 rounded-lg !outline-0 border border-ACCENT bg-LIGHT dark:bg-DARK">

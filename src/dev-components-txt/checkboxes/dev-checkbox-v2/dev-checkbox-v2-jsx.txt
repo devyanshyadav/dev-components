@@ -2,7 +2,7 @@ import React from "react";
 import { HiCheck } from "react-icons/hi";
 
 
-const DevCheckboxV1 = ({ ...props }) => {
+const DevCheckboxV2 = ({ ...props }) => {
   return (
     <span className="border-2 ring-ACCENT/50 relative transition-all border-ACCENT text-white w-6 h-6 grid place-content-center rounded-md cursor-pointer has-[:checked]:bg-ACCENT bg-ACCENT/30 has-[:checked]:ring-[3px]">
       <input
@@ -15,4 +15,4 @@ const DevCheckboxV1 = ({ ...props }) => {
   );
 };
 
-export default DevCheckboxV1;
+export default DevCheckboxV2;

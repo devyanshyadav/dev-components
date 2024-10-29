@@ -1,10 +1,11 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import DevPaginationV2 from './dev-pagination-v2'
 
 const DevPaginationV2Usage = () => {
+  const [initialPage, setInitialPage] = useState(1)
   return (
-    <DevPaginationV2 totalPages={20} onPageChange={(page) => console.log(`Page changed to ${page}`)} />
+    <DevPaginationV2 initialPage={initialPage} totalPages={20} onPageChange={setInitialPage} />
   )
 }
 
