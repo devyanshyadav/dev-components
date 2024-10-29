@@ -26,14 +26,22 @@ const TablesInfo = [
           propDetail: "An array of objects representing the rows of the table.",
         },
         {
+          propName: "isPaginate",
+          propExample: false,
+          propDetail:
+            "A boolean to enable or disable pagination. Defaults to false.",
+        },
+        {
           propName: "itemsPerPage",
           propExample: "4",
-          propDetail: "The number of items to display per page. Defaults to 1.",
+          propDetail:
+            "The number of items to display per page. Recommended when isPaginate is true.",
         },
         {
           propName: "initialPage",
           propExample: "1",
-          propDetail: "The initial page to display. Defaults to 1.",
+          propDetail:
+            "The initial page to display. Recommended when isPaginate is true.",
         },
         {
           propName: "columns",
@@ -77,23 +85,23 @@ const TablesInfo = [
       helpers: [
         {
           cmp_name: "DevTable",
-          cmp_link:"/tables#dev-table"
+          cmp_link: "/tables#dev-table",
         },
         {
           cmp_name: "DevInputV1",
-          cmp_link:"/inputs#dev-input-v1"
+          cmp_link: "/inputs#dev-input-v1",
         },
         {
           cmp_name: "DevPopoverV1",
-          cmp_link:"/popovers#dev-popover-v1"
+          cmp_link: "/popovers#dev-popover-v1",
         },
         {
           cmp_name: "DevPaginationV2",
-          cmp_link:"/pagination#dev-pagination-v2"
+          cmp_link: "/pagination#dev-pagination-v2",
         },
         {
           cmp_name: "DevCheckboxV2",
-          cmp_link:"/checkboxes#dev-checkbox-v2"
+          cmp_link: "/checkboxes#dev-checkbox-v2",
         },
       ],
       props: [
@@ -134,15 +142,16 @@ const TablesInfo = [
             "(Optional) A boolean indicating if data is currently being loaded.",
         },
         {
-          propName:"selectedRows",
+          propName: "selectedRows",
           propExample: "[ 1, 2, 3 ]",
-          propDetail: "(Optional) An array of selected row IDs."
+          propDetail: "(Optional) An array of selected row IDs.",
         },
         {
-          propName:"onRowSelect",
+          propName: "onRowSelect",
           propExample: "(row) => console.log(row)",
-          propDetail: "(Optional) A callback function triggered when a row is clicked."
-        }
+          propDetail:
+            "(Optional) A callback function triggered when a row is clicked.",
+        },
       ],
       packages: [],
     },

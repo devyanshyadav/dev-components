@@ -17,21 +17,29 @@ interface DevTableProps {
   columns?: (string | Column)[];
   stickyColumns?: string[];
   styleRows?: StyleRow[]; // New prop for row styles
+  isPaginate?: boolean;
 }
 
 const DevTable = ({
   data,
-  itemsPerPage = 1,
+  itemsPerPage,
   initialPage = 1,
   columns = [],
   stickyColumns = [],
   styleRows = [], // Default empty array
+  isPaginate = false,
 }: DevTableProps) => {
   const headers = columns.length
     ? columns.map((col) => (typeof col === "string" ? col : col.head))
     : data.length
     ? Object.keys(data[0])
     : [];
+
+  if (!isPaginate && (itemsPerPage || initialPage > 1)) {
+    throw new Error(
+      "Items per page or initial page is only available in paginate mode => isPaginate"
+    );
+  }
 
   if (columns.length) {
     data.forEach((row, index) => {
@@ -53,9 +61,9 @@ const DevTable = ({
     );
   }
 
-  const startIndex = (initialPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentData = data.slice(startIndex, endIndex);
+  const startIndex = itemsPerPage && (initialPage - 1) * itemsPerPage;
+  const endIndex = startIndex && startIndex + itemsPerPage;
+  const currentData = !isPaginate ? data : data.slice(startIndex, endIndex);
 
   const formatCellValue = (value: any) => {
     if (React.isValidElement(value)) return value;
@@ -70,21 +78,23 @@ const DevTable = ({
     return rowStyle ? rowStyle.style : "";
   };
 
+  const headerItems = columns.length ? columns : headers;
   return (
     <div className="w-full">
       <div className="overflow-x-auto shadow-sm rounded-lg border border-ACCENT/30">
         <table className="min-w-full divide-y divide-ACCENT/30">
           <thead className="bg-ACCENT border-b border-ACCENT text-white">
             <tr>
-              {columns.map((col, index) => {
-                const header = typeof col === "string" ? col : col.head;
-                const headerElement =
-                  typeof col === "string" ? header : col.element || header;
+              {headerItems.map(
+                (col: string | { head: string; element?: React.ReactNode }) => {
+                  const header = typeof col === "string" ? col : col.head;
+                  const headerElement =
+                    typeof col === "string" ? header : col.element || header;
 
-                return (
-                  <th
-                    key={header}
-                    className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider 
+                  return (
+                    <th
+                      key={header}
+                      className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider 
                       ${
                         stickyColumns.includes(header) &&
                         "sticky z-10 bg-ACCENT"
@@ -95,11 +105,12 @@ const DevTable = ({
                           ? "right-0"
                           : "left-0"
                       }`}
-                  >
-                    {headerElement}
-                  </th>
-                );
-              })}
+                    >
+                      {headerElement}
+                    </th>
+                  );
+                }
+              )}
             </tr>
           </thead>
           <tbody className="divide-y divide-ACCENT/30">

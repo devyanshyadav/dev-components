@@ -7,6 +7,7 @@ import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
 import DevInputV1 from "../../inputs/(dev-input-v1)/dev-input-v1";
 import DevPaginationV2 from "../../pagination/(dev-pagination-v2)/dev-pagination-v2";
 
+
 const DataTable = ({
   allColumns,
   data,
@@ -155,9 +156,8 @@ const DataTable = ({
             });
             return filteredRow;
           })}
-          initialPage={1}
+          isPaginate={false}
           stickyColumns={["select", ...stickyColumns]}
-          itemsPerPage={itemsPerPage}
           styleRows={filteredData.map((row, index) => ({
             position: index,
             style: isRowSelected(row.id)

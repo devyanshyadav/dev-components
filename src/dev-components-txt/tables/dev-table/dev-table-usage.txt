@@ -12,11 +12,12 @@ const DevTableUsage = () => {
   return (
     <DevTable  data={data}
     initialPage={1} 
+    isPaginate={false}
     stickyColumns={["id", "name", "occupation"]}
-    itemsPerPage={4}
     columns={["id", "name", "age", "city", "country", "email", "phone", "occupation"]}
     />
   )
 }
 
 export default DevTableUsage
+

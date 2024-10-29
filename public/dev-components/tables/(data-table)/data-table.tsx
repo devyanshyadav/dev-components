@@ -168,9 +168,8 @@ const DataTable = ({
             });
             return filteredRow;
           })}
-          initialPage={1}
+          isPaginate={false}
           stickyColumns={["select", ...stickyColumns]}
-          itemsPerPage={itemsPerPage}
           styleRows={filteredData.map((row, index) => ({
             position: index,
             style: isRowSelected(row.id)
