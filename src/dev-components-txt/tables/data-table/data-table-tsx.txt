@@ -39,8 +39,6 @@ const DataTable = ({
     "select",
     ...allColumns,
   ]);
-  const totalPages = Math.ceil(totalData / itemsPerPage);
-
   // Filter data based on search criteria
   const filteredData = useMemo(() => {
     if (!searchTerm.trim() || !searchBy) return data;
@@ -195,11 +193,12 @@ const DataTable = ({
         />
       )}
 
-      <div className="grid place-items-center *:!p-0.5">
+      <div className="flex items-center justify-start *:!p-0.5">
         <DevPaginationV2
+          itemsPerPage={itemsPerPage}
+          totalItems={totalData}
           onPageChange={onPageChange}
-          totalPages={totalPages}
-          initialPage={currentPage}
+          currentPage={currentPage}
         />
       </div>
     </div>

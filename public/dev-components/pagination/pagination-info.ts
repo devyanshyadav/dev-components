@@ -63,14 +63,19 @@ const PaginationInfo = [
       ],
       props: [
         {
-          propName: "totalPages",
+          propName: "totalItems",
           propExample: `20`,
           propDetail: "Total number of pages in the pagination.",
         },
         {
-          propName: "initialPage",
+          propName: "currentPage",
           propExample: `1`,
           propDetail: "Initial page number when the component mounts.",
+        },
+        {
+          propName: "itemsPerPage",
+          propExample: `3`,
+          propDetail: "Number of items to display per page.",
         },
         {
           propName: "onPageChange",

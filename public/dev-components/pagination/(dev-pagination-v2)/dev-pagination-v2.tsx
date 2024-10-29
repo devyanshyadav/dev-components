@@ -1,31 +1,38 @@
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 interface PaginationProps {
-  totalPages: number;
-  initialPage?: number;
-  onPageChange?: (page: number) => void;
+  currentPage?: number;
+  onPageChange: (page: number) => void;
+  itemsPerPage: number;
+  totalItems: number;
 }
 
 const DevPaginationV2 = ({
-  totalPages,
-  initialPage = 1,
-  onPageChange = () => {},
+  currentPage = 1,
+  onPageChange,
+  itemsPerPage,
+  totalItems
 }: PaginationProps) => {
+  const currentCount = Math.min(currentPage * itemsPerPage, totalItems);
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   return (
     <div className="flex *:!select-none items-center bg-LIGHT dark:bg-DARK rounded-full p-1 border border-ACCENT/10 gap-2">
       <button
-        onClick={() => onPageChange(Math.max(1, initialPage - 1))}
-        disabled={initialPage === 1}
+        onClick={() => onPageChange(Math.max(1, currentPage - 1))}
+        disabled={currentPage === 1}
         className="p-2 text-2xl rounded-full text-ACCENT hover:bg-ACCENT/50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BiChevronLeft />
       </button>
-      <p className="grid grid-cols-3 gap-3">
-        <span>{initialPage}</span> of <span>{totalPages}</span>
+      <p className="flex items-center gap-2 font-medium">
+        <span className="text-ACCENT">{currentCount}</span>
+        <span className="opacity-80">of</span>
+        <span className="text-ACCENT">{totalItems}</span>
       </p>
       <button
-        onClick={() => onPageChange(Math.min(totalPages, initialPage + 1))}
-        disabled={initialPage === totalPages}
+        onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
+        disabled={currentPage === totalPages}
         className="p-2 text-2xl rounded-full text-ACCENT hover:bg-ACCENT/50 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <BiChevronRight />

@@ -7,7 +7,6 @@ import DevPopoverV1 from "../../popovers/(dev-popover-v1)/dev-popover-v1";
 import DevInputV1 from "../../inputs/(dev-input-v1)/dev-input-v1";
 import DevPaginationV2 from "../../pagination/(dev-pagination-v2)/dev-pagination-v2";
 
-
 const DataTable = ({
   allColumns,
   data,
@@ -27,8 +26,6 @@ const DataTable = ({
     "select",
     ...allColumns,
   ]);
-  const totalPages = Math.ceil(totalData / itemsPerPage);
-
   // Filter data based on search criteria
   const filteredData = useMemo(() => {
     if (!searchTerm.trim() || !searchBy) return data;
@@ -183,12 +180,15 @@ const DataTable = ({
         />
       )}
 
-      <div className="grid place-items-center *:!p-0.5">
+      <div className="flex items-center justify-between *:!p-0.5">
         <DevPaginationV2
+          itemsPerPage={itemsPerPage}
+          totalItems={totalData}
           onPageChange={onPageChange}
-          totalPages={totalPages}
-          initialPage={currentPage}
+          currentPage={currentPage}
         />
+
+        <button>Sort</button>
       </div>
     </div>
   );
