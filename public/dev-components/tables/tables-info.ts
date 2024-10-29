@@ -84,8 +84,8 @@ const TablesInfo = [
           cmp_link:"/inputs#dev-input-v1"
         },
         {
-          cmp_name: "DevDropdownV1",
-          cmp_link:"/dropdowns#dev-dropdown-v1"
+          cmp_name: "DevPopoverV1",
+          cmp_link:"/popovers#dev-popover-v1"
         },
         {
           cmp_name: "DevPaginationV2",
@@ -133,6 +133,16 @@ const TablesInfo = [
           propDetail:
             "(Optional) A boolean indicating if data is currently being loaded.",
         },
+        {
+          propName:"selectedRows",
+          propExample: "[ 1, 2, 3 ]",
+          propDetail: "(Optional) An array of selected row IDs."
+        },
+        {
+          propName:"onRowSelect",
+          propExample: "(row) => console.log(row)",
+          propDetail: "(Optional) A callback function triggered when a row is clicked."
+        }
       ],
       packages: [],
     },

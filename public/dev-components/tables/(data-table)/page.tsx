@@ -24,6 +24,7 @@ const allColumns = [
 
 const DataTableUsage = () => {
   const [paginate, setPaginate] = useState(1);
+  const [selectedRows, setSelectedRows] = useState<number[]>([])
   const itemsPerPage = 4;
 
   return (
@@ -33,6 +34,8 @@ const DataTableUsage = () => {
       data={data.slice((paginate - 1) * itemsPerPage, paginate * itemsPerPage)} //the slicing don't require if the data is already paginated from the database
       itemsPerPage={itemsPerPage} 
       allColumns={allColumns} 
+      selectedRows={selectedRows}
+      onRowSelect={setSelectedRows}
       currentPage={paginate}
     />
   );

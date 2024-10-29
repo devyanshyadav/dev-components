@@ -16,8 +16,9 @@ const DataTable = ({
   totalData,
   loading = false,
   stickyColumns = [],
+  selectedRows = [],
+  onRowSelect = () => {},
 }) => {
-  const [selectedRows, setSelectedRows] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchBy, setSearchBy] = useState("");
@@ -38,21 +39,21 @@ const DataTable = ({
   }, [data, searchTerm, searchBy]);
 
   const handleRowSelection = (id) => {
-    setSelectedRows((prev) =>
+    onRowSelect?.((prev) =>
       prev.includes(id) ? prev.filter((rowId) => rowId !== id) : [...prev, id]
     );
   };
 
   const handleSelectAll = () => {
     if (selectAll) {
-      setSelectedRows([]);
+      onRowSelect?.([]);
     } else {
-      setSelectedRows(filteredData.map((item) => item.id));
+      onRowSelect?.(filteredData.map((item) => item.id));
     }
     setSelectAll(!selectAll);
   };
 
-  const isRowSelected = (id) => selectedRows.includes(id);
+  const isRowSelected = (id) => selectedRows?.includes(id);
 
   const toggleColumnVisibility = (column) => {
     setVisibleColumns((prev) =>
@@ -114,7 +115,7 @@ const DataTable = ({
             {allColumns.map((column) => (
               <label
                 key={column}
-                className="flex *:scale-75 items-center cursor-pointer space-x-2"
+                className="flex *:scale-[0.7] items-center cursor-pointer space-x-2"
               >
                 <DevCheckboxV2
                   disabled={column === "select"}
@@ -130,13 +131,15 @@ const DataTable = ({
       </div>
 
       {loading ? (
-        <div className="w-full h-32 grid place-items-center">Loading...</div>
+        <div className="w-full h-32 grid place-items-center font-sem">
+          Loading...
+        </div>
       ) : (
         <DevTable
           data={filteredData.map((row) => {
             const filteredRow = {
               select: (
-                <div className="bg-LIGHT w-fit dark:bg-DARK p-0.5 rounded-lg text-lg">
+                <div className="bg-LIGHT w-fit dark:bg-DARK *:scale-[0.85] rounded-lg text-lg">
                   <DevCheckboxV2
                     id={`select-${row.id}`}
                     checked={isRowSelected(row.id)}
@@ -166,7 +169,7 @@ const DataTable = ({
               ? {
                   head: "select",
                   element: (
-                    <div className="bg-LIGHT w-fit dark:bg-DARK p-0.5 rounded-lg text-lg">
+                    <div className="bg-LIGHT w-fit dark:bg-DARK *:scale-[0.85] p-0.5 rounded-lg text-lg">
                       <DevCheckboxV2
                         id="select-all"
                         checked={selectAll}
