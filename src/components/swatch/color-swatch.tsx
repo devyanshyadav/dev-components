@@ -93,11 +93,13 @@ const ColorSwatch = () => {
   // Helper function to convert hex to rgb
   const hexToRgb = (hex: string) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
+    return result
+      ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16),
+        }
+      : null;
   };
 
   const changeTheme = (color: string, value: Colors, labelName: string) => {
@@ -162,16 +164,12 @@ const ColorSwatch = () => {
   return (
     <ColorPopover
       button={
-        <DevTooltipV1 tipData="Change theme">
-          <DevButtonV1
-            variant="ghost"
-            size="sm"
-            className="font-semibold"
-          >
+        <div>
+          <DevButtonV1 variant="ghost" size="sm" className="font-semibold">
             Theme
             <IoIosColorPalette className="text-lg" />
           </DevButtonV1>
-        </DevTooltipV1>
+        </div>
       }
     >
       <div className="*:p-2 space-y-4">
@@ -186,8 +184,14 @@ const ColorSwatch = () => {
                   className="w-8 h-8 rounded-lg border border-ACCENT/20 overflow-hidden hover:scale-110 transition-transform"
                   style={{ background: preset.accent }}
                 >
-                  <div className="h-1/2 w-full opacity-80" style={{ background: preset.light }} />
-                  <div className="h-1/2 w-full opacity-80" style={{ background: preset.dark }} />
+                  <div
+                    className="h-1/2 w-full opacity-80"
+                    style={{ background: preset.light }}
+                  />
+                  <div
+                    className="h-1/2 w-full opacity-80"
+                    style={{ background: preset.dark }}
+                  />
                 </button>
               </DevTooltipV1>
             ))}

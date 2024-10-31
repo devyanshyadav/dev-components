@@ -17,7 +17,7 @@ const ColorPopover = ({
 }: PopoverProps) => {
   return(
     <Root>
-    <Trigger>{button}</Trigger>
+    <Trigger asChild>{button}</Trigger>
     <Portal>
       <Content
         side={place}
