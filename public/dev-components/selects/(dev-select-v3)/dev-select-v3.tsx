@@ -47,7 +47,7 @@ const DevSelectV3 = ({
           side="bottom"
           position="popper"
           sideOffset={5}
-          className={`z-50 origin-[var(--radix-select-content-transform-origin)] showOptions w-[var(--radix-content-trigger-width)] min-w-[var(--radix-content-available-width)] max-h-48 overflow-hidden bg-LIGHT border border-ACCENT/30 dark:bg-DARK rounded-md shadow-lg ${contentProps?.className}`}
+          className={`z-50 origin-[var(--radix-select-content-transform-origin)] showOptions w-[var(--radix-select-trigger-width)] min-w-[var(--radix-content-available-width)] max-h-48 overflow-hidden bg-LIGHT border border-ACCENT/30 dark:bg-DARK rounded-md shadow-lg ${contentProps?.className}`}
         >
           <Select.ScrollUpButton className="flex items-center justify-center h-5 bg-transparent hover:text-ACCENT cursor-pointer">
             <FaChevronDown className="text-sm rotate-180 opacity-80" />

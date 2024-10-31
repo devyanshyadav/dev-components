@@ -46,7 +46,7 @@ const TablesInfo = [
         {
           propName: "columns",
           propExample:
-            "[ 'id', 'name', 'age', ... ] //also accepts objects { head:'selectAll', value:'<Checkbox/>' }",
+            "[ 'id', 'name', 'age', ... ] //also accepts objects { head:'selectAll', value:'<Checkbox/>' } or { head:'id', width:'100px' }",
           propDetail:
             "An array of strings or objects defining the columns of the table.",
         },

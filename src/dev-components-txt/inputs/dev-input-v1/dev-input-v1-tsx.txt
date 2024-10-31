@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 type InputProps = {
   variant?: "base" | "bordered" | "faded" | "underline";
@@ -14,7 +14,7 @@ const cn = (...classes: (string | undefined | null | false)[]) => {
   return classes.filter(Boolean).join(" ");
 };
 
-const DevInputV1 = ({
+const DevInputV1 = forwardRef<HTMLInputElement, InputProps>(({
   variant = "base",
   scale = "md",
   labelName,
@@ -23,11 +23,12 @@ const DevInputV1 = ({
   rounded = "full",
   reverseIcon = false,
   ...props
-}: InputProps) => {
+}, ref) => {
   const commonStyle = `w-full flex border border-ACCENT transition-all ring-ACCENT/50 items-center ${
     icon && "gap-2"
   },
     ${reverseIcon && "flex-row-reverse"}`;
+  
   const inputVariants = {
     base: "bg-LIGHT dark:bg-DARK",
     bordered: "bg-transparent",
@@ -49,6 +50,7 @@ const DevInputV1 = ({
     md: "*:p-2",
     lg: "*:p-3",
   };
+  
   const inputSize = inputSizes[scale] || inputSizes.md;
   const inputVariant = inputVariants[variant] || inputVariants.base;
   const inputRound = inputRoundness[rounded] || inputRoundness.full;
@@ -73,6 +75,7 @@ const DevInputV1 = ({
       >
         <span className="text-xl text-ACCENT !p-0">{icon}</span>
         <input
+          ref={ref}
           id={labelName && labelName}
           {...props}
           className="focus:bg-transparent rounded bg-transparent text-sm outline-0 w-full"
@@ -80,6 +83,6 @@ const DevInputV1 = ({
       </div>
     </div>
   );
-};
+});
 
 export default DevInputV1;

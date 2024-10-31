@@ -11,8 +11,9 @@ const data = [
 const DevTableUsage = () => {
   return (
     <DevTable  data={data}
-    initialPage={1} 
-    isPaginate={false}
+    // initialPage={1} 
+    // itemsPerPage={5}
+    // isPaginate={true}
     stickyColumns={["id", "name", "occupation"]}
     columns={["id", "name", "age", "city", "country", "email", "phone", "occupation"]}
     />

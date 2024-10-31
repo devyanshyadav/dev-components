@@ -3,11 +3,12 @@ import React from "react";
 interface Column {
   head: string;
   element?: React.ReactNode;
+  width?: string;
 }
 
 interface StyleRow {
   position: number;
-  style: string; // Tailwind CSS classes
+  style: string;
 }
 
 interface DevTableProps {
@@ -16,7 +17,7 @@ interface DevTableProps {
   initialPage?: number;
   columns?: (string | Column)[];
   stickyColumns?: string[];
-  styleRows?: StyleRow[]; // New prop for row styles
+  styleRows?: StyleRow[];
   isPaginate?: boolean;
 }
 
@@ -26,7 +27,7 @@ const DevTable = ({
   initialPage = 1,
   columns = [],
   stickyColumns = [],
-  styleRows = [], // Default empty array
+  styleRows = [],
   isPaginate = false,
 }: DevTableProps) => {
   const headers = columns.length
@@ -78,83 +79,97 @@ const DevTable = ({
     return rowStyle ? rowStyle.style : "";
   };
 
+  const getColumnWidth = (col: string | Column) => {
+    if (typeof col === "string") return "auto";
+    return col.width || "auto";
+  };
+
   const headerItems = columns.length ? columns : headers;
+
   return (
-    <div className="w-full">
-      <div className="overflow-x-auto shadow-sm rounded-lg border border-ACCENT/30">
-        <table className="min-w-full divide-y divide-ACCENT/30">
-          <thead className="bg-ACCENT border-b border-ACCENT text-white">
-            <tr>
-              {headerItems.map(
-                (col: string | { head: string; element?: React.ReactNode }) => {
-                  const header = typeof col === "string" ? col : col.head;
-                  const headerElement =
-                    typeof col === "string" ? header : col.element || header;
+    <div className="w-full max-h-screen overflow-x-auto border rounded-lg border-ACCENT/50">
+      <table className="w-full table-auto divide-y divide-ACCENT/30">
+        <thead className="bg-ACCENT text-white">
+          <tr>
+            {headerItems.map((col: string | Column, index) => {
+              const header = typeof col === "string" ? col : col.head;
+              const headerElement =
+                typeof col === "string" ? header : col.element || header;
+              const width = getColumnWidth(col);
+              const isSticky = stickyColumns.includes(header);
+              const isLastSticky =
+                isSticky && headers.indexOf(header) === headers.length - 1;
+
+              return (
+                <th
+                  key={header}
+                  className={`
+                    px-4 py-2 text-left text-xs font-medium uppercase tracking-wider whitespace-nowrap
+                    ${isSticky ? "sticky z-10 bg-ACCENT" : ""}
+                    ${isLastSticky ? "right-0" : isSticky ? "left-0" : ""}
+                  `}
+                  style={{
+                    width: width,
+                    maxWidth: width === "auto" ? "none" : width,
+                  }}
+                >
+                  <div className="flex items-center gap-1">
+                    <span className="truncate">{headerElement}</span>
+                  </div>
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-ACCENT/30">
+          {data.length ? (
+            currentData.map((row, rowIndex) => (
+              <tr
+                key={rowIndex}
+                className={`hover:bg-LIGHT/50 hover:dark:bg-DARK/50 ${getRowStyle(
+                  rowIndex
+                )}`}
+              >
+                {headers.map((header, colIndex) => {
+                  const col = headerItems[colIndex];
+                  const width = getColumnWidth(col);
+                  const isSticky = stickyColumns.includes(header);
+                  const isLastSticky =
+                    isSticky && headers.indexOf(header) === headers.length - 1;
 
                   return (
-                    <th
-                      key={header}
-                      className={`px-6 py-3 text-left text-xs font-medium uppercase tracking-wider 
-                      ${
-                        stickyColumns.includes(header) &&
-                        "sticky z-10 bg-ACCENT"
-                      } 
-                      ${
-                        stickyColumns.includes(header) &&
-                        headers.indexOf(header) === headers.length - 1
-                          ? "right-0"
-                          : "left-0"
-                      }`}
-                    >
-                      {headerElement}
-                    </th>
-                  );
-                }
-              )}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-ACCENT/30">
-            {data.length ? (
-              currentData.map((row, rowIndex) => (
-                <tr
-                  key={rowIndex}
-                  className={`hover:bg-LIGHT/50 hover:dark:bg-DARK/50  ${getRowStyle(
-                    rowIndex
-                  )}`}
-                >
-                  {headers.map((header) => (
                     <td
                       key={`${rowIndex}-${header}`}
-                      className={`px-6 py-4 whitespace-nowrap text-sm  
-                        ${
-                          stickyColumns.includes(header) &&
-                          "sticky z-10 bg-LIGHT dark:bg-DARK"
-                        } 
-                        ${
-                          stickyColumns.includes(header) &&
-                          headers.indexOf(header) === headers.length - 1
-                            ? "right-0"
-                            : "left-0"
-                        }`}
+                      className={`
+                        px-4 py-2 text-sm whitespace-nowrap
+                        ${isSticky ? "sticky z-10 bg-LIGHT dark:bg-DARK" : ""}
+                        ${isLastSticky ? "right-0" : isSticky ? "left-0" : ""}
+                      `}
+                      style={{
+                        width: width,
+                        maxWidth: width === "auto" ? "none" : width,
+                      }}
                     >
-                      {formatCellValue(row[header])}
+                      <div className="overflow-hidden overflow-ellipsis">
+                        {formatCellValue(row[header])}
+                      </div>
                     </td>
-                  ))}
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td
-                  colSpan={headers.length}
-                  className="px-6 py-4 text-center text-ACCENT/80"
-                >
-                  No data available
-                </td>
+                  );
+                })}
               </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+            ))
+          ) : (
+            <tr>
+              <td
+                colSpan={headers.length}
+                className="px-4 py-2 text-center text-ACCENT/80"
+              >
+                No data available
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   );
 };
