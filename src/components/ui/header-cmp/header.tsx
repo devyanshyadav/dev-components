@@ -4,6 +4,7 @@ import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import dynamic from 'next/dynamic'
 import SearchModal from './search-modal'
+import ColorSwatch from '@/components/swatch/color-swatch'
 const ThemeSwitch = dynamic(() => import('@/components/ui/theme-switch'), { ssr: false })
 const MobileSidebar = dynamic(() => import('@/components/components-cmp/mobile-sidebar'), { ssr: false })
 
@@ -28,6 +29,7 @@ const Header = () => {
 
       <div className="text-accentNeon flex items-center justify-center gap-2">
         <SearchModal />
+        <ColorSwatch/>
         <Link
           target="_blank"
           href="https://github.com/devyanshyadav/Dev-Components"

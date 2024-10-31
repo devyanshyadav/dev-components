@@ -260,3 +260,12 @@ pre {
     height: 0;
   }
 }
+
+.colorSwatch .w-color-sketch {
+  @apply !rounded-lg *:!border-slate-500/50 !pb-1.5 !bg-rtlLight dark:!bg-rtlDark; 
+}
+
+.colorSwatch .w-color-sketch div:not(.w-color-swatch),
+.colorSwatch .w-color-sketch input {
+  @apply !rounded-md  font-medium dark:!text-white !text-black;
+}

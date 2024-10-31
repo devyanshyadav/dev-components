@@ -1,22 +1,9 @@
 //TSX code
 "use client";
-import styled from "styled-components";
 import { ColorResult, Sketch } from "@uiw/react-color";
 import { useEffect, useState } from "react";
 import ColorPopover from "./color-popover";
 
-const PickerDiv = styled.div`
-  .w-color-sketch {
-    border-radius: 8px !important;
-    padding-bottom: 5px !important;
-  }
-  .w-color-sketch div,
-  .w-color-sketch input {
-    border-radius: 6px !important;
-    font-weight: 500 !important;
-    color: black !important;
-  }
-`;
 
 type DevColorPickerProps = {
   defaultColor?: {
@@ -59,13 +46,13 @@ const ColorPckr = ({
       }
     >
 
-      <PickerDiv>
+      <div className="colorSwatch">
         <Sketch
           color={color.hex}
           onChange={onChangeHandler}
           presetColors={["#2563eb", "#4f46e5", "#7c3aed", "#9333ea", "#f97316"]}
         />
-      </PickerDiv>
+      </div>
     </ColorPopover>
   );
 };

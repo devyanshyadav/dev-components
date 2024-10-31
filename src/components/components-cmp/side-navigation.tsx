@@ -4,10 +4,6 @@ import { usePathname } from "next/navigation";
 import CmpUrl from "@/utils/cmp-url";
 import Link from "next/link";
 import ComponentDataArray from "../../../public/component-data-array";
-import DevButtonV1 from "../../../public/dev-components/buttons/(dev-button-v1)/dev-button-v1";
-import { IoIosColorPalette } from "react-icons/io";
-import DevPopoverV1 from "../../../public/dev-components/popovers/(dev-popover-v1)/dev-popover-v1";
-import ColorSwatch from "@/components/swatch/color-swatch";
 
 const SideNavigation = () => {
   const path = usePathname();
@@ -29,10 +25,6 @@ const SideNavigation = () => {
             </li>
           ))}
         </ul>
-
-        <div className="fixed bottom-3 right-3">
-         <ColorSwatch/>
-        </div>
       </aside>
     )
   );
