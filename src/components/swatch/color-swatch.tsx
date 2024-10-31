@@ -211,7 +211,7 @@ const ColorSwatch = () => {
                 value={AccentLabel}
                 onChange={(e) => changeLabel("AccentLabel", e.target.value)}
                 type="text"
-                className="outline-0 w-full focus:outline-accentNeon p-1 px-2 rounded-md border border-accentNeon/50 text-sm"
+                className="outline-0 w-full bg-transparent focus:ring-2 transition-all ring-accentNeon/50 p-1 px-2 rounded-md border border-accentNeon text-sm"
               />
             </label>
             <label htmlFor="accent">
@@ -220,7 +220,7 @@ const ColorSwatch = () => {
                 type="text"
                 value={DarkLabel}
                 onChange={(e) => changeLabel("DarkLabel", e.target.value)}
-                className="outline-0 w-full focus:outline-accentNeon p-1 px-2 rounded-md border border-accentNeon/50 text-sm"
+                className="outline-0 w-full bg-transparent focus:ring-2 transition-all ring-accentNeon/50 p-1 px-2 rounded-md border border-accentNeon text-sm"
               />
             </label>
             <label htmlFor="accent">
@@ -229,7 +229,7 @@ const ColorSwatch = () => {
                 type="text"
                 value={LightLabel}
                 onChange={(e) => changeLabel("LightLabel", e.target.value)}
-                className="outline-0 w-full focus:outline-accentNeon p-1 px-2 rounded-md border border-accentNeon/50 text-sm"
+                className="outline-0 w-full bg-transparent focus:ring-2 transition-all ring-accentNeon/50 p-1 px-2 rounded-md border border-accentNeon text-sm"
               />
             </label>
           </div>
