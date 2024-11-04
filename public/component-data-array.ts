@@ -25,6 +25,7 @@ import TabsInfo from "./dev-components/tabs/tabs-info";
 import ToastInfo from "./dev-components/toast/toast-info";
 import TogglesInfo from "./dev-components/toggles/toggles-info";
 import TooltipsInfo from "./dev-components/tooltips/tooltips-info";
+import UploaderInfo from "./dev-components/uploader/uploader-info";
 import VisualCodesInfo from "./dev-components/visual-codes/visual-codes-info";
 
 const ComponentDataArray = [
@@ -213,6 +214,13 @@ const ComponentDataArray = [
     componentData: TablesInfo,
     description:
       "Tables are used to display and organize data in a tabular format.",
+  },
+  {
+    name: "Uploader",
+    image: "uploader.png",
+    componentData: UploaderInfo,
+    description:
+      "Uploader components are used to upload files and images to a web application.",
   },
   {
     name: "Miscellaneous",
