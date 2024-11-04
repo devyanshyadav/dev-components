@@ -22,64 +22,82 @@ interface ThemePreset {
 
 const presets: ThemePreset[] = [
   {
-    name: "Ocean",
-    accent: "#0EA5E9",
-    dark: "#0F172A",
-    light: "#F0F9FF",
+    name: "Blue Sky",
+    accent: "#3b82f6",
+    dark: "#172554",
+    light: "#dbeafe",
   },
   {
-    name: "Forest",
-    accent: "#059669",
-    dark: "#1E293B",
-    light: "#F0FDF4",
+    name: "Indigo Dream",
+    accent: "#6366f1",
+    dark: "#1e1b4b",
+    light: "#e0e7ff",
   },
   {
-    name: "Sunset",
-    accent: "#F97316",
-    dark: "#292524",
-    light: "#FFF7ED",
+    name: "Purple Haze",
+    accent: "#8b5cf6",
+    dark: "#2e1065",
+    light: "#ede9fe",
   },
   {
-    name: "Berry",
-    accent: "#D946EF",
-    dark: "#2D1B2D",
-    light: "#FAF5FF",
+    name: "Lavender Mist",
+    accent: "#a855f7",
+    dark: "#3b0764",
+    light: "#e9d5ff",
   },
   {
-    name: "Royal",
-    accent: "#6366F1",
-    dark: "#1E1B4B",
-    light: "#F5F3FF",
+    name: "Pink Blossom",
+    accent: "#ec4899",
+    dark: "#500724",
+    light: "#fae8ff",
   },
   {
-    name: "Crimson",
-    accent: "#DC2626",
-    dark: "#2C1B1B",
-    light: "#FEF2F2",
+    name: "Rose Red",
+    accent: "#f43f5e",
+    dark: "#4c0519",
+    light: "#ffe4e6",
   },
   {
-    name: "Emerald",
-    accent: "#10B981",
-    dark: "#064E3B",
-    light: "#ECFDF5",
+    name: "Aqua Blue",
+    accent: "#0ea5e9",
+    dark: "#082f49",
+    light: "#e0f2fe",
   },
   {
-    name: "Cyber",
-    accent: "#06B6D4",
-    dark: "#164E63",
-    light: "#ECFEFF",
+    name: "Sunset Orange",
+    accent: "#f97316",
+    dark: "#431407",
+    light: "#ffedd5",
   },
   {
-    name: "Amber",
-    accent: "#D97706",
-    dark: "#292524",
-    light: "#FFFBEB",
+    name: "Yellow Sunshine",
+    accent: "#eab308",
+    dark: "#422006",
+    light: "#fef9c3",
   },
   {
-    name: "Grape",
-    accent: "#7C3AED",
-    dark: "#2E1065",
-    light: "#F5F3FF",
+    name: "Green Meadow",
+    accent: "#84cc16",
+    dark: "#1a2e05",
+    light: "#ecfccb",
+  },
+  {
+    name: "Mint Green",
+    accent: "#22c55e",
+    dark: "#052e16",
+    light: "#dcfce7",
+  },
+  {
+    name: "Emerald Sea",
+    accent: "#10b981",
+    dark: "#022c22",
+    light: "#d1fae5",
+  },
+  {
+    name: "Teal Oasis",
+    accent: "#14b8a6",
+    dark: "#042f2e",
+    light: "#ccfbf1",
   },
 ];
 
@@ -165,10 +183,10 @@ const ColorSwatch = () => {
     <ColorPopover
       button={
         <div>
-          <DevButtonV1 variant="ghost" size="sm" className="font-semibold">
+          <button className="themeButton p-1 px-4 rounded-md after:bg-rtlLight dark:after:bg-rtlDark flex items-center justify-center gap-1">
             Theme
             <IoIosColorPalette className="text-lg" />
-          </DevButtonV1>
+          </button>
         </div>
       }
     >

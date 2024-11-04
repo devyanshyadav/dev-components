@@ -1,6 +1,33 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { FiChevronDown } from "react-icons/fi";
 
+// accordions css 
+/*.accordContent {
+  &[data-state="open"] {
+    animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  }
+  &[data-state="closed"] {
+    animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  }
+}
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+*/
 const DevAccordion = ({ AccordData, ...props }) => {
   return (
     <Accordion.Root
