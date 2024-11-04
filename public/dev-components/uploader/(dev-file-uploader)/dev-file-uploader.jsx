@@ -97,7 +97,7 @@ const DevFileUploader = ({
     <div className='w-64 bg-LIGHT dark:bg-DARK rounded-lg border border-ACCENT/40 p-3 flex flex-col gap-3 max-h-[500px] overflow-hidden'>
       <div className='text-center flex-shrink-0'>
         <h2 className='font-bold text-xl text-center'>Upload Files</h2>
-        <p className='text-sm opacity-70'>Make sure your files are in JPG format</p>
+        <p className='text-sm opacity-70'>Make sure your files are in proper format</p>
       </div>
       <div
         className={`
