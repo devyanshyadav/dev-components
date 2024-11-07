@@ -11,9 +11,7 @@ const data = [
 const DevTableUsage = () => {
   return (
     <DevTable  data={data}
-    // initialPage={1} 
-    // itemsPerPage={5}
-    // isPaginate={true}
+    styleRows={[{ position: 3, style: "bg-ACCENT/30" }]}
     stickyColumns={["id", "name", "occupation"]}
     columns={["id", "name", "age", "city", "country", "email", "phone", "occupation"]}
     />

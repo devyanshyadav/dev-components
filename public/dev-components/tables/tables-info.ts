@@ -26,24 +26,6 @@ const TablesInfo = [
           propDetail: "An array of objects representing the rows of the table.",
         },
         {
-          propName: "isPaginate",
-          propExample: false,
-          propDetail:
-            "A boolean to enable or disable pagination. Defaults to false.",
-        },
-        {
-          propName: "itemsPerPage",
-          propExample: "4",
-          propDetail:
-            "The number of items to display per page. Recommended when isPaginate is true.",
-        },
-        {
-          propName: "initialPage",
-          propExample: "1",
-          propDetail:
-            "The initial page to display. Recommended when isPaginate is true.",
-        },
-        {
           propName: "columns",
           propExample:
             "[ 'id', 'name', 'age', ... ] //also accepts objects { head:'selectAll', value:'<Checkbox/>' } or { head:'id', width:'100px' }",
@@ -58,7 +40,7 @@ const TablesInfo = [
         },
         {
           propName: "styleRows",
-          propExample: "[ { position: 0, style: 'bg-gray-100' } ]",
+          propExample: "[ { position: 3, style: 'bg-gray-100' } ]",
           propDetail:
             "An array of styles to apply to specific rows based on their position.",
         },
@@ -134,12 +116,6 @@ const TablesInfo = [
           propName: "totalData",
           propExample: "10",
           propDetail: "The total number of data items available.",
-        },
-        {
-          propName: "loading",
-          propExample: true,
-          propDetail:
-            "(Optional) A boolean indicating if data is currently being loaded.",
         },
         {
           propName: "selectedRows",

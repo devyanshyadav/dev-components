@@ -1,20 +1,25 @@
 "use client";
-import React from "react";
-import DevFileUploader from "./dev-file-uploader";
+import React, { useState } from "react";
+import DevFileUploader, { UploadedFile } from "./dev-file-uploader";
 
 const DevFileUploaderUsage = () => {
+  const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
+
   return (
-    <DevFileUploader
+   <div className="max-w-xs w-full">
+     <DevFileUploader
       accept={["image/*", "application/pdf"]}
       maxSize={5242880}
-      maxFiles={5}
-      onDrop={(acceptedFiles) => {
-        console.log(acceptedFiles);
-      }}
+      uploadedFiles={uploadedFiles}
+      uploadedImagePreview
+      hideOnLimitExceed
+      onDrop={setUploadedFiles}
+      maxFiles={4}
       onSubmit={() => {
         console.log("submitted");
       }}
     />
+   </div>
   );
 };
 

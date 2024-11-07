@@ -10,12 +10,13 @@ const UploaderInfo = [
     },
     details: {
       description:
-        "A file uploader component that allows users to drag and drop files or select them from their device with support for file type restrictions and size limits.",
+        "A file uploader component that allows users to drag and drop files or select them from their device, with support for file type restrictions, size limits, and file previews.",
       features: [
         "Supports multiple file uploads with a limit on the number of files",
         "File type restrictions (e.g., images and PDFs)",
         "Progress indication for each uploaded file",
         "Error handling for file size limits",
+        "Preview of uploaded images",
       ],
       helpers: [],
       props: [
@@ -51,6 +52,25 @@ const UploaderInfo = [
           propExample: false,
           propDetail:
             "(Optional) A boolean indicating if the uploader is disabled.",
+        },
+        {
+          propName: "uploadedFiles",
+          propExample:
+            "[{ file: new File([], 'example.jpg'), progress: 50, preview: 'url_to_image' }]",
+          propDetail:
+            "(Required) An array of currently uploaded files with their progress and preview URLs.",
+        },
+        {
+          propName: "hideOnLimitExceed",
+          propExample: true,
+          propDetail:
+            "(Optional) A boolean to hide the uploader when the maximum file limit is exceeded.",
+        },
+        {
+          propName: "uploadedImagePreview",
+          propExample: true,
+          propDetail:
+            "(Optional) A boolean to show image previews for uploaded files.",
         },
       ],
       packages: [],

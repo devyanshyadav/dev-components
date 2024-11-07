@@ -1,25 +1,17 @@
 import React from "react";
 
+
 const DevTable = ({
   data,
-  itemsPerPage,
-  initialPage = 1,
   columns = [],
   stickyColumns = [],
   styleRows = [],
-  isPaginate = false,
 }) => {
   const headers = columns.length
     ? columns.map((col) => (typeof col === "string" ? col : col.head))
     : data.length
     ? Object.keys(data[0])
     : [];
-
-  if (!isPaginate && (itemsPerPage || initialPage > 1)) {
-    throw new Error(
-      "Items per page or initial page is only available in paginate mode => isPaginate"
-    );
-  }
 
   if (columns.length) {
     data.forEach((row, index) => {
@@ -41,9 +33,7 @@ const DevTable = ({
     );
   }
 
-  const startIndex = itemsPerPage && (initialPage - 1) * itemsPerPage;
-  const endIndex = startIndex && startIndex + itemsPerPage;
-  const currentData = !isPaginate ? data : data.slice(startIndex, endIndex);
+  const currentData = data;
 
   const formatCellValue = (value) => {
     if (React.isValidElement(value)) return value;

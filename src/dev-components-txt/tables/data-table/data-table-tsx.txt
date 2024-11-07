@@ -14,7 +14,6 @@ type DataTableProps = {
   currentPage: number;
   onPageChange: (page: number) => void;
   totalData: number;
-  loading?: boolean;
   stickyColumns?: string[];
   selectedRows?: number[];
   onRowSelect?: React.Dispatch<React.SetStateAction<number[]>>;
@@ -27,7 +26,6 @@ const DataTable = ({
   currentPage,
   onPageChange,
   totalData,
-  loading = false,
   stickyColumns = [],
   selectedRows = [],
   onRowSelect = () => {},
@@ -140,12 +138,6 @@ const DataTable = ({
           </div>
         </DevPopoverV1>
       </div>
-
-      {loading ? (
-        <div className="w-full h-32 grid place-items-center font-sem">
-          Loading...
-        </div>
-      ) : (
         <DevTable
           data={filteredData.map((row) => {
             const filteredRow: any = {
@@ -166,7 +158,6 @@ const DataTable = ({
             });
             return filteredRow;
           })}
-          isPaginate={false}
           stickyColumns={["select", ...stickyColumns]}
           styleRows={filteredData.map((row, index) => ({
             position: index,
@@ -191,8 +182,6 @@ const DataTable = ({
               : col
           )}
         />
-      )}
-
       <div className="flex items-center justify-start *:!p-0.5">
         <DevPaginationV2
           itemsPerPage={itemsPerPage}

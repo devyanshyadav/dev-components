@@ -14,7 +14,6 @@ const DataTable = ({
   currentPage,
   onPageChange,
   totalData,
-  loading = false,
   stickyColumns = [],
   selectedRows = [],
   onRowSelect = () => {},
@@ -127,12 +126,6 @@ const DataTable = ({
           </div>
         </DevPopoverV1>
       </div>
-
-      {loading ? (
-        <div className="w-full h-32 grid place-items-center font-sem">
-          Loading...
-        </div>
-      ) : (
         <DevTable
           data={filteredData.map((row) => {
             const filteredRow = {
@@ -153,7 +146,6 @@ const DataTable = ({
             });
             return filteredRow;
           })}
-          isPaginate={false}
           stickyColumns={["select", ...stickyColumns]}
           styleRows={filteredData.map((row, index) => ({
             position: index,
@@ -178,17 +170,13 @@ const DataTable = ({
               : col
           )}
         />
-      )}
-
-      <div className="flex items-center justify-between *:!p-0.5">
+      <div className="flex items-center justify-start *:!p-0.5">
         <DevPaginationV2
           itemsPerPage={itemsPerPage}
           totalItems={totalData}
           onPageChange={onPageChange}
           currentPage={currentPage}
         />
-
-        <button>Sort</button>
       </div>
     </div>
   );

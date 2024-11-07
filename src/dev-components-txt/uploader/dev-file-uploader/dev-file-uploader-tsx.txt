@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { PiFilePdfFill } from "react-icons/pi";
 import { GoFileDirectoryFill } from "react-icons/go";
 import { MdImage } from "react-icons/md";
@@ -10,41 +10,60 @@ interface FileWithPreview extends File {
   preview?: string;
 }
 
-interface UploadedFile {
+export interface UploadedFile {
   file: FileWithPreview;
   progress: number;
+  preview?: string;
 }
 
 interface FileDropzoneProps {
-  onDrop?: (acceptedFiles: File[]) => void;
   onSubmit?: () => void;
-  maxSize?: number; // in bytes
+  maxSize?: number;
   accept?: string[];
   maxFiles?: number;
   disabled?: boolean;
+  uploadedImagePreview?: boolean;
+  hideOnLimitExceed?: boolean;
+  uploadedFiles: UploadedFile[];
+  onDrop: React.Dispatch<React.SetStateAction<UploadedFile[]>>;
 }
 
 const DevFileUploader = ({
-  onDrop,
   onSubmit,
-  maxSize = 5242880, // 5MB default
+  maxSize = 5242880,
   accept = ["image/*", "application/pdf"],
   maxFiles = 5,
   disabled = false,
+  uploadedFiles,
+  onDrop,
+  hideOnLimitExceed = false,
+  uploadedImagePreview = false,
 }: FileDropzoneProps) => {
-  const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [isDragActive, setIsDragActive] = useState(false);
   const [fileLimitExceeded, setFileLimitExceeded] = useState(false);
 
+  // Cleanup previews when component unmounts
+  useEffect(() => {
+    return () => {
+      uploadedFiles.forEach((fileObj) => {
+        if (fileObj.preview) {
+          URL.revokeObjectURL(fileObj.preview);
+        }
+      });
+    };
+  }, []);
+
+  const generatePreview = (file: File): string | undefined => {
+    if (file.type.startsWith("image/")) {
+      return URL.createObjectURL(file);
+    }
+    return undefined;
+  };
+
   const handleDrop = useCallback(
     (acceptedFiles: File[]) => {
-      // Reset file limit exceeded message
       setFileLimitExceeded(false);
-
-      // Filter out files that exceed max size
       const validFiles = acceptedFiles.filter((file) => file.size <= maxSize);
-
-      // Limit the total number of files to maxFiles
       const remainingSlots = maxFiles - uploadedFiles.length;
       const filesToAdd = validFiles.slice(0, remainingSlots);
 
@@ -52,11 +71,11 @@ const DevFileUploader = ({
         const newFiles = filesToAdd.map((file) => ({
           file,
           progress: 0,
+          preview: generatePreview(file),
         }));
 
-        setUploadedFiles((prev) => [...prev, ...newFiles]);
+        onDrop((prev) => [...prev, ...newFiles]);
 
-        // Simulate upload progress
         newFiles.forEach((fileObj) => {
           let progress = 0;
           const interval = setInterval(() => {
@@ -65,40 +84,50 @@ const DevFileUploader = ({
               clearInterval(interval);
               return;
             }
-            setUploadedFiles((prev) =>
+            onDrop((prev) =>
               prev.map((f) =>
                 f.file === fileObj.file ? { ...f, progress } : f
               )
             );
           }, 300);
         });
-
-        if (onDrop) {
-          onDrop(filesToAdd);
-        }
       }
 
-      // Show error if trying to add more files than allowed
       if (uploadedFiles.length + filesToAdd.length >= maxFiles) {
         setFileLimitExceeded(true);
       }
     },
-    [maxSize, maxFiles, onDrop, uploadedFiles.length]
+    [maxSize, maxFiles, uploadedFiles.length]
   );
 
   const removeFile = (fileToRemove: FileWithPreview) => {
-    setUploadedFiles((files) => files.filter((f) => f.file !== fileToRemove));
+    onDrop((files) => {
+      const fileObj = files.find((f) => f.file === fileToRemove);
+      if (fileObj?.preview) {
+        URL.revokeObjectURL(fileObj.preview);
+      }
+      return files.filter((f) => f.file !== fileToRemove);
+    });
+
+    if (uploadedFiles.length === maxFiles) {
+      setFileLimitExceeded(false);
+    }
   };
 
   const clearAllFiles = () => {
-    setUploadedFiles([]);
-    setFileLimitExceeded(false); // Reset file limit exceeded message
+    uploadedFiles.forEach((fileObj) => {
+      if (fileObj.preview) {
+        URL.revokeObjectURL(fileObj.preview);
+      }
+    });
+    onDrop([]);
+    setFileLimitExceeded(false);
   };
 
   const handleFileIcon = (fileType: string) => {
-    if (fileType.startsWith("image/")) return <MdImage />; // Icon for images
-    if (fileType === "application/pdf") return <PiFilePdfFill />; // Icon for PDFs
-    return <GoFileDirectoryFill />; // Generic file icon
+    if (fileType.startsWith("image/")) return <MdImage />;
+    if (fileType === "application/pdf") return <PiFilePdfFill />;
+    return <GoFileDirectoryFill />;
   };
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
@@ -112,16 +141,18 @@ const DevFileUploader = ({
   }, []);
 
   return (
-    <div className="w-64 bg-LIGHT dark:bg-DARK rounded-lg border border-ACCENT/40 p-3 flex flex-col gap-3 max-h-[500px] overflow-hidden">
-      <div className="text-center flex-shrink-0">
-        <h2 className="font-bold text-xl text-center">Upload Files</h2>
-        <p className="text-sm opacity-70">
-          Make sure your files are in proper format
-        </p>
-      </div>
-      <div
-        className={`
-          relative rounded-lg border-2 border-ACCENT/50 aspect-video border-dashed p-3 text-center hover:border-ACCENT transition-colors
+    <div className="w-full max-w-md bg-LIGHT dark:bg-DARK rounded-lg border border-ACCENT/40 p-3 flex flex-col gap-3 max-h-dvh overflow-hidden">
+      {!fileLimitExceeded && hideOnLimitExceed && (
+        <>
+          <div className="text-center flex-shrink-0">
+            <h2 className="font-bold text-xl text-center">Upload Files</h2>
+            <p className="text-sm opacity-70">
+              Make sure your files are in proper format
+            </p>
+          </div>
+          <div
+            className={`
+          relative rounded-lg border-2 border-ACCENT/50 aspect-video border-dashed p-3 text-center hover:border-ACCENT grid place-content-center transition-colors
           ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
           ${isDragActive ? "border-ACCENT bg-blue-50" : ""}
           ${
@@ -130,54 +161,56 @@ const DevFileUploader = ({
               : "border-ACCENT/50"
           }
         `}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={(e) => {
-          e.preventDefault();
-          setIsDragActive(false);
-          const files = Array.from(e.dataTransfer.files);
-          handleDrop(files);
-        }}
-      >
-        <input
-          type="file"
-          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-          onChange={(e) => {
-            if (e.target.files) {
-              handleDrop(Array.from(e.target.files));
-            }
-          }}
-          accept={accept.join(",")}
-          multiple={maxFiles > 1}
-          disabled={disabled}
-        />
-
-        <div className="flex items-center flex-col justify-center gap-2">
-          <RxUpload className="text-5xl" />
-          <p>Drag and drop files here</p>
-          <button
-            className="bg-ACCENT p-1.5 px-4 rounded-lg text-white"
-            disabled={disabled}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={(e) => {
+              e.preventDefault();
+              setIsDragActive(false);
+              const files = Array.from(e.dataTransfer.files);
+              handleDrop(files);
+            }}
           >
-            Browse
-          </button>
-        </div>
-      </div>
+            <input
+              type="file"
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              onChange={(e) => {
+                if (e.target.files) {
+                  handleDrop(Array.from(e.target.files));
+                }
+              }}
+              accept={accept.join(",")}
+              multiple={maxFiles > 1}
+              disabled={disabled}
+            />
 
-      {fileLimitExceeded && (
-        <p className="text-red-500 text-sm text-center">
-          File limit exceeded. You can only add up to {maxFiles} files at once.
-        </p>
+            <div className="flex items-center flex-col justify-center gap-2">
+              <RxUpload className="text-5xl" />
+              <p>Drag and drop files here</p>
+              <button
+                className="bg-ACCENT p-1.5 px-4 rounded-lg text-white"
+                disabled={disabled}
+              >
+                Browse
+              </button>
+            </div>
+          </div>
+
+          {fileLimitExceeded && (
+            <p className="text-red-500 text-sm text-center">
+              File limit exceeded. You can only add up to {maxFiles} files at
+              once.
+            </p>
+          )}
+        </>
       )}
-
       {uploadedFiles.length > 0 && (
         <div className="space-y-3 flex-grow overflow-auto overflow-x-hidden">
           {uploadedFiles.map((fileObj, index) => (
             <div
               key={index}
-              className="border-2 border-ACCENT/20 relative p-3 rounded-lg overflow-hidden flex flex-col"
+              className="border-2 border-ACCENT/20 relative p-3 rounded-lg overflow-hidden flex flex-col gap-2"
             >
-              <div className="flex items-center justify-between mb-2 ">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <span className="flex-shrink-0 text-lg">
                     {handleFileIcon(fileObj.file.type)}
@@ -193,6 +226,17 @@ const DevFileUploader = ({
                   <IoCloseSharp />
                 </button>
               </div>
+
+              {uploadedImagePreview && fileObj.preview && (
+                <div className="relative w-full aspect-video">
+                  <img
+                    src={fileObj.preview}
+                    alt={fileObj.file.name}
+                    className="absolute inset-0 w-full h-full object-contain bg-gray-100 rounded"
+                  />
+                </div>
+              )}
+
               <div className="relative h-2 w-full bg-gray-200 rounded">
                 <div
                   style={{ width: `${fileObj.progress}%` }}
@@ -205,7 +249,7 @@ const DevFileUploader = ({
       )}
 
       {uploadedFiles.length > 0 && (
-        <div className="flex justify-between ">
+        <div className="flex justify-between">
           <button
             className="p-1.5 px-4 rounded-lg text-white bg-ACCENT"
             onClick={onSubmit}
