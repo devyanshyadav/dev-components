@@ -76,6 +76,7 @@ const DevPasswordInput: React.FC<DevPasswordInputProps> = ({
       <DevInputV1
         rounded="md"
         {...props}
+        size="md"
         type={state.hide ? "password" : "text"}
         labelName="Password"
         reverseIcon

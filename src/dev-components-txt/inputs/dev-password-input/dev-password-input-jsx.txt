@@ -68,6 +68,7 @@ const DevPasswordInput= ({
     <div className="space-y-1">
       <DevInputV1
         rounded="md"
+        size="md"
         {...props}
         type={state.hide ? "password" : "text"}
         labelName="Password"
