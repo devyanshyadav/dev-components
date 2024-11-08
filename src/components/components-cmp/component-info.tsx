@@ -104,7 +104,8 @@ const ComponentInfo = ({
 
       <div
         id={CmpUrl(component_name)}
-        className="w-full mt-2 pt-0 overflow-hidden max-h-96 min-h-56 border-2 border-accentNeon/50 rounded-lg relative flex flex-col"
+        style={{ maxHeight: CurrTab == 0 ? "auto" : "400px" }}
+        className="w-full mt-2 pt-0 overflow-hidden min-h-56 border-2 border-accentNeon/50 rounded-lg relative flex flex-col"
       >
         <ul className="w-full bg-rtlLight dark:bg-rtlDark relative p-3 pb-0 flex items-center gap-5 text-sm flex-shrink-0 ">
           {["Preview", "Code", "Usage", "Details"].map((item, index) => (
@@ -132,24 +133,28 @@ const ComponentInfo = ({
             <hr className="transform absolute border-0 inset-x-0 h-[2px] bottom-0 bg-gradient-to-r from-accentNeon/50 to-transparent" />
           </li>
         </ul>
-        {CurrTab === 1 && <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
-          <button
-            className={`${
-              currVariant === cmpCodes.jsxCode && "bg-accentNeon/50 text-white"
-            }`}
-            onClick={() => setCurrVariant(() => cmpCodes.jsxCode)}
-          >
-            JSX
-          </button>
-          <button
-            className={`${
-              currVariant === cmpCodes.tsxCode && "bg-accentNeon/50 text-white"
-            }`}
-            onClick={() => setCurrVariant(() => cmpCodes.tsxCode)}
-          >
-            TSX
-          </button>
-        </div>}
+        {CurrTab === 1 && (
+          <div className="absolute bottom-4 right-4 bg-accentNeon/20 text-accentNeon border border-accentNeon  select-none  rounded-lg *:p-0.5 *:px-2 overflow-hidden text-sm font-semibold">
+            <button
+              className={`${
+                currVariant === cmpCodes.jsxCode &&
+                "bg-accentNeon/50 text-white"
+              }`}
+              onClick={() => setCurrVariant(() => cmpCodes.jsxCode)}
+            >
+              JSX
+            </button>
+            <button
+              className={`${
+                currVariant === cmpCodes.tsxCode &&
+                "bg-accentNeon/50 text-white"
+              }`}
+              onClick={() => setCurrVariant(() => cmpCodes.tsxCode)}
+            >
+              TSX
+            </button>
+          </div>
+        )}
         <div
           className={clsx(
             "flex-grow overflow-auto *:p-5",

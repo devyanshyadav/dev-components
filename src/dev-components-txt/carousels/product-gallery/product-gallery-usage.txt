@@ -25,7 +25,7 @@ const ProductGalleryUsage = () => {
     },
   ];
   return (
-    <section className="max-w-lg w-full h-52">
+    <section className="max-w-lg w-full">
       <ProductGallery images={images} />
     </section>
   );

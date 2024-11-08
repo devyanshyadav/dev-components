@@ -93,6 +93,7 @@ const DataTable = ({
       <div className="flex items-center justify-between gap-2">
         <div className="flex gap-2">
           <DevInputV1
+            className="!p-0.5 !pl-2"
             reverseIcon
             icon={
               <div className="text-sm *:!ring-0 *:!border-0">
@@ -138,50 +139,50 @@ const DataTable = ({
           </div>
         </DevPopoverV1>
       </div>
-        <DevTable
-          data={filteredData.map((row) => {
-            const filteredRow: any = {
-              select: (
-                <div className="bg-LIGHT w-fit dark:bg-DARK *:scale-[0.85] rounded-lg text-lg">
-                  <DevCheckboxV2
-                    id={`select-${row.id}`}
-                    checked={isRowSelected(row.id)}
-                    onChange={() => handleRowSelection(row.id)}
-                  />
-                </div>
-              ),
-            };
-            visibleColumns.forEach((col) => {
-              if (col !== "select") {
-                filteredRow[col] = row[col as keyof typeof row];
+      <DevTable
+        data={filteredData.map((row) => {
+          const filteredRow: any = {
+            select: (
+              <div className="bg-LIGHT w-fit dark:bg-DARK *:scale-[0.85] rounded-lg text-lg">
+                <DevCheckboxV2
+                  id={`select-${row.id}`}
+                  checked={isRowSelected(row.id)}
+                  onChange={() => handleRowSelection(row.id)}
+                />
+              </div>
+            ),
+          };
+          visibleColumns.forEach((col) => {
+            if (col !== "select") {
+              filteredRow[col] = row[col as keyof typeof row];
+            }
+          });
+          return filteredRow;
+        })}
+        stickyColumns={["select", ...stickyColumns]}
+        styleRows={filteredData.map((row, index) => ({
+          position: index,
+          style: isRowSelected(row.id)
+            ? "hover:!bg-LIGHT hover:dark:!bg-DARK bg-LIGHT dark:bg-DARK"
+            : "",
+        }))}
+        columns={visibleColumns.map((col) =>
+          col === "select"
+            ? {
+                head: "select",
+                element: (
+                  <div className="bg-LIGHT w-fit dark:bg-DARK *:scale-[0.85] p-0.5 rounded-lg text-lg">
+                    <DevCheckboxV2
+                      id="select-all"
+                      checked={selectAll}
+                      onChange={handleSelectAll}
+                    />
+                  </div>
+                ),
               }
-            });
-            return filteredRow;
-          })}
-          stickyColumns={["select", ...stickyColumns]}
-          styleRows={filteredData.map((row, index) => ({
-            position: index,
-            style: isRowSelected(row.id)
-              ? "hover:!bg-LIGHT hover:dark:!bg-DARK bg-LIGHT dark:bg-DARK"
-              : "",
-          }))}
-          columns={visibleColumns.map((col) =>
-            col === "select"
-              ? {
-                  head: "select",
-                  element: (
-                    <div className="bg-LIGHT w-fit dark:bg-DARK *:scale-[0.85] p-0.5 rounded-lg text-lg">
-                      <DevCheckboxV2
-                        id="select-all"
-                        checked={selectAll}
-                        onChange={handleSelectAll}
-                      />
-                    </div>
-                  ),
-                }
-              : col
-          )}
-        />
+            : col
+        )}
+      />
       <div className="flex items-center justify-start *:!p-0.5">
         <DevPaginationV2
           itemsPerPage={itemsPerPage}
