@@ -1,13 +1,10 @@
 import React, { forwardRef } from "react";
-const cn = (...classes) => {
-  return classes.filter(Boolean).join(" ");
-};
 
 const DevInputV1 = forwardRef(
   (
     {
       variant = "base",
-      scale = "md",
+      size = "md",
       labelName,
       className,
       icon,
@@ -27,7 +24,7 @@ const DevInputV1 = forwardRef(
       bordered: "bg-transparent",
       faded: "bg-ACCENT/20 text-ACCENT",
       underline:
-        "border-0 !ring-0 !border-ACCENT/50 border-b-4 relative after:content-[''] after:absolute after:h-1 after:bg-ACCENT after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0 has-[:focus]:after:scale-x-100 after:-translate-x-2",
+        "border-0 !ring-0 !border-ACCENT/50 border-b-4 relative after:content-[''] after:absolute after:h-1 after:bg-ACCENT after:-bottom-1 after:w-full after:scale-x-0  after:transition after:duration-300 after:origin-center rounded-none px-0 has-[:focus]:after:scale-x-100",
     };
 
     const inputRoundness = {
@@ -39,12 +36,12 @@ const DevInputV1 = forwardRef(
     };
 
     const inputSizes = {
-      sm: "*:p-1",
-      md: "*:p-2",
-      lg: "*:p-3",
+      sm: "p-1",
+      md: "p-2",
+      lg: "p-3",
     };
 
-    const inputSize = inputSizes[scale] || inputSizes.md;
+    const inputSize = inputSizes[size] || inputSizes.md;
     const inputVariant = inputVariants[variant] || inputVariants.base;
     const inputRound = inputRoundness[rounded] || inputRoundness.full;
 
@@ -58,7 +55,7 @@ const DevInputV1 = forwardRef(
 
         <div
           className={cn(
-            "has-[:focus]:ring px-2",
+            "has-[:focus]:ring",
             inputSize,
             commonStyle,
             inputRound,
@@ -66,12 +63,12 @@ const DevInputV1 = forwardRef(
             className
           )}
         >
-          <span className="text-xl text-ACCENT !p-0">{icon}</span>
+          <span className="text-xl text-ACCENT">{icon}</span>
           <input
             ref={ref}
             id={labelName && labelName}
             {...props}
-            className="focus:bg-transparent rounded bg-transparent text-sm outline-0 w-full"
+            className="focus:bg-transparent bg-transparent rounded text-sm outline-0 w-full"
           />
         </div>
       </div>

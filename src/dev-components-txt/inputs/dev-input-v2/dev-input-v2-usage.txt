@@ -9,7 +9,7 @@ const DevInputV2Usage = () => {
         icon={<LuSearch className="text-accent text-xl" />}
         type="text"
         rounded="full"
-        scale="md"
+        size="md"
         placeholder="Enter name"
       />
     </div>

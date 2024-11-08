@@ -41,26 +41,26 @@ const DevInputV1Usage = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-sm  text-ACCENT">Scale (sm/ md/ lg)</h2>
+        <h2 className="text-sm  text-ACCENT">size (sm/ md/ lg)</h2>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-4 w-full ">
           <DevInputV1
             type="text"
             labelName="Search"
-            scale="sm"
+            size="sm"
             placeholder="Search Results"
             icon={<FiSearch />}
           />
           <DevInputV1
             type="text"
             labelName="Search"
-            scale="md"
+            size="md"
             placeholder="Search Results"
             icon={<FiSearch />}
           />
           <DevInputV1
             type="text"
             labelName="Search"
-            scale="lg"
+            size="lg"
             placeholder="Search Results"
             icon={<FiSearch />}
           />

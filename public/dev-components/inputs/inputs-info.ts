@@ -28,7 +28,7 @@ const InputsInfo = [
             "Determines the input's visual variant. Options include 'base', 'bordered', 'faded', and 'underline'. Default is 'base'.",
         },
         {
-          propName: "scale",
+          propName: "size",
           propExample: "md",
           propDetail:
             "Specifies the input's size. Options are 'sm', 'md', and 'lg'. Default is 'md'.",
@@ -79,7 +79,7 @@ const InputsInfo = [
       ],
       props: [
         {
-          propName: "scale",
+          propName: "size",
           propExample: `"sm" | "md" | "lg"`,
           propDetail:
             "Determines the height of the input field. Adjusts the overall size of the component.",
@@ -89,12 +89,6 @@ const InputsInfo = [
           propExample: `"none" | "sm" | "md" | "full"`,
           propDetail:
             "Controls the roundness of the input field. Can be fully customized for various designs.",
-        },
-        {
-          propName: "laserColor",
-          propExample: `"#01FFF5"`,
-          propDetail:
-            "Allows customization of the laser color. Changes the gradient color of the laser effect.",
         },
         {
           propName: "icon",
@@ -108,6 +102,12 @@ const InputsInfo = [
           propDetail:
             "Allows customization and appearance of the laser effect when the input field is clicked. Defaults to true.",
         },
+        {
+          propName: "reverseIcon",
+          propExample: "true | false",
+          propDetail:
+            "Reverses the position of the icon within the input field. Defaults to false.",
+        }
       ],
       packages: [],
     },
