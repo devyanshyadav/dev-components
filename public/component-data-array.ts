@@ -10,6 +10,7 @@ import DrawersInfo from "./dev-components/drawers/drawers-info";
 import DropdownsInfo from "./dev-components/dropdowns/dropdowns-info";
 import EmojiPickersInfo from "./dev-components/emoji-pickers/emoji-pickers-info";
 import InputsInfo from "./dev-components/inputs/inputs-info";
+import LayoutsInfo from "./dev-components/layouts/layouts-info";
 import MiscellaneousInfo from "./dev-components/miscellaneous/miscellaneous-info";
 import ModalsInfo from "./dev-components/modals/modals-info";
 import MultiselectInfo from "./dev-components/multiselect/multiselect-info";
@@ -221,6 +222,13 @@ const ComponentDataArray = [
     componentData: UploaderInfo,
     description:
       "Uploader components are used to upload files and images to a web application.",
+  },
+  {
+    name: "Layouts",
+    image: "layout.png",
+    componentData: LayoutsInfo,
+    description:
+      "Layout components are the higher-order component reusable sections of a website or app that are shared across multiple pages",
   },
   {
     name: "Miscellaneous",
