@@ -9,6 +9,7 @@ import DateInfo from "./dev-components/date/date-info";
 import DrawersInfo from "./dev-components/drawers/drawers-info";
 import DropdownsInfo from "./dev-components/dropdowns/dropdowns-info";
 import EmojiPickersInfo from "./dev-components/emoji-pickers/emoji-pickers-info";
+import FormsInfo from "./dev-components/forms/forms-info";
 import InputsInfo from "./dev-components/inputs/inputs-info";
 import LayoutsInfo from "./dev-components/layouts/layouts-info";
 import MiscellaneousInfo from "./dev-components/miscellaneous/miscellaneous-info";
@@ -229,6 +230,13 @@ const ComponentDataArray = [
     componentData: LayoutsInfo,
     description:
       "Layout components are the higher-order component reusable sections of a website or app that are shared across multiple pages",
+  },
+  {
+    name: "Forms",
+    image: "form.png",
+    componentData: FormsInfo,
+    description:
+      "Forms are used to collect information from users in a web application.",
   },
   {
     name: "Miscellaneous",
