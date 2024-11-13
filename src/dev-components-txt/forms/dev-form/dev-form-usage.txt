@@ -9,7 +9,6 @@ const DevFormUsage: React.FC = () => {
         if (value.length < 3) {
           return "Username must be at least 3 characters";
         }
-        return null;
       },
     },
     email: {
@@ -47,7 +46,6 @@ const DevFormUsage: React.FC = () => {
         if (!value) {
           return "You must accept the terms and conditions";
         }
-        return null;
       },
     },
   };
