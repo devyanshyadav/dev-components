@@ -67,7 +67,6 @@ const FormInput = forwardRef(
       error,
       icon,
       classNames = { mainContainer: "", inputContainer: "" },
-      onChange,
       name,
       children,
       ...props

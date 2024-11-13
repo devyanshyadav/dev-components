@@ -44,7 +44,6 @@ interface FormInputProps
   name: string;
   icon?: React.ReactNode;
   children?: React.ReactNode;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 interface DevFormProps {
@@ -73,7 +72,6 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
       error,
       icon,
       classNames = { mainContainer: "", inputContainer: "" },
-      onChange,
       name,
       children,
       ...props
