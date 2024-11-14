@@ -16,7 +16,11 @@ const DevRangeSliderV1 = (props: RangeSliderProps) => {
       </Slider.Track>
       <Slider.Thumb
         className="block w-5 h-5 focus:outline-0 bg-ACCENT transition-all rounded-full border-2 cursor-pointer active:border-4 dark:border-LIGHT border-DARK"
-        aria-label="Slider"
+        aria-label="Slider Thumb"
+      />
+      <Slider.Thumb
+        className="block w-5 h-5 focus:outline-0 bg-ACCENT transition-all rounded-full border-2 cursor-pointer active:border-4 dark:border-LIGHT border-DARK"
+        aria-label="Slider Thumb"
       />
     </Slider.Root>
   );
