@@ -119,7 +119,6 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
 
 FormInput.displayName = "FormInput";
 
-// Modified DevForm Component
 const DevForm: React.FC<DevFormProps> = ({
   children,
   onSubmit,
@@ -129,55 +128,85 @@ const DevForm: React.FC<DevFormProps> = ({
 }) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  // Helper function to normalize and check if a value is empty
+  const isEmptyValue = (value: any): boolean => {
+    if (value === undefined || value === null) return true;
+
+    if (typeof value === "string") {
+      return value.trim() === "";
+    }
+
+    if (Array.isArray(value)) {
+      return value.length === 0;
+    }
+
+    if (typeof value === "object") {
+      return Object.keys(value).length === 0;
+    }
+
+    if (typeof value === "number") {
+      return false;
+    }
+
+    return !value;
+  };
+
+  // Helper function to normalize value for validation
+  const normalizeValue = (value: any): any => {
+    if (typeof value === "string") {
+      return value.trim();
+    }
+    return value;
+  };
+
   const validate = (values: Record<string, any>): Record<string, string> => {
     const newErrors: Record<string, string> = {};
 
     Object.keys(validationRules).forEach((field) => {
       const rules = validationRules[field];
-      const value = values[field];
+      const rawValue = values[field];
+      const isEmpty = isEmptyValue(rawValue);
 
-      if (rules.required) {
-        if (
-          value === undefined ||
-          value === null ||
-          (typeof value === "string" && value.trim() === "") ||
-          (Array.isArray(value) && value.length === 0)
-        ) {
-          newErrors[field] =
-            typeof rules.required === "string"
-              ? rules.required
-              : "This field is required";
+      // Check required first
+      if (rules.required && isEmpty) {
+        newErrors[field] =
+          typeof rules.required === "string"
+            ? rules.required
+            : "This field is required";
+        return; // Skip other validations if the field is required and empty
+      }
+
+      // Only proceed with other validations if the field has a value
+      if (!isEmpty) {
+        const value = normalizeValue(rawValue);
+
+        if (rules.minLength && typeof value === "string") {
+          if (value.length < rules.minLength.value) {
+            newErrors[field] = rules.minLength.message;
+            return;
+          }
         }
-      }
 
-      if (
-        rules.minLength &&
-        typeof value === "string" &&
-        value.length < rules.minLength.value
-      ) {
-        newErrors[field] = rules.minLength.message;
-      }
+        if (rules.maxLength && typeof value === "string") {
+          if (value.length > rules.maxLength.value) {
+            newErrors[field] = rules.maxLength.message;
+            return;
+          }
+        }
 
-      if (
-        rules.maxLength &&
-        typeof value === "string" &&
-        value.length > rules.maxLength.value
-      ) {
-        newErrors[field] = rules.maxLength.message;
-      }
+        if (rules.pattern && typeof value === "string") {
+          if (!rules.pattern.value.test(value)) {
+            newErrors[field] = rules.pattern.message;
+            return;
+          }
+        }
 
-      if (
-        rules.pattern &&
-        typeof value === "string" &&
-        !rules.pattern.value.test(value)
-      ) {
-        newErrors[field] = rules.pattern.message;
-      }
-
-      if (rules.validate) {
-        const customError = rules.validate(value, values);
-        if (customError) {
-          newErrors[field] = customError;
+        if (rules.validate) {
+          const customError = rules.validate(value, values);
+          if (customError) {
+            newErrors[field] = customError;
+            return;
+          }
         }
       }
     });
@@ -188,19 +217,34 @@ const DevForm: React.FC<DevFormProps> = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const values = Object.fromEntries(formData.entries()) as Record<
-      string,
-      string
-    >;
+    const rawValues = Object.fromEntries(formData.entries());
+
+    // Normalize all values before validation
+    const values = Object.entries(rawValues).reduce((acc, [key, value]) => {
+      acc[key] = typeof value === "string" ? value.trim() : value;
+      return acc;
+    }, {} as Record<string, any>);
 
     const validationErrors = validate(values);
     setErrors(validationErrors);
 
     if (onSubmit) {
       if (Object.keys(validationErrors).length === 0) {
-        onSubmit({ values, errors: null }, e);
+        onSubmit(
+          {
+            values: values as Record<string, string>,
+            errors: null,
+          },
+          e
+        );
       } else {
-        onSubmit({ values: null, errors: validationErrors }, e);
+        onSubmit(
+          {
+            values: null,
+            errors: validationErrors,
+          },
+          e
+        );
       }
     }
   };

@@ -1,5 +1,6 @@
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import { IoMdClose } from "react-icons/io";
 /*//  dev-Modal css animation 
 .Modal-Overlay {
   animation: modal-overlayShow 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -26,7 +27,6 @@ import * as Dialog from "@radix-ui/react-dialog";
     transform: translate(-50%, -50%) scale(1);
   }
 }*/
-
 export const ModalTrigger = ({ children }) => {
   return <Dialog.Trigger asChild>{children}</Dialog.Trigger>;
 };
@@ -36,6 +36,7 @@ const DevModalV1 = ({
   modalBtn,
   closeIcon = true,
   contentProps,
+  customCloseIcon,
   ...props
 }) => {
   return (
@@ -45,7 +46,7 @@ const DevModalV1 = ({
         <Dialog.Overlay className="Modal-Overlay inset-0 fixed bg-black/50 z-50" />
         <Dialog.Content
           {...contentProps}
-          className={`Modal-Content max-w-screen max-h-screen fixed z-50 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-LIGHT dark:bg-DARK border border-ACCENT/30  ${contentProps?.className}`}
+          className={`Modal-Content md:w-auto w-[95vw] md:min-w-[400px] overflow-auto max-w-screen max-h-screen fixed z-50 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-xl bg-LIGHT dark:bg-DARK border border-ACCENT/30  ${contentProps?.className}`}
         >
           {(closeIcon || title) && (
             <div className="flex items-start justify-end w-full p-2">
@@ -54,7 +55,12 @@ const DevModalV1 = ({
                   {title}
                 </Dialog.Title>
               )}
-              <Dialog.Close>🗙</Dialog.Close>
+              {closeIcon && !customCloseIcon && (
+                <Dialog.Close className="aspect-square transition-all p-0.5 rounded-md ring ring-ACCENT/20 active:ring-ACCENT/50">
+                  <IoMdClose />
+                </Dialog.Close>
+              )}
+              {customCloseIcon && customCloseIcon}
             </div>
           )}
           {children}

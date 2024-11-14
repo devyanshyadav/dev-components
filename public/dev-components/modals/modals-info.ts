@@ -52,6 +52,12 @@ const ModalsInfo = [
           propExample: "true",
           propDetail: "Whether to display the close icon in the modal header.",
         },
+        {
+          propName: "customCloseIcon",
+          propExample: "<button>Close</button>",
+          propDetail:
+            "Whether to use a custom close icon or any react node instead of the default close icon.",
+        },
       ],
       doc_links: ["https://www.radix-ui.com/primitives/docs/components/dialog"],
       packages: [

@@ -41,7 +41,7 @@ const ComponentInfo = ({
     usageCode: changeColorNameToHex(component_usage_code),
   });
   const [currVariant, setCurrVariant] = useState<string>(
-    cmpCodes.jsxCode || cmpCodes.tsxCode
+    cmpCodes.tsxCode || cmpCodes.jsxCode
   );
 
   function changeColorNameToHex(component_code: string) {

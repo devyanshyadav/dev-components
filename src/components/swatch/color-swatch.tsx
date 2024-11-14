@@ -20,84 +20,87 @@ interface ThemePreset {
   light: string;
 }
 
+const darkColor = "#1f2937";
+const lightColor = "#F5F8FF";
+
 const presets: ThemePreset[] = [
   {
     name: "Blue Sky",
     accent: "#3b82f6",
-    dark: "#172554",
-    light: "#dbeafe",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Indigo Dream",
     accent: "#6366f1",
-    dark: "#1e1b4b",
-    light: "#e0e7ff",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Purple Haze",
     accent: "#8b5cf6",
-    dark: "#2e1065",
-    light: "#ede9fe",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Lavender Mist",
     accent: "#a855f7",
-    dark: "#3b0764",
-    light: "#e9d5ff",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Pink Blossom",
     accent: "#ec4899",
-    dark: "#500724",
-    light: "#fae8ff",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Rose Red",
     accent: "#f43f5e",
-    dark: "#4c0519",
-    light: "#ffe4e6",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Aqua Blue",
     accent: "#0ea5e9",
-    dark: "#082f49",
-    light: "#e0f2fe",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Sunset Orange",
     accent: "#f97316",
-    dark: "#431407",
-    light: "#ffedd5",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Yellow Sunshine",
     accent: "#eab308",
-    dark: "#422006",
-    light: "#fef9c3",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Green Meadow",
     accent: "#84cc16",
-    dark: "#1a2e05",
-    light: "#ecfccb",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Mint Green",
     accent: "#22c55e",
-    dark: "#052e16",
-    light: "#dcfce7",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Emerald Sea",
     accent: "#10b981",
-    dark: "#022c22",
-    light: "#d1fae5",
+    dark: darkColor,
+    light: lightColor,
   },
   {
     name: "Teal Oasis",
     accent: "#14b8a6",
-    dark: "#042f2e",
-    light: "#ccfbf1",
+    dark: darkColor,
+    light: lightColor,
   },
 ];
 
