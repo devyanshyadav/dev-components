@@ -42,12 +42,7 @@ const DevFormUsage: React.FC = () => {
       },
     },
     terms: {
-      required: true,
-      validate: (value: boolean) => {
-        if (!value) {
-          return "You must accept the terms and conditions";
-        }
-      },
+      required: "You must accept the terms and conditions",
     },
   };
 

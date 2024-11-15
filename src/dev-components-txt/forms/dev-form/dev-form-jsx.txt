@@ -125,10 +125,12 @@ const DevForm = ({
 
   // Helper function to normalize and check if a value is empty
   const isEmptyValue = (value) => {
-    if (value === undefined || value === null) return true;
+    if (value === null || value === undefined) {
+      return true;
+    }
 
-    if (typeof value === "string") {
-      return value.trim() === "";
+    if (value instanceof File) {
+      return false; // A File object is never considered empty
     }
 
     if (Array.isArray(value)) {
@@ -139,8 +141,12 @@ const DevForm = ({
       return Object.keys(value).length === 0;
     }
 
+    if (typeof value === "string") {
+      return value.trim() === "";
+    }
+
     if (typeof value === "number") {
-      return false;
+      return false; // Numbers (even 0) are not considered empty
     }
 
     return !value;
