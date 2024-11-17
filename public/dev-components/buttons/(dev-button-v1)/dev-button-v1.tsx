@@ -1,4 +1,5 @@
 import React from "react";
+import { Url } from "url";
 
 // Simple implementation of the `cn` function to merge tailwind classes
 const cn = (...classes: (string | undefined | null | false)[]) => {
@@ -8,7 +9,7 @@ const cn = (...classes: (string | undefined | null | false)[]) => {
 type ButtonProps = {
   variant?: "solid" | "border" | "light" | "flat" | "ghost";
   size?: "sm" | "md" | "lg";
-  href?: string;
+  href?: Url;
   rounded?: "sm" | "md" | "lg" | "full" | "none";
   ripple?: boolean;
   asIcon?: boolean;

@@ -29,7 +29,7 @@ const DevInputV1 = forwardRef<HTMLInputElement, InputProps>(
     ref
   ) => {
     const commonStyle = `w-full flex border border-ACCENT transition-all ring-ACCENT/50 items-center ${
-      icon && "gap-2"
+      icon && " gap-2 "
     },
     ${reverseIcon && "flex-row-reverse"}`;
 
@@ -82,7 +82,7 @@ const DevInputV1 = forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             id={labelName && labelName}
             {...props}
-            className="focus:bg-transparent bg-transparent rounded text-sm outline-0 w-full"
+            className="autofill:duration-[5000s] autofill:delay-0 autofill:ease-in-out bg-transparent rounded text-sm outline-0 w-full"
           />
         </div>
       </div>
