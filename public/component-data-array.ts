@@ -27,6 +27,7 @@ import TabsInfo from "./dev-components/tabs/tabs-info";
 import ToastInfo from "./dev-components/toast/toast-info";
 import TogglesInfo from "./dev-components/toggles/toggles-info";
 import TooltipsInfo from "./dev-components/tooltips/tooltips-info";
+import TreeDropdownInfo from "./dev-components/tree-dropdowns/tree-dropdown-info";
 import UploaderInfo from "./dev-components/uploader/uploader-info";
 import VisualCodesInfo from "./dev-components/visual-codes/visual-codes-info";
 
@@ -237,6 +238,13 @@ const ComponentDataArray = [
     componentData: FormsInfo,
     description:
       "Forms are used to collect information from users in a web application.",
+  },
+  {
+    name: "Tree Dropdowns",
+    image: "tree-dropdown.png",
+    componentData: TreeDropdownInfo,
+    description:
+      "A tree dropdown component that displays a hierarchical structure of items, allowing users to expand and collapse folders and select files.",
   },
   {
     name: "Miscellaneous",
