@@ -1,6 +1,26 @@
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 
+type TreeNode = {
+  id: string;
+  label: string;
+  icon?: React.ReactNode;
+  children?: TreeNode[];
+};
+
+type TreeState = {
+  expanded: string[];
+  selected: string | null;
+};
+
+type TreeProps = {
+  data: TreeNode[];
+  initialExpandedNodes?: string[];
+  onChange?: (selectedId: string | null) => void;
+  iconOnOpen?: React.ReactNode;
+  iconOnClose?: React.ReactNode;
+  childrenIcon?: React.ReactNode;
+};
 
 const TreeNode = ({
   node,
@@ -9,26 +29,37 @@ const TreeNode = ({
   iconOnOpen = <FiChevronDown />,
   iconOnClose = <FiChevronRight />,
   childrenIcon,
+}: {
+  node: TreeNode;
+  state: TreeState;
+  onAction: (type: "toggle" | "select", id: string) => void;
+  iconOnOpen?: React.ReactNode;
+  iconOnClose?: React.ReactNode;
+  childrenIcon?: React.ReactNode;
 }) => {
   const isExpanded = state.expanded.includes(node.id);
-  // const isSelected = state.selected === node.id;
+  const isSelected = state.selected === node.id;
+  const hasChildren = (node.children || []).length > 0;
 
   return (
     <li className="ml-2">
       <div
-        className={`flex items-center gap-2 px-3 py-1 rounded-md cursor-pointer hover:bg-ACCENT/30`}
-        onClick={() => onAction("select", node.id)}
+        className={`flex ${
+          isSelected && !hasChildren && "text-ACCENT"
+        } items-center select-none gap-2 px-3 py-1 rounded-md cursor-pointer hover:bg-ACCENT/30`}
+        onClick={() => {
+          {
+            onAction("toggle", node.id);
+            onAction("select", node.id);
+          }
+        }}
       >
         {node.children?.length ? (
-          <button
+          <span
             className={`text-lg flex-shrink-0  ${isExpanded && "text-ACCENT"}`}
-            onClick={(e) => {
-              e.stopPropagation();
-              onAction("toggle", node.id);
-            }}
           >
             {isExpanded ? iconOnOpen : iconOnClose}
-          </button>
+          </span>
         ) : (
           <span className="w-fit flex-shrink-0">
             {node.icon || childrenIcon}
@@ -37,7 +68,7 @@ const TreeNode = ({
         <span className={`text-sm`}>{node.label}</span>
       </div>
 
-      {(node.children || []).length > 0 && (
+      {hasChildren && (
         <div
           className={`ml-4 overflow-hidden transition-all duration-300
           ${isExpanded ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
@@ -61,20 +92,20 @@ const TreeNode = ({
   );
 };
 
-const DevTreeDropdownV1 = ({
+const DevDropdownTreeV1 = ({
   data,
   initialExpandedNodes = [],
   onChange,
   iconOnOpen,
   iconOnClose,
   childrenIcon,
-}) => {
-  const [state, setState] = useState({
+}: TreeProps) => {
+  const [state, setState] = useState<TreeState>({
     expanded: initialExpandedNodes,
     selected: null,
   });
 
-  const handleAction = (type, id) => {
+  const handleAction = (type: "toggle" | "select", id: string) => {
     setState((prev) => {
       const newState =
         type === "toggle"
@@ -86,7 +117,7 @@ const DevTreeDropdownV1 = ({
             }
           : {
               ...prev,
-              selected: prev.selected === id ? null : id,
+              selected: id,
             };
 
       if (type === "select") onChange?.(newState.selected);
@@ -113,4 +144,4 @@ const DevTreeDropdownV1 = ({
   );
 };
 
-export default DevTreeDropdownV1;
+export default DevDropdownTreeV1;

@@ -1,16 +1,16 @@
-import DevTreeDropdownV1Usage from "./(dev-tree-dropdown-v1)/page";
+import DevDropdownTreeV1Usage from "./(dev-dropdown-tree-v1)/page";
 
-const TreeDropdownInfo = [
+const DropdownTreeInfo = [
   {
-    title: "Dev Tree Dropdown V1",
-    component: DevTreeDropdownV1Usage,
+    title: "Dev Dropdown Tree V1",
+    component: DevDropdownTreeV1Usage,
     variants: {
       jsx: true,
       tsx: true,
     },
     details: {
       description:
-        "A tree dropdown component that displays a hierarchical structure of items, allowing users to expand and collapse folders and select files.",
+        "A dropdown tree component that displays a hierarchical structure of items, allowing users to expand and collapse folders and select files.",
       features: [
         "Hierarchical display of items with expandable/collapsible folders",
         "Custom icons for opened and closed folders, as well as files",
@@ -60,4 +60,4 @@ const TreeDropdownInfo = [
   },
 ];
 
-export default TreeDropdownInfo;
+export default DropdownTreeInfo;

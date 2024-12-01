@@ -7,6 +7,7 @@ import ClipboardsInfo from "./dev-components/clipboards/clipboards-info";
 import ColorPickersInfo from "./dev-components/color-pickers/color-pickers-info";
 import DateInfo from "./dev-components/date/date-info";
 import DrawersInfo from "./dev-components/drawers/drawers-info";
+import DropdownTreeInfo from "./dev-components/dropdown-tree/dropdown-tree-info";
 import DropdownsInfo from "./dev-components/dropdowns/dropdowns-info";
 import EmojiPickersInfo from "./dev-components/emoji-pickers/emoji-pickers-info";
 import FormsInfo from "./dev-components/forms/forms-info";
@@ -27,7 +28,6 @@ import TabsInfo from "./dev-components/tabs/tabs-info";
 import ToastInfo from "./dev-components/toast/toast-info";
 import TogglesInfo from "./dev-components/toggles/toggles-info";
 import TooltipsInfo from "./dev-components/tooltips/tooltips-info";
-import TreeDropdownInfo from "./dev-components/tree-dropdowns/tree-dropdown-info";
 import UploaderInfo from "./dev-components/uploader/uploader-info";
 import VisualCodesInfo from "./dev-components/visual-codes/visual-codes-info";
 
@@ -240,11 +240,11 @@ const ComponentDataArray = [
       "Forms are used to collect information from users in a web application.",
   },
   {
-    name: "Tree Dropdowns",
+    name: "Dropdown Tree",
     image: "tree-dropdown.png",
-    componentData: TreeDropdownInfo,
+    componentData: DropdownTreeInfo,
     description:
-      "A tree dropdown component that displays a hierarchical structure of items, allowing users to expand and collapse folders and select files.",
+      "A dropdown tree component that displays a hierarchical structure of items, allowing users to expand and collapse folders and select files.",
   },
   {
     name: "Miscellaneous",

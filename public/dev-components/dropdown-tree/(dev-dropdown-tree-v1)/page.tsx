@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import DevTreeDropdownV1 from "./dev-tree-dropdown-v1";
 import { LuFolderOpen, LuFolder, LuFile } from "react-icons/lu";
 import { FaReact } from "react-icons/fa";
+import DevDropdownTreeV1 from "./dev-dropdown-tree-v1";
 
-export default function DevTreeDropdownV1Usage() {
+export default function DevDropdownTreeV1Usage() {
   const folderStructure = [
     {
       id: "src",
@@ -93,7 +93,7 @@ export default function DevTreeDropdownV1Usage() {
 
   return (
     <>
-      <DevTreeDropdownV1
+      <DevDropdownTreeV1
         data={folderStructure}
         iconOnOpen={<LuFolderOpen />}
         iconOnClose={<LuFolder />}
