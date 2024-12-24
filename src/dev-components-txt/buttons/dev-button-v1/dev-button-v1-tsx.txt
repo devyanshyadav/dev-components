@@ -1,90 +1,94 @@
-import React from "react";
+import * as React from "react";
 
-// Simple implementation of the `cn` function to merge tailwind classes
 const cn = (...classes: (string | undefined | null | false)[]) => {
   return classes.filter(Boolean).join(" ");
 };
 
-type ButtonProps = {
-  variant?: "solid" | "border" | "light" | "flat" | "ghost";
-  size?: "sm" | "md" | "lg";
-  href?: string;
-  rounded?: "sm" | "md" | "lg" | "full" | "none";
-  ripple?: boolean;
+const buttonStyles = {
+  base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-[0.9rem] font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  variants: {
+    solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
+    light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
+    border: "border text-ACCENT border-2 border-ACCENT",
+    flat: "border-ACCENT/5 bg-ACCENT/30 text-ACCENT backdrop-blur-sm",
+    ghost:
+      "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",
+  },
+  sizes: {
+    sm: "h-8 rounded-md px-3 text-xs",
+    md: "h-9 px-4 py-2",
+    lg: "h-10 rounded-md px-8",
+  },
+  roundness: {
+    sm: "rounded-sm",
+    md: "rounded-md",
+    lg: "rounded-2xl",
+    full: "rounded-full",
+    none: "rounded-none",
+  },
+  icon: "h-9 w-9 p-0"
+};
+
+type ButtonBaseProps = {
+  variant?: keyof typeof buttonStyles.variants;
+  size?: keyof typeof buttonStyles.sizes;
+  rounded?: keyof typeof buttonStyles.roundness;
   asIcon?: boolean;
-  children: React.ReactNode;
   className?: string;
-} & React.ComponentProps<"button"> &
-  React.ComponentProps<"a">;
+};
+
+type ButtonAsButton = ButtonBaseProps &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "href">;
+type ButtonAsLink = ButtonBaseProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+
+export type ButtonProps = ButtonAsButton | ButtonAsLink;
+
+const Link = "a"; // You can change this to import Link from 'next/link' for Next.js
 
 const DevButtonV1 = React.forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
   ButtonProps
 >(
   (
-    {
-      variant = "solid",
-      size = "md",
-      href,
+    { 
+      className, 
+      variant = "solid", 
+      size = "md", 
       rounded = "md",
-      ripple = false,
       asIcon = false,
-      children,
-      className,
-      ...rest
+      ...props 
     },
     ref
   ) => {
-    const baseStyle = `transition-all outline-0 flex items-center active:scale-95 justify-center  
-    ${!asIcon && "gap-1.5 text-nowrap"}`;
+    const buttonClasses = cn(
+      buttonStyles.base,
+      buttonStyles.variants[variant],
+      asIcon ? buttonStyles.icon : buttonStyles.sizes[size],
+      buttonStyles.roundness[rounded],
+      className
+    );
 
-    const variantStyles = {
-      solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
-      light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
-      border: "border text-ACCENT border-2 border-ACCENT",
-      flat: "border-ACCENT/5 bg-ACCENT/30 text-ACCENT backdrop-blur-sm",
-      ghost:
-        "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",
-    };
-
-    const sizeStyles = {
-      sm: asIcon ? "*:h-3 *:w-3" : "py-1 px-4 text-sm",
-      md: asIcon ? "*:h-5 *:w-5" : "py-1.5 px-5 text-base",
-      lg: asIcon ? "*:h-6 *:w-6" : "py-2 px-7",
-    };
-
-    const roundedStyles = {
-      sm: "rounded-sm",
-      md: "rounded-md",
-      lg: "rounded-2xl",
-      full: "rounded-full",
-      none: "rounded-none",
-    };
-
-    const Link = "a"; //Remove this for next js and import next/link
-    const Component = href ? Link : "button";
+    if ("href" in props) {
+      return (
+        <Link
+          className={buttonClasses}
+          {...(props as ButtonAsLink)}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+        />
+      );
+    }
 
     return (
-      <Component
-        ref={ref as any}
-        href={href as string}
-        {...rest}
-        className={cn(
-          baseStyle,
-          variantStyles[variant],
-          sizeStyles[size],
-          roundedStyles[rounded],
-          asIcon && "aspect-square p-1.5",
-          href && "underline",
-          className
-        )}
-      >
-        {children}
-      </Component>
+      <button
+        className={buttonClasses}
+        {...(props as ButtonAsButton)}
+        ref={ref as React.Ref<HTMLButtonElement>}
+      />
     );
   }
 );
 
-DevButtonV1.displayName = "Button";
+DevButtonV1.displayName = "DevButton";
 
 export default DevButtonV1;

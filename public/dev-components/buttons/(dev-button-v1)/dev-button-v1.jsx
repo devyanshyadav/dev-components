@@ -1,75 +1,62 @@
-import React from "react";
+import * as React from "react";
 
-// Simple implementation of the `cn` function to merge tailwind classes
 const cn = (...classes) => {
   return classes.filter(Boolean).join(" ");
+};
+
+const buttonStyles = {
+  base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-[0.9rem] font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  variants: {
+    solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
+    light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
+    border: "border text-ACCENT border-2 border-ACCENT",
+    flat: "border-ACCENT/5 bg-ACCENT/30 text-ACCENT backdrop-blur-sm",
+    ghost:
+      "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",
+  },
+  sizes: {
+    sm: "h-8 rounded-md px-3 text-xs",
+    md: "h-9 px-4 py-2",
+    lg: "h-10 rounded-md px-8",
+  },
+  roundness: {
+    sm: "rounded-sm",
+    md: "rounded-md",
+    lg: "rounded-2xl",
+    full: "rounded-full",
+    none: "rounded-none",
+  },
+  icon: "h-9 w-9 p-0",
 };
 
 const DevButtonV1 = React.forwardRef(
   (
     {
+      className,
       variant = "solid",
       size = "md",
-      href,
       rounded = "md",
-      ripple = false,
       asIcon = false,
-      children,
-      className,
-      ...rest
+      ...props
     },
     ref
   ) => {
-    const baseStyle = `transition-all outline-0 flex items-center active:scale-95 justify-center  
-    ${!asIcon && "gap-1.5 text-nowrap"}`;
-
-    const variantStyles = {
-      solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
-      light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
-      border: "border text-ACCENT border-2 border-ACCENT",
-      flat: "border-ACCENT/5 bg-ACCENT/30 text-ACCENT backdrop-blur-sm",
-      ghost:
-        "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",
-    };
-
-    const sizeStyles = {
-      sm: asIcon ? "*:h-3 *:w-3" : "py-1 px-4 text-sm",
-      md: asIcon ? "*:h-5 *:w-5" : "py-1.5 px-5 text-base",
-      lg: asIcon ? "*:h-6 *:w-6" : "py-2 px-7",
-    };
-
-    const roundedStyles = {
-      sm: "rounded-sm",
-      md: "rounded-md",
-      lg: "rounded-2xl",
-      full: "rounded-full",
-      none: "rounded-none",
-    };
-
-    const Link = "a"; //Remove this for next js and import next/link
-    const Component = href ? Link : "button";
-
-    return (
-      <Component
-        ref={ref}
-        href={href}
-        {...rest}
-        className={cn(
-          baseStyle,
-          variantStyles[variant],
-          sizeStyles[size],
-          roundedStyles[rounded],
-          asIcon && "aspect-square p-1.5",
-          href && "underline",
-          className
-        )}
-      >
-        {children}
-      </Component>
+    const buttonClasses = cn(
+      buttonStyles.base,
+      buttonStyles.variants[variant],
+      asIcon ? buttonStyles.icon : buttonStyles.sizes[size],
+      buttonStyles.roundness[rounded],
+      className
     );
+
+    if ("href" in props) {
+      return <a className={buttonClasses} {...props} ref={ref} />;
+    }
+
+    return <button className={buttonClasses} {...props} ref={ref} />;
   }
 );
 
-DevButtonV1.displayName = "Button";
+DevButtonV1.displayName = "DevButton";
 
 export default DevButtonV1;
