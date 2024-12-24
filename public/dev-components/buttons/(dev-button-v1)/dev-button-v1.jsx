@@ -5,7 +5,7 @@ const cn = (...classes) => {
 };
 
 const buttonStyles = {
-  base: "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-[0.9rem] font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  base: "inline-flex items-center justify-center gap-2 whitespace-nowrap text-[0.9rem] font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   variants: {
     solid: "bg-ACCENT text-white hover:bg-ACCENT/90",
     light: "text-ACCENT hover:bg-ACCENT/50 hover:text-white",
@@ -15,14 +15,14 @@ const buttonStyles = {
       "text-ACCENT hover:bg-ACCENT hover:text-white border-2 border-ACCENT",
   },
   sizes: {
-    sm: "h-8 rounded-md px-3 text-xs",
+    sm: "h-8 px-3 text-xs",
     md: "h-9 px-4 py-2",
-    lg: "h-10 rounded-md px-8",
+    lg: "h-10 px-8",
   },
   roundness: {
     sm: "rounded-sm",
     md: "rounded-md",
-    lg: "rounded-2xl",
+    lg: "rounded-xl",
     full: "rounded-full",
     none: "rounded-none",
   },
