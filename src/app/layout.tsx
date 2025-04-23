@@ -19,10 +19,7 @@ export const metadata: Metadata = {
     siteName: "Dev Components",
     images: [
       {
-        url: "/assets/og-logo.png",
-        secureUrl: "/assets/og-logo.png",
-        width: 800,
-        height: 600,
+        url: "/assets/og-image.png",
         alt: "Dev Components",
       },
     ],
@@ -33,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "Discover Dev Components, a unique platform providing fully customizable React components in TSX/JSX, seamlessly styled with Tailwind CSS. Unlock productivity and efficiency with our ready-to-use, highly flexible UI elements.",
     images: {
-      url: "/assets/og-logo.png",
+      url: "/assets/og-image.png",
       alt: "Dev Components",
     },
   },
